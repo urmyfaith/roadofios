@@ -1,0 +1,5 @@
+int a,premiter,area;
+int pi = 3.14;
+
+area = pi * a * a;
+permiter = 2 * pi * r;
