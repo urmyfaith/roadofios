@@ -9,9 +9,11 @@ int main(void)
 	switch(ch)
 	{
 		case 'M':
+		case 'm':
 			printf("Monday\n");
 			break;
 		case 'T':
+		case 't':
 			printf("input the second char\n");
 			scanf("%c",&ch);
 			if(ch=='u')
@@ -20,13 +22,16 @@ int main(void)
 				printf("Thurday\n");
 			break;
 		case 'W':
+		case 'w':
 			printf("Wendnesday\n");
 			break;
 			break;
 		case 'F':
+		case 'f':
 			printf("Friday\n");
 			break;
 		case 'S':
+		case 's':
 			printf("input the second char\n");
 			scanf("%c",&ch);
 			if(ch=='a')
