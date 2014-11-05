@@ -46,3 +46,6 @@ int main(void)
 
 	return 0;
 }
+#if 0
+scanf() 读取字符时候，读取缓存区的任何字符（当然包括回车。）
+#endif
