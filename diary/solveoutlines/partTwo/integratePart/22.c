@@ -2,22 +2,18 @@
 
 int main()
 {
-	int i;
-	int num;
-	int sum = 0;
-	int eachBit = 0;
-	
-	printf("add each digits of a num:\n");
+	int num,reverse_num,last_bit_num;
+	reverse_num = 0;
+
+
+	printf("please input a num:\n");
 	scanf("%d",&num);
-	printf("you have input num:%d\n",num);
-
-	while(num)
+	while(num!=0)
 	{
-		//得到各位？
-		//得到一个数的位数？
-	
+		last_bit_num = num % 10;
+		reverse_num = reverse_num * 10 + last_bit_num;
+		num = num /10;
 	}
-	printf("sum each digits of num is %d ",sum);
-
+	printf("reversed number is %d \n",reverse_num);
 	return 0;
 }
