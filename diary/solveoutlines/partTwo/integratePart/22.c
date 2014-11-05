@@ -2,18 +2,20 @@
 
 int main()
 {
-	int num,reverse_num,last_bit_num;
-	reverse_num = 0;
-
-
-	printf("please input a num:\n");
+	int i;
+	int num;
+	int sum = 0;
+	
+	printf("add each digits of a num:\n");
 	scanf("%d",&num);
-	while(num!=0)
+	printf("you have input num:%d\n",num);
+
+	while(num)
 	{
-		last_bit_num = num % 10;
-		reverse_num = reverse_num * 10 + last_bit_num;
+		sum = sum + num%10;
 		num = num /10;
 	}
-	printf("reversed number is %d \n",reverse_num);
+	printf("sum each digits of num is %d ",sum);
+
 	return 0;
 }

@@ -2,20 +2,18 @@
 
 int main()
 {
-	int i;
-	int num;
-	int sum = 0;
+	int num,last_digit,sum;
+	sum = 0;
 	
-	printf("add each digits of a num:\n");
+	printf("add each digit of a number:\n");
 	scanf("%d",&num);
-	printf("you have input num:%d\n",num);
-
-	while(num)
+	while(num!=0)
 	{
-		sum = sum + num%10;
-		num = num /10;
-	}
-	printf("sum each digits of num is %d ",sum);
+		last_digit = num % 10;
+		sum = sum + last_digit;
+		num = num / 10;
 
+	}
+	printf("sum each  digit of a number is %d:\n",sum);
 	return 0;
 }
