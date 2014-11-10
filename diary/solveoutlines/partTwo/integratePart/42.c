@@ -33,11 +33,12 @@ int main(void)
 	else
 		printf("NO");
 
+	printf("\n");
 
 	return 0;
 }
 
 /*
- *  思路：首位对比即可。
+ *  思路：
  */
 
