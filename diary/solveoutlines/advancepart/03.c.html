@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Documents/github/roadofios/diary/solveoutlines/advancepart/03.c.html</title>
+<meta name="Generator" content="Vim/7.3">
+<meta name="plugin-version" content="vim7.3_v6">
+<meta name="syntax" content="c">
+<meta name="settings" content="use_css,number_lines">
+<style type="text/css">
+<!--
+pre { font-family: monospace; color: #c0c0c0; background-color: #000000; }
+body { font-family: monospace; color: #c0c0c0; background-color: #000000; }
+.lnr { color: #ffff00; }
+.Special { color: #af5f00; }
+.Statement { color: #ffff00; }
+.Comment { color: #8080ff; }
+.Type { color: #87ffaf; }
+.Constant { color: #ff40ff; }
+.PreProc { color: #5fd7ff; }
+-->
+</style>
+</head>
+<body>
+<pre>
+<span class="lnr"> 1 </span><span class="PreProc">#include </span><span class="Constant">&lt;stdio.h&gt;</span>
+<span class="lnr"> 2 </span>
+<span class="lnr"> 3 </span><span class="Type">void</span> print_diamond(<span class="Type">int</span><span class=""> n);</span>
+<span class="lnr"> 4 </span>
+<span class="lnr"> 5 </span><span class="Type">int</span> main()
+<span class="lnr"> 6 </span>{
+<span class="lnr"> 7 </span>    <span class="Type">int</span><span class="">  num = </span><span class="Constant">3</span><span class=""> ;</span>
+<span class="lnr"> 8 </span>
+<span class="lnr"> 9 </span><span class="Comment">//  scanf(&quot;%d&quot;,&amp;num);</span>
+<span class="lnr">10 </span>
+<span class="lnr">11 </span>    print_diamond(num);
+<span class="lnr">12 </span>
+<span class="lnr">13 </span>    <span class="Statement">return</span><span class="">  </span><span class="Constant">0</span><span class="">;</span>
+<span class="lnr">14 </span>}
+<span class="lnr">15 </span>
+<span class="lnr">16 </span><span class="Type">void</span> print_diamond(<span class="Type">int</span><span class=""> n)</span>
+<span class="lnr">17 </span>{
+<span class="lnr">18 </span>    <span class="Type">int</span><span class=""> row,col;</span>
+<span class="lnr">19 </span>    <span class="Statement">for</span><span class=""> (row = </span><span class="Constant">0</span><span class="">; row &lt; n; row++ )</span>
+<span class="lnr">20 </span>    {
+<span class="lnr">21 </span>        <span class="Statement">for</span><span class=""> (col = </span><span class="Constant">0</span><span class="">; col &lt; row + n ; col++)</span>
+<span class="lnr">22 </span>        {
+<span class="lnr">23 </span>            <span class="Statement">if</span><span class=""> ( col &lt; n - row - </span><span class="Constant">1</span><span class=""> )</span>
+<span class="lnr">24 </span>                printf(<span class="Constant">&quot; &quot;</span><span class="">);</span>
+<span class="lnr">25 </span>            <span class="Statement">else</span>
+<span class="lnr">26 </span>                printf(<span class="Constant">&quot;*&quot;</span><span class="">);</span>
+<span class="lnr">27 </span>        }
+<span class="lnr">28 </span>        printf(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="">);</span>
+<span class="lnr">29 </span>    }
+<span class="lnr">30 </span>    <span class="Statement">for</span><span class=""> (row = n-</span><span class="Constant">2</span><span class="">; row &gt;= </span><span class="Constant">0</span><span class=""> ; row-- )</span>
+<span class="lnr">31 </span>    {
+<span class="lnr">32 </span>        <span class="Statement">for</span><span class=""> (col = </span><span class="Constant">0</span><span class="">; col &lt; row + n ; col++)</span>
+<span class="lnr">33 </span>        {
+<span class="lnr">34 </span>            <span class="Statement">if</span><span class=""> ( col &lt; n - row - </span><span class="Constant">1</span><span class=""> )</span>
+<span class="lnr">35 </span>                printf(<span class="Constant">&quot; &quot;</span><span class="">);</span>
+<span class="lnr">36 </span>            <span class="Statement">else</span>
+<span class="lnr">37 </span>                printf(<span class="Constant">&quot;*&quot;</span><span class="">);</span>
+<span class="lnr">38 </span>        }
+<span class="lnr">39 </span>        printf(<span class="Constant">&quot;</span><span class="Special">\n</span><span class="Constant">&quot;</span><span class="">);</span>
+<span class="lnr">40 </span>    }
+<span class="lnr">41 </span>}
+</pre>
+</body>
+</html>
