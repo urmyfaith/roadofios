@@ -14,22 +14,7 @@ int main()
 	}
 	printf("\n");
 
-	for (i = 0; i < NUM-1; i++ )
-	{
-		flag = i;
-		for ( j = i+1; j < NUM ; j++ )
-		{
-			if(array[flag] < array[j])
-				flag = j;
 
-		}
-		if( flag != i)
-		{
-			temp = array[i];
-			array[i] = array[flag];
-			array[flag]= temp;
-		}
-	}
 	for ( i = 0; i < NUM;i++)
 	{
 		printf("%d\t",array[i]);
