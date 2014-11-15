@@ -1,0 +1,175 @@
+{\rtf1\ansi\ansicpg936\cocoartf1187\cocoasubrtf390
+{\fonttbl\f0\fnil\fcharset134 STHeitiSC-Light;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red32\green0\blue99;\red66\green255\blue25;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww21380\viewh12540\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+
+\f0\fs28 \cf2 i
+\b OS\'b5\'da\'d2\'bb\'bd\'d7\'b6\'ceC\'d3\'ef\'d1\'d4\'bd\'d7\'b6\'ce\'bd\'d7\'b6\'ce\'b2\'e2\'ca\'d4\
+\
+\'d2\'aa\'c7\'f3:\'b1\'be\'b4\'ce\'bf\'bc\'ca\'d4\'a3\'ac\'ca\'b1\'bc\'e4180\'b7\'d6\'d6\'d3\'a3\'ac\'b9\'b27\'b5\'c0\'cc\'e2\'a1\'a3\
+\
+1.\'d5\'d2\'b3\'f6\'ca\'fd\'d7\'e9\'d6\'d0\'d3\'eb\'d6\'b8\'b6\'a8\'d6\'b5\'d7\'ee\'bd\'d3\'bd\'fc\'b5\'c4\'ca\'fd(10\'b7\'d6)\
+//arr\'ca\'fd\'d7\'e9\'ca\'d7\'d4\'aa\'cb\'d8\'b5\'d8\'d6\'b7\
+//len\'ca\'fd\'d7\'e9\'d4\'aa\'cb\'d8\'b8\'f6\'ca\'fd\
+//n\'d6\'b8\'b6\'a8\'d6\'b5\
+//\'b7\'b5\'bb\'d8\'d6\'b5\'b7\'b5\'bb\'d8\'d7\'ee\'bd\'d3\'bd\'fc\'d6\'b8\'b6\'a8\'d6\'b5\'b5\'c4\'d4\'aa\'cb\'d8\'b5\'c4\'d6\'b5\
+int closeToNum(int * arr, int len, int n);\
+\
+\
+\cf3 \
+\cf2 2.\'bc\'d9\'c9\'e8\'ca\'fd\'d7\'e9\'d6\'d0\'b5\'c4\'d4\'aa\'cb\'d8\'b6\'bc\'b2\'bb\'cf\'e0\'b5\'c8\'a3\'ac\'d5\'d2\'b3\'f6\'ca\'fd\'d7\'e9\'d6\'d0\'b5\'da\'b6\'fe\'b4\'f3\'b5\'c4\'ca\'fd(10\'b7\'d6)\
+//arr\'ca\'fd\'d7\'e9\'ca\'d7\'d4\'aa\'cb\'d8\'b5\'d8\'d6\'b7\
+//len\'ca\'fd\'d7\'e9\'d4\'aa\'cb\'d8\'b8\'f6\'ca\'fd\
+//\'b7\'b5\'bb\'d8\'d6\'b5\'b7\'b5\'bb\'d8\'b5\'da\'b6\'fe\'b4\'f3\'b5\'c4\'ca\'fd\
+\
+\pard\tx529\pardeftab529\pardirnatural
+\cf2 \CocoaLigature0 #include <stdio.h>\CocoaLigature1 \
+\CocoaLigature0 int secondMax(const int * arr, int len)\
+\{\
+	int max, second;	//\'bc\'c7\'c2\'bc\'d7\'ee\'b4\'f3\'d6\'b5\'ba\'cd\'b5\'da\'b6\'fe\'b4\'f3\'d6\'b5\
+	max = arr[0] > arr[1] ? arr[0] : arr[1];\
+	second = arr[0] < arr[1] ? arr[0] : arr[1];\
+	\
+	for(int i = 2; i < len; i++)\{\
+		//\'b4\'d3\'b5\'da\'c8\'fd\'b8\'f6\'ca\'fd\'bf\'aa\'ca\'bc\'cf\'f2\'ba\'f3\'b1\'e9\'c0\'fa\
+		if(arr[i] > max)\{\
+			second = max;\
+			max = arr[i];\
+		\}else if(arr[i] > second)\{\
+			second = arr[i];\
+		\}\
+	\}\
+	\
+	return second;\
+\}\
+\
+int main(void)\
+\{\
+	int a[] = \{1, 9, 0, 5, -1\};\
+	printf("%d\\n", secondMax(a, 5));\
+	return 0;\
+\}\CocoaLigature1 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 \
+\
+\
+3.\'ca\'b5\'cf\'d6\'d2\'bb\'b8\'f6\'ba\'af\'ca\'fd\'a3\'ac\'b9\'a6\'c4\'dc\'c0\'e0\'cb\'c6strcpy(15\'b7\'d6)\
+\pard\tx529\pardeftab529\pardirnatural
+\cf2 \CocoaLigature0 #include <stdio.h>\
+#include <string.h>\
+\
+/*\
+char * mystrcpy(char * \CocoaLigature1 s1\CocoaLigature0 , const char * \CocoaLigature1 s2\CocoaLigature0 )\
+\{\
+    for(int i = 0; ; i++)\{\
+        \CocoaLigature1 s1\CocoaLigature0 [i] = \CocoaLigature1 s2\CocoaLigature0 [i];\
+        if(\CocoaLigature1 s1\CocoaLigature0 [i] == '\\0')\{\
+            break;\
+        \}\
+    \}\
+    return dst;\
+\}\
+*/\
+\
+char * mystrcpy(char * \CocoaLigature1 s1\CocoaLigature0 , const char * \CocoaLigature1 s2\CocoaLigature0 )\
+\{\
+    //\CocoaLigature1 s1\CocoaLigature0  = buf == &buf[0]   \CocoaLigature1 s2\CocoaLigature0  = p = &h\
+    char * x = \CocoaLigature1 s1\CocoaLigature0 ;\
+    while(* \CocoaLigature1 s1 \CocoaLigature0 ++ = * \CocoaLigature1 s2 \CocoaLigature0 ++);\
+    return x;\
+\}\
+\
+int main(void)\
+\{\
+    char buf[64];\
+    char * p = "hello world!";\
+    printf("%s\\n", mystrcpy(buf,p));\
+    return 0;\
+\}\
+\CocoaLigature1 \
+\
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 4.\'bd\'ab\'d2\'bb\'b8\'f6\'d7\'d6\'b7\'fb\'b4\'ae\'a3\'ac\'b0\'b4\'d5\'d5\'b5\'a5\'b4\'ca\'c4\'e6\'d0\'f2\'a3\'ac\'bc\'d9\'c9\'e8\'d7\'d6\'b7\'fb\'b4\'ae\'d6\'d0\'b5\'a5\'b4\'ca\'bd\'f6\'d2\'d4\'bf\'d5\'b8\'f1\'b7\'d6\'b8\'f4\'a1\'a3(15\'b7\'d6)\
+\pard\tx1685\pardeftab1685\pardirnatural
+\cf2 "hello my world" \'a1\'aa> "world my hello"\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 //str\'d0\'e8\'d2\'aa\'c4\'e6\'d0\'f2\'b5\'c4\'d7\'d6\'b7\'fb\'ca\'fd\'d7\'e9\'ca\'d7\'d4\'aa\'cb\'d8\'b5\'d8\'d6\'b7\
+\pard\tx529\pardeftab529\pardirnatural
+\cf2 \CocoaLigature0 #include <stdio.h>\
+void reverseWord(char * str)\
+\{\
+\pard\tx529\pardeftab529\pardirnatural
+
+\b0 \cf2 	
+\b char * q[100];\
+	char * p = str;\
+	int i = 0;\
+	while(1)\{\
+		p = strtok(p, " ");\
+		if(!p)\
+			break;\
+		q[i++] = p;\
+		p = NULL;\
+	\}\
+\
+	for(int j = i - 1; j >= 0; j--)\{\
+		printf("%s\\n", q[j]);\
+	\}\
+\}\
+\
+\pard\tx529\pardeftab529\pardirnatural
+
+\f1\b0 \cf2 int main(void)\
+\{\
+    char a[64]=\{"
+\f0 \CocoaLigature1 hello my world
+\f1 \CocoaLigature0 "\};\
+    reverseWord(a);\
+    printf("\\n");\
+    return 0;\
+\}
+\f0 \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 \CocoaLigature1 \
+\
+
+\b \
+5.\'bd\'ab\'d7\'d6\'b7\'fb\'d6\'d0\'b5\'a5\'b4\'ca\'d3\'c3\'bf\'d5\'b8\'f1\'b8\'f4\'bf\'aa(15\'b7\'d6)\
+\pard\tx1685\pardeftab1685\pardirnatural
+\cf2 \'d2\'d1\'d6\'aa\'b4\'ab\'c8\'eb\'b5\'c4\'d7\'d6\'b7\'fb\'b4\'ae\'d6\'d0\'d6\'bb\'d3\'d0\'d7\'d6\'c4\'b8\'a3\'ac\'b8\'f7\'b5\'a5\'b4\'ca\'d3\'c9\'c8\'ab\'b4\'f3\'d0\'b4\'a3\'ac\'c8\'ab\'d0\'a1\'d0\'b4\'bd\'bb\'cc\'e6\'b3\'f6\'cf\'d6\'d7\'e9\'b3\'c9\'a3\'ac\'ca\'d4\'bd\'ab\'c3\'bf\'b8\'f6\'b5\'a5\'b4\'ca\'b8\'f4\'bf\'aa\'a3\'ac\
+\'b1\'a3\'c1\'f4\'b5\'da\'d2\'bb\'b8\'f6\'b5\'a5\'b4\'ca\'ca\'d7\'d7\'d6\'c4\'b8\'b4\'f3\'d0\'b4\'a3\'ac\'c6\'e4\'cb\'fb\'b5\'a5\'b4\'ca\'c8\'ab\'d0\'a1\'d0\'b4\'a1\'a3\
+\'b4\'ab\'c8\'eb:"HELLOmyDEARworld"\
+\'b4\'f2\'d3\'a1:"Hello my dear world"\
+ void separateString(const char * str);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 \
+\
+\
+6.\'c5\'d0\'b6\'cf\'d7\'d6\'b7\'fb\'b4\'aestr\'ca\'c7\'b7\'f1\'ca\'c7\'ba\'cf\'b7\'a8\'b5\'c4C\'b1\'e4\'c1\'bf(15\'b7\'d6) \
+\pard\tx866\pardeftab866\pardirnatural
+\cf2  \'b1\'e4\'c1\'bf\'c3\'fb\'d6\'bb\'c4\'dc\'d3\'c9\'d7\'d6\'c4\'b8\'a1\'a2\'ca\'fd\'d7\'d6\'a1\'a2\'cf\'c2\'bb\'ae\'cf\'df_\'b9\'b9\'b3\'c9,\'b2\'a2\'c7\'d2\'d2\'d4\'d7\'d6\'c4\'b8\'ba\'cd\'cf\'c2\'bb\'ae\'cf\'df_\'bf\'aa\'cd\'b7\'a1\'a3\
+ \'ca\'b5\'bc\'ca\'c9\'cf\'be\'cd\'ca\'c7\'c5\'d0\'b6\'cf\'ca\'c7\'b7\'f1\'ca\'c7\'d2\'bb\'b8\'f6\'ba\'cf\'b7\'a8\'b5\'c4\'b1\'ea\'ca\'b6\'b7\'fb \'b2\'bb\'bf\'bc\'c2\'c7\'b9\'d8\'bc\'fc\'d7\'d6\'c7\'e9\'bf\'f6\
+ \'c8\'e7:"_ios" \'ca\'c7\'ba\'cf\'b7\'a8\'b5\'c4\'b1\'e4\'c1\'bf\'c3\'fb\
+    "1oc" \'b2\'bb\'ba\'cf\'b7\'a8\
+    "123" \'b2\'bb\'ba\'cf\'b7\'a8\
+    "xiaohuang_"  \'ba\'cf\'b7\'a8\
+    "_UI*" \'b2\'bb\'ba\'cf\'b7\'a8\
+    "#OC"  \'b2\'bb\'ba\'cf\'b7\'a8\
+//\'ca\'c7\'b7\'b5\'bb\'d81\'a3\'ac\'b2\'bb\'ca\'c7\'b7\'b5\'bb\'d80\
+int isCValidVar(const char * str);\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural
+\cf2 \
+\
+\
+7.\'b8\'f9\'be\'dd\'ca\'e4\'c8\'eb\'b5\'c4\'c4\'da\'c8\'dd\'b4\'f2\'d3\'a1(20\'b7\'d6)\
+\pard\tx1685\pardeftab1685\pardirnatural
+\cf2 void printString(const char * str);\
+//\'c8\'e7\'b5\'f7\'d3\'c3printString("12345");\
+\
+12345\
+2       4\
+3       3\
+4       2\
+54321}
