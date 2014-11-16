@@ -2,7 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
-
 int main()
 {
     int i,one_line_size = 100;
@@ -41,5 +40,6 @@ int main()
         }
 		printf("\n");
     }
+	fclose(fp);
     return 0;
 }
