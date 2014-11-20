@@ -30,13 +30,13 @@ int main()
 #endif
 
 	//第2题
-#if 1
-	printf("%d\n",longestwordofstring("we are the world we are the children"));
+#if 0
+	orintf("%d\n",longestwordofstring("we are the world we are the children"));
 #endif
 
 	//第3题
-#if 0
-	printgraph('D');
+#if 1
+	printgraph('Z');
 #endif
 
 	//第4题
