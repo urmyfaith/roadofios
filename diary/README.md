@@ -17,5 +17,5 @@
 |[2014-12-01-week5_day1.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-01-week5_day1.md)| 1.单例(定义,使用,创建,) 2.文件管理NSFileManager(路径下文件列表,文件后缀,创建文件,文件属性,创建路径,文件的复制,文件的移动,文件的删除) 3.NSData(字符串与二进制数据转换) 4.NSFileHandle(打开文件,读取文件内容,写入文件) 5.NSDate(获取当前的时间,时间的比较) 6.NSDateFormatter(字符串转换为时间,时间转换为字符串) |
 |[2014-12-02_week5_day2.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-02_week5_day2.md)| 1.json解析 (文件=>字符串=>NSData=>字典=>文件) 2.plist解析 3.归档(序列化serialization,对系统类归档,对自定义类归档,NSKeyedArchiver) 4.NSUserDefalut|
 |[2014-12-03_week5_day3.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-03_week5_day3.md)|1.协议的概念(协议的分类) 2.协议的使用(创建,引入,引用,实现,使用,协议与属性) 3.匿名对象/id  4.@class,懒加载|
-| 2014-12-05_week5_day5.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-05_week5_day5.md) 1.练习(协议/分类) 2.查看帮助 3.代理/委托/delegate(代理的定义,代理的实现)
+| [2014-12-05_week5_day5.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-05_week5_day5.md) | 1.练习(协议/分类) 2.查看帮助 3.代理/委托/delegate(代理的定义,代理的实现)|
 |[solveoutlines](https://github.com/urmyfaith/roadofios/tree/master/diary/solveoutlines)| C语言代码 |
