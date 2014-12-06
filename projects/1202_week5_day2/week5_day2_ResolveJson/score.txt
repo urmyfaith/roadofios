@@ -1,0 +1,11 @@
+{
+    "name":"tom",
+    "age":20,
+    "score":[
+    {
+    "chinese":90,
+    "english":95,
+    "math":100
+    }
+    ]
+}

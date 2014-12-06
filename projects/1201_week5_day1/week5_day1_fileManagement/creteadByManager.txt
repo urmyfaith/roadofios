@@ -1,0 +1,9 @@
+file content of createdByManaer
+creteadByManager.txt
+creteadByManager_copy.txt
+dir1
+dir2
+good
+main.m
+methodList.rtf
+God is a girlGod is a girlGod is a girlGod is a girl

@@ -1,0 +1,347 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB90E54E1A285A46001E14BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB90E54D1A285A46001E14BB /* main.m */; };
+		FB90E55B1A2864EF001E14BB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB90E55A1A2864EF001E14BB /* main.m */; };
+		FB90E5611A2865C0001E14BB /* Route.m in Sources */ = {isa = PBXBuildFile; fileRef = FB90E5601A2865C0001E14BB /* Route.m */; };
+		FB90E5641A2865CD001E14BB /* Station.m in Sources */ = {isa = PBXBuildFile; fileRef = FB90E5631A2865CD001E14BB /* Station.m */; };
+		FB90E5671A2865E0001E14BB /* SubwayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB90E5661A2865E0001E14BB /* SubwayManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		FB90E5481A285A46001E14BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+		FB90E5561A2864EF001E14BB /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		FB34A0E61A29561C00386502 /* Subway.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Subway.txt; sourceTree = "<group>"; };
+		FB34A0E81A29744700386502 /* Subway.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Subway.png; sourceTree = "<group>"; };
+		FB90E54A1A285A46001E14BB /* week5_day5_dic01 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = week5_day5_dic01; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB90E54D1A285A46001E14BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB90E5581A2864EF001E14BB /* week4_day5_dic02SubWay */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = week4_day5_dic02SubWay; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB90E55A1A2864EF001E14BB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB90E55F1A2865C0001E14BB /* Route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Route.h; sourceTree = "<group>"; };
+		FB90E5601A2865C0001E14BB /* Route.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Route.m; sourceTree = "<group>"; };
+		FB90E5621A2865CD001E14BB /* Station.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Station.h; sourceTree = "<group>"; };
+		FB90E5631A2865CD001E14BB /* Station.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Station.m; sourceTree = "<group>"; };
+		FB90E5651A2865E0001E14BB /* SubwayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubwayManager.h; sourceTree = "<group>"; };
+		FB90E5661A2865E0001E14BB /* SubwayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubwayManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB90E5471A285A46001E14BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB90E5551A2864EF001E14BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB90E5411A285A46001E14BB = {
+			isa = PBXGroup;
+			children = (
+				FB90E54C1A285A46001E14BB /* week5_day5_dic01 */,
+				FB90E5591A2864EF001E14BB /* week4_day5_dic02SubWay */,
+				FB90E54B1A285A46001E14BB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB90E54B1A285A46001E14BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB90E54A1A285A46001E14BB /* week5_day5_dic01 */,
+				FB90E5581A2864EF001E14BB /* week4_day5_dic02SubWay */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB90E54C1A285A46001E14BB /* week5_day5_dic01 */ = {
+			isa = PBXGroup;
+			children = (
+				FB90E54D1A285A46001E14BB /* main.m */,
+			);
+			path = week5_day5_dic01;
+			sourceTree = "<group>";
+		};
+		FB90E5591A2864EF001E14BB /* week4_day5_dic02SubWay */ = {
+			isa = PBXGroup;
+			children = (
+				FB34A0E61A29561C00386502 /* Subway.txt */,
+				FB34A0E81A29744700386502 /* Subway.png */,
+				FB90E55A1A2864EF001E14BB /* main.m */,
+				FB90E5651A2865E0001E14BB /* SubwayManager.h */,
+				FB90E5661A2865E0001E14BB /* SubwayManager.m */,
+				FB90E5621A2865CD001E14BB /* Station.h */,
+				FB90E5631A2865CD001E14BB /* Station.m */,
+				FB90E55F1A2865C0001E14BB /* Route.h */,
+				FB90E5601A2865C0001E14BB /* Route.m */,
+			);
+			path = week4_day5_dic02SubWay;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB90E5491A285A46001E14BB /* week5_day5_dic01 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB90E5511A285A46001E14BB /* Build configuration list for PBXNativeTarget "week5_day5_dic01" */;
+			buildPhases = (
+				FB90E5461A285A46001E14BB /* Sources */,
+				FB90E5471A285A46001E14BB /* Frameworks */,
+				FB90E5481A285A46001E14BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = week5_day5_dic01;
+			productName = week5_day5_dic01;
+			productReference = FB90E54A1A285A46001E14BB /* week5_day5_dic01 */;
+			productType = "com.apple.product-type.tool";
+		};
+		FB90E5571A2864EF001E14BB /* week4_day5_dic02SubWay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB90E55C1A2864EF001E14BB /* Build configuration list for PBXNativeTarget "week4_day5_dic02SubWay" */;
+			buildPhases = (
+				FB90E5541A2864EF001E14BB /* Sources */,
+				FB90E5551A2864EF001E14BB /* Frameworks */,
+				FB90E5561A2864EF001E14BB /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = week4_day5_dic02SubWay;
+			productName = week4_day5_dic02SubWay;
+			productReference = FB90E5581A2864EF001E14BB /* week4_day5_dic02SubWay */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB90E5421A285A46001E14BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = zx;
+				TargetAttributes = {
+					FB90E5491A285A46001E14BB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+					FB90E5571A2864EF001E14BB = {
+						CreatedOnToolsVersion = 6.1;
+					};
+				};
+			};
+			buildConfigurationList = FB90E5451A285A46001E14BB /* Build configuration list for PBXProject "week5_day5_dic01" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FB90E5411A285A46001E14BB;
+			productRefGroup = FB90E54B1A285A46001E14BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB90E5491A285A46001E14BB /* week5_day5_dic01 */,
+				FB90E5571A2864EF001E14BB /* week4_day5_dic02SubWay */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB90E5461A285A46001E14BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB90E54E1A285A46001E14BB /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB90E5541A2864EF001E14BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB90E5671A2865E0001E14BB /* SubwayManager.m in Sources */,
+				FB90E55B1A2864EF001E14BB /* main.m in Sources */,
+				FB90E5611A2865C0001E14BB /* Route.m in Sources */,
+				FB90E5641A2865CD001E14BB /* Station.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FB90E54F1A285A46001E14BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FB90E5501A285A46001E14BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		FB90E5521A285A46001E14BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB90E5531A285A46001E14BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		FB90E55D1A2864EF001E14BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		FB90E55E1A2864EF001E14BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB90E5451A285A46001E14BB /* Build configuration list for PBXProject "week5_day5_dic01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB90E54F1A285A46001E14BB /* Debug */,
+				FB90E5501A285A46001E14BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB90E5511A285A46001E14BB /* Build configuration list for PBXNativeTarget "week5_day5_dic01" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB90E5521A285A46001E14BB /* Debug */,
+				FB90E5531A285A46001E14BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB90E55C1A2864EF001E14BB /* Build configuration list for PBXNativeTarget "week4_day5_dic02SubWay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB90E55D1A2864EF001E14BB /* Debug */,
+				FB90E55E1A2864EF001E14BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB90E5421A285A46001E14BB /* Project object */;
+}
