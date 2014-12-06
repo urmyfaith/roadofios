@@ -32,6 +32,8 @@
 |[2014-12-02_week5_day2.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-02_week5_day2.md)| 1.json解析 (文件=>字符串=>NSData=>字典=>文件) 2.plist解析 3.归档(序列化serialization,对系统类归档,对自定义类归档,NSKeyedArchiver) 4.NSUserDefalut|
 |[2014-12-03_week5_day3.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-03_week5_day3.md)|1.协议的概念(协议的分类) 2.协议的使用(创建,引入,引用,实现,使用,协议与属性) 3.匿名对象/id  4.@class,懒加载|
 | [2014-12-05_week5_day5.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-05_week5_day5.md) | 1.练习(协议/分类) 2.查看帮助 3.代理/委托/delegate(代理的定义,代理的实现)|
+|[2014-12-06_week5_day6.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-06_week5_day6.md)| 1.内存管理的法则(监控retainCount,重写dealloc,野指针,空指针,ARC,MRC,retain),引用计数器 2.多对象的内存管理set方法  3.自动释放池 4 数组的内存管理 5@property再次了解|
+|[2014-12-06_summary.md](https://github.com/urmyfaith/roadofios/tree/master/diary/2014-12-06_summary.md)| **OC阶段总结** |
 |[solveoutlines](https://github.com/urmyfaith/roadofios/tree/master/diary/solveoutlines)| C语言代码 |    
             
 ---
