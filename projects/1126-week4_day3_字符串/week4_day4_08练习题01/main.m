@@ -46,6 +46,62 @@ int main(int argc, const char * argv[]) {
         NSString *findStr = @"oo";
         NSLog(@"%i",[NSString countSmallString:findStr InBigString:srcStr]);
 #endif
+        
+#if 0
+        float result = 0;
+        NSString *string =@"12*23+";
+        NSCharacterSet *mySet = [NSCharacterSet characterSetWithCharactersInString:@"+-*/="];
+        
+        NSArray *newArray = [string componentsSeparatedByCharactersInSet:mySet];
+        NSLog(@"%@",newArray);
+        
+        for (int i = 0; i < [string length]-1; i++) {
+            char ch =[string characterAtIndex:i];
+            if (!( ch>='0' && ch <='9') ) {
+                switch (ch) {
+                    case '+':
+                        result =[newArray[0] floatValue] + [newArray[1] floatValue];
+                        break;
+                    case '-':
+                        result =[newArray[0] floatValue] - [newArray[1] floatValue];
+                        break;
+                    case '*':
+                        result =[newArray[0] floatValue] * [newArray[1] floatValue];
+                        break;
+                    case '/':
+                        result =[newArray[0] floatValue] / [newArray[1] floatValue];
+
+                    default:
+                        break;
+                        
+                }
+            }
+        }
+        NSLog(@"-->%.2f",result);
+        char lastOperator = [string characterAtIndex:[string length]-1];
+        NSLog(@"%c",lastOperator);
+        if (lastOperator != '=') {
+            NSLog(@"hello%@", [NSString stringWithFormat:@"%.2f%c",result,lastOperator]);
+        }
+        
+       
+#endif
+        
+#if 1
+        NSMutableString *mutString = [[NSMutableString alloc]initWithString:@"123+24+"];
+        NSInteger count = 0;
+        for (int i = 0; i < [mutString length]; i++)
+        {
+            char ch = [mutString characterAtIndex:i];
+            if (ch == '+' || ch == '-' ||
+                ch == '*' || ch == '/'
+                ) {
+                count ++;
+            }
+        }
+        NSLog(@"%lu",count);
+#endif
+        
     }
     return 0;
 }

@@ -37,6 +37,9 @@ int main(int argc, const char * argv[]) {
         NSLog(@"%@",str10);
         
         NSString *str11 = [str9 stringByAppendingString:str8];
+        NSMutableString *expression = [[NSMutableString alloc]initWithString:@"123+235="];
+        NSLog(@"%i",[expression length]);
+        NSLog(@"%c",[expression characterAtIndex:([expression length]-1)]);
         
         
     }
