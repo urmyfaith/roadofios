@@ -1,0 +1,15 @@
+//
+//  FirstViewController.h
+//  1208_UI_LabelDemo
+//
+//  Created by zx on 12/8/14.
+//  Copyright (c) 2014 zx. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface FirstViewController : UIViewController
+
+
+@end
+
