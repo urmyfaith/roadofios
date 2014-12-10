@@ -173,6 +173,9 @@
             [self.expression appendString:btnTitle];
             [self calculateResult];
             // NSLog(@"dd->%@",[self expression]);
+        //===AC====
+        case 4:
+            break;
         default:
             break;
     }
@@ -192,6 +195,7 @@
 -(void)calculateResult{
     NSMutableString *tempExpression = [[NSMutableString alloc]initWithString:self.expression];
     float result = 0;
+    
     NSCharacterSet *mySet = [NSCharacterSet characterSetWithCharactersInString:@"+-*/="];
     NSArray *newArray = [tempExpression componentsSeparatedByCharactersInSet:mySet];
     // NSLog(@"%@",newArray);

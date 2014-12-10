@@ -216,3 +216,30 @@ UIButton *button1 = [UIButton buttonWithType:UIButtonTypeSystem];
                                              otherButtonTitles:@"confirm", nil];
         [alert show];
 ```
+
+# Button,label计算器
+
+rangeOfString
+
+
+###从标签中得到数字
+
+```Objective-c
+CGFloat num1 = [self.showlabel.text floatVaule];
+```
+
+###从字符串中得到字符
+
+```Objective-c
+  NSRange range = [self.showLabel.text rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:@"+-*/"]];
+    char signal = [self.showLabel.text characterAtIndex:range.location];
+```
+
+###  需要改进的地方:
+
+*  除数为0
+
+*  = 0 ,数组越界
+
+*  平方,开方
+
