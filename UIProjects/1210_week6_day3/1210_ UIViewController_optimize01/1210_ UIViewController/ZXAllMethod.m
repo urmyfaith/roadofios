@@ -1,0 +1,13 @@
+//
+//  ZXAllMethod.m
+//  1210_ UIViewController
+//
+//  Created by zx on 12/10/14.
+//  Copyright (c) 2014 zx. All rights reserved.
+//
+
+#import "ZXAllMethod.h"
+
+@implementation ZXAllMethod
+
+@end
