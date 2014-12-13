@@ -172,7 +172,7 @@ static ZXSignalModel *signalModel = nil;
 	
 ## 3.通知 
 
-**工程名称 [1213_passValue03_notify](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue03_notify)**
+**工程名称[1213_passValue03_notify](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue03_notify)**
 
 > 通知的使用:
 
