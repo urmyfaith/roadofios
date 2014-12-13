@@ -48,6 +48,15 @@
     
    
 ```
+### 视图控制器之间切换到效果
+
+```Objective-c
+    mainView.modalTransitionStyle = UIModalTransitionStyleCoverVertical;//垂直消失
+      mainView.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;//水平翻转
+    mainView.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;//交叉消失
+    mainView.modalTransitionStyle = UIModalTransitionStylePartialCurl;//翻页效果
+```
+
 
 ## 为什么使用 UIViewController
 
