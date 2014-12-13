@@ -95,8 +95,8 @@
     
     //=====获取label的高度
     //注意:获取的值的大小与开始创建的时候,保持的一致.
-    CGSize labelSize = [label2 sizeThatFits:CGSizeMake(200,0)];
-    NSLog(@"%lf",labelSize.height);
+    //CGSize labelSize = [label2 sizeThatFits:CGSizeMake(200,0)];
+    //NSLog(@"%lf",labelSize.height);
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

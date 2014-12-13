@@ -251,4 +251,31 @@ UIImageView *player = [[UIImageView alloc]initWithImage:imagePlayer];
 
 
 
+# 图片资源介绍
  
+- 程序启动的时候默认加载的图片
+ 
+ ```Objective-c
+default.png
+default@2x.png(表示分辨率提升了2倍)
+```
+
+- 程序最小化后的图片
+
+```Objective-c
+icon.png
+icon@2x.png
+```
+
+- 自己命名程序在桌面显示的名称
+
+修改如下路径的值即可以
+
+```Objective-c
+SupportingFile>.plit文件>Bundle display name>
+```
+
+**iOS_iconSize.docx**
+
+自己新建工程完成上述工作.
+

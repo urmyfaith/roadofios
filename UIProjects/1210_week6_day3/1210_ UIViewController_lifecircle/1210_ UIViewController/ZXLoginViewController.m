@@ -30,10 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
     //设置当前view的背景色
     self.view.backgroundColor = [UIColor grayColor];
-   
     //值传递,创建标签
     UILabel *userName = [[UILabel alloc]init];
     userName.frame = CGRectMake(100,20,120,40);
