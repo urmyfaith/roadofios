@@ -1,4 +1,11 @@
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1213_passValue01](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue01)| 视图控制器之间传值-->代理 |
+|[1213_passValue02_signalInstance](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue02_signalInstance)| 视图控制器之间传值-->单例 |
+|[1213_passValue03_notify](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue03_notify)| 视图控制器之间传值-->通知 |
+
+
 # 界面传值
 
 -  正向传值
@@ -11,7 +18,7 @@
 
 ## 1.单例
 
-**工程名称: 1213_passValue02_signalInstance**
+**工程名称: [1213_passValue02_signalInstance](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue02_signalInstance)**
 
 > 通过创建单例类,在单例类中通过属性来保存值,达到值传递的目的
 
@@ -69,7 +76,7 @@ static ZXSignalModel *signalModel = nil;
 
 ## 2. 代理	
 
-**工程名称:1213_passValue01**
+**工程名称:[1213_passValue01](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue01)**
 
 ```Objective-c
 //通过代理传值
@@ -165,7 +172,7 @@ static ZXSignalModel *signalModel = nil;
 	
 ## 3.通知 
 
-**工程名称 1213_passValue03_notify**
+**工程名称 [1213_passValue03_notify](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue03_notify)**
 
 > 通知的使用:
 
