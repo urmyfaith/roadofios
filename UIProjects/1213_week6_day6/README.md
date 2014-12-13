@@ -72,7 +72,7 @@ static ZXSignalModel *signalModel = nil;
     ZXSignalModel *signal = [[ZXSignalModel alloc]init];
     signal.name = string;
 ```
-
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1213_week6_day6/1213_passValue01/1213_passValue01.gif)
 
 ## 2. 代理	
 
