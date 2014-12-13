@@ -83,10 +83,6 @@
 init ->initWithNibName->laodView->viewDidLoad
 ->viewWillAppear->viewDidAppear->viewWillDisappear->viewDidDisappear->[anthoerView]->**viewWillAppear**-->...
 
-## 视图控制器之间的值传递(正向传值)
-
-通过的对象的属性来传递
-
 ```Objective-c
 2014-12-10 15:32:48.994 init method
 2014-12-10 15:32:48.997  ****loadView method
@@ -98,6 +94,14 @@ init ->initWithNibName->laodView->viewDidLoad
 2014-12-10 15:56:59.062  viewDidDisappear method
 
 ```
+
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1210_week6_day3/UIViewControllerLifeCircle.jpg)
+
+
+## 视图控制器之间的值传递(正向传值)
+
+通过的对象的属性来传递
+
 
 
 
