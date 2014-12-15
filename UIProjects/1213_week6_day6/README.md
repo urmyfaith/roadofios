@@ -167,7 +167,7 @@ static ZXSignalModel *signalModel = nil;
   configView.delegate = self;//主动类的代理设置成本类(重要)
 ```
 
-[设置位代理](https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1213_week6_day6/1213_passValue01/1213_passValue01/ZXMainViewController.m#L83)
+[设置为代理](https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1213_week6_day6/1213_passValue01/1213_passValue01/ZXMainViewController.m#L83)
 	
 	
 ## 3.通知 
