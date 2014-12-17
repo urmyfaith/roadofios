@@ -30,4 +30,19 @@ UINavigationController
 
 
 toolbarItems 
- 
+
+#  多种控/件的创建,自定义TabBar
+
+UITabBar ==>View ==>(button+label)*4
+									|
+									controller
+要想自定义标签控制器,一定要将系统的隐藏h
+1.隐藏本身的UITabBar隐藏
+tabController.tabBar.hidden = YES;
+
+2.继承自UITabBarController,把系统隐藏,自己写
+
+
+作业1:自己写一遍
+
+作业2:自定义TabBar控件
