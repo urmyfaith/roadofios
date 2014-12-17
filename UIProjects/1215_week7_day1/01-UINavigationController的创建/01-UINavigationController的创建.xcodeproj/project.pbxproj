@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BCEB06781A3E7FA300B3B9EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEB06771A3E7FA300B3B9EE /* Foundation.framework */; };
+		BCEB067A1A3E7FA300B3B9EE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEB06791A3E7FA300B3B9EE /* CoreGraphics.framework */; };
+		BCEB067C1A3E7FA300B3B9EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEB067B1A3E7FA300B3B9EE /* UIKit.framework */; };
+		BCEB06821A3E7FA300B3B9EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCEB06801A3E7FA300B3B9EE /* InfoPlist.strings */; };
+		BCEB06841A3E7FA300B3B9EE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB06831A3E7FA300B3B9EE /* main.m */; };
+		BCEB06881A3E7FA300B3B9EE /* ZKAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB06871A3E7FA300B3B9EE /* ZKAppDelegate.m */; };
+		BCEB068A1A3E7FA300B3B9EE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BCEB06891A3E7FA300B3B9EE /* Images.xcassets */; };
+		BCEB06911A3E7FA300B3B9EE /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEB06901A3E7FA300B3B9EE /* XCTest.framework */; };
+		BCEB06921A3E7FA300B3B9EE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEB06771A3E7FA300B3B9EE /* Foundation.framework */; };
+		BCEB06931A3E7FA300B3B9EE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEB067B1A3E7FA300B3B9EE /* UIKit.framework */; };
+		BCEB069B1A3E7FA300B3B9EE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BCEB06991A3E7FA300B3B9EE /* InfoPlist.strings */; };
+		BCEB069D1A3E7FA300B3B9EE /* _1_UINavigationController___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB069C1A3E7FA300B3B9EE /* _1_UINavigationController___Tests.m */; };
+		BCEB06AE1A3E7FC400B3B9EE /* ZKFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB06A71A3E7FC400B3B9EE /* ZKFirstViewController.m */; };
+		BCEB06AF1A3E7FC400B3B9EE /* ZKFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB06A91A3E7FC400B3B9EE /* ZKFourthViewController.m */; };
+		BCEB06B01A3E7FC400B3B9EE /* ZKSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB06AB1A3E7FC400B3B9EE /* ZKSecondViewController.m */; };
+		BCEB06B11A3E7FC400B3B9EE /* ZKThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCEB06AD1A3E7FC400B3B9EE /* ZKThirdViewController.m */; };
+		FB3DA1811A3E90D8000A9F69 /* ZKFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3DA1801A3E90D8000A9F69 /* ZKFifthViewController.m */; };
+		FB5ABFE01A3E8AD800A21844 /* ZXAllMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5ABFDF1A3E8AD800A21844 /* ZXAllMethod.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BCEB06941A3E7FA300B3B9EE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BCEB066C1A3E7FA300B3B9EE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BCEB06731A3E7FA300B3B9EE;
+			remoteInfo = "01-UINavigationController的创建";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BCEB06741A3E7FA300B3B9EE /* 01-UINavigationController的创建.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "01-UINavigationController的创建.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEB06771A3E7FA300B3B9EE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BCEB06791A3E7FA300B3B9EE /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BCEB067B1A3E7FA300B3B9EE /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BCEB067F1A3E7FA300B3B9EE /* 01-UINavigationController的创建-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "01-UINavigationController的创建-Info.plist"; sourceTree = "<group>"; };
+		BCEB06811A3E7FA300B3B9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCEB06831A3E7FA300B3B9EE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = main.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BCEB06851A3E7FA300B3B9EE /* 01-UINavigationController的创建-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "01-UINavigationController的创建-Prefix.pch"; sourceTree = "<group>"; };
+		BCEB06861A3E7FA300B3B9EE /* ZKAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ZKAppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BCEB06871A3E7FA300B3B9EE /* ZKAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZKAppDelegate.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BCEB06891A3E7FA300B3B9EE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BCEB068F1A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "01-UINavigationController的创建Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCEB06901A3E7FA300B3B9EE /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BCEB06981A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "01-UINavigationController的创建Tests-Info.plist"; sourceTree = "<group>"; };
+		BCEB069A1A3E7FA300B3B9EE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BCEB069C1A3E7FA300B3B9EE /* _1_UINavigationController___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = "_1_UINavigationController___Tests.m"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BCEB06A61A3E7FC400B3B9EE /* ZKFirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ZKFirstViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BCEB06A71A3E7FC400B3B9EE /* ZKFirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZKFirstViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BCEB06A81A3E7FC400B3B9EE /* ZKFourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ZKFourthViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BCEB06A91A3E7FC400B3B9EE /* ZKFourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZKFourthViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BCEB06AA1A3E7FC400B3B9EE /* ZKSecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ZKSecondViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BCEB06AB1A3E7FC400B3B9EE /* ZKSecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZKSecondViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		BCEB06AC1A3E7FC400B3B9EE /* ZKThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = ZKThirdViewController.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		BCEB06AD1A3E7FC400B3B9EE /* ZKThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ZKThirdViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		FB3DA17F1A3E90D8000A9F69 /* ZKFifthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKFifthViewController.h; sourceTree = "<group>"; };
+		FB3DA1801A3E90D8000A9F69 /* ZKFifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKFifthViewController.m; sourceTree = "<group>"; };
+		FB5ABFDE1A3E8AD800A21844 /* ZXAllMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAllMethod.h; sourceTree = "<group>"; };
+		FB5ABFDF1A3E8AD800A21844 /* ZXAllMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAllMethod.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BCEB06711A3E7FA300B3B9EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEB067A1A3E7FA300B3B9EE /* CoreGraphics.framework in Frameworks */,
+				BCEB067C1A3E7FA300B3B9EE /* UIKit.framework in Frameworks */,
+				BCEB06781A3E7FA300B3B9EE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCEB068C1A3E7FA300B3B9EE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEB06911A3E7FA300B3B9EE /* XCTest.framework in Frameworks */,
+				BCEB06931A3E7FA300B3B9EE /* UIKit.framework in Frameworks */,
+				BCEB06921A3E7FA300B3B9EE /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BCEB066B1A3E7FA300B3B9EE = {
+			isa = PBXGroup;
+			children = (
+				BCEB067D1A3E7FA300B3B9EE /* 01-UINavigationController的创建 */,
+				BCEB06961A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests */,
+				BCEB06761A3E7FA300B3B9EE /* Frameworks */,
+				BCEB06751A3E7FA300B3B9EE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BCEB06751A3E7FA300B3B9EE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB06741A3E7FA300B3B9EE /* 01-UINavigationController的创建.app */,
+				BCEB068F1A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BCEB06761A3E7FA300B3B9EE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB06771A3E7FA300B3B9EE /* Foundation.framework */,
+				BCEB06791A3E7FA300B3B9EE /* CoreGraphics.framework */,
+				BCEB067B1A3E7FA300B3B9EE /* UIKit.framework */,
+				BCEB06901A3E7FA300B3B9EE /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCEB067D1A3E7FA300B3B9EE /* 01-UINavigationController的创建 */ = {
+			isa = PBXGroup;
+			children = (
+				FB5ABFDE1A3E8AD800A21844 /* ZXAllMethod.h */,
+				FB5ABFDF1A3E8AD800A21844 /* ZXAllMethod.m */,
+				BCEB06861A3E7FA300B3B9EE /* ZKAppDelegate.h */,
+				BCEB06871A3E7FA300B3B9EE /* ZKAppDelegate.m */,
+				BCEB06891A3E7FA300B3B9EE /* Images.xcassets */,
+				FB3DA17E1A3E9093000A9F69 /* VeiwController */,
+				BCEB067E1A3E7FA300B3B9EE /* Supporting Files */,
+			);
+			path = "01-UINavigationController的创建";
+			sourceTree = "<group>";
+		};
+		BCEB067E1A3E7FA300B3B9EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB067F1A3E7FA300B3B9EE /* 01-UINavigationController的创建-Info.plist */,
+				BCEB06801A3E7FA300B3B9EE /* InfoPlist.strings */,
+				BCEB06831A3E7FA300B3B9EE /* main.m */,
+				BCEB06851A3E7FA300B3B9EE /* 01-UINavigationController的创建-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BCEB06961A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB069C1A3E7FA300B3B9EE /* _1_UINavigationController___Tests.m */,
+				BCEB06971A3E7FA300B3B9EE /* Supporting Files */,
+			);
+			path = "01-UINavigationController的创建Tests";
+			sourceTree = "<group>";
+		};
+		BCEB06971A3E7FA300B3B9EE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB06981A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests-Info.plist */,
+				BCEB06991A3E7FA300B3B9EE /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB3DA17E1A3E9093000A9F69 /* VeiwController */ = {
+			isa = PBXGroup;
+			children = (
+				BCEB06A61A3E7FC400B3B9EE /* ZKFirstViewController.h */,
+				BCEB06A71A3E7FC400B3B9EE /* ZKFirstViewController.m */,
+				BCEB06AA1A3E7FC400B3B9EE /* ZKSecondViewController.h */,
+				BCEB06AB1A3E7FC400B3B9EE /* ZKSecondViewController.m */,
+				BCEB06AC1A3E7FC400B3B9EE /* ZKThirdViewController.h */,
+				BCEB06AD1A3E7FC400B3B9EE /* ZKThirdViewController.m */,
+				BCEB06A81A3E7FC400B3B9EE /* ZKFourthViewController.h */,
+				BCEB06A91A3E7FC400B3B9EE /* ZKFourthViewController.m */,
+				FB3DA17F1A3E90D8000A9F69 /* ZKFifthViewController.h */,
+				FB3DA1801A3E90D8000A9F69 /* ZKFifthViewController.m */,
+			);
+			name = VeiwController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BCEB06731A3E7FA300B3B9EE /* 01-UINavigationController的创建 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCEB06A01A3E7FA300B3B9EE /* Build configuration list for PBXNativeTarget "01-UINavigationController的创建" */;
+			buildPhases = (
+				BCEB06701A3E7FA300B3B9EE /* Sources */,
+				BCEB06711A3E7FA300B3B9EE /* Frameworks */,
+				BCEB06721A3E7FA300B3B9EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "01-UINavigationController的创建";
+			productName = "01-UINavigationController的创建";
+			productReference = BCEB06741A3E7FA300B3B9EE /* 01-UINavigationController的创建.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BCEB068E1A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCEB06A31A3E7FA300B3B9EE /* Build configuration list for PBXNativeTarget "01-UINavigationController的创建Tests" */;
+			buildPhases = (
+				BCEB068B1A3E7FA300B3B9EE /* Sources */,
+				BCEB068C1A3E7FA300B3B9EE /* Frameworks */,
+				BCEB068D1A3E7FA300B3B9EE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BCEB06951A3E7FA300B3B9EE /* PBXTargetDependency */,
+			);
+			name = "01-UINavigationController的创建Tests";
+			productName = "01-UINavigationController的创建Tests";
+			productReference = BCEB068F1A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BCEB066C1A3E7FA300B3B9EE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZK;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = zhaokai;
+				TargetAttributes = {
+					BCEB068E1A3E7FA300B3B9EE = {
+						TestTargetID = BCEB06731A3E7FA300B3B9EE;
+					};
+				};
+			};
+			buildConfigurationList = BCEB066F1A3E7FA300B3B9EE /* Build configuration list for PBXProject "01-UINavigationController的创建" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BCEB066B1A3E7FA300B3B9EE;
+			productRefGroup = BCEB06751A3E7FA300B3B9EE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BCEB06731A3E7FA300B3B9EE /* 01-UINavigationController的创建 */,
+				BCEB068E1A3E7FA300B3B9EE /* 01-UINavigationController的创建Tests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BCEB06721A3E7FA300B3B9EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEB06821A3E7FA300B3B9EE /* InfoPlist.strings in Resources */,
+				BCEB068A1A3E7FA300B3B9EE /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCEB068D1A3E7FA300B3B9EE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEB069B1A3E7FA300B3B9EE /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BCEB06701A3E7FA300B3B9EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEB06B01A3E7FC400B3B9EE /* ZKSecondViewController.m in Sources */,
+				BCEB06841A3E7FA300B3B9EE /* main.m in Sources */,
+				BCEB06881A3E7FA300B3B9EE /* ZKAppDelegate.m in Sources */,
+				BCEB06B11A3E7FC400B3B9EE /* ZKThirdViewController.m in Sources */,
+				BCEB06AE1A3E7FC400B3B9EE /* ZKFirstViewController.m in Sources */,
+				FB5ABFE01A3E8AD800A21844 /* ZXAllMethod.m in Sources */,
+				BCEB06AF1A3E7FC400B3B9EE /* ZKFourthViewController.m in Sources */,
+				FB3DA1811A3E90D8000A9F69 /* ZKFifthViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCEB068B1A3E7FA300B3B9EE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCEB069D1A3E7FA300B3B9EE /* _1_UINavigationController___Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BCEB06951A3E7FA300B3B9EE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BCEB06731A3E7FA300B3B9EE /* 01-UINavigationController的创建 */;
+			targetProxy = BCEB06941A3E7FA300B3B9EE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BCEB06801A3E7FA300B3B9EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCEB06811A3E7FA300B3B9EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BCEB06991A3E7FA300B3B9EE /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BCEB069A1A3E7FA300B3B9EE /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BCEB069E1A3E7FA300B3B9EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		BCEB069F1A3E7FA300B3B9EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BCEB06A11A3E7FA300B3B9EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "01-UINavigationController的创建/01-UINavigationController的创建-Prefix.pch";
+				INFOPLIST_FILE = "01-UINavigationController的创建/01-UINavigationController的创建-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BCEB06A21A3E7FA300B3B9EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "01-UINavigationController的创建/01-UINavigationController的创建-Prefix.pch";
+				INFOPLIST_FILE = "01-UINavigationController的创建/01-UINavigationController的创建-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BCEB06A41A3E7FA300B3B9EE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/01-UINavigationController的创建.app/01-UINavigationController的创建";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "01-UINavigationController的创建/01-UINavigationController的创建-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "01-UINavigationController的创建Tests/01-UINavigationController的创建Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BCEB06A51A3E7FA300B3B9EE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/01-UINavigationController的创建.app/01-UINavigationController的创建";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "01-UINavigationController的创建/01-UINavigationController的创建-Prefix.pch";
+				INFOPLIST_FILE = "01-UINavigationController的创建Tests/01-UINavigationController的创建Tests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BCEB066F1A3E7FA300B3B9EE /* Build configuration list for PBXProject "01-UINavigationController的创建" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCEB069E1A3E7FA300B3B9EE /* Debug */,
+				BCEB069F1A3E7FA300B3B9EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCEB06A01A3E7FA300B3B9EE /* Build configuration list for PBXNativeTarget "01-UINavigationController的创建" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCEB06A11A3E7FA300B3B9EE /* Debug */,
+				BCEB06A21A3E7FA300B3B9EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCEB06A31A3E7FA300B3B9EE /* Build configuration list for PBXNativeTarget "01-UINavigationController的创建Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCEB06A41A3E7FA300B3B9EE /* Debug */,
+				BCEB06A51A3E7FA300B3B9EE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BCEB066C1A3E7FA300B3B9EE /* Project object */;
+}
