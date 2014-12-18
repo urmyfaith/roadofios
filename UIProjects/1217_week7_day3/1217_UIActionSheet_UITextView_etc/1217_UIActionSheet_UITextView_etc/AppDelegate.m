@@ -75,9 +75,11 @@
     ZXMainViewController *main      = [[ZXMainViewController alloc]init];
     self.window.rootViewController  = main.tabBarController ;
     UILabel *label4Progress         = (UILabel *) [self.window viewWithTag:400];
-    label4Progress.hidden           = YES;
+    [label4Progress removeFromSuperview ];
+    //label4Progress.hidden           = YES;
     UIProgressView *pro = (UIProgressView *)[self.window viewWithTag:401];
-    pro.hidden = YES;
+    [pro            removeFromSuperview ];
+    //pro.hidden                      = YES;
     NSLog(@"%s [LINE:%d]", __func__, __LINE__);
 }
 
