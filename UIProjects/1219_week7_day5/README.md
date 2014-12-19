@@ -42,6 +42,18 @@
 > 手势放在哪里?
 > > 手势给谁使用,就加给谁.
 
+**手势所处的状态**:
+
+- UIGestureRecognizerStatePossible  
+- UIGestureRecognizerStateBegan
+- UIGestureRecognizerStateChanged
+- UIGestureRecognizerStateEnded//结束状态
+- UIGestureRecognizerStateCancelled  
+- UIGestureRecognizerStateFailed
+- UIGestureRecognizerStateRecognized = UIGestureRecognizerStateEnded //识别到的状态
+
+## 点击UITapGestureRecognizer
+
 ### 1. 创建手势
 
 ```Objective-c
@@ -77,4 +89,144 @@
 
 > > 2. 对象是否支持多点触摸**self.imageView.multipleTouchEnabled**
 
-**这里添加在工程文件中的函数**
+**这里添加在工程文件中的位置:行号**
+
+
+## 长按
+
+| 长按的属性 | 说明 |
+| ------------- | ------------ |
+| numberOfTapsRequired  | 点击的次数 |
+| numberOfTouchesRequired  | 需要的手指数 |
+| minimumPressDuration  | 需要的最小时间 |
+| allowableMovement  | 允许移动的范围 |
+
+
+**这里添加在工程文件中的位置:行号**
+
+## 轻扫
+
+| 轻扫的属性 | 说明 |
+| ------------- | ------------ |
+| direction  | 轻扫的方向 |
+|numberOfTouchesRequired|需要的手指数|
+
+
+轻扫的方向:
+```Objective-c
+typedef NS_OPTIONS(NSUInteger, UISwipeGestureRecognizerDirection) {
+    UISwipeGestureRecognizerDirectionRight = 1 << 0,
+    UISwipeGestureRecognizerDirectionLeft  = 1 << 1,
+    UISwipeGestureRecognizerDirectionUp    = 1 << 2,
+    UISwipeGestureRecognizerDirectionDown  = 1 << 3
+};
+```
+**这里添加在工程文件中的位置:行号**
+
+##  旋转UIRotationGestureRecognizer
+
+
+| 旋转的属性 | 说明 |
+| ------------- | ------------ |
+| rotation  | 旋转的角度增量 |
+| velocity  | 弧度的增量 |
+
+
+**图片的旋转动画**
+
+CGAffineTransformRotate
+
+a)第一个参数:旋转对象的动画属性 
+b)第二个参数:旋转的角度增量/速度(增量会保值,需要清零)
+
+```Objective-c
+-(void)myRotation:(UIRotationGestureRecognizer *)rotation{
+    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    
+    //执行的一个动画.
+    self.imageView.transform = CGAffineTransformRotate(self.imageView.transform, rotation.rotation);
+    rotation.rotation = 0;
+}
+```
+**这里添加在工程文件中的位置:行号**
+
+
+## 缩放/捏合(UIPinchGestureRecognizer)
+
+**对象指向的动画**
+
+CGAffineTransformScale
+a) 第一个参数 缩合对象的属性
+b) 后两个属性,x,y方向缩放的比例(缩放的增量值,需要清零)
+
+```Objective-c
+-(void)myPinch:(UIPinchGestureRecognizer *) pinch{
+    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    self.imageView.transform = CGAffineTransformScale(self.imageView.transform, pinch.scale,pinch.scale);
+    pinch.scale = 1;
+}
+```
+
+**这里添加在工程文件中的位置:行号**
+
+
+## 同时缩放和旋转
+
+如果需要同时执行,就需要实现代理方法.(代理的方法在父类之中.)
+
+1)  引入代理
+
+```Objective-c
+@interface ViewController ()<UIGestureRecognizerDelegate>
+```
+
+2) 设置代理
+
+```Objective-c
+pinch.delegate = self;
+rotation.delegate = self;
+```
+
+3) 实现代理方法
+
+```Objective-c
+#pragma mark 手势的代理方法
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherGestureRecognizer{
+    return YES;
+}
+```
+**这里添加在工程文件中的位置:行号**
+
+## 移动/按住拖动(UIPanGestureRecognizer)
+
+locationInView:是在父视图/或者是窗口上.
+
+```Objective-c
+-(void)myPan:(UIPanGestureRecognizer *)pan{
+    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    CGPoint  point = [pan locationInView:self.view];
+    self.imageView.center = point;
+}
+```
+
+| A | B |
+| ------------- | ------------ |
+| minimumNumberOfTouches  | cell2 |
+| maximumNumberOfTouches  | cell2 |
+| translationInView:  | cell2 |
+| velocityInView:  | cell2 |
+| setTranslation: inView: | cell2 |
+
+**这里添加在工程文件中的位置:行号**
+
+----
+
+
+# UITableView
+
+从一个软件的开发者软件来考虑:这个功能怎么实现的?
+
+
+
+
+
