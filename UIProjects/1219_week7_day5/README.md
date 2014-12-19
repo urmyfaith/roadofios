@@ -209,13 +209,13 @@ locationInView:是在父视图/或者是窗口上.
 }
 ```
 
-| A | B |
+| Pan属性 | 说明 |
 | ------------- | ------------ |
-| minimumNumberOfTouches  | cell2 |
-| maximumNumberOfTouches  | cell2 |
-| translationInView:  | cell2 |
-| velocityInView:  | cell2 |
-| setTranslation: inView: | cell2 |
+| minimumNumberOfTouches  | 最小的手势数 |
+| maximumNumberOfTouches  | 最大的手势数 |
+| translationInView:  | 在视图中平移 |
+| velocityInView:  | 角速度(增量) |
+| setTranslation: inView: | 设置平移 |
 
 **这里添加在工程文件中的位置:行号**
 
@@ -227,6 +227,23 @@ locationInView:是在父视图/或者是窗口上.
 从一个软件的开发者软件来考虑:这个功能怎么实现的?
 
 
+### 一个通讯录,10组,每组5人
+
+分析:
+
+1) 创建足够的按钮
+
+2) ==>使用循环?
+
+3) ===>不能拖动==>scrollView
+
+4) ===>表视图
+
+**表视图**
+
+> 数据怎么存储 ===>数组/字典等
+
+> 显示数据 
 
 
 
