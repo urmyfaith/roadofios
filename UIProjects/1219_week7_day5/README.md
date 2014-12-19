@@ -26,6 +26,8 @@
 
 #  手势
 
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m
+
 > 手势是系统对一些动作进行了封装,形成了拥有了某个特定手势的对象,
 > 在使用的时候,只需要创建对象,添加到需要手势的对象上.
 
@@ -197,7 +199,7 @@ rotation.delegate = self;
     return YES;
 }
 ```
-**这里添加在工程文件中的位置:行号**
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L87,L90
 
 ## 移动/按住拖动(UIPanGestureRecognizer)
 
