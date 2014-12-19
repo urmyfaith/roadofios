@@ -1,3 +1,12 @@
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1209_UIImageView](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2/1209_UIImageView)| UIImageView添加图片,添加动画(需要添加动画图片数组),响应手势(拖动) |
+|[1209_UIView01](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2/1209_UIView01)| 五彩石-UIView的创建,背景,用户可交互性,透明性,隐藏,frame位置动态调整 |
+|[1209_UIView_Nesting](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2/1209_UIView_Nesting)| 视图的层次(按钮上添加图片,添加标签),视图的层次:最上,最下,交换层次,从父视图删除,新增视图 |
+|[1209_UIView_UIImage](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2/1209_UIView_UIImage)| 使用UIImageView,UIView练习-"打飞机" |
+|[1209_UIView_UIImage02](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2/1209_UIView_UIImage02)| 练习"打飞机"的改进 |
+
+----
 
 # UIView 
 
