@@ -89,7 +89,7 @@
 
 > > 2. 对象是否支持多点触摸**self.imageView.multipleTouchEnabled**
 
-**这里添加在工程文件中的位置:行号**
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L137,L154
 
 
 ## 长按
@@ -102,7 +102,7 @@
 | allowableMovement  | 允许移动的范围 |
 
 
-**这里添加在工程文件中的位置:行号**
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L111,L135
 
 ## 轻扫
 
@@ -121,7 +121,8 @@ typedef NS_OPTIONS(NSUInteger, UISwipeGestureRecognizerDirection) {
     UISwipeGestureRecognizerDirectionDown  = 1 << 3
 };
 ```
-**这里添加在工程文件中的位置:行号**
+
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L92,L109
 
 ##  旋转UIRotationGestureRecognizer
 
@@ -148,7 +149,8 @@ b)第二个参数:旋转的角度增量/速度(增量会保值,需要清零)
     rotation.rotation = 0;
 }
 ```
-**这里添加在工程文件中的位置:行号**
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L67,L90
+
 
 
 ## 缩放/捏合(UIPinchGestureRecognizer)
@@ -167,7 +169,7 @@ b) 后两个属性,x,y方向缩放的比例(缩放的增量值,需要清零)
 }
 ```
 
-**这里添加在工程文件中的位置:行号**
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L48,L65
 
 
 ## 同时缩放和旋转
@@ -217,7 +219,7 @@ locationInView:是在父视图/或者是窗口上.
 | velocityInView:  | 角速度(增量) |
 | setTranslation: inView: | 设置平移 |
 
-**这里添加在工程文件中的位置:行号**
+https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/1219_touch_detail/1219_touch_detail/ViewController.m#L87,L90
 
 ----
 
