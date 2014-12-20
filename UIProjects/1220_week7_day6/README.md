@@ -134,19 +134,19 @@ self.imageView.frame = self.imageView.originalFrame;还原大小
 |[07_tableView.png](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/07_tableView.png)| 图片的保存| 
 
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/01_guide.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/01_guide.png)
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/02_guide.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/02_guide.png)
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/03_tableView.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/03_tableView.png)
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/04_tableView.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/04_tableView.png)
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/05_tableView.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/05_tableView.png)
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/06_tableView.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/06_tableView.png)
 
-![image](http:https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/07_tableView.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/07_tableView.png)
 
 https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/1219_exercise_v4final.mov
 
