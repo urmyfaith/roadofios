@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>复习的知识点:</title>
+</head>
+<body>
+<div class="md-section-divider"></div>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted" data-anchor-id="und8"><ol class="linenums"><li class="L0"><code class="language-Objective-c"><span class="pun">要求：</span></code></li><li class="L1"><code class="language-Objective-c"><span class="lit">1.</span><span class="pun">自己写</span><span class="pln">plist</span><span class="pun">文件</span></code></li><li class="L2"><code class="language-Objective-c"><span class="pun">保存数据</span></code></li><li class="L3"><code class="language-Objective-c"><span class="lit">2.</span><span class="pun">主页面：生成一个表（&gt;</span><span class="lit">10</span><span class="pun">个</span><span class="pln">cell</span><span class="pun">），</span></code></li><li class="L4"><code class="language-Objective-c"><span class="pun">表中的单元格的内容使用</span></code></li><li class="L5"><code class="language-Objective-c"><span class="pun">自定义的子控件</span></code></li><li class="L6"><code class="language-Objective-c"><span class="lit">3.</span><span class="pun">详情界面：展示选中</span><span class="pln">cell</span></code></li><li class="L7"><code class="language-Objective-c"><span class="pun">里面的内容，图片可以实现</span></code></li><li class="L8"><code class="language-Objective-c"><span class="pun">缩放，旋转，通过双击可以</span></code></li><li class="L9"><code class="language-Objective-c"><span class="pun">将图片保存到本地</span></code></li><li class="L0"><code class="language-Objective-c"><span class="lit">4.</span><span class="pun">新手引导界面</span></code></li></ol></pre>
+
+<div class="md-section-divider"></div>
+
+<h2 id="复习的知识点" data-anchor-id="s4l6">复习的知识点:</h2>
+
+<p data-anchor-id="81m8">1) scrollView,设置内容大小,设置分页,设置代理.</p>
+
+<p data-anchor-id="8tm3">2) pageControl分页控件,页数,当前页</p>
+
+<p data-anchor-id="gajz">3) 新手引导页的只创建一次的解决办法:</p>
+
+<p data-anchor-id="0aw6">类似与程序第一次的时候,进入登录界面,程序第二次启动的时候,进入主界面.</p>
+
+<p data-anchor-id="b4nm">使用NSUerDefaults(实质是写入plist文件),if判断后设置根视图</p>
+
+<p data-anchor-id="8g8r">4) UITableView==&gt;ZXCustomUITableView自定义表格视图</p>
+
+<p data-anchor-id="ql6g">表格视图中只处理数据的显示,数据从外部加载</p>
+
+<p data-anchor-id="lg6m"><strong>表格cell自定义控件的时候,使用tag值来获得缓存里的对象,然后修改缓存里的对象的属性.</strong></p>
+
+<p data-anchor-id="uxly">5) ZXTableData===&gt;数据从外部加载,plist文件的读取问题(使用NSBundle获取路径,然后读取文件)</p>
+
+<p data-anchor-id="ce2t">6) 图片的旋转,缩放,双加事件==&gt;继承UIImageView,遵守</p>
+
+<p data-anchor-id="ughq">UIGestureRecognizerDelegate协议</p>
+
+<p data-anchor-id="2324">UIPinchGestureRecognizer</p>
+
+<p data-anchor-id="25p2">UIRotationGestureRecognizer</p>
+
+<p data-anchor-id="253v">同时使用多个手势==&gt;代理方法</p>
+
+<p data-anchor-id="357k">双击事件的处理===&gt;传值===&gt;通知/代理/单例</p>
+
+<p data-anchor-id="wgdv">7) 选择图片之后恢复图片原始大小的方法</p>
+
+<p data-anchor-id="4dwc">a.CGAffineTransformMakeRotation(0)还原旋转</p>
+
+<p data-anchor-id="kpdu">b.  self.imageView.frame = self.imageView.originalFrame;还原大小</p>
+
+<p data-anchor-id="qjr1">8) 正向传值==&gt;使用属性即可</p>
+
+<div class="md-section-divider"></div>
+
+<h2 id="问题1表格下拉后出现重复问题" data-anchor-id="9a8s">问题1:表格下拉后出现重复问题</h2>
+
+<p data-anchor-id="51d0">自己第一次做出来之后效果,发现重复,两个同学问了.</p>
+
+<p data-anchor-id="gdga">然后在stackoverFlow上发现了问题的解决方法.</p>
+
+<p data-anchor-id="t2wj">重用cell之后,取出的cell里含有自定义的控件,这些控件的值还是原来缓存下来的.</p>
+
+<p data-anchor-id="ezx9">需要在获得cell之后,给里面的控件修改属性值.</p>
+
+<p data-anchor-id="vry5"><strong>解决的方法是:</strong>对控件设置固定的tag值,然后根据tag值,从<strong>cell</strong>里面取出控件,然后修改属性值.</p>
+
+<p data-anchor-id="o8ro">注意:是从cell里根据tag取出对象.(帮YGX同学处理问题的时候的细节)</p>
+
+<div class="md-section-divider"></div>
+
+<h2 id="问题2表格动态创建的时候怎么设置唯一的标志符的问题" data-anchor-id="gj0p">问题2:表格动态创建的时候,怎么设置唯一的标志符的问题</h2>
+
+<p data-anchor-id="89qh">最初,是想在双击图片的时候,从UIImagView里面获取出图片的名称.</p>
+
+<p data-anchor-id="pakr"><strong>解决的办法是:</strong>对控件设置一个setAccessibilityIdentifier(访问标志符.)</p>
+
+<p data-anchor-id="vw94">创建对象的时候,设置访问标志符:</p>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted" data-anchor-id="7rbr"><ol class="linenums"><li class="L0"><code class="language-Objective-c"><span class="pln"> </span><span class="pun">[</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">imageView setAccessibilityIdentifier</span><span class="pun">:</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">cityImage</span><span class="pun">];</span></code></li></ol></pre>
+
+<p data-anchor-id="w4j3">获取对象的时候,根据访问标志符来区分对象</p>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted" data-anchor-id="y6oa"><ol class="linenums"><li class="L0"><code class="language-Objective-c"><span class="pln">        </span><span class="typ">NSString</span><span class="pln"> </span><span class="pun">*</span><span class="pln">imageName </span><span class="pun">=</span><span class="pln"> </span><span class="pun">[</span><span class="kwd">self</span><span class="pun">.</span><span class="pln">image accessibilityIdentifier</span><span class="pun">];</span></code></li></ol></pre>
+
+<p data-anchor-id="4p4s">第二次遇到这个问题是在XZS问的一个问题:在cell里创建每行元素,但是控件的tag值被固定了,不能通过</p>
+
+<p data-anchor-id="tn6v">tag值来区分对象了,这个时候,可以给对象添加访问标志符来区分对象.</p>
+
+<p data-anchor-id="ce47">在cell创建后,给控件设置访问标志符,在控件的方法中通过访问标志符来区分对象.</p>
+
+<div class="md-section-divider"></div>
+
+<h2 id="问题3图片的位置大小还原的问题" data-anchor-id="jg22">问题3:图片的位置,大小还原的问题:</h2>
+
+<p data-anchor-id="crw1">a)从旋转所执行的方法,进入到h文件之后,查看出还有其他的方法.</p>
+
+<p data-anchor-id="o348">下面的这个方法就将图片旋转还原了:</p>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted" data-anchor-id="j9mp"><ol class="linenums"><li class="L0"><code class="language-Objective-c"><span class="typ">CGAffineTransformMakeRotation</span><span class="pun">(</span><span class="lit">0</span><span class="pun">)还原旋转</span></code></li></ol></pre>
+
+<p data-anchor-id="36fb">b)图片大小的问题,要么直接固定的设置frame,要么给对象添加一个原始的frame属性.</p>
+
+<div class="md-section-divider"></div>
+
+<pre class="prettyprint linenums prettyprinted" data-anchor-id="why0"><ol class="linenums"><li class="L0"><code class="language-Objective-c"><span class="kwd">self</span><span class="pun">.</span><span class="pln">imageView</span><span class="pun">.</span><span class="pln">frame </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">self</span><span class="pun">.</span><span class="pln">imageView</span><span class="pun">.</span><span class="pln">originalFrame</span><span class="pun">;还原大小</span><span class="pln">    </span></code></li></ol></pre>
+
+<div class="md-section-divider"></div>
+
+<h2 id="工程文件说明" data-anchor-id="8jr2">工程文件说明</h2>
+
+<p data-anchor-id="38il"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/project_file.png" alt="image" title=""></p>
+
+<div class="md-section-divider"></div>
+
+<h2 id="效果图和视频" data-anchor-id="w8gf">效果图和视频</h2>
+
+<table data-anchor-id="evoq" class="table table-striped-white table-bordered">
+<thead>
+<tr>
+ <th>文件名</th>
+ <th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/01_guide.png" target="_blank">01_guide.png</a></td>
+ <td>新手引导页面01</td>
+</tr>
+<tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/02_guide.png" target="_blank">02_guide.png</a></td>
+ <td>新手引导页面02</td>
+</tr>
+<tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/03_tableView.png" target="_blank">03_tableView.png</a></td>
+ <td>表格视图</td>
+</tr>
+<tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/04_tableView.png" target="_blank">04_tableView.png</a></td>
+ <td>表格视图</td>
+</tr>
+<tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/05_tableView.png" target="_blank">05_tableView.png</a></td>
+ <td>详情页面</td>
+</tr>
+<tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/06_tableView.png" target="_blank">06_tableView.png</a></td>
+ <td>图片的旋转</td>
+</tr>
+<tr>
+ <td><a href="https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/07_tableView.png" target="_blank">07_tableView.png</a></td>
+ <td>图片的保存</td>
+</tr>
+</tbody></table>
+
+
+<p data-anchor-id="krff"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/01_guide.png" alt="image" title=""></p>
+
+<p data-anchor-id="r333"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/02_guide.png" alt="image" title=""></p>
+
+<p data-anchor-id="fbzd"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/03_tableView.png" alt="image" title=""></p>
+
+<p data-anchor-id="scie"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/04_tableView.png" alt="image" title=""></p>
+
+<p data-anchor-id="jhvm"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/05_tableView.png" alt="image" title=""></p>
+
+<p data-anchor-id="9432"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/06_tableView.png" alt="image" title=""></p>
+
+<p data-anchor-id="1pbj"><img src="https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/07_tableView.png" alt="image" title=""></p>
+</body>
+</html>
