@@ -192,8 +192,7 @@ typedef enum{
  */
 
 -(BOOL)isValidateWithEmail:(NSString *)email{
-    //正则表达式的
-    
+    //正则表达式
     NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
     
     //正则表达式放入语境

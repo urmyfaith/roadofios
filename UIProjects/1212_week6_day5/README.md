@@ -1,4 +1,13 @@
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1212_ UITextFiled01](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5/1212_ UITextFiled01)|  - text,font,backgoundColor |
+|[1212_UITextField_loginDemo](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5/1212_UITextField_loginDemo)| **textAlignment**, **placeholder**,**clearButtonMode** **leftView**,leftViewMode/rightView,rightViewMode  **inputView**/**inputAccessoryView**(自定义键盘上的视图) **secureTextEntry,keyboardType** |
+|[1212_UITextField02](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5/1212_UITextField02)| ***contentHorizontalAlignment***(内容对齐方式)**autocapitalizationType**(大写提示),**autocorrectionType**(纠错提醒),**adjustsFontSizeToFitWidth**(调整文本自适应),**minimumFontSize**(最小字体) |
+|[1212_UITextField_loginDemo_improve01](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5/1212_UITextField_loginDemo_improve01)| 限制输入框的输入长度,验证邮箱的合法性 |
+|[1212_UITextField_loginDemo_improve02](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5/1212_UITextField_loginDemo_improve02)| 将按钮,标签,输入框封起来 |
+|[TextField.pdf](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5/TextField.pdf)| 网上有关TextField文档 |
+
 # UITextField
 
  - create,pos,baorderSytle,backgroundColor,text:
@@ -11,11 +20,11 @@
  ```
 
  
- - text,font,**textAlignment**,**placeholder**,**clearButtonMode**
+ - text,font,**textAlignment**,***contentHorizontalAlignment***(内容对齐方式) **placeholder**,**clearButtonMode**
  
  - **leftView**,leftViewMode/rightView,rightViewMode
- 
- - **inputView**/inputAccessoryView
+ - **autocapitalizationType**(大写提示),**autocorrectionType**(纠错提醒),**adjustsFontSizeToFitWidth**(调整文本自适应),**minimumFontSize**(最小字体)  
+ - **inputView**/inputAccessoryView(自定义键盘上的视图)
 
  - **secureTextEntry,keyboardType**
  
