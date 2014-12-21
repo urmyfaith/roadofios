@@ -6,7 +6,7 @@
 |[1213_passValue03_notify](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6/1213_passValue03_notify)| 视图控制器之间传值-->通知 |
 
 
-# 界面传值
+# 界面传值,单击屏幕收回键盘,键盘遮挡UI处理
 
 -  正向传值
 
@@ -290,7 +290,7 @@ static ZXSignalModel *signalModel = nil;
 
 
 
-###  键盘怎么样不会遮挡键盘
+###  键盘怎么样不会遮挡UI
 
 > 实现的原理:
 
