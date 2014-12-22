@@ -13,6 +13,7 @@
 		FB29B97C1A44537D00666BC0 /* guideView_2.png in Resources */ = {isa = PBXBuildFile; fileRef = FB29B9771A44537D00666BC0 /* guideView_2.png */; };
 		FB29B97D1A44537D00666BC0 /* guideView_3.png in Resources */ = {isa = PBXBuildFile; fileRef = FB29B9781A44537D00666BC0 /* guideView_3.png */; };
 		FB29B97E1A44537D00666BC0 /* guideView_4.png in Resources */ = {isa = PBXBuildFile; fileRef = FB29B9791A44537D00666BC0 /* guideView_4.png */; };
+		FB41A6B21A467144003AE30B /* demo.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB41A6B11A467144003AE30B /* demo.strings */; };
 		FB7FF18F1A44411100C13862 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF18E1A44411100C13862 /* main.m */; };
 		FB7FF1921A44411100C13862 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7FF1911A44411100C13862 /* AppDelegate.m */; };
 		FB7FF1981A44411100C13862 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB7FF1961A44411100C13862 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		FB29B9771A44537D00666BC0 /* guideView_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guideView_2.png; path = ../guideView_2.png; sourceTree = "<group>"; };
 		FB29B9781A44537D00666BC0 /* guideView_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guideView_3.png; path = ../guideView_3.png; sourceTree = "<group>"; };
 		FB29B9791A44537D00666BC0 /* guideView_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = guideView_4.png; path = ../guideView_4.png; sourceTree = "<group>"; };
+		FB41A6B11A467144003AE30B /* demo.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = demo.strings; sourceTree = "<group>"; };
 		FB7FF1891A44411100C13862 /* 1219_exercise_v1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1219_exercise_v1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB7FF18D1A44411100C13862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB7FF18E1A44411100C13862 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -289,6 +291,7 @@
 				FBB38DE61A45234700B0816E /* ZXTableData.m */,
 				FBF5C5221A447C4400480272 /* ZXCustomUITableView.h */,
 				FBF5C5231A447C4400480272 /* ZXCustomUITableView.m */,
+				FB41A6B11A467144003AE30B /* demo.strings */,
 			);
 			name = CustomTableView;
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				FB7FF1DD1A44502B00C13862 /* image8.png in Resources */,
 				FB7FF1D41A44502B00C13862 /* image18.png in Resources */,
 				FB7FF1CD1A44502B00C13862 /* image11.png in Resources */,
+				FB41A6B21A467144003AE30B /* demo.strings in Resources */,
 				FB7FF1CB1A44502B00C13862 /* image1.png in Resources */,
 				FB7FF1CF1A44502B00C13862 /* image13.png in Resources */,
 				FB7FF19D1A44411100C13862 /* LaunchScreen.xib in Resources */,
