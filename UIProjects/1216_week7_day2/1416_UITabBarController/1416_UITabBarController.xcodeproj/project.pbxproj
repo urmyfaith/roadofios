@@ -13,7 +13,7 @@
 		FB11013F1A3FCE3C00296882 /* ZXFourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB11013E1A3FCE3C00296882 /* ZXFourthViewController.m */; };
 		FB1101421A3FCE4400296882 /* ZXFifthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1101411A3FCE4400296882 /* ZXFifthViewController.m */; };
 		FB1101451A3FCE4E00296882 /* ZXSixthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1101441A3FCE4E00296882 /* ZXSixthViewController.m */; };
-		FB1101481A3FCE8000296882 /* ZXAllMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB1101471A3FCE8000296882 /* ZXAllMethod.m */; };
+		FB211C341A47F0EF0067B262 /* ZXAllMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = FB211C331A47F0EF0067B262 /* ZXAllMethod.m */; };
 		FB56FFB41A3FD4E100E41907 /* header_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = FB56FFAE1A3FD4E100E41907 /* header_bg.png */; };
 		FB56FFB51A3FD4E100E41907 /* tab_0.png in Resources */ = {isa = PBXBuildFile; fileRef = FB56FFAF1A3FD4E100E41907 /* tab_0.png */; };
 		FB56FFB61A3FD4E100E41907 /* tab_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FB56FFB01A3FD4E100E41907 /* tab_1.png */; };
@@ -57,8 +57,8 @@
 		FB1101411A3FCE4400296882 /* ZXFifthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXFifthViewController.m; sourceTree = "<group>"; };
 		FB1101431A3FCE4E00296882 /* ZXSixthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXSixthViewController.h; sourceTree = "<group>"; };
 		FB1101441A3FCE4E00296882 /* ZXSixthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXSixthViewController.m; sourceTree = "<group>"; };
-		FB1101461A3FCE8000296882 /* ZXAllMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZXAllMethod.h; path = "../../../../Documents/github/roadofios/UIProjects/1215_week7_day1/1214_UINavigationController02/01-UINavigationController的创建/ZXAllMethod.h"; sourceTree = "<group>"; };
-		FB1101471A3FCE8000296882 /* ZXAllMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZXAllMethod.m; path = "../../../../Documents/github/roadofios/UIProjects/1215_week7_day1/1214_UINavigationController02/01-UINavigationController的创建/ZXAllMethod.m"; sourceTree = "<group>"; };
+		FB211C321A47F0EF0067B262 /* ZXAllMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXAllMethod.h; sourceTree = "<group>"; };
+		FB211C331A47F0EF0067B262 /* ZXAllMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXAllMethod.m; sourceTree = "<group>"; };
 		FB56FFAE1A3FD4E100E41907 /* header_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = header_bg.png; sourceTree = "<group>"; };
 		FB56FFAF1A3FD4E100E41907 /* tab_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_0.png; sourceTree = "<group>"; };
 		FB56FFB01A3FD4E100E41907 /* tab_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tab_1.png; sourceTree = "<group>"; };
@@ -173,9 +173,9 @@
 		FB8879591A3FC9B400798C7F /* 1416_UITabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				FB211C321A47F0EF0067B262 /* ZXAllMethod.h */,
+				FB211C331A47F0EF0067B262 /* ZXAllMethod.m */,
 				FB7686871A3FCF3D0042C28B /* ZXViewController.h */,
-				FB1101461A3FCE8000296882 /* ZXAllMethod.h */,
-				FB1101471A3FCE8000296882 /* ZXAllMethod.m */,
 				FB8879621A3FC9B400798C7F /* ZXAppDelegate.h */,
 				FB8879631A3FC9B400798C7F /* ZXAppDelegate.m */,
 				FB8879651A3FC9B400798C7F /* Images.xcassets */,
@@ -323,8 +323,8 @@
 				FB1101451A3FCE4E00296882 /* ZXSixthViewController.m in Sources */,
 				FB1101361A3FCE1C00296882 /* ZXFirstViewController.m in Sources */,
 				FB8879641A3FC9B400798C7F /* ZXAppDelegate.m in Sources */,
-				FB1101481A3FCE8000296882 /* ZXAllMethod.m in Sources */,
 				FB8879601A3FC9B400798C7F /* main.m in Sources */,
+				FB211C341A47F0EF0067B262 /* ZXAllMethod.m in Sources */,
 				FB1101421A3FCE4400296882 /* ZXFifthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

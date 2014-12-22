@@ -19,7 +19,7 @@ As the user interacts with a tab bar interface, the tab bar controller object se
 
 For more information about using tab bar controllers to build your user interface, see View Controller Programming Guide for iOS.(更多的使用标签控制器来创建用户接口的信息,参考"视图控制器编程指南")
 
-# The Views of a Tab Bar Controller 标签控制起的视图
+# The Views of a Tab Bar Controller 标签控器起的视图
 
 Because the UITabBarController class inherits from the UIViewController class, tab bar controllers have their own view that is accessible through the view property. (由于UITabBarController继承自UIViewController类,所以UITabBarController有自己的视图,这个视图可以通过视图属性来获取.)When deploying a tab bar interface, you must install this view as the root of your window. (**当使用标签控制器接口的时候,必须将标签控制器作为窗口的根视图.**)Unlike other view controllers, a tab bar interface should never be installed as a child of another view controller.(**不像其他的视图控制器,标签栏控制器接口决不能作为其他视图控制器的子接口**)
 

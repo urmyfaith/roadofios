@@ -175,7 +175,7 @@
 /**
  *   选中一个标签后,可以执行一个写预先的行为.
  *
- *  @param tabBarController 当前的标签栏控制器
+ *  @param tabBarControl    ler 当前的标签栏控制器
  *  @param viewController   选中哪个视图控制器元素(选中的哪个标签对应的视图控制器)
  */
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
