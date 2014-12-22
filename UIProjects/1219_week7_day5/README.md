@@ -1,5 +1,15 @@
 2014-12-19
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1219_touch_detail](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1219_week7_day5/1219_touch_detail)| 手势:单击,长按,轻扫,旋转,缩放,移动,(屏幕边缘拖动) |
+|[1219_UItableView01-basic](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1219_week7_day5/1219_UItableView01-basic)| 表格视图基础:数据加载,UITableViewDataSource代理方法:行数,每行的内容.(可选方法:分几组) |
+|[1219_UItableView02_property](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1219_week7_day5/1219_UItableView02_property)| UITableViewDelegate方法:控制表格的外观:表头视图,表尾视图,行高,组头高度,组尾高度.CELL的样式:内置标签,内置图片,内置详细标签,指示样式,自定义指示样式,添加子控件. |
+|[1219_UITableView03_readPlist](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1219_week7_day5/1219_UITableView03_readPlist)| 通过NSBundle来读取plist文件,字符串里有读取文件内容的方法. |
+|[1219_UITableView_05cellCombine](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1219_week7_day5/1219_UITableView_05cellCombine)| 使用复用的单元格CELL,自定义的cell的子控件. |
+
+
+
 # 知识回顾
 
 -  UIprogressView模仿
@@ -252,14 +262,11 @@ https://github.com/urmyfaith/roadofios/blob/master/UIProjects/1219_week7_day5/12
 
 cell
 
-1)创建
+1) 创建cell
 
 2) 填充属性
 
-
-3)
-
-4)返回cell
+3) 返回cell
 
 
 ## 读取plist文件

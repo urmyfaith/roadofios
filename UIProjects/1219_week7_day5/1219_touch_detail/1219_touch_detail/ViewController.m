@@ -21,9 +21,9 @@
     self.imageView.image = [UIImage imageNamed:@"bing.jpg"];
     [self.view addSubview:self.imageView];
 
-    //[self testTap];
-    //[self testLongPress];
-    //[self testSwip];
+    [self testTap];
+    [self testLongPress];
+    [self testSwip];//按住+一个方向长划
     [self testRotation];//alt+按住左键+旋转
     [self testPinch];
     [self testPan];//按住+移动
