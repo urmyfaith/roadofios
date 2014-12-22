@@ -54,7 +54,7 @@
     [self performSelector:@selector(myMove:) withObject:scrollView afterDelay:2];
 #endif
 
-#if 0
+#if 1
     [NSTimer scheduledTimerWithTimeInterval:0.1
                                      target:self
                                    selector:@selector(imageViewScroll:)

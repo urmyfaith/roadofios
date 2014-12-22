@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FB943FDE1A42853D000A7B1A /* 1001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB943FDD1A42853D000A7B1A /* 1001.jpg */; };
 		FBC3F25D1A42ADEB00744ECC /* bing.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBC3F25C1A42ADEB00744ECC /* bing.jpg */; };
 		FBDD44291A4283720046C566 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDD44281A4283720046C566 /* main.m */; };
 		FBDD442C1A4283720046C566 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDD442B1A4283720046C566 /* AppDelegate.m */; };
@@ -16,7 +15,6 @@
 		FBDD44341A4283720046C566 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBDD44331A4283720046C566 /* Images.xcassets */; };
 		FBDD44371A4283720046C566 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBDD44351A4283720046C566 /* LaunchScreen.xib */; };
 		FBDD44431A4283720046C566 /* _218_scrollView01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDD44421A4283720046C566 /* _218_scrollView01Tests.m */; };
-		FBDD444D1A4284660046C566 /* big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FBDD444C1A4284660046C566 /* big.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +28,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FB943FDD1A42853D000A7B1A /* 1001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 1001.jpg; sourceTree = "<group>"; };
 		FBC3F25C1A42ADEB00744ECC /* bing.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bing.jpg; sourceTree = "<group>"; };
 		FBDD44231A4283720046C566 /* 1218_scrollView01.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 1218_scrollView01.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDD44271A4283720046C566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,7 +42,6 @@
 		FBDD443C1A4283720046C566 /* 1218_scrollView01Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1218_scrollView01Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBDD44411A4283720046C566 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FBDD44421A4283720046C566 /* _218_scrollView01Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _218_scrollView01Tests.m; sourceTree = "<group>"; };
-		FBDD444C1A4284660046C566 /* big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = big.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,11 +87,9 @@
 				FBDD442B1A4283720046C566 /* AppDelegate.m */,
 				FBDD442D1A4283720046C566 /* ViewController.h */,
 				FBDD442E1A4283720046C566 /* ViewController.m */,
-				FB943FDD1A42853D000A7B1A /* 1001.jpg */,
 				FBC3F25C1A42ADEB00744ECC /* bing.jpg */,
 				FBDD44301A4283720046C566 /* Main.storyboard */,
 				FBDD44331A4283720046C566 /* Images.xcassets */,
-				FBDD444C1A4284660046C566 /* big.jpg */,
 				FBDD44351A4283720046C566 /* LaunchScreen.xib */,
 				FBDD44261A4283720046C566 /* Supporting Files */,
 			);
@@ -210,8 +204,6 @@
 			files = (
 				FBDD44321A4283720046C566 /* Main.storyboard in Resources */,
 				FBC3F25D1A42ADEB00744ECC /* bing.jpg in Resources */,
-				FBDD444D1A4284660046C566 /* big.jpg in Resources */,
-				FB943FDE1A42853D000A7B1A /* 1001.jpg in Resources */,
 				FBDD44371A4283720046C566 /* LaunchScreen.xib in Resources */,
 				FBDD44341A4283720046C566 /* Images.xcassets in Resources */,
 			);

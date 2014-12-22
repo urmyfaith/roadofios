@@ -53,13 +53,12 @@
     //分页控制控件
     self.pageCotrol = [[UIPageControl alloc]initWithFrame:CGRectMake(100,450,120,0)];
     self.pageCotrol.numberOfPages = 4;
-    self.pageCotrol.currentPage = 0;
+    self.pageCotrol.currentPage =   0;
     [self.view addSubview:self.pageCotrol];
 }
 -(void)buttonClicked:(UIButton *)button{
     NSLog(@"%s [LINE:%d]", __func__, __LINE__);
 }
-
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
    //updateCurrentPageDisplay
     int gap = scrollView.contentOffset.x/320.0;
@@ -67,6 +66,4 @@
     NSLog(@"%s [LINE:%d] scrollView.contentOffset.x = %.f", __func__, __LINE__,scrollView.contentOffset.x);
     
 }
-
-
 @end
