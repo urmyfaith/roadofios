@@ -9,7 +9,7 @@
 #import "ZXHelpViewController.h"
 #import "ZXAllMethod.h"
 
-@interface ZXHelpViewController ()
+@interface ZXHelpViewController ()<UIAlertViewDelegate>
 
 @end
 

@@ -23,15 +23,16 @@
     [self testUISlider];
     [self testUIStepper];
     [self testUISegmentedControl];
-   // [self testUIProcessView];
+    [self testUIProcessView];
    // [self testUIAlerView];
 #endif
     
 #if 1
     [self testUITextView];
+    [self testUIActionSheet];
 #endif
     
-    [self testUIActionSheet];
+    
     
 }
 
@@ -90,6 +91,8 @@
     tv.delegate = self;//
     [self.view addSubview:tv];
     
+    
+    //self.automaticallyAdjustsScrollViewInsets = NO;
    
 }
 -(void)clickedFinish:(UIBarButtonItem *)finish{
@@ -138,18 +141,22 @@
     //pro.progressTintColor = [UIColor yellowColor];//覆盖了背景色
     pro.progress = 0.0;//当前progress的实际大小-->起始进度
     //如果起始进度<0.0或者>1.0,则值被固定到最大值.
-    
+#if 0
     [NSTimer scheduledTimerWithTimeInterval:1.0
                                      target:self
                                    selector:@selector(addProgress:)
                                    userInfo:pro
                                     repeats:YES];
+#endif
     
-  //  [self performSelector:@selector(proSetProgress:) withObject:pro afterDelay:2];
+#if 1
+    [self performSelector:@selector(proSetProgress:) withObject:pro afterDelay:3];
+#endif
+    
     [self.view addSubview:pro];
 }
 -(void)proSetProgress:(UIProgressView *)pro{
-    [pro setProgress:0.5 animated:YES];//-->起始进度,最终的进度(最小为1,最大不限);(根据最大进度进行均匀的延伸)
+    [pro setProgress:1 animated:YES];//-->起始进度,最终的进度(最小为1,最大不限);(根据最大进度进行均匀的延伸)
 }
 -(void)addProgress:(UIProgressView *)pro{
     [pro setProgress:(pro.progress+0.1) animated:YES];
@@ -185,6 +192,7 @@
 }
 
 -(void)removeSegment{
+    //删除后,重新给分段控件指定一项进行选择
     UISegmentedControl *seg = (UISegmentedControl *) [self.view viewWithTag:102];
     [seg removeSegmentAtIndex:1 animated:YES];
 }
