@@ -28,6 +28,8 @@
 #  UINavigaitonController
 
 
+
+
 表示过程,显示过程
 
 UINavigationItem
@@ -39,6 +41,31 @@ UINavigationController
 
 toolbarItems 
 
+###  不同页面之间的跳转:
+
+```Objective-c
+[self.navigationController popViewControllerAnimated:YES];//出栈==>返回前一页
+[self.navigationController pushViewController:fourth animated:YES];//入栈===>后一页
+[self.navigationController popToRootViewControllerAnimated:YES];//出栈==>到根视图的视图控制器
+[self.navigationController popToViewController:mutArray[1] animated:YES];//出栈===>到栈中某个元素
+```
+
+最复杂的属于跳到指定的页面:1.得到导航控制器的视图控制器数组,替换该数组的元素,跳转到某个元素:
+
+```Objective-c
+-(void)repalceController:(UIButton *)button{
+    // 进行页面替换
+    NSArray *array = self.navigationController.viewControllers;
+    NSMutableArray *mutArray = [NSMutableArray arrayWithArray:array];
+    //数组元素替换
+    ZKFifthViewController *fifth = [[ZKFifthViewController alloc]init];
+    [ mutArray replaceObjectAtIndex:1 withObject:fifth];
+    self.navigationController.viewControllers = mutArray;
+    //执行跳转
+    [self.navigationController popToViewController:mutArray[1] animated:YES];
+}
+```
+
 #  多种控/件的创建,自定义TabBar
 
 UITabBar ==>View ==>(button+label)*4
@@ -46,7 +73,7 @@ UITabBar ==>View ==>(button+label)*4
 									controller
 要想自定义标签控制器,一定要将系统的隐藏h
 1.隐藏本身的UITabBar隐藏
-tabController.tabBar.hidden = YES;
+tabController.tabBar.hidden = YES;	
 
 2.继承自UITabBarController,把系统隐藏,自己写
 
