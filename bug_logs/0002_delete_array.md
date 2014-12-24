@@ -10,7 +10,7 @@ problem4:数组,添加,删除引起的程序崩溃
             }
 #endif
             
-#if 1
+#if 0
             for (NSIndexPath *path in self.seleectedCellsIndexes) {
                 [self.datas[path.section] removeObject:self.datas[path.section][path.row]];
             }
@@ -26,3 +26,18 @@ array=@[@“111”,@“222”,@”333”];
 
 >解决办法
 >> 不是删除,而是进行特殊标记—>例如替换成nil/或者是某个非常特殊的方法—>最后执行删除—>removeOjbect
+
+第一步:替换成特殊标记
+第二部:遍历数组,完成删除标记位置
+
+
+```Objective-c
+#if 1
+        for (NSIndexPath *path in self.seleectedCellsIndexes) {
+            self.datas[path.section][path.row] = @"";
+        }
+        for (NSMutableArray *mutArray in self.datas) {
+            [mutArray removeObject:@""];
+        }
+#endif
+```
