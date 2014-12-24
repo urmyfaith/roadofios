@@ -39,7 +39,11 @@ ARC环境下变量的命名规则不能包含new等关键字。
 > 例如：newName,copyName都是错误的，违反了第7条
 
 ##参考资料
+
 － http://stackoverflow.com/questions/6327448/semantic-issue-propertys-synthesized-getter-follows-cocoa-naming-convention-fo
+
 － http://www.cocoafans.com/?p=30
+
 － http://www.cnblogs.com/vagrantatbeijing/p/3450088.html
+
 － http://blog.csdn.net/shijiucdy/article/details/8747568
