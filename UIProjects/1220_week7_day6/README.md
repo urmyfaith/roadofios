@@ -84,7 +84,7 @@ b.  self.imageView.frame = self.imageView.originalFrame;还原大小
 ```Objective-c
  [self.imageView setAccessibilityIdentifier:self.cityImage];
 ```
-   
+
 获取对象的时候,根据访问标志符来区分对象
 
 ```Objective-c
@@ -112,12 +112,12 @@ CGAffineTransformMakeRotation(0)还原旋转
 b)图片大小的问题,要么直接固定的设置frame,要么给对象添加一个原始的frame属性.
 
 ```Objective-c
-self.imageView.frame = self.imageView.originalFrame;还原大小	
+self.imageView.frame = self.imageView.originalFrame;还原大小
 ```
 
 
 ## 工程文件说明
-	
+
 ![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/project_file.png)
 
 
@@ -131,7 +131,7 @@ self.imageView.frame = self.imageView.originalFrame;还原大小
 |[04_tableView.png](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/04_tableView.png)| 表格视图 |
 |[05_tableView.png](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/05_tableView.png)| 详情页面 |
 |[06_tableView.png](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/06_tableView.png)| 图片的旋转 |
-|[07_tableView.png](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/07_tableView.png)| 图片的保存| 
+|[07_tableView.png](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6/07_tableView.png)| 图片的保存|
 
 
 ![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/01_guide.png)
@@ -149,5 +149,3 @@ self.imageView.frame = self.imageView.originalFrame;还原大小
 ![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/07_tableView.png)
 
 https://raw.githubusercontent.com/urmyfaith/roadofios/master/UIProjects/1220_week7_day6/1219_exercise_v4final.mov
-
-
