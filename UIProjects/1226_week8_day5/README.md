@@ -60,5 +60,24 @@ Xcode_import_framework_NonARC2ARC.png"-fno-objc-arc"
 	- 使用表视图表示数据
 	- 使用下拉刷新,上啦刷新数据
 
+宏定义:
+
+- 网址url
+- 图片的名称写成宏
+- 拉伸图片的方法
+- 设置字体(不同的字体)
+
+用到的知识点,没有讲,提给me
+自定义cell
+xml的字段
+
+
+## 明天数据库/
+
+AFNetwoking+post上传
+
+ASIHttpRequest
+
+多媒体/图文混编?
 
 
