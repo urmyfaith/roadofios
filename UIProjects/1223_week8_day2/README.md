@@ -56,3 +56,9 @@ UILabel *label = (UILabel *)[cell viewWithTag:100];// 从父视图中取出子�
 ```
 self.tableView.allowsMultipleSelectionDuringEditing = YES;
 ```
+
+
+## 作业
+
+- 数据的处理,一行数据==>NSArray,DSDictionay.
+- 
