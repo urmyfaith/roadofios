@@ -1,0 +1,570 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB0F7B311A4EE9B900375F85 /* cell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB0F7B301A4EE9B900375F85 /* cell.xib */; };
+		FB3400DA1A4EE116004C092C /* ZXTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3400D91A4EE116004C092C /* ZXTableViewCell.m */; };
+		FB6DDCFB1A4ED2F000AC2B32 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6DDCF21A4ED2F000AC2B32 /* FMDatabase.m */; };
+		FB6DDCFC1A4ED2F000AC2B32 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6DDCF41A4ED2F000AC2B32 /* FMDatabaseAdditions.m */; };
+		FB6DDCFD1A4ED2F000AC2B32 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6DDCF61A4ED2F000AC2B32 /* FMDatabasePool.m */; };
+		FB6DDCFE1A4ED2F000AC2B32 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6DDCF81A4ED2F000AC2B32 /* FMDatabaseQueue.m */; };
+		FB6DDCFF1A4ED2F000AC2B32 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6DDCFA1A4ED2F000AC2B32 /* FMResultSet.m */; };
+		FB6DDD011A4ED31000AC2B32 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB6DDD001A4ED31000AC2B32 /* libsqlite3.dylib */; };
+		FB6DDD051A4ED42900AC2B32 /* ZXFirstLevelDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB6DDD041A4ED42900AC2B32 /* ZXFirstLevelDataModel.m */; };
+		FB8171601A4ECB5400AD1423 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB81715F1A4ECB5400AD1423 /* Foundation.framework */; };
+		FB8171621A4ECB5400AD1423 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8171611A4ECB5400AD1423 /* CoreGraphics.framework */; };
+		FB8171641A4ECB5400AD1423 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8171631A4ECB5400AD1423 /* UIKit.framework */; };
+		FB81716A1A4ECB5400AD1423 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8171681A4ECB5400AD1423 /* InfoPlist.strings */; };
+		FB81716C1A4ECB5400AD1423 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB81716B1A4ECB5400AD1423 /* main.m */; };
+		FB8171701A4ECB5400AD1423 /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB81716F1A4ECB5400AD1423 /* ZXAppDelegate.m */; };
+		FB8171731A4ECB5400AD1423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB8171711A4ECB5400AD1423 /* Main.storyboard */; };
+		FB8171761A4ECB5400AD1423 /* ZXViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8171751A4ECB5400AD1423 /* ZXViewController.m */; };
+		FB8171781A4ECB5400AD1423 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB8171771A4ECB5400AD1423 /* Images.xcassets */; };
+		FB81717F1A4ECB5400AD1423 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB81717E1A4ECB5400AD1423 /* XCTest.framework */; };
+		FB8171801A4ECB5400AD1423 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB81715F1A4ECB5400AD1423 /* Foundation.framework */; };
+		FB8171811A4ECB5400AD1423 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8171631A4ECB5400AD1423 /* UIKit.framework */; };
+		FB8171891A4ECB5400AD1423 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8171871A4ECB5400AD1423 /* InfoPlist.strings */; };
+		FB81718B1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB81718A1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m */; };
+		FB9F47661A4ECC6B00C07C4B /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FB9F47641A4ECC6B00C07C4B /* data.sqlite */; };
+		FB9F47681A4ECD9400C07C4B /* first-level.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9F47671A4ECD9400C07C4B /* first-level.png */; };
+		FB9F476D1A4ECE1100C07C4B /* ZXDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9F476C1A4ECE1100C07C4B /* ZXDatabase.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB8171821A4ECB5400AD1423 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB8171541A4ECB5400AD1423 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB81715B1A4ECB5400AD1423;
+			remoteInfo = "1227_database_readdata-and-showtable";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB0F7B301A4EE9B900375F85 /* cell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = cell.xib; sourceTree = "<group>"; };
+		FB3400D81A4EE116004C092C /* ZXTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXTableViewCell.h; sourceTree = "<group>"; };
+		FB3400D91A4EE116004C092C /* ZXTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXTableViewCell.m; sourceTree = "<group>"; };
+		FB6DDCF11A4ED2F000AC2B32 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FB6DDCF21A4ED2F000AC2B32 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FB6DDCF31A4ED2F000AC2B32 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FB6DDCF41A4ED2F000AC2B32 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FB6DDCF51A4ED2F000AC2B32 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FB6DDCF61A4ED2F000AC2B32 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FB6DDCF71A4ED2F000AC2B32 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FB6DDCF81A4ED2F000AC2B32 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FB6DDCF91A4ED2F000AC2B32 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FB6DDCFA1A4ED2F000AC2B32 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FB6DDD001A4ED31000AC2B32 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FB6DDD031A4ED42900AC2B32 /* ZXFirstLevelDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXFirstLevelDataModel.h; sourceTree = "<group>"; };
+		FB6DDD041A4ED42900AC2B32 /* ZXFirstLevelDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXFirstLevelDataModel.m; sourceTree = "<group>"; };
+		FB81715C1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "1227_database_readdata-and-showtable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB81715F1A4ECB5400AD1423 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FB8171611A4ECB5400AD1423 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FB8171631A4ECB5400AD1423 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FB8171671A4ECB5400AD1423 /* 1227_database_readdata-and-showtable-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "1227_database_readdata-and-showtable-Info.plist"; sourceTree = "<group>"; };
+		FB8171691A4ECB5400AD1423 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB81716B1A4ECB5400AD1423 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB81716D1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "1227_database_readdata-and-showtable-Prefix.pch"; sourceTree = "<group>"; };
+		FB81716E1A4ECB5400AD1423 /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
+		FB81716F1A4ECB5400AD1423 /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
+		FB8171721A4ECB5400AD1423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB8171741A4ECB5400AD1423 /* ZXViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXViewController.h; sourceTree = "<group>"; };
+		FB8171751A4ECB5400AD1423 /* ZXViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXViewController.m; sourceTree = "<group>"; };
+		FB8171771A4ECB5400AD1423 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FB81717D1A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "1227_database_readdata-and-showtableTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB81717E1A4ECB5400AD1423 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FB8171861A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "1227_database_readdata-and-showtableTests-Info.plist"; sourceTree = "<group>"; };
+		FB8171881A4ECB5400AD1423 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB81718A1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _227_database_readdata_and_showtableTests.m; sourceTree = "<group>"; };
+		FB9F47641A4ECC6B00C07C4B /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = data.sqlite; path = "../../../../documents/ocMobletrain/UI第十五天/学生资料/data.sqlite"; sourceTree = "<group>"; };
+		FB9F47671A4ECD9400C07C4B /* first-level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first-level.png"; sourceTree = "<group>"; };
+		FB9F476B1A4ECE1100C07C4B /* ZXDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDatabase.h; sourceTree = "<group>"; };
+		FB9F476C1A4ECE1100C07C4B /* ZXDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDatabase.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB8171591A4ECB5400AD1423 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB6DDD011A4ED31000AC2B32 /* libsqlite3.dylib in Frameworks */,
+				FB8171621A4ECB5400AD1423 /* CoreGraphics.framework in Frameworks */,
+				FB8171641A4ECB5400AD1423 /* UIKit.framework in Frameworks */,
+				FB8171601A4ECB5400AD1423 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB81717A1A4ECB5400AD1423 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB81717F1A4ECB5400AD1423 /* XCTest.framework in Frameworks */,
+				FB8171811A4ECB5400AD1423 /* UIKit.framework in Frameworks */,
+				FB8171801A4ECB5400AD1423 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB3400D71A4EE0FA004C092C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FB3400D81A4EE116004C092C /* ZXTableViewCell.h */,
+				FB3400D91A4EE116004C092C /* ZXTableViewCell.m */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		FB6DDCF01A4ED2F000AC2B32 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				FB6DDCF11A4ED2F000AC2B32 /* FMDatabase.h */,
+				FB6DDCF21A4ED2F000AC2B32 /* FMDatabase.m */,
+				FB6DDCF31A4ED2F000AC2B32 /* FMDatabaseAdditions.h */,
+				FB6DDCF41A4ED2F000AC2B32 /* FMDatabaseAdditions.m */,
+				FB6DDCF51A4ED2F000AC2B32 /* FMDatabasePool.h */,
+				FB6DDCF61A4ED2F000AC2B32 /* FMDatabasePool.m */,
+				FB6DDCF71A4ED2F000AC2B32 /* FMDatabaseQueue.h */,
+				FB6DDCF81A4ED2F000AC2B32 /* FMDatabaseQueue.m */,
+				FB6DDCF91A4ED2F000AC2B32 /* FMResultSet.h */,
+				FB6DDCFA1A4ED2F000AC2B32 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		FB6DDD021A4ED3F800AC2B32 /* FirstLevelDataModel */ = {
+			isa = PBXGroup;
+			children = (
+				FB6DDD031A4ED42900AC2B32 /* ZXFirstLevelDataModel.h */,
+				FB6DDD041A4ED42900AC2B32 /* ZXFirstLevelDataModel.m */,
+			);
+			name = FirstLevelDataModel;
+			sourceTree = "<group>";
+		};
+		FB8171531A4ECB5400AD1423 = {
+			isa = PBXGroup;
+			children = (
+				FB0F7B301A4EE9B900375F85 /* cell.xib */,
+				FB8171651A4ECB5400AD1423 /* 1227_database_readdata-and-showtable */,
+				FB8171841A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests */,
+				FB81715E1A4ECB5400AD1423 /* Frameworks */,
+				FB81715D1A4ECB5400AD1423 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB81715D1A4ECB5400AD1423 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB81715C1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable.app */,
+				FB81717D1A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB81715E1A4ECB5400AD1423 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB6DDD001A4ED31000AC2B32 /* libsqlite3.dylib */,
+				FB81715F1A4ECB5400AD1423 /* Foundation.framework */,
+				FB8171611A4ECB5400AD1423 /* CoreGraphics.framework */,
+				FB8171631A4ECB5400AD1423 /* UIKit.framework */,
+				FB81717E1A4ECB5400AD1423 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB8171651A4ECB5400AD1423 /* 1227_database_readdata-and-showtable */ = {
+			isa = PBXGroup;
+			children = (
+				FB6DDCF01A4ED2F000AC2B32 /* FMDB */,
+				FB6DDD021A4ED3F800AC2B32 /* FirstLevelDataModel */,
+				FB9F476A1A4ECDD000C07C4B /* ReadData */,
+				FB3400D71A4EE0FA004C092C /* Cells */,
+				FB81716E1A4ECB5400AD1423 /* ZXAppDelegate.h */,
+				FB81716F1A4ECB5400AD1423 /* ZXAppDelegate.m */,
+				FB8171711A4ECB5400AD1423 /* Main.storyboard */,
+				FB8171741A4ECB5400AD1423 /* ZXViewController.h */,
+				FB8171751A4ECB5400AD1423 /* ZXViewController.m */,
+				FB8171771A4ECB5400AD1423 /* Images.xcassets */,
+				FB8171661A4ECB5400AD1423 /* Supporting Files */,
+			);
+			path = "1227_database_readdata-and-showtable";
+			sourceTree = "<group>";
+		};
+		FB8171661A4ECB5400AD1423 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB8171671A4ECB5400AD1423 /* 1227_database_readdata-and-showtable-Info.plist */,
+				FB8171681A4ECB5400AD1423 /* InfoPlist.strings */,
+				FB81716B1A4ECB5400AD1423 /* main.m */,
+				FB81716D1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB8171841A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB81718A1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m */,
+				FB8171851A4ECB5400AD1423 /* Supporting Files */,
+			);
+			path = "1227_database_readdata-and-showtableTests";
+			sourceTree = "<group>";
+		};
+		FB8171851A4ECB5400AD1423 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB8171861A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests-Info.plist */,
+				FB8171871A4ECB5400AD1423 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB9F476A1A4ECDD000C07C4B /* ReadData */ = {
+			isa = PBXGroup;
+			children = (
+				FB9F47671A4ECD9400C07C4B /* first-level.png */,
+				FB9F47641A4ECC6B00C07C4B /* data.sqlite */,
+				FB9F476B1A4ECE1100C07C4B /* ZXDatabase.h */,
+				FB9F476C1A4ECE1100C07C4B /* ZXDatabase.m */,
+			);
+			name = ReadData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB81715B1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB81718E1A4ECB5400AD1423 /* Build configuration list for PBXNativeTarget "1227_database_readdata-and-showtable" */;
+			buildPhases = (
+				FB8171581A4ECB5400AD1423 /* Sources */,
+				FB8171591A4ECB5400AD1423 /* Frameworks */,
+				FB81715A1A4ECB5400AD1423 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "1227_database_readdata-and-showtable";
+			productName = "1227_database_readdata-and-showtable";
+			productReference = FB81715C1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB81717C1A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB8171911A4ECB5400AD1423 /* Build configuration list for PBXNativeTarget "1227_database_readdata-and-showtableTests" */;
+			buildPhases = (
+				FB8171791A4ECB5400AD1423 /* Sources */,
+				FB81717A1A4ECB5400AD1423 /* Frameworks */,
+				FB81717B1A4ECB5400AD1423 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB8171831A4ECB5400AD1423 /* PBXTargetDependency */,
+			);
+			name = "1227_database_readdata-and-showtableTests";
+			productName = "1227_database_readdata-and-showtableTests";
+			productReference = FB81717D1A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB8171541A4ECB5400AD1423 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZX;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "zuoxue@qq.com";
+				TargetAttributes = {
+					FB81717C1A4ECB5400AD1423 = {
+						TestTargetID = FB81715B1A4ECB5400AD1423;
+					};
+				};
+			};
+			buildConfigurationList = FB8171571A4ECB5400AD1423 /* Build configuration list for PBXProject "1227_database_readdata-and-showtable" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB8171531A4ECB5400AD1423;
+			productRefGroup = FB81715D1A4ECB5400AD1423 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB81715B1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable */,
+				FB81717C1A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB81715A1A4ECB5400AD1423 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8171781A4ECB5400AD1423 /* Images.xcassets in Resources */,
+				FB81716A1A4ECB5400AD1423 /* InfoPlist.strings in Resources */,
+				FB8171731A4ECB5400AD1423 /* Main.storyboard in Resources */,
+				FB0F7B311A4EE9B900375F85 /* cell.xib in Resources */,
+				FB9F47661A4ECC6B00C07C4B /* data.sqlite in Resources */,
+				FB9F47681A4ECD9400C07C4B /* first-level.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB81717B1A4ECB5400AD1423 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8171891A4ECB5400AD1423 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB8171581A4ECB5400AD1423 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB8171701A4ECB5400AD1423 /* ZXAppDelegate.m in Sources */,
+				FB6DDCFE1A4ED2F000AC2B32 /* FMDatabaseQueue.m in Sources */,
+				FB81716C1A4ECB5400AD1423 /* main.m in Sources */,
+				FB6DDD051A4ED42900AC2B32 /* ZXFirstLevelDataModel.m in Sources */,
+				FB9F476D1A4ECE1100C07C4B /* ZXDatabase.m in Sources */,
+				FB6DDCFB1A4ED2F000AC2B32 /* FMDatabase.m in Sources */,
+				FB6DDCFD1A4ED2F000AC2B32 /* FMDatabasePool.m in Sources */,
+				FB6DDCFF1A4ED2F000AC2B32 /* FMResultSet.m in Sources */,
+				FB8171761A4ECB5400AD1423 /* ZXViewController.m in Sources */,
+				FB3400DA1A4EE116004C092C /* ZXTableViewCell.m in Sources */,
+				FB6DDCFC1A4ED2F000AC2B32 /* FMDatabaseAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8171791A4ECB5400AD1423 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB81718B1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB8171831A4ECB5400AD1423 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB81715B1A4ECB5400AD1423 /* 1227_database_readdata-and-showtable */;
+			targetProxy = FB8171821A4ECB5400AD1423 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB8171681A4ECB5400AD1423 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8171691A4ECB5400AD1423 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FB8171711A4ECB5400AD1423 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8171721A4ECB5400AD1423 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB8171871A4ECB5400AD1423 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8171881A4ECB5400AD1423 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB81718C1A4ECB5400AD1423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FB81718D1A4ECB5400AD1423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB81718F1A4ECB5400AD1423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "1227_database_readdata-and-showtable/1227_database_readdata-and-showtable-Prefix.pch";
+				INFOPLIST_FILE = "1227_database_readdata-and-showtable/1227_database_readdata-and-showtable-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FB8171901A4ECB5400AD1423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "1227_database_readdata-and-showtable/1227_database_readdata-and-showtable-Prefix.pch";
+				INFOPLIST_FILE = "1227_database_readdata-and-showtable/1227_database_readdata-and-showtable-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FB8171921A4ECB5400AD1423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/1227_database_readdata-and-showtable.app/1227_database_readdata-and-showtable";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "1227_database_readdata-and-showtable/1227_database_readdata-and-showtable-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "1227_database_readdata-and-showtableTests/1227_database_readdata-and-showtableTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FB8171931A4ECB5400AD1423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/1227_database_readdata-and-showtable.app/1227_database_readdata-and-showtable";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "1227_database_readdata-and-showtable/1227_database_readdata-and-showtable-Prefix.pch";
+				INFOPLIST_FILE = "1227_database_readdata-and-showtableTests/1227_database_readdata-and-showtableTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB8171571A4ECB5400AD1423 /* Build configuration list for PBXProject "1227_database_readdata-and-showtable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB81718C1A4ECB5400AD1423 /* Debug */,
+				FB81718D1A4ECB5400AD1423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB81718E1A4ECB5400AD1423 /* Build configuration list for PBXNativeTarget "1227_database_readdata-and-showtable" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB81718F1A4ECB5400AD1423 /* Debug */,
+				FB8171901A4ECB5400AD1423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB8171911A4ECB5400AD1423 /* Build configuration list for PBXNativeTarget "1227_database_readdata-and-showtableTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB8171921A4ECB5400AD1423 /* Debug */,
+				FB8171931A4ECB5400AD1423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB8171541A4ECB5400AD1423 /* Project object */;
+}
