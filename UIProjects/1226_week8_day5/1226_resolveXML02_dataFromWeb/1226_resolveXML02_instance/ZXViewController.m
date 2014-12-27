@@ -60,6 +60,9 @@
     self.refreshFooterView = [MJRefreshFooterView footer];
     self.refreshFooterView.delegate = self;
     self.refreshFooterView.scrollView = self.tableView;
+    
+    [self downlaodData];
+    [self.tableView reloadData];
 }
 
 #pragma mark UITableViewDataSource
