@@ -210,25 +210,76 @@ key的值与成员变量的值保值一致的时候,可以给私有成员变量�
 }
 ```
 
+## <3> 设计模式
 
-- mvc
-- 单例
-- 代理
-- kvo
-- kvc
-- 通知
-- 动作-目标
-- 工厂模式 [类方法创建对象]
+-   MVC模式(model,view,controller)
+-   单例设计
+	-   UIApplication
+	-   NSFileManager
+-   代理
+	- 主动类之中写协议
+-   Target-Action
+-       控件
+-   观察者模式 KVO
+	- 	
+-   通知模式 NSNotificationCenter
+-   工厂模式 buttonWithType
 
-    //  MVC模式(model,view,controller)
-    //  单例设计
-    //      UIApplication
-    //      NSFileManager]
-    //  代理
-    //  Target-Action
-    //      控件
-    //  观察者模式 KVO
-    //  通知模式 NSNotificationCenter
-    //  工厂模式 buttonWithType
+## <4>  storyboard故事版
+
+#### a)通过storybaord创建页面
+
+- a.创建 command+n > ios > ui >storyboard
+- b.设置程序的根视图:工程>General>Deployment info> MainInterface
+
+
+> storyboard可以单独进行页面的布局/跳转,也可以和代码混合使用.
+
+#### b)通过storybaord与代码混合创建页面
+
+- 通过UIStoryboard类,找到对应的文件
+- 同文件中找到第一个视图控制器(有一个箭头(空箭头:中间没有任何其他的图形)代表首先加载的视图控制器.)
+- 将此视图控制器作为根视图控制器.
+- 要想对stroyboard里进行操作,需要将该视图控制器恢复原始大小;
+- 要想使用prepareForSegue方法,界面之间要使用导航的调转方式(push)
+- 在stroybaord里需要添加辅助的视图控制器类(代码)的时候,在cutom class里填写相应的视图控制器类名称就可以了.
+
+
+
+```Objective-c
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    
+    //取出名为@"Main"的storyboard文件.
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+
+    self.window.rootViewController =  [storyboard instantiateInitialViewController];//从文件中取出第一个视图控制器.
+    
+    
+    [self.window makeKeyAndVisible];
+    return YES;
+}
+```
+
+
+## <5> UIPickerView,UIDatePicker
+
+UIDatePicker并不是继承UIPickerView
+
+
+
+## 小练习
+
+登录>主界面>设置界面
+
+选择生日,用UIPickView进行选择.
+
+选择生日,UITextField,inputView(用UIPickerView替换掉键盘)
+
+在表示数据的时候,字典==>数据模型,KVC
 
 
