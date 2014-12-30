@@ -150,6 +150,11 @@ typedef void(^block)();
 
 ### <3> block  捕获外部变量
 
+//block修改外部的变量的值的时候.
+//对于简单的数据类型,需要使用__block==>block类型的变量
+//对于对象/指针,不要使用__block修饰.(对象被复制了一份,(复制了指针),修改的是指针的内容.)
+
+
 > 可以在block的内部使用外部的变量,但是不能去改变值.
 
 
@@ -253,7 +258,64 @@ typedef void(^block)();
 }
 ```
 
+- b)自定义button(再封装button),block作为参数使用
 
+block作为参数传入:
+
+
+```Objective-c
+    ZXCustomButton *customButton = [ZXCustomButton buttonWithFrame:CGRectMake(100, 150, 100, 40) title:@"custom button" andBlock:^void(ZXCustomButton *button1){
+        NSLog(@"%s [LINE:%d] button1=%p", __func__, __LINE__,button1);
+        NSLog(@"%s [LINE:%d]button.tag = %i", __func__, __LINE__,button1.tag);
+        self.view.backgroundColor = [UIColor grayColor];
+    }];
+    [self.view addSubview:customButton];
+```
+
+
+实际的调用的时间:
+
+```Objective-c
++(ZXCustomButton *)buttonWithFrame:(CGRect )frame
+                       title:(NSString *)title
+                    andBlock:(BUTTONBLOCK) block{
+    ZXCustomButton *button = [ZXCustomButton buttonWithType:UIButtonTypeCustom];
+    button.frame = frame;
+    button.backgroundColor = [UIColor redColor];
+    [button setTitle:title forState:UIControlStateSelected];
+    [button addTarget:button action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    button.tempBlock = block;
+    return button;
+}
+-(void)buttonClicked:(ZXCustomButton *)button{
+    //在点击事件发生的时候调用block.
+    button.tag = 10;
+    NSLog(@"%s [LINE:%d] button=%p", __func__, __LINE__,button);
+    button.tempBlock(button);//这里实际调用.
+}
+```
+
+具体实现在一个类,调用在另一个类里面==>传值,传递对象等等.
+
+上面的,实现在ViewController里,实际的调用在Button的方法内部.
+
+
+- c) 通过block实现view动画效果.
+
+
+
++ (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion
+
+| 参数 | 说明 |
+| ------------- | ------------ |
+| duration  | 持续的时间 |
+| animations  | 执行的动画 |
+| completion  | 动画完成后执行的block |
+
+
+- d) 利用block进行反向传值
+
+利用传回来的值对界面的label的字体大小进行修改
 
 
 
