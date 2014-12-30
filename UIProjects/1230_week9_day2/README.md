@@ -209,3 +209,53 @@ typedef void(^block)();
 
 ### <3> block的实际应用
 
+- 多线程GCD(并发运行)
+- 排序
+- 传值(反向传值)
+
+
+- a) 通过blcok进行排序/对自己对象的属性进行排序.
+
+使用匿名的block来作为排序的条件.(比较两个对象的规则.)
+
+
+```Objective-c
+    NSMutableArray *array = [NSMutableArray arrayWithObjects:@"88",@"55",@"66",@"33",nil];
+    [array sortUsingComparator:^NSComparisonResult(id obj1, id obj2){
+        return [obj1 compare:obj2] == NSOrderedDescending;
+    }];
+    NSLog(@"%s [LINE:%d] array=%@", __func__, __LINE__,array);
+```
+
+输出:
+
+```Objective-c
+2014-12-30 11:36:16.400 1230_block_basic[19757:607] -[ZXViewController viewDidLoad] [LINE:76] array=(
+    33,
+    55,
+    66,
+    88
+)
+```
+
+之前使用sel排序:
+
+```Objective-c
+//	/week4_day5_arraySort/main.m
+        //实现了sortUsingSelector:方法,//
+        //但是没有给标准(是按哪个属性排序?升序?降序?
+        //下面的问题就是怎么创建标准(一个方法)
+        //方法放在被排序的对象的所在的类.
+        [ myClass.students sortUsingSelector:@selector(isYungerThanOtherStudent:)];
+         NSLog(@"%@",myClass);
+-(BOOL)isLowerThanOtherStudent:(Student *)student{
+    return self.score > student.score;
+}
+```
+
+
+
+
+
+
+
