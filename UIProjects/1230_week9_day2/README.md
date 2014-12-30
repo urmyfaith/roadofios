@@ -152,7 +152,7 @@ typedef void(^block)();
 
 //block修改外部的变量的值的时候.
 //对于简单的数据类型,需要使用__block==>block类型的变量
-//对于对象/指针,不要使用__block修饰.(对象被复制了一份,(复制了指针),修改的是指针的内容.)
+//对于对象/指针,不要使用__block修饰.(对象被复制了一份,(复制了指针),修改的是同一个对象的内容.)
 
 
 > 可以在block的内部使用外部的变量,但是不能去改变值.
@@ -303,8 +303,10 @@ block作为参数传入:
 - c) 通过block实现view动画效果.
 
 
-
+```Objective-c
 + (void)animateWithDuration:(NSTimeInterval)duration animations:(void (^)(void))animations completion:(void (^)(BOOL finished))completion
+```
+
 
 | 参数 | 说明 |
 | ------------- | ------------ |
