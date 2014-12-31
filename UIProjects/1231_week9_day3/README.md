@@ -69,4 +69,28 @@ progress表示进度
   - 通过tableView显示数据
   - 自定义cell
   
+  
+#### 自定义的cell
+  
+- a)cell的高度根据需要进行调整
+- b)子控件的加载根据具体需要(是否进行加载子控件)(如果数据源中没有===>隐藏子控件)
+- c)子控件的内容根据数据量进行自适应(文本较多===>换行处理)
+
+
+- d)表格加载的顺序
+
+```Objective-c
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZXTweetCell *cell = [ZXTweetCell cellWithTableView:tableView];
+    
+ -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+```
+
+是先执行的高度,然后加载的cell的创建.
+
+- e)QQ的聊天界面
+
+
+
+  
 
