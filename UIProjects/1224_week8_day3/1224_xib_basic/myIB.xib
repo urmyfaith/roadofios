@@ -6,10 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ZXMainViewController">
             <connections>
-                <outlet property="IBName" destination="l8O-aQ-GRO" id="kwT-Qm-6s5"/>
-                <outlet property="button" destination="dFW-yk-CFQ" id="H2J-ly-bn4"/>
-                <outlet property="buttonClicked" destination="dFW-yk-CFQ" id="782-OF-ttv"/>
-                <outlet property="myImageView" destination="Vq0-yw-yoq" id="2Q6-4V-vdi"/>
+                <outlet property="IBName" destination="l8O-aQ-GRO" id="mce-kq-ioL"/>
+                <outlet property="button" destination="dFW-yk-CFQ" id="LnF-tU-blP"/>
+                <outlet property="myImageView" destination="Vq0-yw-yoq" id="nyG-6j-SzV"/>
+                <outlet property="view" destination="zTb-ml-2zN" id="8sB-QC-Wo5"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -55,7 +55,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="buttonCliked:" destination="-1" eventType="touchUpInside" id="3tb-7P-UDH"/>
+                        <action selector="buttonCliked:" destination="-1" eventType="touchUpInside" id="7qE-zx-Ose"/>
                     </connections>
                 </button>
             </subviews>

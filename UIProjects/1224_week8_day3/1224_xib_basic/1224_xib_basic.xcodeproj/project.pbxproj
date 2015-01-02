@@ -60,7 +60,7 @@
 		FB0C0E671A4AABDE00211215 /* 1224_xib_basicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 1224_xib_basicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB0C0E6C1A4AABDE00211215 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB0C0E6D1A4AABDE00211215 /* _224_xib_basicTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _224_xib_basicTests.m; sourceTree = "<group>"; };
-		FB0C0E771A4AAD4E00211215 /* myIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = myIB.xib; sourceTree = "<group>"; };
+		FB0C0E771A4AAD4E00211215 /* myIB.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = myIB.xib; path = ../myIB.xib; sourceTree = "<group>"; };
 		FB0C0E791A4AB4A000211215 /* ZXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMainViewController.h; sourceTree = "<group>"; };
 		FB0C0E7A1A4AB4A000211215 /* ZXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMainViewController.m; sourceTree = "<group>"; };
 		FB54F79D1A4ABCF200D599AE /* image0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image0.png; sourceTree = "<group>"; };
@@ -107,7 +107,6 @@
 		FB0C0E451A4AABDE00211215 = {
 			isa = PBXGroup;
 			children = (
-				FB0C0E771A4AAD4E00211215 /* myIB.xib */,
 				FB0C0E501A4AABDE00211215 /* 1224_xib_basic */,
 				FB0C0E6A1A4AABDE00211215 /* 1224_xib_basicTests */,
 				FB0C0E4F1A4AABDE00211215 /* Products */,
@@ -131,6 +130,7 @@
 				FB0C0E791A4AB4A000211215 /* ZXMainViewController.h */,
 				FB0C0E7A1A4AB4A000211215 /* ZXMainViewController.m */,
 				FB0C0E5B1A4AABDE00211215 /* Main.storyboard */,
+				FB0C0E771A4AAD4E00211215 /* myIB.xib */,
 				FB54F79C1A4ABCF200D599AE /* images */,
 				FB0C0E5E1A4AABDE00211215 /* Images.xcassets */,
 				FB0C0E601A4AABDE00211215 /* LaunchScreen.xib */,

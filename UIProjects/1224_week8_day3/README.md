@@ -1,5 +1,16 @@
 2014-12-24
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1224_xib_basic](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_xib_basic)| xib基础操作 |
+|[1224_UITableView01_customCell](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_UITableView01_customCell)| UITableView自定义cell |
+|[1224_UITableView02_customCellXIB](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_UITableView02_customCellXIB)| UITableView自定义cell-通过xib |
+|[1224_custom-cell-by-code](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_custom-cell-by-code)| 练习-UITableView自定义cell-通过代码 |
+|[1224_custom-cell-by-code.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_custom-cell-by-code.zip)| 练习-UITableView自定义cell-通过代码-done |
+|[1224_custom-cell-by-code_exercies](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_custom-cell-by-code_exercies)| 练习-UITableView自定义cell |
+|[1224_custom-cell-by-xib](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_custom-cell-by-xib)| 练习-UITableView自定义cell-通过xib |
+|[1224_custom-cell-by-xib.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3/1224_custom-cell-by-xib.zip)| 练习-UITableView自定义cell-通过xib-done |
+
 # 知识回顾
 
 - 表示数据
