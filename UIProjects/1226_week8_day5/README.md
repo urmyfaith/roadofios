@@ -1,5 +1,16 @@
 2014-12-26
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1226_resolveXML01_dataFromLoacal](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/1226_resolveXML01_dataFromLoacal)| 本地XML文档解析 |
+|[1226_resolveXML02_dataFromWeb](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/1226_resolveXML02_dataFromWeb)| 网络XML文档解析 |
+|[1226_resolveXML03_clean](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/1226_resolveXML03_clean)| 网络XML文档解析(清除多余注释) |
+|[1226_resolveXML03_clean.mp4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/1226_resolveXML03_clean.mp4)| 网络XML文档解析(演示视频) |
+|[pull-to-refresh.pages](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/pull-to-refresh.pages)| 下拉刷新资料介绍 |
+|[xml.txt](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/xml.txt)| xml示例文档 |
+|[xml_readme.pages](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/xml_readme.pages)| xml文档资料 |
+|[XPathSyntax.pdf](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5/XPathSyntax.pdf)| xPath语法 |
+
 ## 知识回归
 
 - 三种从网络下载数据方式
