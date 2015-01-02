@@ -89,6 +89,8 @@ NSString *selectAllFromFirstLevelTable_sqlString = @"SELECT * FROM firstlevel";
 }
 ```
 
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data01.png)
+
 - 如果数据库对象地址为空?ok,打印下你的地址.
 
 ```objectivec
@@ -104,12 +106,16 @@ NSString *selectAllFromFirstLevelTable_sqlString = @"SELECT * FROM firstlevel";
 2015-01-02 21:38:52.901 1227_database_readdata-and-showtable[29249:1128299] -[ZXDatabase firstLevelTable_Marray] [LINE:69] _database=<FMDatabase: 0x7a82eee0>
 ```
 
-- 地址为空?没有找到文件?难道在工程中没有这么文件?
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data02.png)
+
+- **数据库对象地址不为空,但是数据库对象的路径字符串为空?**没有找到文件?难道在工程中没有这么文件?
 
 - 那么,删除这个文件,然后重新导入,
 
 
 发现问题了:
+
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data02.png)
 
 文件没有添加target!!!!!
 
@@ -124,7 +130,13 @@ NSString *selectAllFromFirstLevelTable_sqlString = @"SELECT * FROM firstlevel";
 >> 今天的错误出现在没有将文件添加到target中.
 
 
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data04.png)
+
 ## 总结:
+
+在向工程添加已有文件的时候.
+
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data05.png)
 
  aa)处,如果不勾选,文件就不会拷贝到本工程中.(当原始文件路径变化的时候,就会找不到文件)
  
