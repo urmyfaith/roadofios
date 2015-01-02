@@ -18,10 +18,12 @@
 ## 音频
 
 -  导入系统库
+	- "#import <AVFoundation/AVFoundation.h>"
 -  导入头文件
 -  创建音频播放器对象
 -  导入音频文件
 -  播放
+-  另外,音频也有代理方法(例如在播放完成的时候执行的方法/中断,高优先级的方法)
 
 ```Objective-c
 -(void)testAudio{
@@ -42,13 +44,41 @@
 
 progress表示进度
 
+| 属性 | 说明 |
+| ------------- | ------------ |
+| playing  | 是否正在播放 |
+|duration |音频的长度|
+| currentTime  | 当前播放的时间 |
+
+~
+
+| 方法 | 说明 |
+| ------------- | ------------ |
+| prepareToPlay  | 即将播放 |
+|pause|暂停波烦恼歌|
+|play|恢复播放/播放|
+
 ## 视频的播放
 
 - 导入系统库
+	- "#import <MediaPlayer/MediaPlayer.h>"
 - 导入头文件
 - 找到视频文件
 - 创建视频播放器对象
 - 播放
+
+
+```Objective-c
+-(void)testVideo{
+    
+    NSString *path = [[NSBundle mainBundle]pathForResource:@"dzs" ofType:@"mp4"];
+    NSURL *url = [NSURL fileURLWithPath:path];
+    
+    self.moviePlayer = [[MPMoviePlayerViewController alloc]initWithContentURL:url];
+    self.moviePlayer.view.frame  = self.view.bounds;
+    [self.view addSubview:self.moviePlayer.view];
+}
+```
 
 
 ## 简版微博示例
@@ -72,11 +102,10 @@ progress表示进度
   
 #### 自定义的cell
   
-- a)cell的高度根据需要进行调整
-- b)子控件的加载根据具体需要(是否进行加载子控件)(如果数据源中没有===>隐藏子控件)
-- c)子控件的内容根据数据量进行自适应(文本较多===>换行处理)
 
-
+- a)子控件的加载根据具体需要(是否进行加载子控件)(如果数据源中没有===>隐藏子控件)
+- b)子控件的内容根据数据量进行自适应(文本较多===>换行处理)
+- c)cell的高度根据需要进行调整
 - d)表格加载的顺序
 
 ```Objective-c
