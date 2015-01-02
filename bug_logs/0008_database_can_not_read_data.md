@@ -115,7 +115,7 @@ NSString *selectAllFromFirstLevelTable_sqlString = @"SELECT * FROM firstlevel";
 
 发现问题了:
 
-![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data02.png)
+![image](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0008_database_can_not_read_data03.png)
 
 文件没有添加target!!!!!
 
