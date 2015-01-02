@@ -1,5 +1,16 @@
 2014-12-25
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1225_dataDownload01_threeMethods](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/1225_dataDownload01_threeMethods)| 数据下载的三种方法 \ 使用字符串的方法进行同步下载  \ 使用NSURLConnection的方法进行同步下载 \ 使用NSURLConnection进行异步下载|
+|[1225_dataDownload02_encapsulateMethod](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/1225_dataDownload02_encapsulateMethod)| 数据下载-异步下载-方法封装 |
+|[1225_dataDownload03_encapsulateMethod_removeComments](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/1225_dataDownload03_encapsulateMethod_removeComments)| 数据下载-异步下载-方法封装-移除多余注释 |
+|[1225_dataDownload04_tableView](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/1225_dataDownload04_tableView)| 数据下载-异步下载-方法封装-表视图显示 |
+|[1225_dataDownload_exercise](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/1225_dataDownload_exercise)| 数据下载-异步下载-表视图显示-图片下载表视图显示 |
+|[1225_dataDownload_exercise.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/1225_dataDownload_exercise.zip)| 数据下载-异步下载表视图显示-图片下载表视图显示-done |
+|[DataLoad-jsonResolve.pages](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4/DataLoad-jsonResolve.pages)| 数据下载文档资料 |
+
+
 # 昨天复习
 
 - bug解决：数组删除
