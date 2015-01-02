@@ -21,5 +21,8 @@
     }
     return self;
 }
+-(NSString *)description{
+    return [NSString stringWithFormat:@"pid=%i,panme=%@,pcount=%i",self.pid,self.pname,self.pcount];
+}
 
 @end

@@ -1,5 +1,18 @@
 2014-12-27
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[databases-keywords.pages](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/databases-keywords.pages)| 数据库操作基本步骤 |
+|[databases.pages](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/databases.pages)| 常见数据库操作 |
+|[1227_database01_basicOperations](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/1227_database01_basicOperations)| 数据库的基础操作 |
+|[1227_database_readdata-and-showtable-by-code](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/1227_database_readdata-and-showtable-by-code)| 数据库读取,表格显示 |
+|[1227_database_readdata-and-showtable-by-codeV1_getData.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/1227_database_readdata-and-showtable-by-codeV1_getData.zip)| 数据库读取,表格显示,完成第一部分 |
+|[1227_database_readdata-and-showtable-by-codeV2_complete.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/1227_database_readdata-and-showtable-by-codeV2_complete.zip)| 数据库读取,表格显示,完成功能 |
+|[1227_database_readdata-and-showtable-by-xib](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/1227_database_readdata-and-showtable-by-xib)| 数据库读取,表格显示,通过xib实现 |
+|[1227_database_readdata-and-showtable-by-xib.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6/1227_database_readdata-and-showtable-by-xib.zip)| 数据库读取,表格显示,通过xib实现-done |
+
+
+
 每天坚持一小时,复习?
 
 每天坚持一小时,敲代码?

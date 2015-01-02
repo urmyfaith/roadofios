@@ -29,7 +29,7 @@
 		FB8171811A4ECB5400AD1423 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8171631A4ECB5400AD1423 /* UIKit.framework */; };
 		FB8171891A4ECB5400AD1423 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8171871A4ECB5400AD1423 /* InfoPlist.strings */; };
 		FB81718B1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB81718A1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m */; };
-		FB9F47661A4ECC6B00C07C4B /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FB9F47641A4ECC6B00C07C4B /* data.sqlite */; };
+		FB9211761A56D84100A6037A /* data.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = FB9211751A56D84100A6037A /* data.sqlite */; };
 		FB9F47681A4ECD9400C07C4B /* first-level.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9F47671A4ECD9400C07C4B /* first-level.png */; };
 		FB9F476D1A4ECE1100C07C4B /* ZXDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9F476C1A4ECE1100C07C4B /* ZXDatabase.m */; };
 /* End PBXBuildFile section */
@@ -79,7 +79,7 @@
 		FB8171861A4ECB5400AD1423 /* 1227_database_readdata-and-showtableTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "1227_database_readdata-and-showtableTests-Info.plist"; sourceTree = "<group>"; };
 		FB8171881A4ECB5400AD1423 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB81718A1A4ECB5400AD1423 /* _227_database_readdata_and_showtableTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _227_database_readdata_and_showtableTests.m; sourceTree = "<group>"; };
-		FB9F47641A4ECC6B00C07C4B /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; name = data.sqlite; path = "../../../../documents/ocMobletrain/UI第十五天/学生资料/data.sqlite"; sourceTree = "<group>"; };
+		FB9211751A56D84100A6037A /* data.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = data.sqlite; sourceTree = "<group>"; };
 		FB9F47671A4ECD9400C07C4B /* first-level.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first-level.png"; sourceTree = "<group>"; };
 		FB9F476B1A4ECE1100C07C4B /* ZXDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDatabase.h; sourceTree = "<group>"; };
 		FB9F476C1A4ECE1100C07C4B /* ZXDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDatabase.m; sourceTree = "<group>"; };
@@ -226,8 +226,8 @@
 		FB9F476A1A4ECDD000C07C4B /* ReadData */ = {
 			isa = PBXGroup;
 			children = (
+				FB9211751A56D84100A6037A /* data.sqlite */,
 				FB9F47671A4ECD9400C07C4B /* first-level.png */,
-				FB9F47641A4ECC6B00C07C4B /* data.sqlite */,
 				FB9F476B1A4ECE1100C07C4B /* ZXDatabase.h */,
 				FB9F476C1A4ECE1100C07C4B /* ZXDatabase.m */,
 			);
@@ -314,8 +314,8 @@
 				FB8171781A4ECB5400AD1423 /* Images.xcassets in Resources */,
 				FB81716A1A4ECB5400AD1423 /* InfoPlist.strings in Resources */,
 				FB8171731A4ECB5400AD1423 /* Main.storyboard in Resources */,
-				FB9F47661A4ECC6B00C07C4B /* data.sqlite in Resources */,
 				FB9F47681A4ECD9400C07C4B /* first-level.png in Resources */,
+				FB9211761A56D84100A6037A /* data.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
