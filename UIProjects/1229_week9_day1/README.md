@@ -1,4 +1,17 @@
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1229_FactoryMethod_demo](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_FactoryMethod_demo)| 工厂模式(将类对象的创建延迟到子类中) |
+|[1229_storyboard01_basic](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_storyboard01_basic)| storyboard基础->视图之间的跳转,分支等. |
+|[1229_storyboard02](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_storyboard02)| storyboard基础->自己创建storyboard |
+|[1229_week9_day1_kvc_kvo](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_week9_day1_kvc_kvo)| KVC,KVO的基本使用 |
+|[1229_UIPickerView_UIDataPicker](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_UIPickerView_UIDataPicker)| UIPikcerView和UIDatePicker介绍 |
+|[1229_UIPickerView_UIDatePicker_exerciseV1](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_UIPickerView_UIDatePicker_exerciseV1)| 在表视图中使用UIPickerView,自定义键盘的inputView |
+|[1229_UIPickerView_UIDatePicker_exerciseV1.mov](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_UIPickerView_UIDatePicker_exerciseV1.mov)| 在表视图中使用UIPickerView,自定义键盘的inputView(视频效果) |
+|[1229_UIPickerView_UIDatePicker_exerciseV1.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1/1229_UIPickerView_UIDatePicker_exerciseV1.zip)| 在表视图中使用UIPickerView,自定义键盘的inputView(done) |
+
+
+
 ## 数据库复习
 
 - 通过软件
