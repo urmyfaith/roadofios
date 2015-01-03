@@ -1,5 +1,11 @@
 2014-12-30
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[1230_block_basic](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1230_week9_day2/1230_block_basic)| block的基本使用:定义,声明,实现,调用,捕获变量,排序,传参等|
+|[1230_dataDownload02_encapsulateMethod_byBlock](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1230_week9_day2/1230_dataDownload02_encapsulateMethod_byBlock)| block传递参数实例:封装数据下载类,传递参数 |
+
+
 ## 昨日复习
 
 - KVC
@@ -320,6 +326,22 @@ block作为参数传入:
 利用传回来的值对界面的label的字体大小进行修改
 
 
+- e) 利用blokc进行方向传值---下载数据
+
+
+
+
+## 最后的复习
+
+- block 基础知识
+- block 几个列子
+
+
+~
+
+- 第一步:block作为参数(传值--->反向传值),在匿名的block中写需要执行的代码块.
+- 第二步:block作为参数,那么在这个方法内部,需要保存在这个block变量
+- 第三步:给block实际的参数,执行代码块方法. ===>
 
 
 
