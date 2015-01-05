@@ -82,6 +82,8 @@ d) 调用请求方法
      2.2、在做数据查询时，建议用Get方式；而在做数据添加、修改或删除时，建议用Post方式；	 
 ```
 
+get,post 方法区别: http://www.w3school.com.cn/tags/html_ref_httpmethods.asp
+
 | 参数序号 | 参数说明 |
 | ------------- | ------------ |
 | arg1  | 下载数据的来源 |
