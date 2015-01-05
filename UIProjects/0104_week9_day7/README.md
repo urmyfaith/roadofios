@@ -1,5 +1,12 @@
 2015-01-04
 
+| 文件名 |  描述 |
+| ------------- | ------------ |
+|[0104_network01-basic](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/0104_week9_day7/0104_network01-basic)| 网络AFNetworking的使用,GET请求(html请求,json请求),POST请求(带参数请求/带文件请求),下载数据,下载图片,网络状态 |
+|[HTTP_POST0-GET.pages](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/0104_week9_day7/HTTP_POST0-GET.pages)| 知识点 |
+|[O2O_C2C_B2B_B2C.pdf](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/0104_week9_day7/O2O_C2C_B2B_B2C.pdf)| 名词解释 |
+
+
 ## 知识复习
 
 自定义cell--->cell的高度
