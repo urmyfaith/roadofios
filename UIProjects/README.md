@@ -1,7 +1,7 @@
 | 文件名 |  描述 |
 | ------------- | ------------ |
 |[1208_week6_day1](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1208_week6_day1)| UIButton,UILabel,UIAlertView |
-|[1209_week6_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2)| UIImageView |
+|[1209_week6_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2)| UIImageView,图片拉伸 |
 |[1210_week6_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1210_week6_day3)| UIViewController |
 |[1211_week6_day4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1211_week6_day4)| UIViewController的练习 |
 |[1212_week6_day5](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5)| UITextField |
