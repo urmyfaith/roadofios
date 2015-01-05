@@ -21,6 +21,9 @@
 |[1229_week9_day1](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1)| 设计模式(工程模式),storyboad使用,kvc,kvo使用,UIPikcer,UIatePicker |
 |[1230_week9_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1230_week9_day2)| block的基本使用:定义,声明,实现,调用,捕获变量,排序,传参等-->封装数据下载类 |
 |[1231_week9_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1231_week9_day3)| 音频播放,视频播放,自定义cell,**可变cell高度** |
+|[1231_week9_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1231_week9_day3)| 音频播放,视频播放,自定义cell,**可变cell高度** |
+|[0104_week9_day7](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/0104_week9_day7)| 网络AFNetworking的使用,GET请求(html请求,json请求),POST请求(带参数请求/带文件请求),下载数据,下载图片,网络状态 |
+
 
 
 
