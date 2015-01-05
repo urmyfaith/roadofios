@@ -76,6 +76,7 @@ CREATE table IF NOT EXISTS userInfoTable (userId INTEGER PRIMARY KEY,userHeadIma
 ```
 
 - 插入用户信息;
+
 ```objectivec
 insert into userInfoTable(userHeadImage,userNickName)values("zxHeadImage","zx");
 insert into userInfoTable(userHeadImage,userNickName)values("youHeadImage","you");
