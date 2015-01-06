@@ -89,11 +89,11 @@ get,post 方法区别: http://www.w3school.com.cn/tags/html_ref_httpmethods.asp
 | arg1  | 下载数据的来源 |
 | arg2  | **请求的参数**(路径之后的参数) |
 | arg3  | 请求成功的回调方法 |
-|   | argv1 默认参数,不用管|
-|   | argv2 得到的数据|
+| -  | argv1 默认参数,不用管|
+|  - | argv2 得到的数据|
 | arg4  | 请求失败的回调方法 |
-|   | argv1 默认参数,不用管|
-|   | argv2 得到的数据|
+|  - | argv1 默认参数,不用管|
+|  - | argv2 得到的数据|
 
 ```objectivec
     [manager GET:path parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
