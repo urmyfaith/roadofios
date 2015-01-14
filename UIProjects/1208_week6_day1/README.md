@@ -243,3 +243,58 @@ CGFloat num1 = [self.showlabel.text floatVaule];
 
 *  平方,开方
 
+
+
+----
+2015-01-14_12_38_49
+
+add
+
+---
+
+## UILable
+
+~~~objectivec
+    
+    UILabel *label = [[UILabel alloc]init];
+    label.frame = CGRectMake(10, 20, 300, 30);
+    label.text = @"this is a label,this is a label,this is a label,this is a label,this is a label,this is a label,this is a label,";
+   // label.textColor = [UIColor colorWithRed:0.6 green:0.8 blue:1.0 alpha:1.0];//字体的透明度
+   // label.alpha = 0.5;//整体透明度(通常不会使用)
+    label.backgroundColor = [UIColor yellowColor];
+    
+    //遍历系统字体库
+    for (NSString *name in [UIFont familyNames]) {
+        NSLog(@"name=%@",name);
+    }
+    //设置字体(默认字体大小17)
+//    label.font = [UIFont fontWithName:@"Zapfino" size:14];//指定字体;
+//    label.font = [UIFont systemFontOfSize:20];//系统字体
+//    label.font = [UIFont italicSystemFontOfSize:20];//倾斜
+//    label.font = [UIFont boldSystemFontOfSize:20];//加粗
+//    label.textAlignment = NSTextAlignmentRight;//对齐方式
+//    label.shadowColor = [UIColor redColor];//文字阴影
+//    label.shadowOffset = CGSizeMake(5,5);
+    [self.window addSubview:label];
+    
+    //计算label大小
+    //a.字体, b.
+    CGSize lableSize = [label.text sizeWithFont:label.font
+                              constrainedToSize:CGSizeMake(300, 1000)
+                                  lineBreakMode:NSLineBreakByCharWrapping];
+    label.frame = CGRectMake(label.frame.origin.x,
+                             label.frame.origin.y,
+                             lableSize.width,
+                             lableSize.height);
+    label.numberOfLines = 0;
+~~~
+
+###  ----工程:Review_Button
+
+UIButton(位置,标题,背景,图片,点击方法方法方法,多个参数快速创建UIButton)
+
+
+
+### ------工程:Review_Label
+UILabel(frame,text,textColor,alpha,**遍历系统字体**,设置字体大小,字体倾斜,字体加粗,文字阴影,文字自适应.),UIAlertView
+
