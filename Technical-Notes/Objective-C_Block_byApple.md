@@ -86,4 +86,36 @@ NSArray *stringsArray = @[ @"string 1",                             @"String 21
 
 ------
 
+## Declaring and Creating Blocks声明和创建Blocks
+#### Declaring a Block Reference 声明一个block引用
+Block variables hold references to blocks. You declare them using syntax similar to that you use to declare a pointer to a function, except that you use ^ instead of *. The block type fully interoperates with the rest of the C type system. The following are all valid block variable declarations:
+
+Block变量拥有block的所有权?声明的语法和声明函数的指针一样,除了使用^而不是*,blokc和c类型的系统就可以交互了.下面的是一个有效的block变量声明:
+
+~~~objectivec
+void (^blockReturningVoidWithVoidArgument)(void);int (^blockReturningIntWithIntAndCharArguments)(int, char);void (^arrayOfTenBlocksReturningVoidWithIntArgument[10])(int);
+~~~
+
+Blocks also support variadic (...) arguments. A block that takes no arguments must specify void in the argument list.
+
+Blokcs也支持**?**参数.如果一个block没有参数的时候,需要将参数列表指定为void.
+Blocks are designed to be fully type safe by giving the compiler a full set of metadata to use to validate use of blocks, parameters passed to blocks, and assignment of the return value. You can cast a block reference to a pointer of arbitrary type and vice versa. You cannot, however, dereference a block reference via the pointer dereference operator (*)—thus a block's size cannot be computed at compile time.
+
+Blocks在设计的时候,就需要告诉编译器,指定所有的安全的类型:有效的形参,有效的返回值类型.可以将block对象的引用转换为任意的类型,反之亦然.然而,决不能通过一个*,来解除对一个对象的引用,这样blokc代码块的大小在编译的时候就不能被计算 了.
+You can also create types for blocks—doing so is generally considered to be best practice when you use a block with a given signature in multiple places:
+
+你可以创建一个执行某事情的block,这样在多个地方发都可以调用这个block了.
+
+~~~objectivectypedef float (^MyBlockType)(float, float);MyBlockType myFirstBlock = // ... ;MyBlockType mySecondBlock = // ... ;
+~~~#### Creating a Block 创建代码块
+You use the ^ operator to indicate the beginning of a block literal expression. It may be followed by an argument list contained within (). The body of the block is contained within {}. The following example defines a simple block and assigns it to a previously declared variable (oneFrom)—here the block is followed by the normal ; that ends a C statement.
+
+如果使用^操作符来代表一个block表达式的开始,那么后面可能跟随着一个使用括号包含的参数列表.
+代码块体使用{}来包含.下面的例子展示了定义一个简单的block和将这个block赋值给之前声明的一个block变量.赋值语句的结尾包含了一个标准c的结束符号";"(分号).
+
+~~~objectivec
+float (^oneFrom)(float);oneFrom = ^(float aFloat) {    float result = aFloat - 1.0;    return result;};
+~~~
+If you don’t explicitly declare the return value of a block expression, it can be automatically inferred from the contents of the block. If the return type is inferred and the parameter list is void, then you can omit the (void) parameter list as well. If or when multiple return statements are present, they must exactly match (using casting if necessary).如果没有显示的声明一个block代码块的返回值,系统会自动使用代码块内部的返回值.如果返回值是void,可以省略返回值列表.如果有多个返回值,就必须和声明的时候严格的匹配了,在必要的时候,使用强制类型转换.
+
 
