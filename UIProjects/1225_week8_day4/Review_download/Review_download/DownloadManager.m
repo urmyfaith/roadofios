@@ -21,6 +21,9 @@
     // 1.判断当前要下载的数据是否有缓存
     if ([_sourceDict objectForKey:downloadStr]) {
         //有缓存,通知界面,可以直接取数据使用
+        [[NSNotificationCenter defaultCenter]postNotificationName:downloadStr
+                                                           object:nil
+                                                         userInfo:nil];
     }
     else{
         //无缓存==>下载数据
