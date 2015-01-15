@@ -74,7 +74,7 @@
 
 //选中的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%s [LINE:%d]%d---%d", __func__, __LINE__,indexPath.section,indexPath.row);
+    NSLog(@"%s [LINE:%d]%i---%i", __func__, __LINE__,indexPath.section,indexPath.row);
 }
 
 - (void)didReceiveMemoryWarning
