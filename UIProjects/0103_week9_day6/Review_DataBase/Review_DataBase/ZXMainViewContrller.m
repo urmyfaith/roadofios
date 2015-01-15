@@ -151,11 +151,16 @@
     NSString *message;
     
     if ([_db isExistInCollectionsTableWithID:idString]) {
+#if 0
         //如果存在,从数据库中删除;
         //delete  from collections where userNickName="you";
         NSString *deleteSQL = [NSString stringWithFormat:@"delete from collections where id=\"%@\" and title=\"%@\"",idString,titleString];
         NSLog(@"%s [LINE:%d] 取消收藏到数据库-->%i", __func__, __LINE__,[_db doUpdateTableWithSQL:deleteSQL andType:sqlOperationTypeWithDelete]);
-        message = @"已取消收藏";
+          message = @"已取消收藏";
+#else
+          message = @"已经收藏";
+      
+#endif
     }
     else{
         //插入到数据库

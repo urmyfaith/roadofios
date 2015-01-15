@@ -38,7 +38,7 @@
     self.title = @" 收藏页面";
     [self createEditButton];
     [self createTableView];
-    [self loadDataFromDatabase];    
+    [self loadDataFromDatabase];
 }
 -(void)createEditButton
 {
@@ -51,7 +51,11 @@
 
 -(void)editButtonClicked{
     NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+
+    _tableView.editing = !_tableView.editing;
 }
+
+
 
 -(void)loadDataFromDatabase{
     if (_datas) {
@@ -90,4 +94,28 @@
     return cell;
 }
 
+-(BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath{
+    return YES;
+}
+
+
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        //直接删除数组中的元素,又会出现以前出现的删除数组的时候,数组已经被改变,然后可能出现数组下标越界.
+        
+        MainArticleModel *articleModel =  _datas[indexPath.row];
+        NSString *idString = articleModel.id;
+        NSString *titleString = articleModel.title;
+        NSString *deleteSQL = [NSString stringWithFormat:@"delete from collections where id=\"%@\" and title=\"%@\"",idString,titleString];
+        NSLog(@"%s [LINE:%d]从收藏数据库中删除-->%i", __func__, __LINE__,[_db doUpdateTableWithSQL:deleteSQL andType:sqlOperationTypeWithDelete]);
+    }
+    [self refreshTable];
+}
+
+-(void)refreshTable{
+    [self loadDataFromDatabase];
+    [_tableView reloadData];
+    _tableView.editing = !_tableView.editing;
+}
 @end
