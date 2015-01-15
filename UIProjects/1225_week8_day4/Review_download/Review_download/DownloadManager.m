@@ -48,6 +48,27 @@
 //下载完成的协议方法
 -(void)downloadDataFinishWithDL:(Download *)dl{
     
+    //传递对象,而不是传递属性.
+    //1.要将下载从下载任务字典中移除
+    
+    [_taskDict removeObjectForKey:dl.downloadStr];
+
+    //2.解析数据
+    NSMutableArray *dataArray = [[NSMutableArray alloc]init];
+    
+    if (0 == dl.downloadType) {
+        //
+    }else if (1 == dl.downloadType){
+        //
+    }
+    else{
+        
+    }
+    
+    //3.缓存数据
+    [_sourceDict setObject:dataArray forKey:dl.downloadStr];
+    
+    //4.通知界面,数据可以取用.
 }
 
 
