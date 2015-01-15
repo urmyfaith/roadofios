@@ -72,6 +72,9 @@
     [_sourceDict setObject:dataArray forKey:dl.downloadStr];
     
     //4.通知界面,数据可以取用.
+    [[NSNotificationCenter defaultCenter]postNotificationName:dl.downloadStr
+                                                       object:nil
+                                                     userInfo:nil];
 }
 
 //返回下载数据
