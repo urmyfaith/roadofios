@@ -104,3 +104,46 @@ insert into messageInfoTable(userId,messageContent,messageSendTime,isTimeMessage
 select * from userInfoTable;
 select * from messageInfoTable;
 ```
+
+
+创建
+
+
+查询:
+
+select * from User order by UserId desc;
+
+链接查询
+
+ select * from User inner join UserInfo where User.UserId = UserInfo.U
+ 
+ select User.UserName,UserInfo.UserAge from User inner join UserInfo where User.UserId = UserInfo.UserId;
+ 
+  select User.UserName,UserInfo.UserPhone from User inner join UserInfo where User.UserId = UserInfo.UserId and  UserInfo.UserAge >20 order by User.UserId desc limi
+  
+  需要我们做的是,解析json,把vaule0~value4,每组10篇文章,保存在cell里,
+  
+  
+## 数据库操作:
+   
+roadofios/UIProjects/1227_week8_day6/sqlite3_usage.txt
+
+json==>数据库===>取出===>title,id
+
+左上角,读另外十篇文章,value0-->value1-->value2.
+
+点击第一行,这一行的单篇文件
+
+一张表存40篇文章.
+
+另一张表存单篇文章
+
+右侧,跳到新的界面,显示收藏,
+
+
+滑动,删除文件===>数据库删除.
+
+2个小时?
+
+
+导航条,表标签栏,
