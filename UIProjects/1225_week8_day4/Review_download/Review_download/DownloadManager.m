@@ -71,6 +71,10 @@
     //4.通知界面,数据可以取用.
 }
 
+//返回下载数据
+-(NSMutableArray *)getDataArrayWithDownloadStr:(NSString *)downloadStr{
+    return [_sourceDict objectForKey:downloadStr];
+}
 
 #pragma mark  管理类----单例
 /**
