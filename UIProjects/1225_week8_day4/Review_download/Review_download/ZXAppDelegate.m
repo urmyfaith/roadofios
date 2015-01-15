@@ -35,15 +35,17 @@
     //1.订阅下载通知
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(downloadFinish:)
-                                                name:@"www.baidu.com"
+                                                name:@"http://iappfree.candou.com:8080/free/applications/limited?currency=rmb&page=1"
                                               object:nil];
     //2.添加下载任务
-    [[DownloadManager sharedDownloadManager]addDownloadWithDownloadStr:@"www.baidu.com" andDownloadType:0];
+    [[DownloadManager sharedDownloadManager]addDownloadWithDownloadStr:@"http://iappfree.candou.com:8080/free/applications/limited?currency=rmb&page=1" andDownloadType:0];
     
 }
 
+//3.下载完成后,去取数据
 -(void)downloadFinish:(NSNotification *)notification{
-    
+    NSMutableArray *array = [[DownloadManager sharedDownloadManager] getDataArrayWithDownloadStr:@"http://iappfree.candou.com:8080/free/applications/limited?currency=rmb&page=1"];
+    NSLog(@"%s [LINE:%d] array=%@", __func__, __LINE__,array);
 }
 
 @end

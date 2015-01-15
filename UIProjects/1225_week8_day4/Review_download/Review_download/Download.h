@@ -13,8 +13,11 @@
 @protocol DownloadDelegate <NSObject>
 
 -(void)downloadDataFinishWithDL:(Download *)dl;
+-(void)downloadFailedWithDL:(Download *)dl;
 
 @end
+
+
 
 
 /**

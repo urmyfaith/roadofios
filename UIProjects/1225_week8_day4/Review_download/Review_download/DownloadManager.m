@@ -21,6 +21,7 @@
     // 1.判断当前要下载的数据是否有缓存
     if ([_sourceDict objectForKey:downloadStr]) {
         //有缓存,通知界面,可以直接取数据使用
+        NSLog(@"%s [LINE:%d]有缓存,不再下载", __func__, __LINE__);
         [[NSNotificationCenter defaultCenter]postNotificationName:downloadStr
                                                            object:nil
                                                          userInfo:nil];
@@ -30,6 +31,7 @@
         //2.判断当前的下载的数据是否正在下载
         if ([_taskDict objectForKey:downloadStr]) {
             //downloading===>无需重复下载
+             NSLog(@"%s [LINE:%d]下载中,无需重复下载", __func__, __LINE__);
         }
         else{
             //创建下载对象,开始下载.
@@ -75,6 +77,10 @@
     [[NSNotificationCenter defaultCenter]postNotificationName:dl.downloadStr
                                                        object:nil
                                                      userInfo:nil];
+}
+
+-(void)downloadFailedWithDL:(Download *)dl{
+    [_taskDict removeObjectForKey:dl.downloadStr];
 }
 
 //返回下载数据

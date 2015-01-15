@@ -45,13 +45,14 @@
 
 //下载完成
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    
+    NSLog(@"%s [LINE:%d]下载完成", __func__, __LINE__);
     [_delegate downloadDataFinishWithDL:self];//调用代理,将下载的数据和下载的类本身传递给管理类.
 }
 
 //下载失败
 -(void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error{
     NSLog(@"%s [LINE:%d] downloadData FAILED", __func__, __LINE__);
+    [_delegate downloadFailedWithDL:self];
 }
 
 @end
