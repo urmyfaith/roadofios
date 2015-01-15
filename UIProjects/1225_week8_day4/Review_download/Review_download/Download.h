@@ -8,6 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+@class Download;
+
+@protocol DownloadDelegeat <NSObject>
+
+-(void)downloadDataFinishWithDL:(Download *)dl;
+
+@end
+
 
 /**
  *  下载类只负责下载数据,不管解析等其他的事情.
@@ -19,5 +27,7 @@
 
 -(void)startDownload; //开始下载
 
+
+@property(nonatomic,weak) __weak id<DownloadDelegeat> delegate; //代理属性
 
 @end
