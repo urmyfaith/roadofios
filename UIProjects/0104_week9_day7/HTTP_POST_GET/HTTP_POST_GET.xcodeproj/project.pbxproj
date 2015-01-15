@@ -1,0 +1,453 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB4140F41A679743005E5198 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4140F31A679743005E5198 /* Foundation.framework */; };
+		FB4140F61A679743005E5198 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4140F51A679743005E5198 /* CoreGraphics.framework */; };
+		FB4140F81A679743005E5198 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4140F71A679743005E5198 /* UIKit.framework */; };
+		FB4140FE1A679743005E5198 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB4140FC1A679743005E5198 /* InfoPlist.strings */; };
+		FB4141001A679743005E5198 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4140FF1A679743005E5198 /* main.m */; };
+		FB4141041A679743005E5198 /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4141031A679743005E5198 /* ZXAppDelegate.m */; };
+		FB4141061A679743005E5198 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB4141051A679743005E5198 /* Images.xcassets */; };
+		FB41410D1A679743005E5198 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB41410C1A679743005E5198 /* XCTest.framework */; };
+		FB41410E1A679743005E5198 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4140F31A679743005E5198 /* Foundation.framework */; };
+		FB41410F1A679743005E5198 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4140F71A679743005E5198 /* UIKit.framework */; };
+		FB4141171A679743005E5198 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB4141151A679743005E5198 /* InfoPlist.strings */; };
+		FB4141191A679743005E5198 /* HTTP_POST_GETTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4141181A679743005E5198 /* HTTP_POST_GETTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FB4141101A679743005E5198 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB4140E81A679743005E5198 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB4140EF1A679743005E5198;
+			remoteInfo = HTTP_POST_GET;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB4140F01A679743005E5198 /* HTTP_POST_GET.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTP_POST_GET.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB4140F31A679743005E5198 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FB4140F51A679743005E5198 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FB4140F71A679743005E5198 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FB4140FB1A679743005E5198 /* HTTP_POST_GET-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTTP_POST_GET-Info.plist"; sourceTree = "<group>"; };
+		FB4140FD1A679743005E5198 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB4140FF1A679743005E5198 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FB4141011A679743005E5198 /* HTTP_POST_GET-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HTTP_POST_GET-Prefix.pch"; sourceTree = "<group>"; };
+		FB4141021A679743005E5198 /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
+		FB4141031A679743005E5198 /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
+		FB4141051A679743005E5198 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FB41410B1A679743005E5198 /* HTTP_POST_GETTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HTTP_POST_GETTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB41410C1A679743005E5198 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FB4141141A679743005E5198 /* HTTP_POST_GETTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTTP_POST_GETTests-Info.plist"; sourceTree = "<group>"; };
+		FB4141161A679743005E5198 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB4141181A679743005E5198 /* HTTP_POST_GETTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTP_POST_GETTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB4140ED1A679743005E5198 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4140F61A679743005E5198 /* CoreGraphics.framework in Frameworks */,
+				FB4140F81A679743005E5198 /* UIKit.framework in Frameworks */,
+				FB4140F41A679743005E5198 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4141081A679743005E5198 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB41410D1A679743005E5198 /* XCTest.framework in Frameworks */,
+				FB41410F1A679743005E5198 /* UIKit.framework in Frameworks */,
+				FB41410E1A679743005E5198 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FB4140E71A679743005E5198 = {
+			isa = PBXGroup;
+			children = (
+				FB4140F91A679743005E5198 /* HTTP_POST_GET */,
+				FB4141121A679743005E5198 /* HTTP_POST_GETTests */,
+				FB4140F21A679743005E5198 /* Frameworks */,
+				FB4140F11A679743005E5198 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FB4140F11A679743005E5198 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB4140F01A679743005E5198 /* HTTP_POST_GET.app */,
+				FB41410B1A679743005E5198 /* HTTP_POST_GETTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB4140F21A679743005E5198 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB4140F31A679743005E5198 /* Foundation.framework */,
+				FB4140F51A679743005E5198 /* CoreGraphics.framework */,
+				FB4140F71A679743005E5198 /* UIKit.framework */,
+				FB41410C1A679743005E5198 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FB4140F91A679743005E5198 /* HTTP_POST_GET */ = {
+			isa = PBXGroup;
+			children = (
+				FB4141021A679743005E5198 /* ZXAppDelegate.h */,
+				FB4141031A679743005E5198 /* ZXAppDelegate.m */,
+				FB4141051A679743005E5198 /* Images.xcassets */,
+				FB4140FA1A679743005E5198 /* Supporting Files */,
+			);
+			path = HTTP_POST_GET;
+			sourceTree = "<group>";
+		};
+		FB4140FA1A679743005E5198 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB4140FB1A679743005E5198 /* HTTP_POST_GET-Info.plist */,
+				FB4140FC1A679743005E5198 /* InfoPlist.strings */,
+				FB4140FF1A679743005E5198 /* main.m */,
+				FB4141011A679743005E5198 /* HTTP_POST_GET-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB4141121A679743005E5198 /* HTTP_POST_GETTests */ = {
+			isa = PBXGroup;
+			children = (
+				FB4141181A679743005E5198 /* HTTP_POST_GETTests.m */,
+				FB4141131A679743005E5198 /* Supporting Files */,
+			);
+			path = HTTP_POST_GETTests;
+			sourceTree = "<group>";
+		};
+		FB4141131A679743005E5198 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FB4141141A679743005E5198 /* HTTP_POST_GETTests-Info.plist */,
+				FB4141151A679743005E5198 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB4140EF1A679743005E5198 /* HTTP_POST_GET */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB41411C1A679743005E5198 /* Build configuration list for PBXNativeTarget "HTTP_POST_GET" */;
+			buildPhases = (
+				FB4140EC1A679743005E5198 /* Sources */,
+				FB4140ED1A679743005E5198 /* Frameworks */,
+				FB4140EE1A679743005E5198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HTTP_POST_GET;
+			productName = HTTP_POST_GET;
+			productReference = FB4140F01A679743005E5198 /* HTTP_POST_GET.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FB41410A1A679743005E5198 /* HTTP_POST_GETTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB41411F1A679743005E5198 /* Build configuration list for PBXNativeTarget "HTTP_POST_GETTests" */;
+			buildPhases = (
+				FB4141071A679743005E5198 /* Sources */,
+				FB4141081A679743005E5198 /* Frameworks */,
+				FB4141091A679743005E5198 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB4141111A679743005E5198 /* PBXTargetDependency */,
+			);
+			name = HTTP_POST_GETTests;
+			productName = HTTP_POST_GETTests;
+			productReference = FB41410B1A679743005E5198 /* HTTP_POST_GETTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB4140E81A679743005E5198 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZX;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = zx;
+				TargetAttributes = {
+					FB41410A1A679743005E5198 = {
+						TestTargetID = FB4140EF1A679743005E5198;
+					};
+				};
+			};
+			buildConfigurationList = FB4140EB1A679743005E5198 /* Build configuration list for PBXProject "HTTP_POST_GET" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FB4140E71A679743005E5198;
+			productRefGroup = FB4140F11A679743005E5198 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB4140EF1A679743005E5198 /* HTTP_POST_GET */,
+				FB41410A1A679743005E5198 /* HTTP_POST_GETTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB4140EE1A679743005E5198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4140FE1A679743005E5198 /* InfoPlist.strings in Resources */,
+				FB4141061A679743005E5198 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4141091A679743005E5198 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4141171A679743005E5198 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB4140EC1A679743005E5198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4141041A679743005E5198 /* ZXAppDelegate.m in Sources */,
+				FB4141001A679743005E5198 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB4141071A679743005E5198 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB4141191A679743005E5198 /* HTTP_POST_GETTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FB4141111A679743005E5198 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB4140EF1A679743005E5198 /* HTTP_POST_GET */;
+			targetProxy = FB4141101A679743005E5198 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FB4140FC1A679743005E5198 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4140FD1A679743005E5198 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FB4141151A679743005E5198 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4141161A679743005E5198 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB41411A1A679743005E5198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FB41411B1A679743005E5198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB41411D1A679743005E5198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTTP_POST_GET/HTTP_POST_GET-Prefix.pch";
+				INFOPLIST_FILE = "HTTP_POST_GET/HTTP_POST_GET-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FB41411E1A679743005E5198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTTP_POST_GET/HTTP_POST_GET-Prefix.pch";
+				INFOPLIST_FILE = "HTTP_POST_GET/HTTP_POST_GET-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FB4141201A679743005E5198 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HTTP_POST_GET.app/HTTP_POST_GET";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTTP_POST_GET/HTTP_POST_GET-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "HTTP_POST_GETTests/HTTP_POST_GETTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FB4141211A679743005E5198 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/HTTP_POST_GET.app/HTTP_POST_GET";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "HTTP_POST_GET/HTTP_POST_GET-Prefix.pch";
+				INFOPLIST_FILE = "HTTP_POST_GETTests/HTTP_POST_GETTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB4140EB1A679743005E5198 /* Build configuration list for PBXProject "HTTP_POST_GET" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB41411A1A679743005E5198 /* Debug */,
+				FB41411B1A679743005E5198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB41411C1A679743005E5198 /* Build configuration list for PBXNativeTarget "HTTP_POST_GET" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB41411D1A679743005E5198 /* Debug */,
+				FB41411E1A679743005E5198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		FB41411F1A679743005E5198 /* Build configuration list for PBXNativeTarget "HTTP_POST_GETTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB4141201A679743005E5198 /* Debug */,
+				FB4141211A679743005E5198 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB4140E81A679743005E5198 /* Project object */;
+}
