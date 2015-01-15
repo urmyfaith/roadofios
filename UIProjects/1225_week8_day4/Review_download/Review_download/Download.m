@@ -9,10 +9,6 @@
 #import "Download.h"
 
 @implementation Download
-{
-    NSMutableData *_data;
-}
-
 
 -(void)startDownload{
     

@@ -19,6 +19,6 @@
 
 -(void)addDownloadWithDownloadStr:(NSString *)downloadStr andDownloadType:(int)downloadType;//添加下载任务
 
--(NSMutableArray *)getDataArrayWithDownloadStr:(NSString *)downloadStr; //取数据方法
+-(NSData *)getDataArrayWithDownloadStr:(NSString *)downloadStr; //取数据方法
 
 @end

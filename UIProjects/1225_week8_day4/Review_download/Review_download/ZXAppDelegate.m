@@ -44,8 +44,11 @@
 
 //3.下载完成后,去取数据
 -(void)downloadFinish:(NSNotification *)notification{
-    NSMutableArray *array = [[DownloadManager sharedDownloadManager] getDataArrayWithDownloadStr:@"http://iappfree.candou.com:8080/free/applications/limited?currency=rmb&page=1"];
-    NSLog(@"%s [LINE:%d] array=%@", __func__, __LINE__,array);
+    NSData *data = [[DownloadManager sharedDownloadManager] getDataArrayWithDownloadStr:@"http://iappfree.candou.com:8080/free/applications/limited?currency=rmb&page=1"];
+    
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%s [LINE:%d] string=%@", __func__, __LINE__,string);
+
 }
 
 @end

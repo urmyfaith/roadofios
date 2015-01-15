@@ -24,7 +24,9 @@
         NSLog(@"%s [LINE:%d]有缓存,不再下载", __func__, __LINE__);
         [[NSNotificationCenter defaultCenter]postNotificationName:downloadStr
                                                            object:nil
-                                                         userInfo:nil];
+                                                         userInfo:@{
+                                                                    @"data":[_sourceDict objectForKey:downloadStr]
+                                                                    }];
     }
     else{
         //无缓存==>下载数据
@@ -34,7 +36,7 @@
              NSLog(@"%s [LINE:%d]下载中,无需重复下载", __func__, __LINE__);
         }
         else{
-            //创建下载对象,开始下载.
+            //创建下载对象,开始下载,添加到任务队列.
             Download *dl = [[Download alloc]init];
             
             dl.downloadStr = downloadStr;
@@ -42,10 +44,7 @@
             dl.delegate = self;
             [dl startDownload];
             
-            //
             [_taskDict setObject:dl forKey:downloadStr];
-            
-            
         }
     }
 }
@@ -58,25 +57,30 @@
     
     [_taskDict removeObjectForKey:dl.downloadStr];
 
-    //2.解析数据
+#if 0
+    //2.解析数据(数据的解析随着数据源的不同而不同,在外部单独解析也行啊?
+    //  向外部传递值的方法   a)使用下载管理类的方法的返回值,b)使用通知,将下载完成的数据传递出去.
     NSMutableArray *dataArray = [[NSMutableArray alloc]init];
     
     if (0 == dl.downloadType) {
-        //
+        
     }else if (1 == dl.downloadType){
-        //
+        
     }
     else{
         
     }
+#endif
     
     //3.缓存数据
-    [_sourceDict setObject:dataArray forKey:dl.downloadStr];
+    [_sourceDict setObject:dl.data forKey:dl.downloadStr];
     
     //4.通知界面,数据可以取用.
     [[NSNotificationCenter defaultCenter]postNotificationName:dl.downloadStr
                                                        object:nil
-                                                     userInfo:nil];
+                                                     userInfo:@{
+                                                                @"data":dl.data
+                                                                }];
 }
 
 -(void)downloadFailedWithDL:(Download *)dl{
@@ -84,7 +88,7 @@
 }
 
 //返回下载数据
--(NSMutableArray *)getDataArrayWithDownloadStr:(NSString *)downloadStr{
+-(NSData *)getDataArrayWithDownloadStr:(NSString *)downloadStr{
     return [_sourceDict objectForKey:downloadStr];
 }
 

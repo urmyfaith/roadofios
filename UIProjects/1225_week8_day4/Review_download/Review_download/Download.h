@@ -30,6 +30,7 @@
 
 -(void)startDownload; //开始下载
 
+@property(nonatomic,strong)NSMutableData *data;//下载到的数据;
 
 @property(nonatomic,weak) __weak id<DownloadDelegate> delegate; //代理属性
 
