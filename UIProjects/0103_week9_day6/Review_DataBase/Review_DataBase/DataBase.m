@@ -50,10 +50,14 @@ static DataBase *zxSharedDB = nil;
         
 
         NSLog(@"%s [LINE:%d] createTable---%i", __func__, __LINE__,[self createArticleTable]);
-        
+        NSLog(@"%s [LINE:%d] createCollectionTable---%i", __func__, __LINE__,[self createCollectionTable]);
+     
     }
     return self;
 }
+
+
+#pragma mark 创建文章列表
 
 -(BOOL)createArticleTable{
     
@@ -61,12 +65,6 @@ static DataBase *zxSharedDB = nil;
     
     return [self.database executeUpdate:createArticleTableSQL];
 }
-
-//插入,删除,改
--(BOOL)doUpdateTableWithSQL:(NSString *)sql andType:(sqlOperationType) sqlType{
-    return [self.database executeUpdate:sql];
-}
-
 
 
 -(NSArray *)selectTableWithCondition:(NSString *)condition andLimit:(NSInteger)limitCount{
@@ -77,13 +75,60 @@ static DataBase *zxSharedDB = nil;
     
     NSMutableArray *array = [NSMutableArray array];
     
-        while (set.next) {
-            NSDictionary *dic = [NSMutableDictionary dictionary];
-            [ dic setValue:[set stringForColumn:@"id"] forKey:@"id"];
-            [ dic setValue:[set stringForColumn:@"title"] forKey:@"title"];
-            [array addObject:dic];
-        }
+    while (set.next) {
+        NSDictionary *dic = [NSMutableDictionary dictionary];
+        [ dic setValue:[set stringForColumn:@"id"] forKey:@"id"];
+        [ dic setValue:[set stringForColumn:@"title"] forKey:@"title"];
+        [array addObject:dic];
+    }
     return array;
+}
+
+
+#pragma mark 通用增,删,改方法;
+
+//插入,删除,改
+-(BOOL)doUpdateTableWithSQL:(NSString *)sql andType:(sqlOperationType) sqlType{
+    return [self.database executeUpdate:sql];
+}
+
+
+
+#pragma mark  创建收藏的表
+
+-(BOOL)createCollectionTable{
+    
+    NSString *createCollectionTableSQL = @"CREATE table collections (articleID integer,id integer,title vchar(100));";
+    
+    return [self.database executeUpdate:createCollectionTableSQL];
+}
+
+
+-(NSArray *)selectALLFromCollectionsTable{
+    NSString *selectTableSQL = @"select * from collections ;";
+    FMResultSet *set = [self.database executeQuery:selectTableSQL];
+    
+    NSMutableArray *array = [NSMutableArray array];
+    while (set.next) {
+        NSDictionary *dic = [NSMutableDictionary dictionary];
+        [ dic setValue:[set stringForColumn:@"id"] forKey:@"id"];
+        [ dic setValue:[set stringForColumn:@"title"] forKey:@"title"];
+        [array addObject:dic];
+    }
+    return array;
+}
+
+-(BOOL)isExistInCollectionsTableWithID:(NSString *)idStirng{
+    
+    NSString *selectTableSQL = [NSString stringWithFormat:@"select * from collections where id = %@",idStirng];
+    
+    FMResultSet *set = [self.database executeQuery:selectTableSQL];
+    int count = 0;
+    while (set.next) {
+        count++;
+        break;
+    }
+    return  count;
 }
 
 @end

@@ -24,4 +24,7 @@ typedef enum {
 -(BOOL)doUpdateTableWithSQL:(NSString *)sql andType:(sqlOperationType) sqlType;
 -(NSArray *)selectTableWithCondition:(NSString *)condition andLimit:(NSInteger)limitCount;
 
+-(NSArray *)selectALLFromCollectionsTable;
+-(BOOL)isExistInCollectionsTableWithID:(NSString *)idStirng;
+
 @end

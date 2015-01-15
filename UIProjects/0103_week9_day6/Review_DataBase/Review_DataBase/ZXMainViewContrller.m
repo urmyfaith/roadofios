@@ -11,6 +11,7 @@
 #import "DataBase.h"
 #import "MainArticleModel.h"
 #import "ZXMainCell.h"
+#import "ZXCollectionViewController.h"
 
 @interface ZXMainViewContrller ()
 
@@ -58,6 +59,8 @@
 
 -(void)showBookedArticle{
    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    ZXCollectionViewController *collectionView = [[ZXCollectionViewController alloc]init ];
+    [self.navigationController pushViewController:collectionView animated:YES];
 }
 
 
@@ -137,6 +140,31 @@
     cell.articleModel = _datas[indexPath.row];
     
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    MainArticleModel *articleModel =  _datas[indexPath.row];
+    
+    NSString *idString = articleModel.id;
+    NSString *titleString = articleModel.title;
+    NSString *message;
+    
+    if ([_db isExistInCollectionsTableWithID:idString]) {
+        //如果存在,从数据库中删除;
+        //delete  from collections where userNickName="you";
+        NSString *deleteSQL = [NSString stringWithFormat:@"delete from collections where id=\"%@\" and title=\"%@\"",idString,titleString];
+        NSLog(@"%s [LINE:%d] 取消收藏到数据库-->%i", __func__, __LINE__,[_db doUpdateTableWithSQL:deleteSQL andType:sqlOperationTypeWithDelete]);
+        message = @"已取消收藏";
+    }
+    else{
+        //插入到数据库
+        NSString *insertTableSQL = [NSString stringWithFormat:@"insert into  collections(id,title) values(\"%@\",\"%@\")",idString,titleString];
+        NSLog(@"%s [LINE:%d] 收藏到数据库-->%i", __func__, __LINE__,[_db doUpdateTableWithSQL:insertTableSQL andType:sqlOperationTypeWithInsert]);
+        message = @"收藏成功";
+    }
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示:" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"确认", nil];
+    [alertView show];
 }
 @end
 
