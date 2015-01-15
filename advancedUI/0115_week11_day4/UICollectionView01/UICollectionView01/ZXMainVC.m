@@ -33,11 +33,11 @@
     UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
     
     //1.1设置item的大小(每个叫做item)
-    [flowLayout setItemSize:CGSizeMake(80, 80)];
+    [flowLayout setItemSize:CGSizeMake(72.5, 100)];
     
     //1.2设置排列方式(横向,纵向)==>系统自己排列
-    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-    
+  //  [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
     //2.实例化collectionView 控件
     UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
@@ -60,7 +60,7 @@
 
 //设置分组数
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
-    return 1;
+    return 2;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -68,8 +68,13 @@
     
     //如果复用池中没有,会自动实例化.
     MyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
-    
+    cell.titleLabel.text = [NSString stringWithFormat:@"%d-%d",indexPath.section,indexPath.row];
     return cell;
+}
+
+//选中的方法
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%s [LINE:%d]%d---%d", __func__, __LINE__,indexPath.section,indexPath.row);
 }
 
 - (void)didReceiveMemoryWarning
