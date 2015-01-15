@@ -34,6 +34,7 @@
             
             dl.downloadStr = downloadStr;
             dl.downloadType = downloadType;
+            dl.delegate = self;
             [dl startDownload];
             
             //
@@ -42,6 +43,11 @@
             
         }
     }
+}
+
+//下载完成的协议方法
+-(void)downloadDataFinishWithDL:(Download *)dl{
+    
 }
 
 

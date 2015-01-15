@@ -10,7 +10,7 @@
 
 @class Download;
 
-@protocol DownloadDelegeat <NSObject>
+@protocol DownloadDelegate <NSObject>
 
 -(void)downloadDataFinishWithDL:(Download *)dl;
 
@@ -28,6 +28,6 @@
 -(void)startDownload; //开始下载
 
 
-@property(nonatomic,weak) __weak id<DownloadDelegeat> delegate; //代理属性
+@property(nonatomic,weak) __weak id<DownloadDelegate> delegate; //代理属性
 
 @end

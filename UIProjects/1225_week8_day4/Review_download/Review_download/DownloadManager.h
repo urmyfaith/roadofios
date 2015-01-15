@@ -13,7 +13,7 @@
  *  负责所有下载的管理,我们的程序中只有一个管理类的对象===>单例
  *  负责管理: 1)下载队列,2)数据解析,3)数据缓存
  */
-@interface DownloadManager : NSObject
+@interface DownloadManager : NSObject<DownloadDelegate>
 
 +(DownloadManager *)sharedDownloadManager;
 
