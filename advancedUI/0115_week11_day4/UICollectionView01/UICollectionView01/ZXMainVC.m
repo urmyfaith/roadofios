@@ -7,6 +7,7 @@
 //
 
 #import "ZXMainVC.h"
+#import "MyCell.h"
 
 @interface ZXMainVC ()
 
@@ -27,6 +28,48 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    //1.设置布局模式
+    UICollectionViewFlowLayout *flowLayout = [[UICollectionViewFlowLayout alloc]init];
+    
+    //1.1设置item的大小(每个叫做item)
+    [flowLayout setItemSize:CGSizeMake(80, 80)];
+    
+    //1.2设置排列方式(横向,纵向)==>系统自己排列
+    [flowLayout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+    
+    
+    //2.实例化collectionView 控件
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:self.view.bounds collectionViewLayout:flowLayout];
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    
+    [self.view addSubview:collectionView];
+    
+    //3.注册cell类型
+    [collectionView registerClass:[MyCell class] forCellWithReuseIdentifier:@"cell"];
+    
+}
+
+#pragma mark delegateMethod
+
+//每组多少个item
+-(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
+    return  10;
+}
+
+//设置分组数
+-(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
+    return 1;
+}
+
+-(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"cell";
+    
+    //如果复用池中没有,会自动实例化.
+    MyCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    return cell;
 }
 
 - (void)didReceiveMemoryWarning

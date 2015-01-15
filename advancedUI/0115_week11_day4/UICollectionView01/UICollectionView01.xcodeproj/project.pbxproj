@@ -20,6 +20,7 @@
 		FBA3574F1A676730002A956D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBA3574D1A676730002A956D /* InfoPlist.strings */; };
 		FBA357511A676730002A956D /* UICollectionView01Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA357501A676730002A956D /* UICollectionView01Tests.m */; };
 		FBA3575C1A676749002A956D /* ZXMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA3575B1A676749002A956D /* ZXMainVC.m */; };
+		FBA3575F1A676977002A956D /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA3575E1A676977002A956D /* MyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		FBA357501A676730002A956D /* UICollectionView01Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionView01Tests.m; sourceTree = "<group>"; };
 		FBA3575A1A676749002A956D /* ZXMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMainVC.h; sourceTree = "<group>"; };
 		FBA3575B1A676749002A956D /* ZXMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMainVC.m; sourceTree = "<group>"; };
+		FBA3575D1A676977002A956D /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		FBA3575E1A676977002A956D /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +117,8 @@
 				FBA3573B1A676730002A956D /* ZXAppDelegate.m */,
 				FBA3575A1A676749002A956D /* ZXMainVC.h */,
 				FBA3575B1A676749002A956D /* ZXMainVC.m */,
+				FBA3575D1A676977002A956D /* MyCell.h */,
+				FBA3575E1A676977002A956D /* MyCell.m */,
 				FBA3573D1A676730002A956D /* Images.xcassets */,
 				FBA357321A676730002A956D /* Supporting Files */,
 			);
@@ -246,6 +251,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBA3573C1A676730002A956D /* ZXAppDelegate.m in Sources */,
+				FBA3575F1A676977002A956D /* MyCell.m in Sources */,
 				FBA3575C1A676749002A956D /* ZXMainVC.m in Sources */,
 				FBA357381A676730002A956D /* main.m in Sources */,
 			);
