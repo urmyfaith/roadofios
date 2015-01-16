@@ -10,4 +10,9 @@
 
 @interface ZXArticleModel : NSObject
 
+@property(nonatomic,strong)NSString *articleId;
+@property(nonatomic,strong)NSString *articleTitle;
+
+@property(nonatomic,assign)int articleIndex;
+
 @end

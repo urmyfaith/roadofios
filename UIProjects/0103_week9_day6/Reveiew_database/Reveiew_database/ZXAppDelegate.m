@@ -7,13 +7,28 @@
 //
 
 #import "ZXAppDelegate.h"
-
+#import "ZXMainViewController.h"
 @implementation ZXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    NSLog(@"%s [LINE:%d]%@", __func__, __LINE__,NSHomeDirectory());
+    
+    //创建数据库和表
+    [[ZXDatabaseManager sharedDatabaseManager]createDataBase];
+    [[ZXDatabaseManager sharedDatabaseManager]createTable];
+    
+    
+    
+    ZXMainViewController *mvc =[[ZXMainViewController alloc]init];
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mvc];
+    
+    self.window.rootViewController = nav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXMainViewController : UIViewController
+@interface ZXMainViewController : UIViewController<UITableViewDelegate,UITableViewDataSource>
 
 @end

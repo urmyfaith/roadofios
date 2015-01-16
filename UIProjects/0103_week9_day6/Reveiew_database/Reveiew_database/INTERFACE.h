@@ -6,9 +6,13 @@
 //  Copyright (c) 2015 zx. All rights reserved.
 //
 
-#ifndef Reveiew_database_INTERFACE_h
-#define Reveiew_database_INTERFACE_h
+//内网测试==>外网地址
+
+// 地址进行宏拼接
+//方便提示,添加z
 
 
+#define zSERVER_URL @"http://ipad.jkb.com.cn/program/API/"
+//#define zFIRESTPAGE_URL (zSERVER_URL@"firstpaperpage")
+#define zFIRESTPAGE_URL @"http://127.0.0.1/~zx/data.json"
 
-#endif
