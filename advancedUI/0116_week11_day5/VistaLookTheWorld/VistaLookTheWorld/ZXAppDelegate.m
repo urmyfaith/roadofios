@@ -9,7 +9,7 @@
 #import "ZXAppDelegate.h"
 #import "ZXCustomTabBarVC.h"
 
-#import "ZXInfomationDetailVC.h"
+#import "ZXInfomationViewController.h"
 #import "ZXMagazineViewController.h"
 #import "ZXRespectableViewController.h"
 #import "ZXPictureDetailVC.h"
@@ -33,8 +33,7 @@
 
 -(void)createTabBarView{
     
-    ZXInfomationDetailVC *infomation = [[ZXInfomationDetailVC alloc]init];
-    infomation.title = @"infomation";
+    ZXInfomationViewController *infomation = [[ZXInfomationViewController alloc]init];
     UINavigationController *infomationNav = [[UINavigationController alloc]initWithRootViewController:infomation];
     
     

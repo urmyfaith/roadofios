@@ -69,6 +69,11 @@
         [customTabBar addSubview:button];
         
     }
+//    self.selectedIndex = 0;
+//    UIButton *button = (UIButton *)[self.view viewWithTag:10];
+//    [button setImage:[UIImage imageNamed:_selectedImages[0]]
+//            forState:UIControlStateNormal];
+    
     [self.view addSubview:customTabBar];
 }
 
