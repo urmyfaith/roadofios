@@ -70,15 +70,25 @@ From ZHH
 
 总结一些崩溃的流程
 
-1. 给UIButton的子控件布局
-2. 更新UIButton的图片视图
-3. 设置UIButton的图片视图
-4. 设置图片视图的大小
-5. _CF_forwarding_prep_
-6. ___forwarding___ 
-7. [NSObject(NSObject) doesNotRecognizeSelector:]方法不识别
-8. objc_exception_throw 对象抛出异常
-9. __exceptionPreprocess 程序崩溃.
+.9.) 代理的类的子图层
+
+.8.) 给UIButton的子控件布局
+
+.7.) 更新UIButton的图片视图\
+
+.6.) 设置UIButton的图片视图
+
+.5.) 设置图片视图的大小
+
+.4.) _CF_forwarding_prep_
+
+.3.) ___forwarding___ 
+
+.2.) [NSObject(NSObject) doesNotRecognizeSelector:]方法不识别
+
+.1.) objc_exception_throw 对象抛出异常
+
+.0.) __exceptionPreprocess 程序崩溃.
 
 > 所以,分析的关键的是从第4个, imageRectForContentRect,设置图片的大小的时候报错.
 > 
