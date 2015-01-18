@@ -1,26 +1,24 @@
 //
-//  ZXInfomationModel.m
+//  ZXPictureItemModel.m
 //  VistaLookTheWorld
 //
-//  Created by zx on 1/16/15.
+//  Created by zx on 1/18/15.
 //  Copyright (c) 2015 zx. All rights reserved.
 //
 
-#import "ZXInfomationModel.h"
+#import "ZXPictureItemModel.h"
 
-@implementation ZXInfomationModel
+@implementation ZXPictureItemModel
 
-+(ZXInfomationModel *)modelWithDictionary:(NSDictionary *)dic{
++(ZXPictureItemModel *)modeleWithDictionary:(NSDictionary *)dic{
     return [[self alloc]initWithDictionary:dic];
 }
 
--(id)initWithDictionary:(NSDictionary *)dic{
+-(id) initWithDictionary:(NSDictionary *)dic{
     if (self = [super init]) {
         [self setValuesForKeysWithDictionary:dic];
     }
     return self;
 }
-
-
 
 @end

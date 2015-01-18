@@ -10,4 +10,6 @@
 
 @interface ZXMagazineItemVC : UIViewController
 
+@property(nonatomic,copy)NSString *mgid_string;
+@property(nonatomic,copy)NSString *vol_year_string;
 @end

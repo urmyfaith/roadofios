@@ -10,6 +10,8 @@
 #import "DownloadManager.h"
 #import "ZXInfomationModel.h"
 #import "ZXInfomationCell.h"
+#import "ZXInfomationDetailVC.h"
+
 
 @interface ZXInfomationViewController ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -71,7 +73,7 @@
 }
 
 -(void)buttonClicked{
-
+    NSLog(@"%s [LINE:%d] 点击了设置按钮", __func__, __LINE__);
 }
 
 #pragma mark 下载数据
@@ -113,9 +115,15 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     
-    UIImageView *backgourndImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"资讯背景底"]];
+    UIImageView *backgourndImageView = [[UIImageView alloc]init];
+    
+    backgourndImageView.frame = self.view.bounds;
+    backgourndImageView.image =[UIImage imageNamed:@"资讯背景底"];
+                                        
     _tableView.backgroundView = backgourndImageView;
     [self.view addSubview:_tableView];
+
+
 
 }
 
@@ -134,5 +142,26 @@
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 86;
 }
+
+
+#pragma mark 页面跳转
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    ZXInfomationDetailVC *informationDetail = [[ZXInfomationDetailVC alloc]init];
+    //传递id值,进行URL拼接
+    informationDetail.information_id = ((ZXInfomationModel * )_datas_array[indexPath.row]).id;
+
+    //self.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:informationDetail animated:YES];
+    ((ZXCustomTabBarVC *)self.tabBarController).customTabBar.hidden = YES;
+}
+
+#pragma mark  处理标签栏的隐藏
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    
+    ((ZXCustomTabBarVC *)self.tabBarController).customTabBar.hidden = NO;
+}
+
 
 @end

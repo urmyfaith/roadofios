@@ -10,4 +10,5 @@
 
 @interface ZXCustomTabBarVC : UITabBarController
 
+@property(nonatomic,strong)    UIView *customTabBar;
 @end

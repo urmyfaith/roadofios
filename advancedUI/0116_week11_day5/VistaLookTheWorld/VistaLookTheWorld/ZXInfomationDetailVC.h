@@ -10,4 +10,6 @@
 
 @interface ZXInfomationDetailVC : ZXDetailViewController
 
+@property(nonatomic,copy)NSString *information_id;
+
 @end

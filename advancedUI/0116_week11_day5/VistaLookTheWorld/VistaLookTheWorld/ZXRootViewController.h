@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZXCustomTabBarVC.h"
+#import "DownloadManager.h"
 
 @interface ZXRootViewController : UIViewController
+
+@property(nonatomic,strong)ZXCustomTabBarVC *customTabBarVC;
 
 @end

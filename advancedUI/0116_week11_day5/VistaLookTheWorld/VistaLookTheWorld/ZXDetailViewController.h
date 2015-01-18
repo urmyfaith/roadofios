@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
+
+
+//@interface ZXDetailViewController : ZXRootViewController
 @interface ZXDetailViewController : UIViewController
+
 
 @end

@@ -23,13 +23,12 @@
 }
 
 
-/*
+/**
  @property(nonatomic,strong) IBOutlet UIImageView *icon_ImageView;
  @property(nonatomic,strong) IBOutlet UILabel *title_Label;
  @property(nonatomic,strong) IBOutlet UILabel *desc_Label;
  @property(nonatomic,strong) IBOutlet UILabel *pub_time;
  */
-
 -(void)setInfomationModel:(ZXInfomationModel *)infomationModel{
     _infomationModel = infomationModel;
     [_icon_ImageView setImageWithURL:[NSURL URLWithString:infomationModel.icon]

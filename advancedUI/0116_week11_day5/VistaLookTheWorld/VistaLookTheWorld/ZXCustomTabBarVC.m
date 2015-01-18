@@ -36,7 +36,7 @@
     [super viewDidLoad];
     self.tabBar.hidden = YES;
     
-    UIView *customTabBar = [[UIView alloc]initWithFrame:CGRectMake(0,
+    _customTabBar = [[UIView alloc]initWithFrame:CGRectMake(0,
                                                                    self.view.frame.size.height-49,
                                                                    self.view.frame.size.width,
                                                                    49)];
@@ -66,7 +66,7 @@
         [button addTarget:self
                    action:@selector(buttonClicked:)
          forControlEvents:UIControlEventTouchUpInside];
-        [customTabBar addSubview:button];
+        [_customTabBar addSubview:button];
         
     }
 //    self.selectedIndex = 0;
@@ -74,7 +74,7 @@
 //    [button setImage:[UIImage imageNamed:_selectedImages[0]]
 //            forState:UIControlStateNormal];
     
-    [self.view addSubview:customTabBar];
+    [self.view addSubview:_customTabBar];
 }
 
 -(void)buttonClicked:(UIButton *)button{

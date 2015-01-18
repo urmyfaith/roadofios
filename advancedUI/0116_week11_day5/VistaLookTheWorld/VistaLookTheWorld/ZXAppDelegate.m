@@ -12,7 +12,7 @@
 #import "ZXInfomationViewController.h"
 #import "ZXMagazineViewController.h"
 #import "ZXRespectableViewController.h"
-#import "ZXPictureDetailVC.h"
+#import "ZXPictureViewController.h"
 
 
 @implementation ZXAppDelegate
@@ -35,7 +35,7 @@
     
     ZXInfomationViewController *infomation = [[ZXInfomationViewController alloc]init];
     UINavigationController *infomationNav = [[UINavigationController alloc]initWithRootViewController:infomation];
-    
+
     
     ZXMagazineViewController  *magazine = [[ZXMagazineViewController  alloc]init];
     UINavigationController *magazineNav = [[UINavigationController alloc]initWithRootViewController:magazine];
@@ -44,7 +44,7 @@
     
     UINavigationController *respectableNav = [[UINavigationController alloc]initWithRootViewController:respectable];
     
-    ZXPictureDetailVC *picture = [[ZXPictureDetailVC alloc]init];
+    ZXPictureViewController *picture = [[ZXPictureViewController alloc]init];
     UINavigationController *pictureNav = [[UINavigationController alloc]initWithRootViewController:picture];
     
     ZXCustomTabBarVC *tabBarController = [[ZXCustomTabBarVC alloc]init];
@@ -52,6 +52,8 @@
     tabBarController.viewControllers = @[infomationNav,magazineNav,respectableNav,pictureNav];
     
     self.window.rootViewController = tabBarController;
+    
+
     
 }
 @end
