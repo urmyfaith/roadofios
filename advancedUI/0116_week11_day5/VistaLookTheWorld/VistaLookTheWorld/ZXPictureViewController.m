@@ -22,32 +22,40 @@
 {
     UITableView *_tableView;
     NSArray *_datas_array;
-
+    NSInteger _offset;
+    NSInteger _count;
+    NSString *_url;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self setNavigationBar];
-    
+   
     [self loadTableView];
+    
+    _offset  = 0;
+    _count = 15;
+   
     [self downloadData];
+    
 }
 
 #pragma mark 下载数据
 -(void)downloadData{
+     _url = [NSString stringWithFormat:PICTURE_URL,_offset,_count];
     [[NSNotificationCenter defaultCenter]addObserver:self
                                             selector:@selector(downloadFinish:)
-                                                name:PICTURE_URL
+                                                name:_url
                                               object:nil];
     
-    [[DownloadManager sharedDownloadManager]addDownloadWithDownloadStr:PICTURE_URL andDownloadType:0];
+    [[DownloadManager sharedDownloadManager]addDownloadWithDownloadStr:_url andDownloadType:0];
 }
 
 #pragma mark 数据下载完成
 -(void)downloadFinish:(NSNotification *)notification{
     NSLog(@"%s [LINE:%d]", __func__, __LINE__);
-    NSData *data = [[DownloadManager sharedDownloadManager] getDataArrayWithDownloadStr:PICTURE_URL];
+    NSData *data = [[DownloadManager sharedDownloadManager] getDataArrayWithDownloadStr:_url];
     _datas_array = [NSArray arrayWithArray:[self parseJSONWithData:data]];
     [_tableView reloadData];
 }
@@ -69,7 +77,7 @@
 
 -(void)loadTableView{
     _tableView = [[UITableView alloc]init];
-    _tableView.frame = self.view.bounds;
+    _tableView.frame = CGRectMake(0, 0, 320, 480-64);
     _tableView.dataSource = self;
     _tableView.delegate = self;
     
@@ -93,7 +101,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return (100+10)*(15/3);
+    return 100*(15/3);
 }
 
 
@@ -122,10 +130,18 @@
         UIImage *image = [UIImage imageNamed:@"标题栏底.png"];
         [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
     }
+    
+    
     //---centerImage
     UIImage *centerImage = [UIImage imageNamed:@"logo"];
     UIImageView *centerImageView = [[UIImageView alloc]initWithImage:centerImage];
     self.navigationItem.titleView = centerImageView;
+    
+    //---leftRefreshButton
+
+    UIBarButtonItem *loadMoreItem = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(loadMore)];
+    
+    self.navigationItem.leftBarButtonItem = loadMoreItem;
     
     //---rightSettingButton
     UIButton *settingButton = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -140,6 +156,13 @@
     settingButton.frame = CGRectMake(0,0, settingImage.size.width, settingImage.size.height);
     UIBarButtonItem *rightItemCustomView = [[UIBarButtonItem alloc] initWithCustomView:settingButton];
     self.navigationItem.rightBarButtonItem = rightItemCustomView;
+}
+
+-(void)loadMore{
+    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    _offset += 15;
+    [self downloadData];
+    
 }
 
 -(void)buttonClicked{

@@ -58,10 +58,10 @@
             ZXPictureItemView *itemView = [[ZXPictureItemView alloc]init];
             itemView.frame = CGRectMake(xPos, yPos, WIDTH, HEIGHT);
             [self.contentView addSubview:itemView];
-            
+          
             [_pictureItemView_array addObject:itemView];//每个小视图===>添加到数组中.
         }
-        
+
         
     }
     return self;
