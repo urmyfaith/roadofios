@@ -255,4 +255,22 @@ sleep(1)//c语言
     //可以动态调整系统压力
 ~~~
 
+#### GCD
+
+gcd是block版本的NSOperation
+
+
+oc是cocoa是框架的
+
+gcd是c语言的,更加底层,高效
+
+**三种方法中,gcd是最高效,简单的**
+
+
+
+
+Dispatch QUueues
+
+- 主队列
+- 
 
