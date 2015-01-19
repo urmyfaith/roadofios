@@ -128,6 +128,8 @@
     
 }
 
+#pragma mark 创建UI
+
 -(void)createUI{
     
     //--->320/4=80
@@ -224,7 +226,7 @@
 }
 
 -(void)all_stop:(UIButton *)button{
-    static BOOL isStopped = NO;
+    static BOOL isStopped = YES;
     if (isStopped == NO) {
         for (NSThread *eachThread in _thread_array) {
             [eachThread cancel];
