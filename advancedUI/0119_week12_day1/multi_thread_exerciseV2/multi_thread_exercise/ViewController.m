@@ -16,14 +16,14 @@
 {
 
     
-    NSMutableArray *_thread_array;
+    NSMutableArray *_thread_array;//线程数据
     
-    NSMutableArray *_number_array;
+    NSMutableArray *_number_array;//每个线程操作一个值
     
     NSLock *_lock;
     
     
-    NSInteger _sum;
+    NSInteger _sum;//所有的值的和
 }
 
 - (void)viewDidLoad {
@@ -72,12 +72,12 @@
  */
 -(void)thread:(NSString *)string{
     
-    int thread_number = [string integerValue];
+    int thread_number = (int)[string integerValue];
     
     while (1) {
         
         [_lock lock];
-            _number_array[thread_number] = [NSString stringWithFormat:@"%i",[_number_array[thread_number] integerValue] +1];
+            _number_array[thread_number] = [NSString stringWithFormat:@"%li",[_number_array[thread_number] integerValue] +1];
             //NSLog(@"_number_array=%@", _number_array);
             /*
              for (NSString *str in _number_array) {
@@ -112,14 +112,17 @@
 }
 
 -(void)mainThread:(NSDictionary *)dic{
-    int thread_number = [dic[@"thread_number"] integerValue];
+    int thread_number = (int) [dic[@"thread_number"] integerValue];
     
     UILabel *label = (UILabel *)[self.view viewWithTag:(100+thread_number)];
     UILabel *total_number_label = (UILabel *)[self.view viewWithTag:500];
     
     [_lock lock];
         label.text = dic[@"number"];
-        total_number_label.text = [NSString stringWithFormat:@"%i",_sum];
+        if (_sum%10 == 0) {
+        total_number_label.text = [NSString stringWithFormat:@"%li",(long)_sum];
+        }
+    
     [_lock unlock];
 
     
@@ -155,11 +158,13 @@
         button_start.tag = i + 200;
         button_start.frame = CGRectMake(xPos, CGRectGetMaxY(label.frame), W*2-50, H);
         [button_start setTitle:@"开始" forState:UIControlStateNormal];
-        button_start.backgroundColor = [UIColor redColor];
+        button_start.backgroundColor = [UIColor blueColor];
         [button_start setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [button_start addTarget:self
                          action:@selector(buttonClicked:)
                forControlEvents:UIControlEventTouchUpInside];
+        button_start.clipsToBounds = YES;
+        [button_start.layer setCornerRadius:8];
         [self.view addSubview:button_start];
     }
     
@@ -170,8 +175,10 @@
                                        self.view.frame.size.height-60,
                                        300,
                                        40);
-    [button_all_stop setTitle:@"全部停止" forState:UIControlStateNormal];
-    button_all_stop.backgroundColor = [UIColor redColor];
+    button_all_stop.clipsToBounds = YES;
+    [button_all_stop.layer setCornerRadius:8];
+    [button_all_stop setTitle:@"全部开始" forState:UIControlStateNormal];
+    button_all_stop.backgroundColor = [UIColor blueColor];
     [button_all_stop  addTarget:self
                          action:@selector(all_stop:)
                forControlEvents:UIControlEventTouchUpInside];
@@ -204,12 +211,14 @@
     if ([current_thread isExecuting]) {
         [current_thread cancel];
         [button setTitle:@"开始" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor blueColor];
     }
     else{
-        current_thread = [[NSThread alloc]initWithTarget:self selector:@selector(thread:) object:[NSString stringWithFormat:@"%i",(button.tag -200)]];
+        current_thread = [[NSThread alloc]initWithTarget:self selector:@selector(thread:) object:[NSString stringWithFormat:@"%li",(button.tag -200)]];
         [_thread_array replaceObjectAtIndex:(button.tag -200) withObject:current_thread];
         [current_thread start];
         [button setTitle:@"结束" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor redColor];
     }
     
 }
@@ -223,8 +232,10 @@
         for (int i = 0 ; i < 4; i++) {
             UIButton *button = (UIButton *)[self.view viewWithTag:200+i];
             [button setTitle:@"开始" forState:UIControlStateNormal];
+            button.backgroundColor = [UIColor blueColor];
         }
          [button setTitle:@"全部开始" forState:UIControlStateNormal];
+         button.backgroundColor = [UIColor blueColor];
     }
     else{
      
@@ -235,8 +246,10 @@
         for (int i = 0 ; i < 4; i++) {
             UIButton *button = (UIButton *)[self.view viewWithTag:200+i];
             [button setTitle:@"结束" forState:UIControlStateNormal];
+            button.backgroundColor = [UIColor redColor];
         }
         [button setTitle:@"全部结束" forState:UIControlStateNormal];
+        button.backgroundColor = [UIColor redColor];
 
     }
     isStopped = !isStopped;
