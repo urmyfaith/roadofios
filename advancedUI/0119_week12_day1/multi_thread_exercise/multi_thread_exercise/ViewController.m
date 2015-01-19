@@ -19,6 +19,9 @@
     NSThread *_thread3;
     NSThread *_thread4;
     
+    NSMutableArray *_thread_array;
+    NSMutableArray *_number_array;
+    
     NSLock *_lock;
     
     NSInteger _number1;
@@ -40,6 +43,10 @@
 
 #pragma mark 数据初始化
 -(void)initData{
+    
+    _number_array = [NSMutableArray arrayWithObjects:@"0",@"0",@"0",@"0", nil];
+    _thread_array = [NSMutableArray array];
+    
     _number1 = 0;
     _number2 = 0;
     _number3 = 0;
@@ -52,6 +59,14 @@
 #pragma mark 创建线程
 
 -(void)create4Thread{
+    
+    for (int i = 0 ; i < 4; i++) {
+        [_thread_array addObject:[[NSThread alloc]initWithTarget:self
+                                                        selector:NSSelectorFromString([NSString stringWithFormat:@"thread%i",i+1])
+                                                          object:nil]
+         ];
+    }
+    
     _thread1 = [[NSThread alloc]initWithTarget:self selector:@selector(thread1) object:nil];
     _thread2 = [[NSThread alloc]initWithTarget:self selector:@selector(thread2) object:nil];
     _thread3 = [[NSThread alloc]initWithTarget:self selector:@selector(thread3) object:nil];
