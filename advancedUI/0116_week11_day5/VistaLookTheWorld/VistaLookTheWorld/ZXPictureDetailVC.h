@@ -15,4 +15,6 @@
  */
 @interface ZXPictureDetailVC : ZXDetailViewController
 
+@property(nonatomic,copy)NSString *url_gid;
+
 @end

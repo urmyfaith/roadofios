@@ -9,6 +9,9 @@
 #import "ZXPictureViewController.h"
 #import "ZXPictureModel.h"
 #import "ZXPictureCell.h"
+#import "ZXPictureItemModel.h"
+
+#import "ZXPictureDetailVC.h"
 
 
 
@@ -93,7 +96,17 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ZXPictureCell *cell = [ZXPictureCell cellWithTableView:tableView];
+    ZXPictureCell *cell = [ZXPictureCell cellWithTableView:tableView andBlock:^(ZXPictureItemModel *pictureItemModel) {
+#pragma mark 页面跳转
+        //处理传值问题,跳转
+
+        ZXPictureDetailVC *pictureDetail = [[ZXPictureDetailVC alloc]init];
+        pictureDetail.url_gid = pictureItemModel.gid;
+        self.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:pictureDetail animated:YES];
+         ((ZXCustomTabBarVC *)self.tabBarController).customTabBar.hidden = YES;
+        
+    }];
     cell.pictureModel = _datas_array[indexPath.row];
     
 
@@ -105,12 +118,6 @@
 }
 
 
-#pragma mark 页面跳转
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-
-    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
-//    ((ZXCustomTabBarVC *)self.tabBarController).customTabBar.hidden = YES;
-}
 
 #pragma mark  处理标签栏的隐藏
 

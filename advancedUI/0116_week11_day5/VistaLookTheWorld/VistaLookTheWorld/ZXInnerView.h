@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXInnerModel;
+
 @interface ZXInnerView : UIView
+
+@property(nonatomic,strong)UILabel *lable_title;
+
+@property(nonatomic,strong)ZXInnerModel *innerModel;
+
+
 
 @end

@@ -1,17 +1,17 @@
 //
-//  ZXInnerModel.m
+//  ZXPictureDetailModel.m
 //  VistaLookTheWorld
 //
 //  Created by zx on 1/19/15.
 //  Copyright (c) 2015 zx. All rights reserved.
 //
 
-#import "ZXInnerModel.h"
+#import "ZXPictureDetailModel.h"
 
-@implementation ZXInnerModel
+@implementation ZXPictureDetailModel
 
-+(ZXInnerModel *)modelWithDic:(NSDictionary *)dic{
-    return [[ZXInnerModel alloc]initWithDic:dic];
++(ZXPictureDetailModel *)modelWithDic:(NSDictionary *)dic{
+    return [[self alloc]initWithDic:dic];
 }
 
 -(id)initWithDic:(NSDictionary *)dic{

@@ -19,15 +19,17 @@
 }
 
 
-
-+(ZXPictureCell *)cellWithTableView:(UITableView *)tableVeiw{
++(ZXPictureCell *)cellWithTableView:(UITableView *)tableVeiw andBlock:(BLOCK )myBlock{
     static NSString *identifier = @"cell";
     ZXPictureCell *cell  = [tableVeiw dequeueReusableCellWithIdentifier:identifier];
     if (!cell) {
         cell = [[ZXPictureCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    cell.myBlock = myBlock;
     return cell;
+   
 }
+
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -60,11 +62,25 @@
             [self.contentView addSubview:itemView];
           
             [_pictureItemView_array addObject:itemView];//每个小视图===>添加到数组中.
+            
+            itemView.tag = i + 100;
+            UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(itemViewTap:)];
+            itemView.userInteractionEnabled = YES;
+            [itemView addGestureRecognizer:tap];
         }
 
         
     }
     return self;
+}
+
+-(void)itemViewTap:(UITapGestureRecognizer *)tap{
+
+
+    ZXPictureItemModel *model = [_pictureModel.pictureItems_array objectAtIndex:(((ZXPictureItemView *)tap.view).tag -100)];
+                                 
+    _myBlock(model);
+    
 }
 
 -(void)setPictureModel:(ZXPictureModel *)pictureModel{
@@ -74,6 +90,7 @@
         ZXPictureItemView *view = _pictureItemView_array[i];
         view.pictureItemModel = _pictureModel.pictureItems_array[i];
     }
+
 }
 
 @end

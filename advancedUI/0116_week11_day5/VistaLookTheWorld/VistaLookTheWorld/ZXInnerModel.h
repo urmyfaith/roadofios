@@ -10,4 +10,12 @@
 
 @interface ZXInnerModel : NSObject
 
+@property(nonatomic,strong)NSString *id;
+@property(nonatomic,strong)NSString *title;
+
+
++(ZXInnerModel *)modelWithDic:(NSDictionary *)dic;
+
+-(id)initWithDic:(NSDictionary *)dic;
+
 @end

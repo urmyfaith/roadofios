@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class ZXPictureItemModel;
+
+typedef void(^BLOCK)(ZXPictureItemModel *pictureItemModel);
+
 @class ZXPictureModel;
 
 @interface ZXPictureCell : UITableViewCell
@@ -16,7 +20,8 @@
 
 @property(nonatomic,strong)ZXPictureModel *pictureModel;
 
+@property(nonatomic,strong )BLOCK myBlock;
 
-+(ZXPictureCell *)cellWithTableView:(UITableView *)tableVeiw;
++(ZXPictureCell *)cellWithTableView:(UITableView *)tableVeiw andBlock:(BLOCK )myBlock;
 
 @end
