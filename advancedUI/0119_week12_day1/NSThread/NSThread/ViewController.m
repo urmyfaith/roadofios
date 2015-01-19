@@ -105,6 +105,10 @@
         //回调到主线程去操作UI
         
         sleep(1);
+        
+        //是否等待主线程执行玩成后执行我们的方法:mainThread:
+        //如果等待----等主线程执行完成后,继续执行异步线程
+        //如果不等待----先执行完成异步线程,在去执行(我们添加的)主线程方法.
         [self performSelectorOnMainThread:@selector(mainThread:)
                                withObject:[NSString stringWithFormat:@"%d",i]
                             waitUntilDone:YES];
