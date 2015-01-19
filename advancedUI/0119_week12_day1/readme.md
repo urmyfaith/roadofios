@@ -188,4 +188,71 @@ sleep(1)//c语言
 > 创建任务任务,添加任务
 > 
 
-*任务***
+
+#### 任务/任务队列
+
+`roadofios/advancedUI/0119_week12_day1/NSOperationQueue/NSOperationQueue/ViewController.m`
+
+1. 创建任务队列
+2. 创建任务
+3. 将任务添加到任务队列中.
+
+~~~objectivec
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    
+    
+    //创建任务队列
+    
+    NSOperationQueue *queue  = [[NSOperationQueue alloc]init];
+    
+    //创建任务---1
+    NSInvocationOperation *operation1 = [[NSInvocationOperation alloc]
+                                         initWithTarget:self
+                                         selector:@selector(operation1)
+                                         object:nil];
+    //将任务添加到任务队列中.
+    //每执行一个任务会开启一个线程<====任务队列是以任务为导向的操作多线程的方式.
+    //任务队列会根据当前情况自动开启线程,执行我们需要的执行的函数.
+    [queue addOperation:operation1];
+}
+
+-(void)operation1{
+    sleep(5);
+    NSLog(@"operation1");
+}
+~~~
+
+
+**Block形式的任务**
+
+~~~objectivec
+    //创建任务--2
+    NSBlockOperation *operation2 = [NSBlockOperation blockOperationWithBlock:^{
+        // 任务要做的操作
+        sleep(8);
+        NSLog(@"operation2");
+    }];
+    [queue addOperation:operation2];
+~~~
+
+**匿名blokc形式的任务**
+
+~~~objectivec
+    //创建任务---3
+    [queue addOperationWithBlock:^{
+        sleep(10);
+        NSLog(@"operation3");
+    }];
+~~~
+
+
+**同时执行的任务数**
+
+~~~objectivec
+    [queue setMaxConcurrentOperationCount:1];
+    //上面执行的后,串行执行任务(即为,先执行完成任务1,执行完后,执行任务2;
+    //可以动态调整系统压力
+~~~
+
+
