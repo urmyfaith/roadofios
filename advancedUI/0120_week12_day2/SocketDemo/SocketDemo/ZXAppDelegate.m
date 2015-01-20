@@ -8,12 +8,19 @@
 
 #import "ZXAppDelegate.h"
 
+#import "MessageItem.h"
+
 @implementation ZXAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    
+    MessageItem *mi = [[MessageItem alloc]init];
+    [mi data];
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

@@ -21,6 +21,6 @@
 
 
 -(NSData *)data;
--(void)parseData:(NSData *)data;
+-(void )parseData;
 
 @end
