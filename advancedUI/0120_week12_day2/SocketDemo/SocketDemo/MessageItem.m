@@ -29,9 +29,14 @@
     
     //2.组织根节点
     NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
+
     
     [dic setObject:@"zx" forKey:@"name"];
-    [dic setObject:@"30" forKey:@"30"];
+    [dic setObject:@"30" forKey:@"age"];
+    
+    NSMutableDictionary *subDic = [[NSMutableDictionary alloc] init];
+    [subDic setObject:@"infoValue" forKey:@"infoKey"];
+    [dic setObject:subDic forKey:@"subDic"];
     
     [self dicToXMLWithDic:dic andXMLElement:[document rootElement]];
     
