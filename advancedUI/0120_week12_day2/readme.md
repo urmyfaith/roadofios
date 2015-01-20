@@ -144,3 +144,139 @@ UI==>属性/成员变量==>字典===>xml==>NSdata
     [sock readDataWithTimeout:-1 tag:100];
 }
 ~~~
+
+
+--todohere 插入图片 SocketClientSide_code.jpg
+
+## 服务端
+
+由于同一通信协议层次上的设备的对等性.服务端和客户端的相似,也体现了管道的双向性.
+
+-  1)创建socket套接字,实例化对象
+-  2)指定端口号,监听端口
+-  3)回到函数:有新连接时执行
+-  `-(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket`(处理:保存管道,读取数据...)
+- 4)从管道读取数据
+- 5)回调函数:读取到数据使执行
+- `-(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag`
+- 6)向管道写入数据
+- 7)回调函数:写入数据成功后执行
+- ``
+- 8)连接将要断开,连接已经断开.
+
+
+第一步:创建服务端socket对象,实例化,
+
+~~~objectivec
+    _serverSocket = [[AsyncSocket alloc]initWithDelegate:self];
+~~~
+
+第二步A:监听指定的端口号
+
+
+~~~objectivec
+    [_serverSocket acceptOnPort:5678 error:nil];
+    NSLog(@"监听端口---等待客户端链接");
+~~~
+
+第二步B:回调方法:**有客户端加入,已经建立了连接**
+
+(需要保存通讯管道),(刷新UI),(读取消息)
+
+~~~objectivec
+-(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket{
+    
+    NSLog(@"有新客户端加入");
+    [_socketArray addObject:newSocket];//加入数组
+    
+    [_tableView reloadData];
+    
+    [newSocket readDataWithTimeout:-1 tag:0];//接受消息
+}
+~~~
+
+第三步A:从管道接收数据
+
+~~~objectivec
+[newSocket readDataWithTimeout:-1 tag:0];//接受消息
+~~~
+
+第三步B:回掉方法
+
+~~~objectivec
+-(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
+    
+    NSLog(@"接受到数据");
+    
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"recevied data string:%@",string);
+~~~
+
+第四步A:向管道写入数据(给客户端发消息,响应)
+
+~~~objectivec
+   [sock writeData:data withTimeout:-1 tag:0 ];
+~~~
+
+第四步B,回调方法
+
+~~~objectivec
+-(void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag{
+    NSLog(@"数据发送成功-%ld",tag);
+}
+~~~
+
+第五步:将要断开连接,已经断开连接
+
+(需要将管道从数组中移除)
+
+~~~objectivec
+-(void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err{
+    NSLog(@"将要断开链接");
+}
+
+-(void)onSocketDidDisconnect:(AsyncSocket *)sock{
+   NSLog(@"已经断开连接");
+    
+    //从数组中移除已经断开的连接对象.
+    [_socketArray removeObject:sock];
+}
+~~~
+
+
+#### 数据的转换问题
+
+客户端: UI ==> 成员变量/属性==>字典===>xml===>NSData(发送出去)
+
+服务器: NSData===>xml===>字典====>成员变量/属性===>UI(接收数据)
+
+不管是哪一侧,发数据和读取数据都是一样的过程.
+
+
+> 问题的关键点在于,字典和xml的相互换换问题.(xml与NSData的转换,第三方库已经封装)
+
+
+
+1.) 字典===>xml的转换过程思路
+
+a)遍历字典
+b)如果vaue是字符串,直接创建节点
+c)将节点加入xml文档
+d)如果value是字典,goto  a)
+
+2.) xml ===> 字典的转换思路
+
+a)遍历root/当前节点的子节点
+b)如果是值节点,根据这个节点的名称(key)和节点的值(value)做字典
+c)如果不是,goto a)
+
+
+
+
+
+
+
+
+
+
+
