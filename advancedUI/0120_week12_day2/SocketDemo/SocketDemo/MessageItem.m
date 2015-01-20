@@ -28,21 +28,12 @@
                                                                       error:nil];
     
     
-    NSMutableDictionary *dic = [[NSMutableDictionary alloc] init];
 
-    
-    [dic setObject:@"zx" forKey:@"name"];
-    [dic setObject:@"30" forKey:@"age"];
-    
-    NSMutableDictionary *subDic = [[NSMutableDictionary alloc] init];
-    [subDic setObject:@"12345" forKey:@"phone"];
-    [subDic setObject:@"6789" forKey:@"home"];
-    [dic setObject:subDic forKey:@"tel"];
     
     //2.组织根节点
-    [self dicToXMLWithDic:dic andXMLElement:[document rootElement]];
+    [self dicToXMLWithDic:_messageDict andXMLElement:[document rootElement]];
 
-    [self parseFromData:[document XMLData]];
+//    [self parseFromData:[document XMLData]];
     
     return [document XMLData];
 }
@@ -92,6 +83,19 @@
     }
     NSLog(@"rootDict = %@",rootDict);
     
+    //用KVC将解析出来的字典赋值给当前类的属性
+    [self setValuesForKeysWithDictionary:rootDict];
+    
+}
+
+/**
+ *  KVC的时候,防止给不存在的属性赋值
+ *
+ *  @param value 值
+ *  @param key   键
+ */
+-(void)setValue:(id)value forUndefinedKey:(NSString *)key{
+    NSLog(@"%s [LINE:%d] key=%@", __func__, __LINE__,key);
 }
 
 /**

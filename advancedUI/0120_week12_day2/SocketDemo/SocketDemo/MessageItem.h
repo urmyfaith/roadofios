@@ -18,7 +18,7 @@
 
 @property(nonatomic,strong) NSString *messageContent;
 @property(nonatomic,assign) int messageType;
-
+@property(nonatomic,strong) NSMutableDictionary *messageDict;
 
 -(NSData *)parseToData;
 -(void )parseFromData:(NSData *)data;

@@ -78,8 +78,56 @@
     
     //NSData ==> 数据模型 
     [mi parseFromData:data];
+    
+    NSLog(@"conent = %@",mi.messageContent);
+    
+    if ([mi.messageContent isEqualToString:@"LIST"]) {
+        //用户请求当前的用户列表
+        //服务端发送用户列表
+        
+        NSMutableString *str = [NSMutableString stringWithFormat:@""];
+        
+        //1.对ip地址进行拼接,用逗号分割 例如 ==> "ipA,ipB,ipC"
+        int i = 0;
+        for (AsyncSocket *as in _socketArray) {
+            if (i == 0 ) {
+                [str appendFormat:@"%@",[as connectedHost] ];
+            }
+            else{
+                [str appendFormat:@",%@",[as connectedHost]];
+            }
+            i++;
+        }
+        
+        //2. 将所有需要的信息组织成字典,dic===>xml===>NSdata.
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc]init];
+        
+        [dict setObject:str forKey:@"messageContent"];
+        [dict setObject:@"1" forKey:@"messageType"];
+        mi.messageDict = dict;
+        NSData *data = [mi parseToData];
+        
+        //3. 通过管道响应客户端的请求:发送消息==>写入数据到管道
+        [sock writeData:data withTimeout:-1 tag:0 ];
+    }
+    
+    //继续接受消息
+    [sock readDataWithTimeout:-1 tag:0];//接受消息
+    
 }
 
+
+-(void)onSocket:(AsyncSocket *)sock willDisconnectWithError:(NSError *)err{
+    NSLog(@"将要断开链接");
+}
+
+-(void)onSocketDidDisconnect:(AsyncSocket *)sock{
+
+   NSLog(@"已经断开连接");
+    
+    //从数组中移除已经断开的连接对象. 
+    [_socketArray removeObject:sock];
+}
 
 
 @end
