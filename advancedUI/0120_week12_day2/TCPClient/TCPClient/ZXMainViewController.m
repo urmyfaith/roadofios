@@ -78,7 +78,7 @@
             //1-1024系统占用,1024-4000是服务占用,4000~65536,
             //建议:从5000之后开始设置.
              //NSString *host  = _textField.text;
-             NSString *host = @"10.0.157.78";
+             NSString *host = @"10.0.157.75";
             [_clientSocket connectToHost:host onPort:5678 error:nil];
 
     }
