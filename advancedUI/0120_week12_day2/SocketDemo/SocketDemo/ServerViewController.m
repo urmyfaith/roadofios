@@ -82,12 +82,18 @@
 -(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
     
     NSLog(@"接受到数据");
+    
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"recevied data string:%@",string);
+    
+    
     MessageItem *mi = [[MessageItem alloc]init];
+    
     
     //NSData ==> 数据模型 
     [mi parseFromData:data];
     
-    NSLog(@"conent = %@",mi.messageContent);
+    NSLog(@"content = %@",mi.messageContent);
     
     if ([mi.messageContent isEqualToString:@"LIST"]) {
         //用户请求当前的用户列表
@@ -117,6 +123,7 @@
         
         //3. 通过管道响应客户端的请求:发送消息==>写入数据到管道
         [sock writeData:data withTimeout:-1 tag:0 ];
+        NSLog(@"响应客户端消息结束");
     }
     
     //继续接受消息
