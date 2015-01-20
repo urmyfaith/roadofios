@@ -12,6 +12,8 @@
 |[1223_exercisev1.zip](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2/1223_exercisev1.zip)| 表视图练习:增,删,移动行 |
 |[1223_exercisev2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2/1223_exercisev2)| 表视图练习:增,删,移动行 |
 |[1223_exercisev2.mov](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2/1223_exercisev2.mov)| 表视图练习:增,删,移动行-效果图 |
+|[Review_UITableView](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2/Review_UITableView)| 表视图复习,各种方法,索引条 |
+
 
 
 # 上周的知识的复习
