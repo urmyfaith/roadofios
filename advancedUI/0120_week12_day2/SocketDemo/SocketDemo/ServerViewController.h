@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
 
-@interface ServerViewController : UIViewController<AsyncSocketDelegate>
+@interface ServerViewController : UIViewController<AsyncSocketDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @end
