@@ -15,7 +15,7 @@
 
 
 /**
- *   NSData转换为xml
+ *   NSData转换为xml,拼接字典
  *
  *  @param data 待转换的NSData
  */
@@ -35,20 +35,37 @@
     [dic setObject:@"30" forKey:@"age"];
     
     NSMutableDictionary *subDic = [[NSMutableDictionary alloc] init];
-    [subDic setObject:@"infoValue" forKey:@"infoKey"];
-    [dic setObject:subDic forKey:@"subDic"];
+    [subDic setObject:@"12345" forKey:@"phone"];
+    [subDic setObject:@"6789" forKey:@"home"];
+    [dic setObject:subDic forKey:@"tel"];
     
     [self dicToXMLWithDic:dic andXMLElement:[document rootElement]];
     
+#if 0
     for (GDataXMLElement *element in document.rootElement.children) {
         NSLog(@"elementName = %@",element.name);
         NSLog(@"elementValue = %@",element.stringValue);
     }
+#else
     
+    NSData *data = [document XMLData];
     
-    NSLog(@"%s [LINE:%d] document =%@", __func__, __LINE__,document);
+    NSString *string = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
     
-    return nil;
+    NSLog(@"str = %@",string);
+    /*
+     <?xml version="1.0" encoding="utf-8"?>
+     <root>
+     <age>30</age>
+     <name>zx</name>
+     <tel>
+     <phone>12345</phone>
+     <home>6789</home>
+     </tel>
+     </root>
+     */
+#endif
+    return [document XMLData];
 }
 
 
@@ -68,8 +85,10 @@
         if ([object isKindOfClass:[NSDictionary class]] ) {
             //
             GDataXMLElement *subElement = [GDataXMLElement elementWithName:key];
-            [element addChild:subElement];
+           
             [self dicToXMLWithDic:object andXMLElement:subElement];
+            
+             [element addChild:subElement];
         }
     }
     
