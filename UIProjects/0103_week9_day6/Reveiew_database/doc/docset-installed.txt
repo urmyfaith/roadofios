@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/zx/Library/Developer/Shared/Documentation/DocSets/com.zuoxue.reveiew_database.Reveiew_database.docset
+Time: 2015-01-16 03:51:45 +0000

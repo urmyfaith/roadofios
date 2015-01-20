@@ -19,6 +19,18 @@
 		FB8C860B1A689BFD00898D14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8C85F31A689BFD00898D14 /* UIKit.framework */; };
 		FB8C86131A689BFD00898D14 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8C86111A689BFD00898D14 /* InfoPlist.strings */; };
 		FB8C86151A689BFD00898D14 /* Reveiew_databaseTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86141A689BFD00898D14 /* Reveiew_databaseTests.m */; };
+		FB8C86201A689C0600898D14 /* ZXMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C861F1A689C0600898D14 /* ZXMainViewController.m */; };
+		FB8C86231A689C1000898D14 /* ZXOtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86221A689C1000898D14 /* ZXOtherViewController.m */; };
+		FB8C862F1A689C8E00898D14 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86261A689C8E00898D14 /* FMDatabase.m */; };
+		FB8C86301A689C8E00898D14 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86281A689C8E00898D14 /* FMDatabaseAdditions.m */; };
+		FB8C86311A689C8E00898D14 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C862A1A689C8E00898D14 /* FMDatabasePool.m */; };
+		FB8C86321A689C8E00898D14 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C862C1A689C8E00898D14 /* FMDatabaseQueue.m */; };
+		FB8C86331A689C8E00898D14 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C862E1A689C8E00898D14 /* FMResultSet.m */; };
+		FB8C86351A689CA200898D14 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB8C86341A689CA200898D14 /* libsqlite3.dylib */; };
+		FB8C863A1A689D1200898D14 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86371A689D1200898D14 /* Download.m */; };
+		FB8C863B1A689D1200898D14 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86391A689D1200898D14 /* DownloadManager.m */; };
+		FB8C86421A689D6C00898D14 /* ZXDatabaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8C86411A689D6C00898D14 /* ZXDatabaseManager.m */; };
+		FBEEDCD31A689E3F00DB4A17 /* ZXArticleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEEDCD21A689E3F00DB4A17 /* ZXArticleModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +60,30 @@
 		FB8C86101A689BFD00898D14 /* Reveiew_databaseTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Reveiew_databaseTests-Info.plist"; sourceTree = "<group>"; };
 		FB8C86121A689BFD00898D14 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB8C86141A689BFD00898D14 /* Reveiew_databaseTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Reveiew_databaseTests.m; sourceTree = "<group>"; };
+		FB8C861E1A689C0600898D14 /* ZXMainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXMainViewController.h; sourceTree = "<group>"; };
+		FB8C861F1A689C0600898D14 /* ZXMainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXMainViewController.m; sourceTree = "<group>"; };
+		FB8C86211A689C1000898D14 /* ZXOtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXOtherViewController.h; sourceTree = "<group>"; };
+		FB8C86221A689C1000898D14 /* ZXOtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXOtherViewController.m; sourceTree = "<group>"; };
+		FB8C86251A689C8E00898D14 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		FB8C86261A689C8E00898D14 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		FB8C86271A689C8E00898D14 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		FB8C86281A689C8E00898D14 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		FB8C86291A689C8E00898D14 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		FB8C862A1A689C8E00898D14 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		FB8C862B1A689C8E00898D14 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		FB8C862C1A689C8E00898D14 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		FB8C862D1A689C8E00898D14 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		FB8C862E1A689C8E00898D14 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		FB8C86341A689CA200898D14 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FB8C86361A689D1200898D14 /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
+		FB8C86371A689D1200898D14 /* Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
+		FB8C86381A689D1200898D14 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		FB8C86391A689D1200898D14 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		FB8C86401A689D6C00898D14 /* ZXDatabaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXDatabaseManager.h; sourceTree = "<group>"; };
+		FB8C86411A689D6C00898D14 /* ZXDatabaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXDatabaseManager.m; sourceTree = "<group>"; };
+		FBEEDCD11A689E3F00DB4A17 /* ZXArticleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXArticleModel.h; sourceTree = "<group>"; };
+		FBEEDCD21A689E3F00DB4A17 /* ZXArticleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXArticleModel.m; sourceTree = "<group>"; };
+		FBEEDCD51A689E8800DB4A17 /* INTERFACE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INTERFACE.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB8C86351A689CA200898D14 /* libsqlite3.dylib in Frameworks */,
 				FB8C85F21A689BFD00898D14 /* CoreGraphics.framework in Frameworks */,
 				FB8C85F41A689BFD00898D14 /* UIKit.framework in Frameworks */,
 				FB8C85F01A689BFD00898D14 /* Foundation.framework in Frameworks */,
@@ -96,6 +133,7 @@
 		FB8C85EE1A689BFD00898D14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB8C86341A689CA200898D14 /* libsqlite3.dylib */,
 				FB8C85EF1A689BFD00898D14 /* Foundation.framework */,
 				FB8C85F11A689BFD00898D14 /* CoreGraphics.framework */,
 				FB8C85F31A689BFD00898D14 /* UIKit.framework */,
@@ -107,6 +145,12 @@
 		FB8C85F51A689BFD00898D14 /* Reveiew_database */ = {
 			isa = PBXGroup;
 			children = (
+				FBEEDCD51A689E8800DB4A17 /* INTERFACE.h */,
+				FB8C86241A689C8E00898D14 /* FMDB */,
+				FBEEDCD61A68B28400DB4A17 /* 数据库 */,
+				FB8C863C1A689D1500898D14 /* 工具类 */,
+				FBEEDCD41A689E4300DB4A17 /* model */,
+				FBE4AE001A68E79900BC6783 /* 界面 */,
 				FB8C85FE1A689BFD00898D14 /* ZXAppDelegate.h */,
 				FB8C85FF1A689BFD00898D14 /* ZXAppDelegate.m */,
 				FB8C86011A689BFD00898D14 /* Images.xcassets */,
@@ -142,6 +186,63 @@
 				FB8C86111A689BFD00898D14 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB8C86241A689C8E00898D14 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				FB8C86251A689C8E00898D14 /* FMDatabase.h */,
+				FB8C86261A689C8E00898D14 /* FMDatabase.m */,
+				FB8C86271A689C8E00898D14 /* FMDatabaseAdditions.h */,
+				FB8C86281A689C8E00898D14 /* FMDatabaseAdditions.m */,
+				FB8C86291A689C8E00898D14 /* FMDatabasePool.h */,
+				FB8C862A1A689C8E00898D14 /* FMDatabasePool.m */,
+				FB8C862B1A689C8E00898D14 /* FMDatabaseQueue.h */,
+				FB8C862C1A689C8E00898D14 /* FMDatabaseQueue.m */,
+				FB8C862D1A689C8E00898D14 /* FMResultSet.h */,
+				FB8C862E1A689C8E00898D14 /* FMResultSet.m */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		FB8C863C1A689D1500898D14 /* 工具类 */ = {
+			isa = PBXGroup;
+			children = (
+				FB8C86361A689D1200898D14 /* Download.h */,
+				FB8C86371A689D1200898D14 /* Download.m */,
+				FB8C86381A689D1200898D14 /* DownloadManager.h */,
+				FB8C86391A689D1200898D14 /* DownloadManager.m */,
+			);
+			name = "工具类";
+			sourceTree = "<group>";
+		};
+		FBE4AE001A68E79900BC6783 /* 界面 */ = {
+			isa = PBXGroup;
+			children = (
+				FB8C861E1A689C0600898D14 /* ZXMainViewController.h */,
+				FB8C861F1A689C0600898D14 /* ZXMainViewController.m */,
+				FB8C86211A689C1000898D14 /* ZXOtherViewController.h */,
+				FB8C86221A689C1000898D14 /* ZXOtherViewController.m */,
+			);
+			name = "界面";
+			sourceTree = "<group>";
+		};
+		FBEEDCD41A689E4300DB4A17 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				FBEEDCD11A689E3F00DB4A17 /* ZXArticleModel.h */,
+				FBEEDCD21A689E3F00DB4A17 /* ZXArticleModel.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		FBEEDCD61A68B28400DB4A17 /* 数据库 */ = {
+			isa = PBXGroup;
+			children = (
+				FB8C86401A689D6C00898D14 /* ZXDatabaseManager.h */,
+				FB8C86411A689D6C00898D14 /* ZXDatabaseManager.m */,
+			);
+			name = "数据库";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,7 +342,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB8C86001A689BFD00898D14 /* ZXAppDelegate.m in Sources */,
+				FB8C86321A689C8E00898D14 /* FMDatabaseQueue.m in Sources */,
+				FB8C86231A689C1000898D14 /* ZXOtherViewController.m in Sources */,
+				FBEEDCD31A689E3F00DB4A17 /* ZXArticleModel.m in Sources */,
+				FB8C863B1A689D1200898D14 /* DownloadManager.m in Sources */,
+				FB8C86421A689D6C00898D14 /* ZXDatabaseManager.m in Sources */,
+				FB8C86201A689C0600898D14 /* ZXMainViewController.m in Sources */,
+				FB8C862F1A689C8E00898D14 /* FMDatabase.m in Sources */,
+				FB8C86311A689C8E00898D14 /* FMDatabasePool.m in Sources */,
+				FB8C86331A689C8E00898D14 /* FMResultSet.m in Sources */,
+				FB8C863A1A689D1200898D14 /* Download.m in Sources */,
 				FB8C85FC1A689BFD00898D14 /* main.m in Sources */,
+				FB8C86301A689C8E00898D14 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +550,7 @@
 				FB8C861A1A689BFD00898D14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB8C861B1A689BFD00898D14 /* Build configuration list for PBXNativeTarget "Reveiew_databaseTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +559,7 @@
 				FB8C861D1A689BFD00898D14 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

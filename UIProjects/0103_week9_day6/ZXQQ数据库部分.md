@@ -147,3 +147,28 @@ json==>数据库===>取出===>title,id
 
 
 导航条,表标签栏,
+
+
+rwxr-xr-x  2 zx  staff   68 Jan 16 09:10 Documents
+drwxr-xr-x  5 zx  staff  170 Jan 16 10:28 Library
+drwxr-xr-x  8 zx  staff  272 Jan 16 11:02 Reveiew_database.app
+drwxr-xr-x  2 zx  staff   68 Jan 16 10:30 tmp
+
+tmp程序关闭的时候,清空
+
+app目录--->程序所有
+
+iCloud--->同步的云端
+
+
+数据库存在Documents,数据量过大(>10M)
+
+数据库存在Documents中,云同步太慢.
+
+Documents存plist文件(存放帐号,密码)
+
+数据库和大型的文件存放在Libray/Cachees/
+
+第一,云同步的时候,不同步Library文件夹.
+
+数据库的删除和插入的语句同时执行的时候,会挂起一个.所以,每次都先打开,后关闭.
