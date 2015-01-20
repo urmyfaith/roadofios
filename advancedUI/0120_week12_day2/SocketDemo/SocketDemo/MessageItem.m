@@ -45,7 +45,12 @@
     return [document XMLData];
 }
 
-
+/**
+ *  将字典转换为xml形式
+ *
+ *  @param dic     待转换的字典
+ *  @param element 转换完成的xml文档
+ */
 -(void)dicToXMLWithDic:(NSDictionary *)dic andXMLElement:(GDataXMLElement *)element{
     
     //遍历找出字典中的每一个值
