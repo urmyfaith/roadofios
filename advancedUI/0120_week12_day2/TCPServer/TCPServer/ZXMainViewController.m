@@ -61,6 +61,8 @@
  *  @param newSocket.connectedHost 客户端ip地址
  *  @param newSocket.connectedPort 客户端端口号
  *  @param newSocket 服务端和客户端建立连接后,产生的通讯管道(既不是服务端,也不是客户端),只要管道在,连接就存在,保存管道,就可以长久的连接.
+ *  - 接受消息的方法是数据管道调用的.
+ *  - 数据管道双向的.
  */
 -(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket{
     
