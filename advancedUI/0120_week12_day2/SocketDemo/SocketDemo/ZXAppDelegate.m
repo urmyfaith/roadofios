@@ -8,7 +8,8 @@
 
 #import "ZXAppDelegate.h"
 
-#import "MessageItem.h"
+#import "ServerViewController.h"
+
 
 @implementation ZXAppDelegate
 
@@ -18,9 +19,9 @@
     // Override point for customization after application launch.
     
     
-    MessageItem *mi = [[MessageItem alloc]init];
-    [mi parseToData];
-  //  [mi parseFromData:<#(NSData *)#>]
+    
+    ServerViewController  *server = [[ServerViewController alloc]init];
+    self.window.rootViewController = server;
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

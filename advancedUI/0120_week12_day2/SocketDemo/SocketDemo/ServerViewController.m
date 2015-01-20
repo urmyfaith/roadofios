@@ -43,7 +43,7 @@
     
     _serverSocket = [[AsyncSocket alloc]initWithDelegate:self];
     [_serverSocket acceptOnPort:5678 error:nil];
-    
+    NSLog(@"监听端口---等待客户端链接");
     _socketArray = [[NSMutableArray alloc]init];
 }
 
@@ -54,8 +54,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
+    cell.textLabel.text = [(AsyncSocket * )_socketArray[indexPath.row] connectedHost];
+    cell.detailTextLabel.text  = [NSString stringWithFormat:@"%d",
+                                  [(AsyncSocket * )_socketArray[indexPath.row] connectedPort]];
     return cell;
 }
 
@@ -68,12 +71,17 @@
 
 -(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket{
     
+    NSLog(@"有新客户端加入");
     [_socketArray addObject:newSocket];//加入数组
+    
+    [_tableView reloadData];
     
     [newSocket readDataWithTimeout:-1 tag:0];//接受消息
 }
 
 -(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
+    
+    NSLog(@"接受到数据");
     MessageItem *mi = [[MessageItem alloc]init];
     
     //NSData ==> 数据模型 
@@ -125,7 +133,7 @@
 
    NSLog(@"已经断开连接");
     
-    //从数组中移除已经断开的连接对象. 
+    //从数组中移除已经断开的连接对象.
     [_socketArray removeObject:sock];
 }
 
