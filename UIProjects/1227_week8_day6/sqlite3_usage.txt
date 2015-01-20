@@ -1,0 +1,153 @@
+zx:0115_week11_day4 zx$ sqlite3 demo.db 
+SQLite version 3.8.5 2014-08-15 22:37:57
+Enter ".help" for usage hints.
+sqlite> .ta
+User
+sqlite> create table UserInfo(UserId integer,UserAge integer,UserPhone text);
+sqlite> .ta
+User      UserInfo
+sqlite> .help
+.backup ?DB? FILE      Backup DB (default "main") to FILE
+.bail on|off           Stop after hitting an error.  Default OFF
+.clone NEWDB           Clone data into NEWDB from the existing database
+.databases             List names and files of attached databases
+.dump ?TABLE? ...      Dump the database in an SQL text format
+                         If TABLE specified, only dump tables matching
+                         LIKE pattern TABLE.
+.echo on|off           Turn command echo on or off
+.exit                  Exit this program
+.explain ?on|off?      Turn output mode suitable for EXPLAIN on or off.
+                         With no args, it turns EXPLAIN on.
+.headers on|off        Turn display of headers on or off
+.help                  Show this message
+.import FILE TABLE     Import data from FILE into TABLE
+.indices ?TABLE?       Show names of all indices
+                         If TABLE specified, only show indices for tables
+                         matching LIKE pattern TABLE.
+.log FILE|off          Turn logging on or off.  FILE can be stderr/stdout
+.mode MODE ?TABLE?     Set output mode where MODE is one of:
+                         csv      Comma-separated values
+                         column   Left-aligned columns.  (See .width)
+                         html     HTML <table> code
+                         insert   SQL insert statements for TABLE
+                         line     One value per line
+                         list     Values delimited by .separator string
+                         tabs     Tab-separated values
+                         tcl      TCL list elements
+.nullvalue STRING      Use STRING in place of NULL values
+.once FILENAME         Output for the next SQL command only to FILENAME
+.open ?FILENAME?       Close existing database and reopen FILENAME
+.output ?FILENAME?     Send output to FILENAME or stdout
+.print STRING...       Print literal STRING
+.prompt MAIN CONTINUE  Replace the standard prompts
+.quit                  Exit this program
+.read FILENAME         Execute SQL in FILENAME
+.restore ?DB? FILE     Restore content of DB (default "main") from FILE
+.save FILE             Write in-memory database into FILE
+.schema ?TABLE?        Show the CREATE statements
+                         If TABLE specified, only show tables matching
+                         LIKE pattern TABLE.
+.separator STRING      Change separator used by output mode and .import
+.shell CMD ARGS...     Run CMD ARGS... in a system shell
+.show                  Show the current values for various settings
+.stats on|off          Turn stats on or off
+.system CMD ARGS...    Run CMD ARGS... in a system shell
+.tables ?TABLE?        List names of tables
+                         If TABLE specified, only list tables matching
+                         LIKE pattern TABLE.
+.timeout MS            Try opening locked tables for MS milliseconds
+.timer on|off          Turn SQL timer on or off
+.trace FILE|off        Output each SQL statement as it is run
+.vfsname ?AUX?         Print the name of the VFS stack
+.width NUM1 NUM2 ...   Set column widths for "column" mode
+                         Negative values right-justify
+sqlite> .schema User
+CREATE TABLE User(UserId integer primary key autoincrement,UserName text,UserPassword, text);
+sqlite> insert into User(UserName,UserPasssword) values ('zx','111');
+Error: table User has no column named UserPasssword
+sqlite> insert into User(UserName,UserPassword) values ('zx','111');
+sqlite> insert into User(UserName,UserPassword) values ('zxx','222');
+sqlite> insert into User(UserName,UserPassword) values ('zxxx','333');
+sqlite> insert into User(UserName,UserPassword) values ('zxxxx','444');
+sqlite> .mode cloumn
+Error: mode should be one of: column csv html insert line list tabs tcl
+sqlite> .mode column
+sqlite> select * from User;
+1           zx          111                     
+2           zxx         222                     
+3           zxxx        333                     
+4           zxxxx       444                     
+sqlite> .header on
+sqlite> select * from User;
+UserId      UserName    UserPassword  text      
+----------  ----------  ------------  ----------
+1           zx          111                     
+2           zxx         222                     
+3           zxxx        333                     
+4           zxxxx       444                     
+sqlite> select * from User order by UserId desc;
+UserId      UserName    UserPassword  text      
+----------  ----------  ------------  ----------
+4           zxxxx       444                     
+3           zxxx        333                     
+2           zxx         222                     
+1           zx          111                     
+sqlite> select * from User order by UserId desc limit 2;
+UserId      UserName    UserPassword  text      
+----------  ----------  ------------  ----------
+4           zxxxx       444                     
+3           zxxx        333                     
+sqlite> select * from User where UserId > 2;
+UserId      UserName    UserPassword  text      
+----------  ----------  ------------  ----------
+3           zxxx        333                     
+4           zxxxx       444                     
+sqlite> select UserName from User where UserId > 2;
+UserName  
+----------
+zxxx      
+zxxxx     
+sqlite> select UserName from User where UserId > 1 order by UserId desc limit 2; 
+UserName  
+----------
+zxxxx     
+zxxx      
+sqlite> insert into UserInfo values(1,30,'111');
+sqlite> insert into UserInfo values(2,33,'222');
+sqlite> insert into UserInfo values(3,28,'333');
+sqlite> insert into UserInfo values(4,20,'444');
+sqlite> select * from UserInfo;
+UserId      UserAge     UserPhone 
+----------  ----------  ----------
+1           30          111       
+2           33          222       
+3           28          333       
+4           20          444       
+sqlite> select * from User inner join UserInfo where User.UserId = UserInfo.UserId;
+UserId      UserName    UserPassword  text        UserId      UserAge     UserPhone 
+----------  ----------  ------------  ----------  ----------  ----------  ----------
+1           zx          111                       1           30          111       
+2           zxx         222                       2           33          222       
+3           zxxx        333                       3           28          333       
+4           zxxxx       444                       4           20          444       
+sqlite> select User.UserName,UserInfo.UserAge from User inner join UserInfo where User.UserId = UserInfo.UserId;
+UserName    UserAge   
+----------  ----------
+zx          30        
+zxx         33        
+zxxx        28        
+zxxxx       20        
+sqlite> select User.UserName,UserInfo.UserPhone from User inner join UserInfo where User.UserId = UserInfo.UserId and  UserInfo.UserAge >20 orderby User.UserId desc;
+Error: near "orderby": syntax error
+sqlite> select User.UserName,UserInfo.UserPhone from User inner join UserInfo where User.UserId = UserInfo.UserId and  UserInfo.UserAge >20 order by User.UserId desc;
+UserName    UserPhone 
+----------  ----------
+zxxx        333       
+zxx         222       
+zx          111       
+sqlite> select User.UserName,UserInfo.UserPhone from User inner join UserInfo where User.UserId = UserInfo.UserId and  UserInfo.UserAge >20 order by User.UserId desc limit 2;
+UserName    UserPhone 
+----------  ----------
+zxxx        333       
+zxx         222       
+sqlite> 
