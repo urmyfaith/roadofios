@@ -13,7 +13,7 @@
 |[1218_week7_day4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1218_week7_day4)| 触摸/单指/双指 + 滚动视图+**新手引导界面**,**滚动视图(循环滚动)**|
 |[1219_week7_day5](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1219_week7_day5)| 手势:单击,长按,轻扫,旋转,缩放,移动,(屏幕边缘拖动)+UITableView基础 |
 |[1220_week7_day6](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6)| 综合练习:plist文件,表格,单例存值,通知传值,图片缩放旋转,scrollView练习 |
-|[1223_week8_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2)| 表视图,增,删,改,搜索数据,移动行 |
+|[1223_week8_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2)| 表视图,增,删,改,搜索数据,移动行,表视图的索引 |
 |[1224_week8_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3)| nib文件基本使用,通过代码自定义cell,通过nib自定义cell |
 |[1225_week8_day4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4)| 数据下载(同步,异步,下载数据显示,下载图片显示) |
 |[1226_week8_day5](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5)| xml解析(本地,网络,数据显示),**下拉刷新使用** |
