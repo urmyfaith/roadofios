@@ -19,7 +19,8 @@
     
     
     MessageItem *mi = [[MessageItem alloc]init];
-    [mi data];
+    [mi parseToData];
+  //  [mi parseFromData:<#(NSData *)#>]
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];

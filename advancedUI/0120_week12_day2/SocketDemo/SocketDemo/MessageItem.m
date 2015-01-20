@@ -19,7 +19,7 @@
  *
  *  @param data 待转换的NSData
  */
--(NSData *)data
+-(NSData *)parseToData
 {
     
     //1.得到xml文档
@@ -42,6 +42,8 @@
     //2.组织根节点
     [self dicToXMLWithDic:dic andXMLElement:[document rootElement]];
 
+    [self parseFromData:[document XMLData]];
+    
     return [document XMLData];
 }
 
@@ -76,4 +78,78 @@
     
 }
 
+-(void)parseFromData:(NSData *)data{
+    
+    GDataXMLDocument *document = [[GDataXMLDocument alloc]initWithData:data options:0 error:nil];
+    
+    //根节点
+    GDataXMLElement *rootElement = [document rootElement];
+    
+    NSMutableDictionary *rootDict = [[NSMutableDictionary alloc]init];
+    
+    for (GDataXMLElement *element  in rootElement.children) {
+        [self xmlToDicWithXmlElement:element andDict:rootDict];
+    }
+    NSLog(@"rootDict = %@",rootDict);
+    
+}
+
+/**
+ *  将xml转换为字典
+ *
+ *  @param element xml
+ *  @param dic     dic
+ */
+-(void)xmlToDicWithXmlElement:(GDataXMLElement *)element andDict:(NSMutableDictionary *)dic{
+    
+    //节点的值也是一个节点===>所以>1.
+    if (element.children.count > 1 ) {
+        //有子节点
+        NSMutableDictionary *subDic = [[NSMutableDictionary alloc]init];
+        
+        for (GDataXMLElement *subElement  in element.children) {
+            [self xmlToDicWithXmlElement:subElement andDict:subDic];
+        }
+        [dic setObject:subDic forKey:[element name]];
+        
+    }
+    else{
+        //没有子节点
+        [dic setObject:[element stringValue] forKey:[element name]];
+    }
+    
+    /*
+     <?xml version="1.0" encoding="utf-8"?>
+     
+     <root>
+         <age>30</age>
+         <name>zx</name>
+         <tel>
+            <phone>12345</phone>
+            <home>6789</home>
+         </tel>
+     </root>
+     
+     {
+     @"root":{
+                @"name":@"zx",
+                @"age":@"age",
+                @"tel":{
+                        @"phone" :@"12345",
+                        @"home":@"6789"
+                      }
+             }
+     }
+     
+     2015-01-20 16:22:55.604 SocketDemo[25153:607] rootDict = {
+     age = 30;
+     name = zx;
+     tel =     {
+     home = 6789;
+     phone = 12345;
+     };
+     }
+
+     */
+}
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ServerViewController.h"
+#import "MessageItem.h"
 
 
 @interface ServerViewController ()
@@ -17,6 +18,7 @@
 {
     UITableView *_tableView;
     NSMutableArray *_socketArray;
+    AsyncSocket *_serverSocket;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -38,7 +40,14 @@
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
     
+    
+    _serverSocket = [[AsyncSocket alloc]initWithDelegate:self];
+    [_serverSocket acceptOnPort:5678 error:nil];
+    
+    _socketArray = [[NSMutableArray alloc]init];
 }
+
+#pragma mark - UITableViewDataSource
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString *identifier = @"cell";
@@ -53,6 +62,24 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return [_socketArray count];
 }
+
+
+#pragma mark - AsyncSocketDelegate
+
+-(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket{
+    
+    [_socketArray addObject:newSocket];//加入数组
+    
+    [newSocket readDataWithTimeout:-1 tag:0];//接受消息
+}
+
+-(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
+    MessageItem *mi = [[MessageItem alloc]init];
+    
+    //NSData ==> 数据模型 
+    [mi parseFromData:data];
+}
+
 
 
 @end

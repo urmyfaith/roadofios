@@ -20,7 +20,7 @@
 @property(nonatomic,assign) int messageType;
 
 
--(NSData *)data;
--(void )parseData;
+-(NSData *)parseToData;
+-(void )parseFromData:(NSData *)data;
 
 @end
