@@ -119,10 +119,10 @@
 				FBE27A081A6DF9B300537C1F /* AsyncSocket */,
 				FBE279E51A6DF95D00537C1F /* ZXAppDelegate.h */,
 				FBE279E61A6DF95D00537C1F /* ZXAppDelegate.m */,
-				FBE279E81A6DF95D00537C1F /* Images.xcassets */,
-				FBE279DD1A6DF95D00537C1F /* Supporting Files */,
 				FBE27A051A6DF97400537C1F /* ZXMainViewController.h */,
 				FBE27A061A6DF97400537C1F /* ZXMainViewController.m */,
+				FBE279E81A6DF95D00537C1F /* Images.xcassets */,
+				FBE279DD1A6DF95D00537C1F /* Supporting Files */,
 			);
 			path = TCPServer;
 			sourceTree = "<group>";
@@ -465,6 +465,7 @@
 				FBE27A011A6DF95D00537C1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBE27A021A6DF95D00537C1F /* Build configuration list for PBXNativeTarget "TCPServerTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +474,7 @@
 				FBE27A041A6DF95D00537C1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
