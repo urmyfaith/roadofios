@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ZXAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ZXAppDelegate : UIResponder <UIApplicationDelegate,NSURLConnectionDataDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
