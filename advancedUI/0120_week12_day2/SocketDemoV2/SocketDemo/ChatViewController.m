@@ -7,12 +7,15 @@
 //
 
 #import "ChatViewController.h"
+#import "MessageItem.h"
+
 
 @interface ChatViewController ()
 
 @end
 
 @implementation ChatViewController
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,24 +29,37 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    if (_chatSocket) {
+        //被动方
+        NSLog(@"我是新东方");
+    }
+    else{
+        //主动方
+        _chatSocket = [[AsyncSocket alloc]initWithDelegate:self];
+        //连接被动方
+        
+        [_chatSocket connectToHost:_chatIP onPort:8888 error:nil];
+    }
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark
+-(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port{
+    NSLog(@"连接被动方成功%@",[sock connectedHost]);
+    
+    [sock readDataWithTimeout:-1 tag:0];
 }
 
-/*
-#pragma mark - Navigation
+-(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
+    
+    MessageItem *mi = [[MessageItem alloc]init];
+    [mi parseFromData:data];
+    if ([mi.messageContent isEqualToString:@"NO"]) {
+        NSLog(@"%@拒绝了你的请求!",[sock connectedHost]);
+        NSLog(@"退出聊天界面");
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
 
 @end

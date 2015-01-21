@@ -81,7 +81,7 @@
     for (GDataXMLElement *element  in rootElement.children) {
         [self xmlToDicWithXmlElement:element andDict:rootDict];
     }
-    NSLog(@"rootDict = %@",rootDict);
+   // NSLog(@"rootDict = %@",rootDict);
     
     //用KVC将解析出来的字典赋值给当前类的属性
     [self setValuesForKeysWithDictionary:rootDict];

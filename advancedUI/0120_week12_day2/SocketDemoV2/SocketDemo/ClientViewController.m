@@ -8,6 +8,7 @@
 
 #import "ClientViewController.h"
 #import "MessageItem.h"
+#import "ChatViewController.h"
 
 
 @interface ClientViewController ()
@@ -18,17 +19,24 @@
 
 {
     UITableView *_tableView;
-    NSMutableArray *_socketArray;
+
     NSMutableArray *_datas_array;
     
     AsyncSocket *_clientSocket;
+    
+    //用于监听8888端口,等待被主动方连接
+    AsyncSocket *_listenSocket;
+    
+    //收到连接请求,保存临时.
+    AsyncSocket *_tempSocket;
+    
     
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    _socketArray = [[NSMutableArray alloc]init];
+
     _datas_array = [[NSMutableArray alloc]init];
     
     _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
@@ -38,6 +46,10 @@
     
     _clientSocket = [[AsyncSocket alloc]initWithDelegate:self];
     
+    
+    
+    _listenSocket = [[AsyncSocket alloc]initWithDelegate:self];
+    [_listenSocket acceptOnPort:8888 error:nil];
     
     UIBarButtonItem *leftBBI = [[UIBarButtonItem alloc]initWithTitle:@"连接服务器"
                                                                style:UIBarButtonItemStyleDone
@@ -81,8 +93,48 @@
 }
 
 
-#pragma mark --- AsyncSocketDelegate
+#pragma mark --- AsyncSocketDelegate  监听8888,(服务端)
+-(void)onSocket:(AsyncSocket *)sock didAcceptNewSocket:(AsyncSocket *)newSocket{
+    
+    //默认接受,后跳转界面
+    
+    //todo:需要判断,是否正在聊天,是否同意进行聊天
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:@"是否接受聊天" delegate:self cancelButtonTitle:@"否" otherButtonTitles:@"是", nil];
+    [alertView show];
+    
+    _tempSocket = newSocket;
 
+}
+
+#pragma mark  alertViewDelegate
+
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex  == 0) {
+        //否
+        MessageItem *mi = [[MessageItem alloc] init];
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+        
+        [dict setObject:@"NO" forKey:@"messageContent"];
+         [dict setObject:@"2" forKey:@"messageType"];
+        mi.messageDict = dict;
+        
+        NSData *data = [mi parseToData];
+        [_tempSocket writeData:data withTimeout:-1 tag:0];
+        
+    }else{
+        //是
+        
+        ChatViewController *cvc = [[ChatViewController alloc]init];
+        cvc.chatSocket = _tempSocket; // 把数据管道传递过去==>保存会话.
+        _tempSocket.delegate = cvc;   //数据管道的代理者改变
+        
+        [self.navigationController pushViewController:cvc animated:YES];
+    }
+    
+}
+
+
+#pragma mark --- AsyncSocketDelegate  客户端方法
 
 -(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port{
     NSLog(@"连接服务器成功:serverIP:%@\tserverip=%d",sock.connectedHost,sock.connectedPort);
@@ -115,7 +167,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    //return [_socketArray count];
+
     return [_datas_array count];
 }
 
@@ -129,6 +181,14 @@
     
     cell.textLabel.text = _datas_array[indexPath.row];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"点击行,就跟某个ip地址的人聊天");
+    
+    ChatViewController *cvc = [[ChatViewController alloc]init];
+    cvc.chatIP = [_datas_array objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:cvc animated:YES];
 }
 
 
