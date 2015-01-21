@@ -18,6 +18,13 @@
  */
 @interface PageView : UIView
 
+//加载/释放轻资源
+-(void)loadPage;
+-(void)unloadPage;
 
+//加载/释放中资源
+-(void)activityPage;
+-(void)unActivityPage;
 
 @end
+
