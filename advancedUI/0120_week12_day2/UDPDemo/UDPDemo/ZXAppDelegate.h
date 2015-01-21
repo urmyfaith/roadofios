@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncUdpSocket.h"
 
-@interface ZXAppDelegate : UIResponder <UIApplicationDelegate>
+@interface ZXAppDelegate : UIResponder <UIApplicationDelegate,AsyncUdpSocketDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 

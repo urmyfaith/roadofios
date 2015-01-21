@@ -19,6 +19,8 @@
 		FBAEB1101A6F90BF008EE2EF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAEB0F81A6F90BF008EE2EF /* UIKit.framework */; };
 		FBAEB1181A6F90BF008EE2EF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBAEB1161A6F90BF008EE2EF /* InfoPlist.strings */; };
 		FBAEB11A1A6F90BF008EE2EF /* UDPDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAEB1191A6F90BF008EE2EF /* UDPDemoTests.m */; };
+		FBAEB1281A6F90DE008EE2EF /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAEB1251A6F90DE008EE2EF /* AsyncSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FBAEB1291A6F90DE008EE2EF /* AsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAEB1271A6F90DE008EE2EF /* AsyncUdpSocket.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +50,10 @@
 		FBAEB1151A6F90BF008EE2EF /* UDPDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UDPDemoTests-Info.plist"; sourceTree = "<group>"; };
 		FBAEB1171A6F90BF008EE2EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FBAEB1191A6F90BF008EE2EF /* UDPDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UDPDemoTests.m; sourceTree = "<group>"; };
+		FBAEB1241A6F90DE008EE2EF /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		FBAEB1251A6F90DE008EE2EF /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		FBAEB1261A6F90DE008EE2EF /* AsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncUdpSocket.h; sourceTree = "<group>"; };
+		FBAEB1271A6F90DE008EE2EF /* AsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncUdpSocket.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +113,7 @@
 		FBAEB0FA1A6F90BF008EE2EF /* UDPDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FBAEB1231A6F90DE008EE2EF /* AsyncSocket */,
 				FBAEB1031A6F90BF008EE2EF /* ZXAppDelegate.h */,
 				FBAEB1041A6F90BF008EE2EF /* ZXAppDelegate.m */,
 				FBAEB1061A6F90BF008EE2EF /* Images.xcassets */,
@@ -142,6 +149,17 @@
 				FBAEB1161A6F90BF008EE2EF /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBAEB1231A6F90DE008EE2EF /* AsyncSocket */ = {
+			isa = PBXGroup;
+			children = (
+				FBAEB1241A6F90DE008EE2EF /* AsyncSocket.h */,
+				FBAEB1251A6F90DE008EE2EF /* AsyncSocket.m */,
+				FBAEB1261A6F90DE008EE2EF /* AsyncUdpSocket.h */,
+				FBAEB1271A6F90DE008EE2EF /* AsyncUdpSocket.m */,
+			);
+			path = AsyncSocket;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +258,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBAEB1281A6F90DE008EE2EF /* AsyncSocket.m in Sources */,
 				FBAEB1051A6F90BF008EE2EF /* ZXAppDelegate.m in Sources */,
 				FBAEB1011A6F90BF008EE2EF /* main.m in Sources */,
+				FBAEB1291A6F90DE008EE2EF /* AsyncUdpSocket.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
