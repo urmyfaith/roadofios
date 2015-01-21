@@ -99,6 +99,9 @@
     MessageItem *mi = [[MessageItem alloc] init];
     [mi parseFromData:data];
     NSString *ipListStirng = mi.messageContent;
+    if ([_datas_array count] > 0) {
+        [_datas_array removeAllObjects];
+    }
     _datas_array = [ipListStirng componentsSeparatedByString:@","];
 
     [_tableView reloadData];
