@@ -19,6 +19,8 @@
 {
     UITableView *_tableView;
     NSMutableArray *_socketArray;
+    NSMutableArray *_datas_array;
+    
     AsyncSocket *_clientSocket;
     
 }
@@ -27,6 +29,7 @@
     [super viewDidLoad];
     
     _socketArray = [[NSMutableArray alloc]init];
+    _datas_array = [[NSMutableArray alloc]init];
     
     _tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
     _tableView.delegate = self;
@@ -95,7 +98,10 @@
     
     MessageItem *mi = [[MessageItem alloc] init];
     [mi parseFromData:data];
-    NSLog(@"content=%@",mi.messageContent);
+    NSString *ipListStirng = mi.messageContent;
+    _datas_array = [ipListStirng componentsSeparatedByString:@","];
+
+    [_tableView reloadData];
     [_clientSocket readDataWithTimeout:-1 tag:100];
 }
 
@@ -106,7 +112,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    return [_socketArray count];
+    //return [_socketArray count];
+    return [_datas_array count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -116,12 +123,8 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
-    AsyncSocket *as = (AsyncSocket *)_socketArray[indexPath.row];
     
-    cell.textLabel.text = [as connectedHost];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[as connectedPort]];
-    
-    
+    cell.textLabel.text = _datas_array[indexPath.row];
     return cell;
 }
 
