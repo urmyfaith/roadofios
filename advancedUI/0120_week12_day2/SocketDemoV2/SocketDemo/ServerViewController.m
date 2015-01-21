@@ -139,9 +139,9 @@
 -(void)onSocketDidDisconnect:(AsyncSocket *)sock{
 
    NSLog(@"已经断开连接");
-    
     //从数组中移除已经断开的连接对象.
     [_socketArray removeObject:sock];
+    [_tableView reloadData];
 }
 
 

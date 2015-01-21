@@ -83,11 +83,22 @@
 
 -(void)onSocket:(AsyncSocket *)sock didConnectToHost:(NSString *)host port:(UInt16)port{
     NSLog(@"连接服务器成功:serverIP:%@\tserverip=%d",sock.connectedHost,sock.connectedPort);
+    [_clientSocket readDataWithTimeout:-1 tag:100];
+}
+
+-(void)onSocket:(AsyncSocket *)sock didWriteDataWithTag:(long)tag{
+    NSLog(@"发送消息到服务器:成功\tserverIP:%@\tserverip=%d",sock.connectedHost,sock.connectedPort);
 }
 
 -(void)onSocket:(AsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag{
-    NSLog(@"发送消息到服务器:成功\tserverIP:%@\tserverip=%d",sock.connectedHost,sock.connectedPort);
+    NSLog(@"收到服务器响应:成功\tserverIP:%@\tserverip=%d",sock.connectedHost,sock.connectedPort);
+    
+    MessageItem *mi = [[MessageItem alloc] init];
+    [mi parseFromData:data];
+    NSLog(@"content=%@",mi.messageContent);
+    [_clientSocket readDataWithTimeout:-1 tag:100];
 }
+
 
 
 #pragma mark UITableViewDataSource
@@ -105,6 +116,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
     }
+    AsyncSocket *as = (AsyncSocket *)_socketArray[indexPath.row];
+    
+    cell.textLabel.text = [as connectedHost];
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%d",[as connectedPort]];
+    
+    
     return cell;
 }
 
