@@ -25,6 +25,7 @@
 		FB50157F1A6E2C0A00DCFEA4 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB50157E1A6E2C0A00DCFEA4 /* libxml2.dylib */; };
 		FB5015821A6E2E6F00DCFEA4 /* MessageItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5015811A6E2E6F00DCFEA4 /* MessageItem.m */; };
 		FB5015851A6E3E1F00DCFEA4 /* ServerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5015841A6E3E1F00DCFEA4 /* ServerViewController.m */; };
+		FB57E9B51A6F4F2300C92DB5 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB57E9B41A6F4F2300C92DB5 /* ChatViewController.m */; };
 		FBA2BC231A6F3241009F385B /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBA2BC221A6F3241009F385B /* ClientViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,8 @@
 		FB5015811A6E2E6F00DCFEA4 /* MessageItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageItem.m; sourceTree = "<group>"; };
 		FB5015831A6E3E1F00DCFEA4 /* ServerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerViewController.h; sourceTree = "<group>"; };
 		FB5015841A6E3E1F00DCFEA4 /* ServerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerViewController.m; sourceTree = "<group>"; };
+		FB57E9B31A6F4F2300C92DB5 /* ChatViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		FB57E9B41A6F4F2300C92DB5 /* ChatViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
 		FBA2BC211A6F3241009F385B /* ClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
 		FBA2BC221A6F3241009F385B /* ClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientViewController.m; sourceTree = "<group>"; };
 		FBBE375A1A6F38EC00355718 /* CONST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONST.h; sourceTree = "<group>"; };
@@ -139,6 +142,8 @@
 				FB5015841A6E3E1F00DCFEA4 /* ServerViewController.m */,
 				FBA2BC211A6F3241009F385B /* ClientViewController.h */,
 				FBA2BC221A6F3241009F385B /* ClientViewController.m */,
+				FB57E9B31A6F4F2300C92DB5 /* ChatViewController.h */,
+				FB57E9B41A6F4F2300C92DB5 /* ChatViewController.m */,
 				FBBE375A1A6F38EC00355718 /* CONST.h */,
 				FB5015561A6E2B5E00DCFEA4 /* Images.xcassets */,
 				FB50154B1A6E2B5E00DCFEA4 /* Supporting Files */,
@@ -301,6 +306,7 @@
 				FB50157B1A6E2BD000DCFEA4 /* AsyncSocket.m in Sources */,
 				FB5015851A6E3E1F00DCFEA4 /* ServerViewController.m in Sources */,
 				FBA2BC231A6F3241009F385B /* ClientViewController.m in Sources */,
+				FB57E9B51A6F4F2300C92DB5 /* ChatViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
