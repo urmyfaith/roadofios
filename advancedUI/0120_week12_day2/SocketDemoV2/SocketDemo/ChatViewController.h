@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AsyncSocket.h"
 
-@interface ChatViewController : UIViewController<AsyncSocketDelegate,UITableViewDataSource,UITableViewDelegate>
+@interface ChatViewController : UIViewController<AsyncSocketDelegate,UITableViewDataSource,UITableViewDelegate,UITextFieldDelegate>
 
 @property(nonatomic,strong)NSString *chatIP;
 @property(nonatomic,strong)AsyncSocket *chatSocket;

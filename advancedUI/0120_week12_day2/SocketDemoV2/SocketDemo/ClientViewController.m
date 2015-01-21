@@ -15,6 +15,11 @@
 
 @end
 
+/**
+ *  增加功能:
+ *  服务端和客户端在接收到消息后
+ */
+
 @implementation ClientViewController
 
 {

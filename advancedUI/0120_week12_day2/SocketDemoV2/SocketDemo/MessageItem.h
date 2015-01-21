@@ -17,6 +17,7 @@
 @interface MessageItem : NSObject
 
 @property(nonatomic,strong) NSString *messageContent;
+@property(nonatomic,strong) NSString *messageHost;
 @property(nonatomic,strong) NSString *messageType;
 @property(nonatomic,strong) NSMutableDictionary *messageDict;
 
