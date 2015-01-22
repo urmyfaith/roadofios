@@ -89,6 +89,8 @@
     
     //3.设置主ScorllView的内容大小
     _mainScrollView.contentSize = CGSizeMake(768*(i+1), 1024);
+    
+    //模拟器的内存大小比真机的内存占用高20%~30%
 }
 
 
