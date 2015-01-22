@@ -64,6 +64,7 @@
 -(void)layoutUI{
 
     // 1.主scrollView
+    self.automaticallyAdjustsScrollViewInsets = NO;
     _mainScrollView = [[UIScrollView alloc]init];
     _mainScrollView.frame =self.view.bounds;
     _mainScrollView.delegate = self;
@@ -106,7 +107,7 @@
     }
     
     //3.设置主ScorllView的内容大小
-    _mainScrollView.contentSize = CGSizeMake(768*(i+1), 1024);
+    _mainScrollView.contentSize = CGSizeMake(768*i, 1024);
     
     //模拟器的内存大小比真机的内存占用高20%~30%
 }
