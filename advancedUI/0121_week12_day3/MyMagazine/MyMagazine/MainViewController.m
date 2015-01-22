@@ -127,15 +127,34 @@
                              initWithContentsOfFile:[NSString stringWithFormat:@"%@/Library/Caches/book/thumbnail/%@.jpg",NSHomeDirectory(),pv.pageViewId]];
         UIImageView *subImageView = [[UIImageView alloc]initWithImage:subImage];
         subImageView.frame = CGRectMake(150*i,0, 150, 200);
+
+#pragma mark 下面的滚动视图
+        subImageView.userInteractionEnabled = YES;
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(subImageTapped:)];
+        [subImageView addGestureRecognizer:tap];
         [_subScrollView addSubview:subImageView];
         i++;
     }
     [self.view addSubview:_subScrollView];
 }
 
+-(void)subImageTapped:(UITapGestureRecognizer *)tap{
+    CGPoint point = [tap locationInView:_subScrollView];
+    _currentIndex = point.x/150;
+    
+    
+    //此时,如果只loadPageView的话,就会出现实际上是加载了图片,但是当前页面没有偏移,出现空白页面的情况
+    //参见 UIScorollView_contentOffset.png
+    _mainScrollView.contentOffset = CGPointMake(768*_currentIndex, 0);
+    [self loadPageView];
+}
+
+#pragma mark 顶部按钮点击事件处理
 -(void)buttonClicked:(UIButton *)button{
     NSLog(@"%s [LINE:%d] %i", __func__, __LINE__,button.tag);
 }
+
+#pragma mark ---绘制底部UI
 
 -(void)showSubView{
     NSLog(@"%s [LINE:%d]", __func__, __LINE__);
@@ -154,6 +173,8 @@
     }
 }
 
+
+#pragma mark ---绘制整体UI
 -(void)layoutUI{
 
     // 1.主scrollView
@@ -215,7 +236,7 @@
         _currentIndex = index;
         [self loadPageView];
     }
-
+    _subScrollView.contentOffset = CGPointMake(150*_currentIndex, 0);
 }
 
 #pragma mark 加载页面
