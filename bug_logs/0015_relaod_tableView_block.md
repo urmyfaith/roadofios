@@ -101,4 +101,8 @@ b)方法二
 - 3.)http://likid1412.github.io/blog/2013/10/28/ios-stanford-university-ios-shi-pin-bi-ji/
 
 
+![gcd01.png](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0015_relaod_tableView_block_01.png)
 
+![gcd02.png](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0015_relaod_tableView_block_02.png)
+
+![gcd03.png](https://raw.githubusercontent.com/urmyfaith/roadofios/master/bug_logs/0015_relaod_tableView_block_03.png)
