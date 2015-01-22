@@ -69,6 +69,30 @@
 }
 ~~~
 
+使用GCD的方法:
+
+a)方法一
+
+~~~objectivec
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+			[_tableView reloadData];
+	});
+~~~
+
+b)方法二
+
+~~~objectivec
+
+     dispatch_queue_t queue= dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0) ; 
+     
+     dispatch_async(queue, ^{
+          dispatch_async(dispatch_get_main_queue(),^{
+               [self.tableView reloadData]; 
+               // reloadData will load your table with contents
+          });
+~~~
+
 ## 参考资料(重要)
 
 
