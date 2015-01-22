@@ -29,8 +29,14 @@
  
  */
 -(void)loadPage{
-    UIImage *bgImage1 = [UIImage imageNamed:@"1.jpg"];
-    UIImage *bgImage = [[UIImage alloc]initWithContentsOfFile:@"xxx"];
+
+    UIImage *bgImage = [[UIImage alloc]initWithContentsOfFile:
+                        [NSString stringWithFormat:@"%@/Library/Caches/book/%@.jpg",NSHomeDirectory(),_pageViewId]];
+    UIImageView *bgImageView = [[UIImageView alloc]initWithImage:bgImage];
+    
+    bgImageView.frame = self.bounds;
+    
+    [self addSubview:bgImageView];
 }
 
 /*
