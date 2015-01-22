@@ -104,5 +104,87 @@ mac本,4~5个月一换,键盘敲坏了.睁眼敲代码,闭眼敲代码.
 重资源---视频
 轻资源---图片
 
+initWithTarget:selector:object:
 
 
+(0 ,1,[2],3,4)
+0 ,(1,2,[3],4,5)
+
+
+
+## for循环的三种遍历方法
+
+第一种,使用下标进行遍历
+
+~~~objectivec
+for (int i < 0 ; i < xxx; i++)
+~~~
+
+
+第二种,快速枚举进行变量
+
+第三种,使用枚举器进行遍历
+
+在快速枚举或者使用枚举器进行遍历时,如果对遍历源(数组,字典)
+
+但是,如果使用下标进行遍历则不会.
+
+~~~objectivec
+unloadPage - 00
+2015-01-22 14:20:22.326 MyMagazine[16005:1533306] *** Terminating app due to uncaught exception 'NSGenericException', reason: '*** Collection <__NSArrayM: 0x7fbbbaeef190> was mutated while being enumerated.'
+*** First throw call stack:
+(
+	0   CoreFoundation                      0x0000000105febb75 __exceptionPreprocess + 165
+	1   libobjc.A.dylib                     0x0000000105bc3bb7 objc_exception_throw + 45
+	2   CoreFoundation                      0x0000000105feb4d4 __NSFastEnumerationMutationHandler + 132
+	3   MyMagazine                          0x0000000104016f6b -[MainViewController loadPageView] + 971
+	4   MyMagazine                          0x0000000104016b78 -[MainViewController scrollViewDidEndDecelerating:] + 168
+	5   UIKit                               0x00000001044fcca3 -[UIScrollView(UIScrollViewInternal) _stopScrollDecelerationNotify:] + 277
+	6   UIKit                               0x00000001044fcebd -[UIScrollView(UIScrollViewInternal) _stopScrollingNotify:pin:tramplingDragFlags:] + 479
+	7   UIKit                               0x00000001044f76aa -[UIScrollView _smoothScrollWithUpdateTime:] + 2896
+	8   QuartzCore                          0x0000000108a59737 _ZN2CA7Display15DisplayLinkItem8dispatchEv + 37
+	9   QuartzCore                          0x0000000108a595ff _ZN2CA7Display11DisplayLink14dispatch_itemsEyyy + 315
+	10  CoreFoundation                      0x0000000105f533e4 __CFRUNLOOP_IS_CALLING_OUT_TO_A_TIMER_CALLBACK_FUNCTION__ + 20
+	11  CoreFoundation                      0x0000000105f52fa5 __CFRunLoopDoTimer + 1045
+	12  CoreFoundation                      0x0000000105f162dd __CFRunLoopRun + 1901
+	13  CoreFoundation                      0x0000000105f15906 CFRunLoopRunSpecific + 470
+	14  GraphicsServices                    0x000000010856da58 GSEventRunModal + 161
+	15  UIKit                               0x0000000104466870 UIApplicationMain + 1282
+	16  MyMagazine                          0x0000000104017b23 main + 115
+	17  libdyld.dylib                       0x000000010680e145 start + 1
+	18  ???                                 0x0000000000000001 0x0 + 1
+)
+libc++abi.dylib: terminating with uncaught exception of type NSException
+(lldb) 
+~~~
+
+
+## 谓词/预测/谓语
+
+枚举器,类簇,
+
+C89,C95,C99
+
+~~~objectivec
+int i;
+for ( i = 0; i < 10; i++) {
+   //
+}
+//c89,c95,c99
+~~~
+
+~~~objectivec
+for(int i = 0 ; i < 10; i++{
+    	//
+    }
+//c99+
+~~~
+
+0,1,[2],3,4
+i= 0 删除0
+1,2,3,4
+i= 1 删除2
+1,3,4
+i = 2删除4
+1,3
+    

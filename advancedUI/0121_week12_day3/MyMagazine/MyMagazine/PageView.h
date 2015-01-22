@@ -18,8 +18,11 @@
  */
 @interface PageView : UIView
 
-//每一页的id.(第几页)
+//每一页的id.(第几页),与xml文件名对应
 @property(nonatomic,strong)NSString *pageViewId;
+
+//页面的页号,与数组_loadPageViewArray对应
+@property(nonatomic,assign)int pageViewIndex;
 
 //当前页是否已经被加载
 @property(nonatomic,assign)BOOL isLoadPage;

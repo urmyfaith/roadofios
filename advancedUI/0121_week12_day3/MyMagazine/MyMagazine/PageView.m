@@ -56,8 +56,13 @@
 
 -(void)unloadPage{
     
-     _isLoadPage = NO;//销毁页面完成后,设置已经加载过了.
+    _isLoadPage = NO;//销毁页面完成后,设置已经加载过了.
     NSLog(@"unloadPage - %@",_pageViewId);
+    
+    //卸载页面资源
+    for (UIView *view in self.subviews) {
+        [view removeFromSuperview];
+    }
 }
 
 //加载/释放中资源

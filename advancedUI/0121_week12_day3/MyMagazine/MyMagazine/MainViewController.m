@@ -56,7 +56,7 @@
     
     //3.加载界面(当前页+前,后页)
     _currentIndex = 0;
-    _maxPageNumber = 2;
+    _maxPageNumber = 1;
     _loadPaegViewArray = [[NSMutableArray alloc]init];
     [self loadPageView];
 }
@@ -89,6 +89,7 @@
         PageView *pv = [[PageView alloc]init];
         pv.frame = CGRectMake(768 *i , 0, 768, 1024);
         pv.pageViewId =  [[pageElement.attributes lastObject] stringValue];
+        pv.pageViewIndex = i;
       //  [pv loadPage];//注意:先设置id,后加载背景图片.
         i++;
 #if 0
@@ -123,7 +124,53 @@
 
 }
 
+#pragma mark 加载页面
+
 -(void)loadPageView{
+    
+    //0.释放部分
+    //0.1得到所有应该加载的页的页号
+    NSMutableArray *indexArray = [[NSMutableArray alloc]init];
+    
+    [indexArray addObject:[NSString stringWithFormat:@"%d",_currentIndex]];
+    for (int i = 0 ; i < _maxPageNumber; i++) {
+        if (_currentIndex - i - 1 >=0) {
+             [indexArray addObject:[NSString stringWithFormat:@"%d",_currentIndex - i - 1]];
+        }
+        if (_currentIndex + i + 1 < [_pageViewArray count]) {
+            [indexArray addObject:[NSString stringWithFormat:@"%d",_currentIndex + i + 1]];
+        }
+    }
+    NSLog(@"indexArray=%@",indexArray);
+    
+    //遍历所有已经加载过的pageView对象
+    
+    for ( int i = 0; i < [_loadPaegViewArray count]; i++)
+    {
+        PageView *pv = [_loadPaegViewArray objectAtIndex:i];
+        BOOL isRelease = YES;
+        for (NSString *index in indexArray) {
+            if (pv.pageViewIndex  == [index intValue]) {
+                //是需要加载的不能释放
+                isRelease = NO;
+                break;
+            }
+        }
+        //释放重资源
+        if (pv.isActivityPage) {
+            [pv unActivityPage];
+        }
+        
+        //经过双重的遍历之后,如果isRelease值依旧是YES;
+        //说明pv对象不需要加载了,这个时候,我们释放这个pv对象.
+        if (isRelease) {
+            [pv unloadPage];
+            //在快速枚举中,删除元素,程序崩溃
+            [_loadPaegViewArray removeObject:pv];
+            i--;
+        }
+    }
+
     //1. 加载
     
     // 1.1 加载当前页:轻资源+重资源==>已经加载页面加入数据====>牺牲一点内存,提高遍历效率
