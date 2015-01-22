@@ -8,6 +8,8 @@
 
 #import "MainViewController.h"
 #import "ZipArchive.h"
+#import "GDataXMLNode.h"
+#import "PageView.h"
 
 
 @interface MainViewController ()
@@ -15,7 +17,12 @@
 @end
 
 @implementation MainViewController
-
+{
+    UIScrollView *_mainScrollView;
+    
+    //用来存放所有的pageView对象
+    NSMutableArray *_pageViewArray;
+}
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -34,8 +41,50 @@
     [self zipFile];
 
     //2.布局UI
-    
+    _pageViewArray = [[NSMutableArray alloc] init];
+    [self layoutUI];
 }
+
+-(void)layoutUI{
+
+    // 1.主scrollView
+    _mainScrollView = [[UIScrollView alloc]init];
+    _mainScrollView.frame =self.view.bounds;
+    _mainScrollView.delegate = self;
+    _mainScrollView.delegate = self;
+    _mainScrollView.pagingEnabled = YES;
+    _mainScrollView.showsHorizontalScrollIndicator = NO;
+    [self.view addSubview:_mainScrollView];
+    
+    //book.xml 每页的背景图的名字
+    //节点名,节点属性,节点的值.(节点属性是一个数组,节点的值也是一个节点,这个节点比较特殊,节点名位text,节点值就是文本)
+    //2.读取book.xml文件 a)读取xml文件 b)读取文件root节点 c)匹配需要的节点 d)从节点中取出属性 e)从属性中取出值
+    NSData *bookData = [[NSData alloc]initWithContentsOfFile:
+                        [NSString stringWithFormat:@"%@/Library/Caches/book/book.xml",NSHomeDirectory()]];
+
+    GDataXMLDocument *bookDocument = [[GDataXMLDocument alloc]initWithData:bookData options:0 error:nil];
+    
+    GDataXMLElement *rootElement = [bookDocument rootElement];
+    
+    NSArray *pageElements = [rootElement nodesForXPath:@"//page" error:nil];
+    
+    for (GDataXMLElement *pageElement in pageElements) {
+        
+        PageView *pv = [[PageView alloc]init];
+
+
+#if 0
+//见上面的注释.
+         NSArray *attArray = pageElement.attributes;
+         GDataXMLElement *attNode = [attArray lastObject];
+         NSString *attNodeValue = [attNode stringValue];
+         NSString *attNodeName = [attNode name];
+#endif
+        pv.pageViewId =  [[pageElement.attributes lastObject] stringValue];
+    }
+}
+
+
 
 -(void)zipFile
 {

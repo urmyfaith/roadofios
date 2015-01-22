@@ -18,6 +18,9 @@
  */
 @interface PageView : UIView
 
+//每一页的id.(第几页)
+@property(nonatomic,strong)NSString *pageViewId;
+
 //加载/释放轻资源
 -(void)loadPage;
 -(void)unloadPage;

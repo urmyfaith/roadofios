@@ -30,6 +30,8 @@
 		FBB08FFE1A7084DF003271EB /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = FBB08FF61A7084DF003271EB /* zip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBB08FFF1A7084E0003271EB /* ZipArchive.mm in Sources */ = {isa = PBXBuildFile; fileRef = FBB08FF91A7084DF003271EB /* ZipArchive.mm */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBB090011A70852D003271EB /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB090001A70852D003271EB /* libz.1.1.3.dylib */; };
+		FBB090041A708AB9003271EB /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB090031A708AB9003271EB /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FBB090061A708ADC003271EB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB090051A708ADC003271EB /* libxml2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,9 @@
 		FBB08FF81A7084DF003271EB /* ZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZipArchive.h; sourceTree = "<group>"; };
 		FBB08FF91A7084DF003271EB /* ZipArchive.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ZipArchive.mm; sourceTree = "<group>"; };
 		FBB090001A70852D003271EB /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		FBB090021A708AB9003271EB /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		FBB090031A708AB9003271EB /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		FBB090051A708ADC003271EB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB090061A708ADC003271EB /* libxml2.dylib in Frameworks */,
 				FBB090011A70852D003271EB /* libz.1.1.3.dylib in Frameworks */,
 				FB5674861A6F9D88005AC34D /* CoreGraphics.framework in Frameworks */,
 				FB5674881A6F9D88005AC34D /* UIKit.framework in Frameworks */,
@@ -129,6 +135,7 @@
 		FB5674821A6F9D88005AC34D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBB090051A708ADC003271EB /* libxml2.dylib */,
 				FBB090001A70852D003271EB /* libz.1.1.3.dylib */,
 				FB5674831A6F9D88005AC34D /* Foundation.framework */,
 				FB5674851A6F9D88005AC34D /* CoreGraphics.framework */,
@@ -141,6 +148,8 @@
 		FB5674891A6F9D88005AC34D /* MyMagazine */ = {
 			isa = PBXGroup;
 			children = (
+				FBB090021A708AB9003271EB /* GDataXMLNode.h */,
+				FBB090031A708AB9003271EB /* GDataXMLNode.m */,
 				FBB08FED1A7084DF003271EB /* ZIP */,
 				FBB08FEC1A7084DF003271EB /* book.zip */,
 				FB5674921A6F9D88005AC34D /* ZXAppDelegate.h */,
@@ -316,6 +325,7 @@
 				FB5674BD1A6F9F2F005AC34D /* PageElement.m in Sources */,
 				FBB08FFF1A7084E0003271EB /* ZipArchive.mm in Sources */,
 				FBB08FFE1A7084DF003271EB /* zip.c in Sources */,
+				FBB090041A708AB9003271EB /* GDataXMLNode.m in Sources */,
 				FBB08FFC1A7084DF003271EB /* mztools.c in Sources */,
 				FB5674941A6F9D88005AC34D /* ZXAppDelegate.m in Sources */,
 				FB5674B71A6F9E4F005AC34D /* PageView.m in Sources */,
@@ -442,6 +452,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyMagazine/MyMagazine-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "MyMagazine/MyMagazine-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -455,6 +470,11 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "MyMagazine/MyMagazine-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = "MyMagazine/MyMagazine-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
