@@ -84,6 +84,37 @@
     _titleView.backgroundColor =[UIColor colorWithRed:0   green:0 blue:0 alpha:0.8];
     [self.view addSubview:_titleView];
     
+#pragma mark  -----2015-01-22_17_43_01
+    
+    CGFloat gap = 5.0f;
+    
+    UIImage *homeImage = [UIImage imageNamed:@"sun"];
+    UIButton *homeButton = [[UIButton alloc] init];
+    homeButton.tag = 100;
+    homeButton.frame = CGRectMake(gap, gap,40,40);
+    [homeButton setImage:homeImage forState:UIControlStateNormal];
+    [homeButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImage *listImage = [UIImage imageNamed:@"badge"];
+    UIButton *listButton = [[UIButton alloc]init];
+    listButton.tag = 101;
+    listButton.frame= CGRectMake(CGRectGetMaxX(homeButton.frame) + gap, gap, 40, 40);
+    [listButton setImage:listImage forState:UIControlStateNormal ];
+    [listButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIImage *musicImage = [UIImage imageNamed:@"music-note"];
+    UIButton *musicButton = [[UIButton alloc]init];
+    musicButton.tag = 102;
+    musicButton.frame= CGRectMake(self.view.bounds.size.width-40-gap, gap, 40, 40);
+    [musicButton setImage:musicImage forState:UIControlStateNormal ];
+    [musicButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    
+    [_titleView addSubview:homeButton];
+    [_titleView addSubview:listButton];
+    [_titleView addSubview:musicButton];
+    
     
     _subScrollView = [[UIScrollView alloc]init];
     _subScrollView.frame = CGRectMake(0, 1024, 768, 200);
@@ -100,6 +131,10 @@
         i++;
     }
     [self.view addSubview:_subScrollView];
+}
+
+-(void)buttonClicked:(UIButton *)button{
+    NSLog(@"%s [LINE:%d] %i", __func__, __LINE__,button.tag);
 }
 
 -(void)showSubView{
