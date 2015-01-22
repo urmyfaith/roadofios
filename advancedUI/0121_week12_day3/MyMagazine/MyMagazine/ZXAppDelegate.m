@@ -9,6 +9,9 @@
 #import "ZXAppDelegate.h"
 #import "MainViewController.h"
 
+/**
+ *  五个no-ARC,一个libz库
+ */
 
 @implementation ZXAppDelegate
 

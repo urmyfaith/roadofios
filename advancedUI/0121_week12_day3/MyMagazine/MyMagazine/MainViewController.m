@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "ZipArchive.h"
+
 
 @interface MainViewController ()
 
@@ -26,7 +28,41 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    
+    //1.解压缩资源包
+    [self zipFile];
+
+    //2.布局UI
+    
+}
+
+-(void)zipFile
+{
+    
+    //1.判断是否已经解压缩过
+    NSString *bookPath = [NSString stringWithFormat:@"%@/Library/Caches/book",NSHomeDirectory()];
+    
+    NSLog(@"%s [LINE:%d]%@", __func__, __LINE__,bookPath);
+    
+    NSFileManager *fileManager = [[NSFileManager alloc]init];
+    
+    if (![fileManager fileExistsAtPath:bookPath])
+    {
+        //2.如果文件不存在,则去解压缩文件
+        
+        //2.1判断是否可以解压缩文件
+        ZipArchive *zip  = [[ZipArchive alloc]init];
+        
+        NSString *appBookPath = [NSString stringWithFormat:@"%@/book.zip",[[NSBundle mainBundle]resourcePath]];
+        
+        if ([zip UnzipOpenFile:appBookPath])
+        {
+           //2.2解压缩文件
+            [zip UnzipFileTo:[NSString stringWithFormat:@"%@/Library/Caches/",NSHomeDirectory()] overWrite:YES];
+        }
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
