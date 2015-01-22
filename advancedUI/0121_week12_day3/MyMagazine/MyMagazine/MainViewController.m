@@ -114,30 +114,51 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    [self loadPageView];
+    int index = scrollView.contentOffset.x/768;
+    if (_currentIndex != index)
+    {
+        _currentIndex = index;
+        [self loadPageView];
+    }
+
 }
 
 -(void)loadPageView{
     //1. 加载
     
-    // 1.1 加载当前页:轻资源+重资源
+    // 1.1 加载当前页:轻资源+重资源==>已经加载页面加入数据====>牺牲一点内存,提高遍历效率
+    
     PageView *currentPageView = [_pageViewArray objectAtIndex:_currentIndex];
-    [currentPageView loadPage];
+    
+    if(!currentPageView.isLoadPage)
+    {
+        [currentPageView loadPage];
+        [_loadPaegViewArray addObject:currentPageView];
+    }
+    
     [currentPageView activityPage];
     
     // 1.2加载左右各两页
+    // 如果没有被加载,则加载,否则不加载.
     for (int i = 0; i < _maxPageNumber; i++)
     {
 
         if (_currentIndex - i -1 >= 0) {        //加载左侧页
             PageView *prePageView = [_pageViewArray objectAtIndex:_currentIndex - i- 1];
-            [prePageView loadPage];
+            if (!prePageView.isLoadPage) {
+                [prePageView loadPage];
+                 [_loadPaegViewArray addObject:prePageView];
+            }
         }
         if (_currentIndex + i + 1 < [_pageViewArray count]) {//加载右侧页
             PageView *nextPageView = [_pageViewArray objectAtIndex:_currentIndex + i +1];
-            [nextPageView loadPage];
+            if (!nextPageView.isLoadPage) {
+                [nextPageView loadPage];
+                [_loadPaegViewArray addObject:nextPageView];
+            }
         }
     }
+    NSLog(@"_loadPaegViewArray count =%d",[_loadPaegViewArray count]);
 }
 
 -(void)zipFile
