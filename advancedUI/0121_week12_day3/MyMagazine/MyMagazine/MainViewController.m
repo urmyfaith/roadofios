@@ -73,6 +73,8 @@
         
         PageView *pv = [[PageView alloc]init];
         pv.frame = CGRectMake(768 *i , 0, 768, 1024);
+        pv.pageViewId =  [[pageElement.attributes lastObject] stringValue];
+        [pv loadPage];//注意:先设置id,后加载背景图片.
         i++;
 #if 0
 //见上面的注释.
@@ -81,7 +83,7 @@
          NSString *attNodeValue = [attNode stringValue];
          NSString *attNodeName = [attNode name];
 #endif
-        pv.pageViewId =  [[pageElement.attributes lastObject] stringValue];
+       
         
         [_pageViewArray addObject:pv];
         [_mainScrollView addSubview:pv];

@@ -23,7 +23,6 @@
 		FB5674B71A6F9E4F005AC34D /* PageView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5674B61A6F9E4F005AC34D /* PageView.m */; };
 		FB5674BA1A6F9F0F005AC34D /* Page.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5674B91A6F9F0F005AC34D /* Page.m */; };
 		FB5674BD1A6F9F2F005AC34D /* PageElement.m in Sources */ = {isa = PBXBuildFile; fileRef = FB5674BC1A6F9F2F005AC34D /* PageElement.m */; };
-		FBB08FFA1A7084DF003271EB /* book.zip in Resources */ = {isa = PBXBuildFile; fileRef = FBB08FEC1A7084DF003271EB /* book.zip */; };
 		FBB08FFB1A7084DF003271EB /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = FBB08FF01A7084DF003271EB /* ioapi.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBB08FFC1A7084DF003271EB /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = FBB08FF21A7084DF003271EB /* mztools.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBB08FFD1A7084DF003271EB /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = FBB08FF41A7084DF003271EB /* unzip.c */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -32,6 +31,7 @@
 		FBB090011A70852D003271EB /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB090001A70852D003271EB /* libz.1.1.3.dylib */; };
 		FBB090041A708AB9003271EB /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB090031A708AB9003271EB /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBB090061A708ADC003271EB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB090051A708ADC003271EB /* libxml2.dylib */; };
+		FBC73FA71A70953C004EC5C8 /* book.zip in Resources */ = {isa = PBXBuildFile; fileRef = FBC73FA61A70953C004EC5C8 /* book.zip */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,7 +69,6 @@
 		FB5674B91A6F9F0F005AC34D /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
 		FB5674BB1A6F9F2F005AC34D /* PageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageElement.h; sourceTree = "<group>"; };
 		FB5674BC1A6F9F2F005AC34D /* PageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageElement.m; sourceTree = "<group>"; };
-		FBB08FEC1A7084DF003271EB /* book.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = book.zip; sourceTree = "<group>"; };
 		FBB08FEF1A7084DF003271EB /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		FBB08FF01A7084DF003271EB /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		FBB08FF11A7084DF003271EB /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		FBB090021A708AB9003271EB /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
 		FBB090031A708AB9003271EB /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		FBB090051A708ADC003271EB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		FBC73FA61A70953C004EC5C8 /* book.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = book.zip; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,10 +148,10 @@
 		FB5674891A6F9D88005AC34D /* MyMagazine */ = {
 			isa = PBXGroup;
 			children = (
+				FBC73FA61A70953C004EC5C8 /* book.zip */,
 				FBB090021A708AB9003271EB /* GDataXMLNode.h */,
 				FBB090031A708AB9003271EB /* GDataXMLNode.m */,
 				FBB08FED1A7084DF003271EB /* ZIP */,
-				FBB08FEC1A7084DF003271EB /* book.zip */,
 				FB5674921A6F9D88005AC34D /* ZXAppDelegate.h */,
 				FB5674931A6F9D88005AC34D /* ZXAppDelegate.m */,
 				FB5674B21A6F9DA2005AC34D /* MainViewController.h */,
@@ -301,7 +301,7 @@
 			files = (
 				FB56748E1A6F9D88005AC34D /* InfoPlist.strings in Resources */,
 				FB5674961A6F9D88005AC34D /* Images.xcassets in Resources */,
-				FBB08FFA1A7084DF003271EB /* book.zip in Resources */,
+				FBC73FA71A70953C004EC5C8 /* book.zip in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
