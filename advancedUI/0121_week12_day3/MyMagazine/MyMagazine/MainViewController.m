@@ -68,11 +68,12 @@
     
     NSArray *pageElements = [rootElement nodesForXPath:@"//page" error:nil];
     
+    int i = 0;
     for (GDataXMLElement *pageElement in pageElements) {
         
         PageView *pv = [[PageView alloc]init];
-
-
+        pv.frame = CGRectMake(768 *i , 0, 768, 1024);
+        i++;
 #if 0
 //见上面的注释.
          NSArray *attArray = pageElement.attributes;
@@ -81,7 +82,13 @@
          NSString *attNodeName = [attNode name];
 #endif
         pv.pageViewId =  [[pageElement.attributes lastObject] stringValue];
+        
+        [_pageViewArray addObject:pv];
+        [_mainScrollView addSubview:pv];
     }
+    
+    //3.设置主ScorllView的内容大小
+    _mainScrollView.contentSize = CGSizeMake(768*(i+1), 1024);
 }
 
 
