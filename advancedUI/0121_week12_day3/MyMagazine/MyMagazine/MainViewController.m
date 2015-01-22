@@ -32,6 +32,13 @@
     //已经加载的页面数组
     NSMutableArray *_loadPaegViewArray;
     
+    //subView的黑条
+    UIView *_titleView;
+    
+    //subView的引导滚动条
+    UIScrollView *_subScrollView;
+    
+    
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -56,9 +63,60 @@
     
     //3.加载界面(当前页+前,后页)
     _currentIndex = 0;
-    _maxPageNumber = 1;
+    _maxPageNumber = 2;
     _loadPaegViewArray = [[NSMutableArray alloc]init];
     [self loadPageView];
+    
+    //4.添加手势
+    UITapGestureRecognizer *tgr = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(showSubView)];
+    
+    tgr.numberOfTouchesRequired = 2;
+    [self.view addGestureRecognizer:tgr];
+    
+    //5.加载subView界面
+    [self layoutSubUI];
+    
+}
+
+-(void)layoutSubUI{
+    _titleView = [[UIView alloc]init];
+    _titleView.frame = CGRectMake(0, -44, 768, 44);
+    _titleView.backgroundColor =[UIColor colorWithRed:0   green:0 blue:0 alpha:0.8];
+    [self.view addSubview:_titleView];
+    
+    
+    _subScrollView = [[UIScrollView alloc]init];
+    _subScrollView.frame = CGRectMake(0, 1024, 768, 200);
+    _subScrollView.contentSize = CGSizeMake(150*_pageViewArray.count, 200);
+
+    int i = 0 ;
+    for (PageView *pv in _pageViewArray) {
+        //
+        UIImage *subImage = [[UIImage alloc]
+                             initWithContentsOfFile:[NSString stringWithFormat:@"%@/Library/Caches/book/thumbnail/%@.jpg",NSHomeDirectory(),pv.pageViewId]];
+        UIImageView *subImageView = [[UIImageView alloc]initWithImage:subImage];
+        subImageView.frame = CGRectMake(150*i,0, 150, 200);
+        [_subScrollView addSubview:subImageView];
+        i++;
+    }
+    [self.view addSubview:_subScrollView];
+}
+
+-(void)showSubView{
+    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    if (_titleView.frame.origin.y == -44) {
+        //出现
+        [UIView animateWithDuration:0.5 animations:^{
+            //
+            _titleView.frame = CGRectMake(0, 0, 768, 44);
+            _subScrollView.frame = CGRectMake(0, 1024-200, 768, 200);
+        }];
+    }
+    else{
+        //隐藏
+        _titleView.frame = CGRectMake(0, -44, 768, 44);
+        _subScrollView.frame = CGRectMake(0, 1024, 768, 200);
+    }
 }
 
 -(void)layoutUI{
@@ -237,21 +295,5 @@
 
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
