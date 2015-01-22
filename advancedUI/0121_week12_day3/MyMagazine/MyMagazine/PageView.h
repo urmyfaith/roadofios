@@ -21,6 +21,12 @@
 //每一页的id.(第几页)
 @property(nonatomic,strong)NSString *pageViewId;
 
+//当前页是否已经被加载
+@property(nonatomic,assign)BOOL isLoadPage;
+
+//是否是活动页
+@property(nonatomic,assign)BOOL isActivityPage;
+
 //加载/释放轻资源
 -(void)loadPage;
 -(void)unloadPage;

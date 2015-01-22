@@ -22,6 +22,16 @@
     
     //用来存放所有的pageView对象
     NSMutableArray *_pageViewArray;
+    
+    //记录当前也下标
+    int _currentIndex;
+    
+    //需要加载的页数;
+    int _maxPageNumber;
+    
+    //已经加载的页面数组
+    NSMutableArray *_loadPaegViewArray;
+    
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -43,6 +53,12 @@
     //2.布局UI
     _pageViewArray = [[NSMutableArray alloc] init];
     [self layoutUI];
+    
+    //3.加载界面(当前页+前,后页)
+    _currentIndex = 0;
+    _maxPageNumber = 2;
+    _loadPaegViewArray = [[NSMutableArray alloc]init];
+    [self loadPageView];
 }
 
 -(void)layoutUI{
@@ -50,7 +66,6 @@
     // 1.主scrollView
     _mainScrollView = [[UIScrollView alloc]init];
     _mainScrollView.frame =self.view.bounds;
-    _mainScrollView.delegate = self;
     _mainScrollView.delegate = self;
     _mainScrollView.pagingEnabled = YES;
     _mainScrollView.showsHorizontalScrollIndicator = NO;
@@ -74,7 +89,7 @@
         PageView *pv = [[PageView alloc]init];
         pv.frame = CGRectMake(768 *i , 0, 768, 1024);
         pv.pageViewId =  [[pageElement.attributes lastObject] stringValue];
-        [pv loadPage];//注意:先设置id,后加载背景图片.
+      //  [pv loadPage];//注意:先设置id,后加载背景图片.
         i++;
 #if 0
 //见上面的注释.
@@ -95,7 +110,35 @@
     //模拟器的内存大小比真机的内存占用高20%~30%
 }
 
+#pragma mark --scrollViewDelegate
 
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    [self loadPageView];
+}
+
+-(void)loadPageView{
+    //1. 加载
+    
+    // 1.1 加载当前页:轻资源+重资源
+    PageView *currentPageView = [_pageViewArray objectAtIndex:_currentIndex];
+    [currentPageView loadPage];
+    [currentPageView activityPage];
+    
+    // 1.2加载左右各两页
+    for (int i = 0; i < _maxPageNumber; i++)
+    {
+
+        if (_currentIndex - i -1 >= 0) {        //加载左侧页
+            PageView *prePageView = [_pageViewArray objectAtIndex:_currentIndex - i- 1];
+            [prePageView loadPage];
+        }
+        if (_currentIndex + i + 1 < [_pageViewArray count]) {//加载右侧页
+            PageView *nextPageView = [_pageViewArray objectAtIndex:_currentIndex + i +1];
+            [nextPageView loadPage];
+        }
+    }
+}
 
 -(void)zipFile
 {

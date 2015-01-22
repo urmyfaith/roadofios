@@ -39,6 +39,21 @@
     [self addSubview:bgImageView];
 }
 
+
+-(void)unloadPage{
+
+}
+
+//加载/释放中资源
+-(void)activityPage{
+
+}
+
+-(void)unActivityPage{
+
+}
+
+
 /*
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
