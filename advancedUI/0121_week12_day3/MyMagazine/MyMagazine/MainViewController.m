@@ -217,7 +217,7 @@
 #pragma mark ---绘制底部UI
 
 -(void)showSubView{
-    NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+   
     if (_titleView.frame.origin.y == -44) {
         //出现
         [UIView animateWithDuration:0.5 animations:^{

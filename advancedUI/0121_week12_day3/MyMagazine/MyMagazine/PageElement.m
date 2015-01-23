@@ -10,4 +10,10 @@
 
 @implementation PageElement
 
+-(id)init{
+    if (self = [super init]) {
+        _pageElementAttribute = [[NSMutableArray alloc]  init];
+    }
+    return self;
+}
 @end

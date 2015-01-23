@@ -44,6 +44,7 @@
 		FBDEE8AA1A71D63900AE3AF2 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A21A71D63900AE3AF2 /* toolbar.png */; };
 		FBDEE8AB1A71D63900AE3AF2 /* videoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A31A71D63900AE3AF2 /* videoplay.png */; };
 		FBDEE8AD1A71DB0E00AE3AF2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEE8AC1A71DB0E00AE3AF2 /* AVFoundation.framework */; };
+		FBDEE8B01A71E2B700AE3AF2 /* PageAttribute.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDEE8AF1A71E2B700AE3AF2 /* PageAttribute.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -109,6 +110,8 @@
 		FBDEE8A21A71D63900AE3AF2 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		FBDEE8A31A71D63900AE3AF2 /* videoplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoplay.png; sourceTree = "<group>"; };
 		FBDEE8AC1A71DB0E00AE3AF2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		FBDEE8AE1A71E2B700AE3AF2 /* PageAttribute.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageAttribute.h; sourceTree = "<group>"; };
+		FBDEE8AF1A71E2B700AE3AF2 /* PageAttribute.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageAttribute.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +192,8 @@
 				FB5674B91A6F9F0F005AC34D /* Page.m */,
 				FB5674BB1A6F9F2F005AC34D /* PageElement.h */,
 				FB5674BC1A6F9F2F005AC34D /* PageElement.m */,
+				FBDEE8AE1A71E2B700AE3AF2 /* PageAttribute.h */,
+				FBDEE8AF1A71E2B700AE3AF2 /* PageAttribute.m */,
 				FB5674951A6F9D88005AC34D /* Images.xcassets */,
 				FB56748A1A6F9D88005AC34D /* Supporting Files */,
 			);
@@ -381,6 +386,7 @@
 				FB5674BA1A6F9F0F005AC34D /* Page.m in Sources */,
 				FB5674BD1A6F9F2F005AC34D /* PageElement.m in Sources */,
 				FBB08FFF1A7084E0003271EB /* ZipArchive.mm in Sources */,
+				FBDEE8B01A71E2B700AE3AF2 /* PageAttribute.m in Sources */,
 				FBB08FFE1A7084DF003271EB /* zip.c in Sources */,
 				FBB090041A708AB9003271EB /* GDataXMLNode.m in Sources */,
 				FBB08FFC1A7084DF003271EB /* mztools.c in Sources */,
