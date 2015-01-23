@@ -222,6 +222,21 @@ NSURL fileURLWithPath:<#(NSString *)#>//本地路径
 NSURL *url = [NSURL URLWithString:<#(NSString *)#>] //网络路径
 ~~~
 
+~~~objectivec
+
+	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Library/Caches/book/music.mp3",NSHomeDirectory()]];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url
+                                                         error:nil];
+    [_audioPlayer prepareToPlay];
+    [_audioPlayer play];
+//------    
+  if (button.selected) {
+  [_audioPlayer pause];
+}
+else{
+  [_audioPlayer play];
+}
+~~~
 
 
     

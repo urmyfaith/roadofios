@@ -44,6 +44,10 @@
     //音乐播放器
     AVAudioPlayer *_audioPlayer;
     
+    //显示页码
+    UILabel *_pageLabele;
+    
+    
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -134,6 +138,15 @@
                  forState:UIControlStateSelected ];
     [musicButton addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
     
+    
+    //页码UI
+    
+    _pageLabele = [[UILabel alloc]init];
+    _pageLabele.frame  = CGRectMake(600, 0, 100, 44);
+    _pageLabele.text = @"封面/39";
+    _pageLabele.text = [NSString stringWithFormat:@"封面/%d",[_pageViewArray count]-1];
+    _pageLabele.textColor = [UIColor whiteColor];
+    [_titleView addSubview:_pageLabele];
     
     
     [_titleView addSubview:homeButton];
@@ -288,6 +301,15 @@
 #pragma mark 加载页面
 
 -(void)loadPageView{
+    
+    //改变Label值
+    if (_currentIndex == 0) {
+        _pageLabele.text = [NSString stringWithFormat:@"封面/%d",_pageViewArray.count-1];
+    }
+    else{
+        _pageLabele.text = [NSString stringWithFormat:@"%d/%d",_currentIndex,_pageViewArray.count-1];
+    }
+    
     
     //0.释放部分
     //0.1得到所有应该加载的页的页号
