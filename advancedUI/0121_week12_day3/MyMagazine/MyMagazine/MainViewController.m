@@ -100,6 +100,7 @@
     [_audioPlayer play];
 }
 
+#pragma mark --绘制弹出的顶部/底部UI
 -(void)layoutSubUI{
     _titleView =[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"toolbar.png"]];
     _titleView.userInteractionEnabled = YES;
