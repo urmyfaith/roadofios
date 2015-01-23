@@ -35,6 +35,14 @@
 		FBB090041A708AB9003271EB /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB090031A708AB9003271EB /* GDataXMLNode.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBB090061A708ADC003271EB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB090051A708ADC003271EB /* libxml2.dylib */; };
 		FBC73FA71A70953C004EC5C8 /* book.zip in Resources */ = {isa = PBXBuildFile; fileRef = FBC73FA61A70953C004EC5C8 /* book.zip */; };
+		FBDEE8A41A71D63900AE3AF2 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE89C1A71D63900AE3AF2 /* Icon.png */; };
+		FBDEE8A51A71D63900AE3AF2 /* iPadAppIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE89D1A71D63900AE3AF2 /* iPadAppIcon.png */; };
+		FBDEE8A61A71D63900AE3AF2 /* iPadSettingsIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE89E1A71D63900AE3AF2 /* iPadSettingsIcon.png */; };
+		FBDEE8A71A71D63900AE3AF2 /* iPadSpotlightIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE89F1A71D63900AE3AF2 /* iPadSpotlightIcon.png */; };
+		FBDEE8A81A71D63900AE3AF2 /* music_off.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A01A71D63900AE3AF2 /* music_off.png */; };
+		FBDEE8A91A71D63900AE3AF2 /* music_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A11A71D63900AE3AF2 /* music_on.png */; };
+		FBDEE8AA1A71D63900AE3AF2 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A21A71D63900AE3AF2 /* toolbar.png */; };
+		FBDEE8AB1A71D63900AE3AF2 /* videoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A31A71D63900AE3AF2 /* videoplay.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,9 +80,9 @@
 		FB5674B91A6F9F0F005AC34D /* Page.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Page.m; sourceTree = "<group>"; };
 		FB5674BB1A6F9F2F005AC34D /* PageElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PageElement.h; sourceTree = "<group>"; };
 		FB5674BC1A6F9F2F005AC34D /* PageElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PageElement.m; sourceTree = "<group>"; };
-		FB85D0311A70FE65007D485A /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = badge.png; sourceTree = "<group>"; };
-		FB85D0321A70FE65007D485A /* music-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "music-note.png"; sourceTree = "<group>"; };
-		FB85D0331A70FE65007D485A /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sun.png; sourceTree = "<group>"; };
+		FB85D0311A70FE65007D485A /* badge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = badge.png; path = ../badge.png; sourceTree = "<group>"; };
+		FB85D0321A70FE65007D485A /* music-note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "music-note.png"; path = "../music-note.png"; sourceTree = "<group>"; };
+		FB85D0331A70FE65007D485A /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = ../sun.png; sourceTree = "<group>"; };
 		FBB08FEF1A7084DF003271EB /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
 		FBB08FF01A7084DF003271EB /* ioapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ioapi.c; sourceTree = "<group>"; };
 		FBB08FF11A7084DF003271EB /* ioapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ioapi.h; sourceTree = "<group>"; };
@@ -91,6 +99,14 @@
 		FBB090031A708AB9003271EB /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
 		FBB090051A708ADC003271EB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		FBC73FA61A70953C004EC5C8 /* book.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = book.zip; sourceTree = "<group>"; };
+		FBDEE89C1A71D63900AE3AF2 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		FBDEE89D1A71D63900AE3AF2 /* iPadAppIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadAppIcon.png; sourceTree = "<group>"; };
+		FBDEE89E1A71D63900AE3AF2 /* iPadSettingsIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadSettingsIcon.png; sourceTree = "<group>"; };
+		FBDEE89F1A71D63900AE3AF2 /* iPadSpotlightIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPadSpotlightIcon.png; sourceTree = "<group>"; };
+		FBDEE8A01A71D63900AE3AF2 /* music_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_off.png; sourceTree = "<group>"; };
+		FBDEE8A11A71D63900AE3AF2 /* music_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_on.png; sourceTree = "<group>"; };
+		FBDEE8A21A71D63900AE3AF2 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
+		FBDEE8A31A71D63900AE3AF2 /* videoplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoplay.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,9 +170,7 @@
 		FB5674891A6F9D88005AC34D /* MyMagazine */ = {
 			isa = PBXGroup;
 			children = (
-				FB85D0311A70FE65007D485A /* badge.png */,
-				FB85D0321A70FE65007D485A /* music-note.png */,
-				FB85D0331A70FE65007D485A /* sun.png */,
+				FBDEE89B1A71D63900AE3AF2 /* 图片 */,
 				FBC73FA61A70953C004EC5C8 /* book.zip */,
 				FBB090021A708AB9003271EB /* GDataXMLNode.h */,
 				FBB090031A708AB9003271EB /* GDataXMLNode.m */,
@@ -230,6 +244,25 @@
 				FBB08FF71A7084DF003271EB /* zip.h */,
 			);
 			path = minizip;
+			sourceTree = "<group>";
+		};
+		FBDEE89B1A71D63900AE3AF2 /* 图片 */ = {
+			isa = PBXGroup;
+			children = (
+				FB85D0311A70FE65007D485A /* badge.png */,
+				FB85D0321A70FE65007D485A /* music-note.png */,
+				FB85D0331A70FE65007D485A /* sun.png */,
+				FBDEE89C1A71D63900AE3AF2 /* Icon.png */,
+				FBDEE89D1A71D63900AE3AF2 /* iPadAppIcon.png */,
+				FBDEE89E1A71D63900AE3AF2 /* iPadSettingsIcon.png */,
+				FBDEE89F1A71D63900AE3AF2 /* iPadSpotlightIcon.png */,
+				FBDEE8A01A71D63900AE3AF2 /* music_off.png */,
+				FBDEE8A11A71D63900AE3AF2 /* music_on.png */,
+				FBDEE8A21A71D63900AE3AF2 /* toolbar.png */,
+				FBDEE8A31A71D63900AE3AF2 /* videoplay.png */,
+			);
+			name = "图片";
+			path = "归档";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,10 +343,18 @@
 			files = (
 				FB85D0361A70FE65007D485A /* sun.png in Resources */,
 				FB56748E1A6F9D88005AC34D /* InfoPlist.strings in Resources */,
+				FBDEE8A51A71D63900AE3AF2 /* iPadAppIcon.png in Resources */,
+				FBDEE8AA1A71D63900AE3AF2 /* toolbar.png in Resources */,
+				FBDEE8A71A71D63900AE3AF2 /* iPadSpotlightIcon.png in Resources */,
+				FBDEE8A91A71D63900AE3AF2 /* music_on.png in Resources */,
+				FBDEE8A61A71D63900AE3AF2 /* iPadSettingsIcon.png in Resources */,
 				FB5674961A6F9D88005AC34D /* Images.xcassets in Resources */,
 				FB85D0351A70FE65007D485A /* music-note.png in Resources */,
 				FBC73FA71A70953C004EC5C8 /* book.zip in Resources */,
+				FBDEE8A81A71D63900AE3AF2 /* music_off.png in Resources */,
+				FBDEE8A41A71D63900AE3AF2 /* Icon.png in Resources */,
 				FB85D0341A70FE65007D485A /* badge.png in Resources */,
+				FBDEE8AB1A71D63900AE3AF2 /* videoplay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
