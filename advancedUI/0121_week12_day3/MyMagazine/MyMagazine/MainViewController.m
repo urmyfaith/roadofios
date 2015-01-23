@@ -189,6 +189,12 @@
     else{
         NSLog(@"%s [LINE:%d] 音乐开关", __func__, __LINE__);
         button.selected = !button.selected;
+        if (button.selected) {
+            [_audioPlayer pause];
+        }
+        else{
+            [_audioPlayer play];
+        }
     }
      [self loadPageView];
         
