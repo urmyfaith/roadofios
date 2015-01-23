@@ -247,6 +247,8 @@ else{
 - 更新当前页
 - 重新加载页面.
 
+http://objccn.io/issue-19-2/
+
 
 
 
