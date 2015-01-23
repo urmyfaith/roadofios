@@ -8,6 +8,9 @@
 
 #import "PageView.h"
 #import "Page.h"
+#import "PageElement.h"
+#import "PageAttribute.h"
+
 
 @implementation PageView
 {
@@ -58,8 +61,10 @@
     //0.-----先加载三层
     [self addSubview:_backView];
     [self addSubview:_midView];
+    self.userInteractionEnabled = YES;
+    _midView.userInteractionEnabled = YES;
     [self addSubview:_topView];
-    
+
     
     //1.-----背景图
     UIImage *bgImage = [[UIImage alloc]initWithContentsOfFile:
@@ -79,11 +84,36 @@
     }
     
     
+    //3.-----遍历page中的所有pageElement对象创建对应的控件
+    for (PageElement *pe  in _page.pageElementList) {
+        if ([pe.pageElementName isEqualToString:@"goto"]) {
+            //跳转页面
+            int x = [((PageAttribute *)[pe.pageElementAttribute objectAtIndex:0]).pageAttributeValue intValue];
+            int y = [((PageAttribute *)[pe.pageElementAttribute objectAtIndex:1]).pageAttributeValue intValue];
+            int w = [((PageAttribute *)[pe.pageElementAttribute objectAtIndex:2]).pageAttributeValue intValue];
+            int h = [((PageAttribute *)[pe.pageElementAttribute objectAtIndex:3]).pageAttributeValue intValue];
+            int tag = [((PageAttribute *)[pe.pageElementAttribute objectAtIndex:4]).pageAttributeValue intValue];
+            
+            
+            UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+            btn.frame = CGRectMake(x, y, w, h);
+            btn.tag = tag;
+            btn.backgroundColor = [UIColor redColor];
+            [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
+            [_midView addSubview:btn];
+        }
+        
+    }
+    
     _isLoadPage = YES;//加载完成后,设置已经加载过了.
     
     NSLog(@"laodPage - %@",_pageViewId);
 }
 
+
+-(void)btnClicked:(UIButton *)button{
+    NSLog(@"%s [LINE:%d] button.tag=%d", __func__, __LINE__,button.tag);
+}
 
 -(void)unloadPage{
     
