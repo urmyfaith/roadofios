@@ -13,6 +13,11 @@
  */
 @interface Page : NSObject
 
+//当前页面的所有的节点列表
+@property(nonatomic,strong)NSMutableArray *pageElementList;
 
+
+//传进来一个界面的xml文件路径,解析xml文件返回page对象.
++(Page *)loadPageWithXMLPath:(NSString *)xmlPath;
 
 @end

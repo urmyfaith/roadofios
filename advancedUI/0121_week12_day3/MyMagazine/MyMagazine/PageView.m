@@ -7,8 +7,19 @@
 //
 
 #import "PageView.h"
+#import "Page.h"
 
 @implementation PageView
+{
+    //所有控件分为三层加载,不同控件根据功能不同,选择加入到不同的层中
+    UIView *_backView;
+    UIView *_midView;
+    UIView *_topView;
+    
+    //页面对象
+    Page *_page;
+    
+}
 
 - (id)initWithFrame:(CGRect)frame
 {
@@ -25,6 +36,10 @@
         _pageViewId = @"0";
         _isActivityPage = NO;
         _isLoadPage  = NO;
+        _backView = [[UIView alloc]init];
+        _midView = [[UIView alloc]init];
+        _topView = [[UIView alloc]init];
+
     }
     return self;
 }
@@ -39,14 +54,30 @@
  
  */
 -(void)loadPage{
-
+    
+    //0.-----先加载三层
+    [self addSubview:_backView];
+    [self addSubview:_midView];
+    [self addSubview:_topView];
+    
+    
+    //1.-----背景图
     UIImage *bgImage = [[UIImage alloc]initWithContentsOfFile:
                         [NSString stringWithFormat:@"%@/Library/Caches/book/%@.jpg",NSHomeDirectory(),_pageViewId]];
     UIImageView *bgImageView = [[UIImageView alloc]initWithImage:bgImage];
     
     bgImageView.frame = self.bounds;
     
-    [self addSubview:bgImageView];
+    [_backView addSubview:bgImageView];
+    
+    //2.-----加载页面资源(首先判断是否有)
+    NSString *xmlFilePath = [NSString stringWithFormat:@"%@/Library/Caches/book/%@.xml",NSHomeDirectory(),_pageViewId];
+    NSFileManager *fileManager = [[NSFileManager alloc]init];
+    if ([fileManager fileExistsAtPath:xmlFilePath]) {
+        //有界面资源
+        _page = [Page loadPageWithXMLPath:xmlFilePath];
+    }
+    
     
     _isLoadPage = YES;//加载完成后,设置已经加载过了.
     
@@ -60,9 +91,17 @@
     NSLog(@"unloadPage - %@",_pageViewId);
     
     //卸载页面资源
-    for (UIView *view in self.subviews) {
+    //由于成员变量在类销毁时释放,所以,成员变量View中的控件需要单独释放.
+    for (UIView *view in _backView.subviews) {
         [view removeFromSuperview];
     }
+    for (UIView *view in _midView.subviews) {
+        [view removeFromSuperview];
+    }
+    for (UIView *view in _topView.subviews) {
+        [view removeFromSuperview];
+    }
+    
 }
 
 //加载/释放中资源
