@@ -43,6 +43,7 @@
 		FBDEE8A91A71D63900AE3AF2 /* music_on.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A11A71D63900AE3AF2 /* music_on.png */; };
 		FBDEE8AA1A71D63900AE3AF2 /* toolbar.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A21A71D63900AE3AF2 /* toolbar.png */; };
 		FBDEE8AB1A71D63900AE3AF2 /* videoplay.png in Resources */ = {isa = PBXBuildFile; fileRef = FBDEE8A31A71D63900AE3AF2 /* videoplay.png */; };
+		FBDEE8AD1A71DB0E00AE3AF2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBDEE8AC1A71DB0E00AE3AF2 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		FBDEE8A11A71D63900AE3AF2 /* music_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = music_on.png; sourceTree = "<group>"; };
 		FBDEE8A21A71D63900AE3AF2 /* toolbar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = toolbar.png; sourceTree = "<group>"; };
 		FBDEE8A31A71D63900AE3AF2 /* videoplay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = videoplay.png; sourceTree = "<group>"; };
+		FBDEE8AC1A71DB0E00AE3AF2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBDEE8AD1A71DB0E00AE3AF2 /* AVFoundation.framework in Frameworks */,
 				FBB090061A708ADC003271EB /* libxml2.dylib in Frameworks */,
 				FBB090011A70852D003271EB /* libz.1.1.3.dylib in Frameworks */,
 				FB5674861A6F9D88005AC34D /* CoreGraphics.framework in Frameworks */,
@@ -157,6 +160,7 @@
 		FB5674821A6F9D88005AC34D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBDEE8AC1A71DB0E00AE3AF2 /* AVFoundation.framework */,
 				FBB090051A708ADC003271EB /* libxml2.dylib */,
 				FBB090001A70852D003271EB /* libz.1.1.3.dylib */,
 				FB5674831A6F9D88005AC34D /* Foundation.framework */,

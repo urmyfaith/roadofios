@@ -209,7 +209,18 @@ for(int i = 0 ; i < 10; i++{
 //c99+
 ~~~
 
+##  播放音乐
 
+- 引入头文件
+
+~~~objectivec
+#import <AVFoundation/AVFoundation.h>
+~~~
+
+~~~objectivec
+NSURL fileURLWithPath:<#(NSString *)#>//本地路径
+NSURL *url = [NSURL URLWithString:<#(NSString *)#>] //网络路径
+~~~
 
 
 

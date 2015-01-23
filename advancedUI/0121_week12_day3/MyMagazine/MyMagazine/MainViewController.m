@@ -10,7 +10,7 @@
 #import "ZipArchive.h"
 #import "GDataXMLNode.h"
 #import "PageView.h"
-
+#import <AVFoundation/AVFoundation.h>
 
 @interface MainViewController ()
 
@@ -41,6 +41,8 @@
     //subView的引导滚动条
     UIScrollView *_subScrollView;
     
+    //音乐播放器
+    AVAudioPlayer *_audioPlayer;
     
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -79,6 +81,19 @@
     //5.加载subView界面
     [self layoutSubUI];
     
+    //6.播放音乐
+    [self loadAudioPlayer];
+}
+
+-(void)loadAudioPlayer
+{
+ 
+
+    NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/Library/Caches/book/music.mp3",NSHomeDirectory()]];
+    _audioPlayer = [[AVAudioPlayer alloc]initWithContentsOfURL:url
+                                                         error:nil];
+    [_audioPlayer prepareToPlay];
+    [_audioPlayer play];
 }
 
 -(void)layoutSubUI{
@@ -164,13 +179,18 @@
     NSLog(@"%s [LINE:%d] %i", __func__, __LINE__,button.tag);
     if (button.tag == 100) {
         [_mainScrollView setContentOffset:CGPointMake(0,0) animated:YES];
+        _currentIndex = 0;
     }else if(button.tag == 101)
     {
+        _currentIndex = 2;
         [_mainScrollView setContentOffset:CGPointMake(768*2,0) animated:YES];
+       
     }
     else{
         NSLog(@"%s [LINE:%d] 音乐开关", __func__, __LINE__);
+        button.selected = !button.selected;
     }
+     [self loadPageView];
         
 }
 
