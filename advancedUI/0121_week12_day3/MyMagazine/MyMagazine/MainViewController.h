@@ -10,6 +10,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PageView.h"
+
 
 /**
  *  主界面(唯一界面)
@@ -17,6 +19,6 @@
  * - 声音的控制
  * - 引导页的控制
  */
-@interface MainViewController : UIViewController<UIScrollViewDelegate>
+@interface MainViewController : UIViewController<UIScrollViewDelegate,PageViewDelegete>
 
 @end

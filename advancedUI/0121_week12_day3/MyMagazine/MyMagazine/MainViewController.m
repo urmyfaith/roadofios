@@ -332,6 +332,8 @@
     for ( int i = 0; i < [_loadPaegViewArray count]; i++)
     {
         PageView *pv = [_loadPaegViewArray objectAtIndex:i];
+        pv.delegete = self;
+        
         BOOL isRelease = YES;
         for (NSString *index in indexArray) {
             if (pv.pageViewIndex  == [index intValue]) {
@@ -422,5 +424,14 @@
 
 }
 
+
+-(void)gotoPageWithPageIndex:(int)pageIndex{
+    [UIView animateWithDuration:1.0 animations:^{
+        [_mainScrollView setContentOffset:CGPointMake(768*pageIndex, 0) animated:NO];
+        _currentIndex = pageIndex;
+        [self loadPageView];
+    }];
+
+}
 
 @end

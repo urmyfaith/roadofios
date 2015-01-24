@@ -59,10 +59,12 @@
 -(void)loadPage{
     
     //0.-----先加载三层
+    _backView.frame = self.bounds;
+    _midView.frame = self.bounds;
+    _topView.frame = self.bounds;
+    
     [self addSubview:_backView];
     [self addSubview:_midView];
-    self.userInteractionEnabled = YES;
-    _midView.userInteractionEnabled = YES;
     [self addSubview:_topView];
 
     
@@ -98,9 +100,9 @@
             UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
             btn.frame = CGRectMake(x, y, w, h);
             btn.tag = tag;
-            btn.backgroundColor = [UIColor redColor];
+         
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
-            [_midView addSubview:btn];
+            [_topView addSubview:btn];
         }
         
     }
@@ -113,6 +115,7 @@
 
 -(void)btnClicked:(UIButton *)button{
     NSLog(@"%s [LINE:%d] button.tag=%d", __func__, __LINE__,button.tag);
+    [_delegete gotoPageWithPageIndex:button.tag];
 }
 
 -(void)unloadPage{

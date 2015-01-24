@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PageViewDelegete <NSObject>
+
+-(void)gotoPageWithPageIndex:(int)pageIndex;
+
+@end
 
 /**
  *  每一个页
@@ -29,6 +34,9 @@
 
 //是否是活动页
 @property(nonatomic,assign)BOOL isActivityPage;
+
+//调转页面的代理
+@property(nonatomic,weak)__weak id<PageViewDelegete> delegete;
 
 //加载/释放轻资源
 -(void)loadPage;
