@@ -135,7 +135,7 @@ int main(int argc, const char * argv[])
     
 #pragma mark     /*==========容器类+可变对象===========*/
 
-#if 1
+#if 0
     
     NSMutableString *string = [NSMutableString stringWithFormat:@"hello"];
     
@@ -180,6 +180,71 @@ int main(int argc, const char * argv[])
      */
     
 #endif
+    
+#pragma  mark     /*==========浅拷贝和深拷贝===========*/
+    
+#if 1
+    
+    NSMutableString *str = [NSMutableString stringWithFormat:@"copy object"];
+    
+    NSMutableDictionary *dic = [NSMutableDictionary dictionaryWithCapacity:1];
+    [dic setObject:str forKey:@"key1"];
+    
+    NSMutableArray *oldArray = [NSMutableArray arrayWithObjects:dic,nil];
+    
+    NSMutableArray *newArray = [NSMutableArray arrayWithArray:oldArray];
+    NSMutableArray *copyItems = [[NSMutableArray alloc]initWithArray:oldArray copyItems:YES ];
+    
+    
+    //就数组归档
+    NSData *data = [NSArchiver archivedDataWithRootObject:oldArray];
+    NSMutableArray *m_array = [NSUnarchiver unarchiveObjectWithData:data];
+    
+    [dic setObject:@"new_value" forKey:@"key2"];
+    [str appendString:@"update"];
+    
+    
+    NSLog(@"oldArray = %@",oldArray);
+    NSLog(@"newArray = %@",newArray);
+    NSLog(@"copyItems = %@",copyItems);
+    NSLog(@"m_array = %@",m_array);
+    
+    NSLog(@"%p",oldArray);
+    NSLog(@"%p",newArray);
+    NSLog(@"%p",copyItems);
+    NSLog(@"%p",m_array);
+    
+    /*
+     2015-01-26 21:25:30.551 Deep_Shallow_Copy[9567:676473] oldArray = (
+     {
+     key1 = "copy objectupdate";
+     key2 = "new_value";
+     }
+     )
+     2015-01-26 21:25:30.552 Deep_Shallow_Copy[9567:676473] newArray = (
+     {
+     key1 = "copy objectupdate";
+     key2 = "new_value";
+     }
+     )
+     2015-01-26 21:25:30.552 Deep_Shallow_Copy[9567:676473] copyItems = (
+     {
+     key1 = "copy objectupdate";
+     }
+     )
+     2015-01-26 21:25:30.553 Deep_Shallow_Copy[9567:676473] m_array = (
+     {
+     key1 = "copy object";
+     }
+     )
+     2015-01-26 21:25:30.553 Deep_Shallow_Copy[9567:676473] 0x10010f9c0
+     2015-01-26 21:25:30.553 Deep_Shallow_Copy[9567:676473] 0x10010faf0
+     2015-01-26 21:25:30.553 Deep_Shallow_Copy[9567:676473] 0x10010fbf0
+     2015-01-26 21:25:30.553 Deep_Shallow_Copy[9567:676473] 0x100203ac0
+     */
+    
+#endif
+
 
     return 0;
 }
