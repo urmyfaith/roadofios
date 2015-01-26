@@ -219,6 +219,7 @@
 		FBF3A6931A7642D600A55E29 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Deep_Shallow_Copy/Deep_Shallow_Copy-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -228,6 +229,7 @@
 		FBF3A6941A7642D600A55E29 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Deep_Shallow_Copy/Deep_Shallow_Copy-Prefix.pch";
 				PRODUCT_NAME = "$(TARGET_NAME)";
