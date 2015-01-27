@@ -97,9 +97,33 @@
     NSString *groupTitle_string = [NSString stringWithFormat:@"第%02ld组",section];
     [button setTitle:groupTitle_string forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.tag = section + 100;
+    //button.tag = section + 100;
     
-    return button;
+    UIView *headerView = [[UIView alloc]init];
+    headerView.userInteractionEnabled = YES;
+    headerView.tag = section + 100;
+    UIImageView *backgourndView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 42)];
+    backgourndView.image = [[UIImage imageNamed:@"section"] stretchableImageWithLeftCapWidth:10 topCapHeight:10];
+    [headerView addSubview:backgourndView];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self
+                                                                         action:@selector(headViewTapped:)];
+    [headerView addGestureRecognizer:tap];
+    return headerView;
+}
+
+-(void)headViewTapped:(UITapGestureRecognizer *)tap{
+    id tapView = [tap view];
+    if([tapView isKindOfClass:[UIView class]]){
+        NSString *key = [NSString stringWithFormat:@"%ld",((UIView *)tapView).tag];
+        if (![_isHiddenSections objectForKey:key]) {
+            [_isHiddenSections setObject:@"YES" forKey:key];
+        }else{
+            [_isHiddenSections removeObjectForKey:key];
+        }
+        [_tableView reloadSections:[NSIndexSet indexSetWithIndex:((UIView *)tapView).tag-100]
+                  withRowAnimation:UITableViewRowAnimationFade];
+    }
 }
 
 /**
@@ -108,7 +132,7 @@
  *  第一次点击,根据key,没有值====>存入字典===>字典有值===>隐藏对应的分组
  *  字典有值===>从字典删除====>字典没有值===>展开对应的分组.
  *
- *  @param button <#button description#>
+ *  @param button button
  */
 -(void)buttonClicked:(UIButton *)button{
     
