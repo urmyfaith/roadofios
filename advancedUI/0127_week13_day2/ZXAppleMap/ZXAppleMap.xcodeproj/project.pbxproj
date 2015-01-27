@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB321D2B1A776E000033E858 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FB321D2A1A776E000033E858 /* MyAnnotation.m */; };
+		FB321D2D1A7773E60033E858 /* eye.png in Resources */ = {isa = PBXBuildFile; fileRef = FB321D2C1A7773E60033E858 /* eye.png */; };
+		FB89643A1A776608007158D0 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8964391A776608007158D0 /* MainViewController.m */; };
 		FBB8EAD81A773A5B004759CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EAD71A773A5B004759CA /* Foundation.framework */; };
 		FBB8EADA1A773A5B004759CA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EAD91A773A5B004759CA /* CoreGraphics.framework */; };
 		FBB8EADC1A773A5B004759CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EADB1A773A5B004759CA /* UIKit.framework */; };
@@ -39,6 +42,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB321D291A776E000033E858 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		FB321D2A1A776E000033E858 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
+		FB321D2C1A7773E60033E858 /* eye.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = eye.png; sourceTree = "<group>"; };
+		FB8964381A776608007158D0 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FB8964391A776608007158D0 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		FBB8EAD41A773A5B004759CA /* ZXAppleMap.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZXAppleMap.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB8EAD71A773A5B004759CA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FBB8EAD91A773A5B004759CA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -193,8 +201,13 @@
 		FBB8EADD1A773A5B004759CA /* ZXAppleMap */ = {
 			isa = PBXGroup;
 			children = (
+				FB321D2C1A7773E60033E858 /* eye.png */,
 				FBB8EAE61A773A5B004759CA /* ZXAppDelegate.h */,
 				FBB8EAE71A773A5B004759CA /* ZXAppDelegate.mm */,
+				FB8964381A776608007158D0 /* MainViewController.h */,
+				FB8964391A776608007158D0 /* MainViewController.m */,
+				FB321D291A776E000033E858 /* MyAnnotation.h */,
+				FB321D2A1A776E000033E858 /* MyAnnotation.m */,
 				FBB8EB061A774364004759CA /* inc */,
 				FBB8EB441A774364004759CA /* libbaidumapapi.a */,
 				FBB8EB451A774364004759CA /* mapapi.bundle */,
@@ -378,6 +391,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB8EB471A774364004759CA /* mapapi.bundle in Resources */,
+				FB321D2D1A7773E60033E858 /* eye.png in Resources */,
 				FBB8EAE21A773A5B004759CA /* InfoPlist.strings in Resources */,
 				FBB8EAEA1A773A5B004759CA /* Images.xcassets in Resources */,
 			);
@@ -399,6 +413,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FBB8EAE81A773A5B004759CA /* ZXAppDelegate.mm in Sources */,
+				FB89643A1A776608007158D0 /* MainViewController.m in Sources */,
+				FB321D2B1A776E000033E858 /* MyAnnotation.m in Sources */,
 				FBB8EAE41A773A5B004759CA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

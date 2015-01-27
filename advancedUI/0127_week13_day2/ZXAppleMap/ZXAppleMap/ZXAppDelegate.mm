@@ -8,7 +8,7 @@
 
 #import "ZXAppDelegate.h"
 #import "BMapKit.h"
-
+#import "MainViewController.h"
 
 @implementation ZXAppDelegate
 {
@@ -21,7 +21,8 @@
     
     
     // Override point for customization after application launch.
-    _mapManager  = [[BMKMapManager alloc]    init];
+    
+    _mapManager  = [[BMKMapManager alloc]  init];
     BOOL res = [_mapManager start:@"a9bDDgkdsrXf14qFMVd8F09p" generalDelegate:nil];
     if (res) {
         NSLog(@"start success");
@@ -30,6 +31,9 @@
         NSLog(@"start failed.");
     }
     
+    MainViewController *mvc = [[MainViewController alloc]init];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mvc];
+    self.window.rootViewController = nav;
     
     
     self.window.backgroundColor = [UIColor whiteColor];
