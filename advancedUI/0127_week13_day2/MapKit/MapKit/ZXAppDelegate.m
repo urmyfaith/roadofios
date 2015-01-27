@@ -7,6 +7,7 @@
 //
 
 #import "ZXAppDelegate.h"
+#import "MainViewController.h"
 
 @implementation ZXAppDelegate
 
@@ -14,6 +15,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    MainViewController *mainView = [[MainViewController alloc] init];
+    
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mainView];
+    self.window.rootViewController = nav;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;

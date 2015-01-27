@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0063EC1A771DDF00E2E4AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB0063EB1A771DDF00E2E4AB /* CoreLocation.framework */; };
+		FB12FD501A771F9500ED9CD7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB12FD4F1A771F9500ED9CD7 /* MapKit.framework */; };
+		FB12FD541A7725E800ED9CD7 /* MyAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = FB12FD531A7725E800ED9CD7 /* MyAnnotation.m */; };
 		FB9C56CB1A771BE000D706C2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9C56CA1A771BE000D706C2 /* Foundation.framework */; };
 		FB9C56CD1A771BE000D706C2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9C56CC1A771BE000D706C2 /* CoreGraphics.framework */; };
 		FB9C56CF1A771BE000D706C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9C56CE1A771BE000D706C2 /* UIKit.framework */; };
@@ -19,6 +22,7 @@
 		FB9C56E61A771BE000D706C2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB9C56CE1A771BE000D706C2 /* UIKit.framework */; };
 		FB9C56EE1A771BE000D706C2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB9C56EC1A771BE000D706C2 /* InfoPlist.strings */; };
 		FB9C56F01A771BE000D706C2 /* MapKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9C56EF1A771BE000D706C2 /* MapKitTests.m */; };
+		FB9C56FB1A771C4300D706C2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9C56FA1A771C4300D706C2 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +36,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0063EB1A771DDF00E2E4AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FB12FD4F1A771F9500ED9CD7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FB12FD511A77247F00ED9CD7 /* myLocation.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = myLocation.gpx; sourceTree = "<group>"; };
+		FB12FD521A7725E800ED9CD7 /* MyAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAnnotation.h; sourceTree = "<group>"; };
+		FB12FD531A7725E800ED9CD7 /* MyAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAnnotation.m; sourceTree = "<group>"; };
 		FB9C56C71A771BE000D706C2 /* MapKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB9C56CA1A771BE000D706C2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB9C56CC1A771BE000D706C2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -48,6 +57,8 @@
 		FB9C56EB1A771BE000D706C2 /* MapKitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "MapKitTests-Info.plist"; sourceTree = "<group>"; };
 		FB9C56ED1A771BE000D706C2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB9C56EF1A771BE000D706C2 /* MapKitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MapKitTests.m; sourceTree = "<group>"; };
+		FB9C56F91A771C4300D706C2 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FB9C56FA1A771C4300D706C2 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB12FD501A771F9500ED9CD7 /* MapKit.framework in Frameworks */,
+				FB0063EC1A771DDF00E2E4AB /* CoreLocation.framework in Frameworks */,
 				FB9C56CD1A771BE000D706C2 /* CoreGraphics.framework in Frameworks */,
 				FB9C56CF1A771BE000D706C2 /* UIKit.framework in Frameworks */,
 				FB9C56CB1A771BE000D706C2 /* Foundation.framework in Frameworks */,
@@ -96,6 +109,8 @@
 		FB9C56C91A771BE000D706C2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB12FD4F1A771F9500ED9CD7 /* MapKit.framework */,
+				FB0063EB1A771DDF00E2E4AB /* CoreLocation.framework */,
 				FB9C56CA1A771BE000D706C2 /* Foundation.framework */,
 				FB9C56CC1A771BE000D706C2 /* CoreGraphics.framework */,
 				FB9C56CE1A771BE000D706C2 /* UIKit.framework */,
@@ -109,6 +124,11 @@
 			children = (
 				FB9C56D91A771BE000D706C2 /* ZXAppDelegate.h */,
 				FB9C56DA1A771BE000D706C2 /* ZXAppDelegate.m */,
+				FB9C56F91A771C4300D706C2 /* MainViewController.h */,
+				FB9C56FA1A771C4300D706C2 /* MainViewController.m */,
+				FB12FD521A7725E800ED9CD7 /* MyAnnotation.h */,
+				FB12FD531A7725E800ED9CD7 /* MyAnnotation.m */,
+				FB12FD511A77247F00ED9CD7 /* myLocation.gpx */,
 				FB9C56DC1A771BE000D706C2 /* Images.xcassets */,
 				FB9C56D11A771BE000D706C2 /* Supporting Files */,
 			);
@@ -241,6 +261,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB9C56DB1A771BE000D706C2 /* ZXAppDelegate.m in Sources */,
+				FB9C56FB1A771C4300D706C2 /* MainViewController.m in Sources */,
+				FB12FD541A7725E800ED9CD7 /* MyAnnotation.m in Sources */,
 				FB9C56D71A771BE000D706C2 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,6 +460,7 @@
 				FB9C56F51A771BE000D706C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB9C56F61A771BE000D706C2 /* Build configuration list for PBXNativeTarget "MapKitTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +469,7 @@
 				FB9C56F81A771BE000D706C2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
