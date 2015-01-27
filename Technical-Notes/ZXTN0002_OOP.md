@@ -69,3 +69,45 @@ http://www.cnblogs.com/ludashi/p/3911666.html
             
 ```
 
+## KVC 和kVO
+
+http://www.cnblogs.com/ludashi/p/3912970.html
+
+- 设置值和取值
+
+~~~objectivec
+[kvc setValue:@"xxx" forKey:@"name"];
+NSLog(@"name = %@", [kvc valueForKey:@"name"]);
+~~~
+
+
+- 通过键路径给实例变量是其他类的对象赋值(当类的属性也是一个类的时候)
+
+~~~objectivec
+SubKVCClass *sub = [SubKVCClass new];
+kvc.subKVC = sub;  
+[kvc setValue:@"xxxx" forKeyPath:@"subKVC.subName"];
+NSLog(@"subName = %@", [kvc valueForKeyPath:@"subKVC.subName"]);
+NSLog(@"%@", kvc);
+~~~
+
+
+> KVO使用三步走：
+>>(1)注册成为观察者
+>>
+>>(2)观察者定义KVO的回调
+>>
+>>(3)移除观察者
+
+
+~~~objectivec
+[self addObserver:self
+               forKeyPath:@"name"
+                  options:NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld
+                  context:@"name"];
+                  
+                  
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context;
+
+[self removeObserver:self forKeyPath:@"name"];
+~~~
