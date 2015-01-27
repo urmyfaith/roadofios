@@ -12,7 +12,7 @@
 		FBB8EADC1A773A5B004759CA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EADB1A773A5B004759CA /* UIKit.framework */; };
 		FBB8EAE21A773A5B004759CA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBB8EAE01A773A5B004759CA /* InfoPlist.strings */; };
 		FBB8EAE41A773A5B004759CA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB8EAE31A773A5B004759CA /* main.m */; };
-		FBB8EAE81A773A5B004759CA /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB8EAE71A773A5B004759CA /* ZXAppDelegate.m */; };
+		FBB8EAE81A773A5B004759CA /* ZXAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = FBB8EAE71A773A5B004759CA /* ZXAppDelegate.mm */; };
 		FBB8EAEA1A773A5B004759CA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBB8EAE91A773A5B004759CA /* Images.xcassets */; };
 		FBB8EAF11A773A5B004759CA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EAF01A773A5B004759CA /* XCTest.framework */; };
 		FBB8EAF21A773A5B004759CA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EAD71A773A5B004759CA /* Foundation.framework */; };
@@ -21,6 +21,11 @@
 		FBB8EAFD1A773A5B004759CA /* ZXAppleMapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBB8EAFC1A773A5B004759CA /* ZXAppleMapTests.m */; };
 		FBB8EB461A774364004759CA /* libbaidumapapi.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EB441A774364004759CA /* libbaidumapapi.a */; };
 		FBB8EB471A774364004759CA /* mapapi.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FBB8EB451A774364004759CA /* mapapi.bundle */; };
+		FBB8EB491A776219004759CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EB481A776219004759CA /* CoreLocation.framework */; };
+		FBB8EB4B1A776229004759CA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EB4A1A776229004759CA /* QuartzCore.framework */; };
+		FBB8EB4D1A776234004759CA /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EB4C1A776234004759CA /* OpenGLES.framework */; };
+		FBB8EB4F1A77623E004759CA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EB4E1A77623E004759CA /* SystemConfiguration.framework */; };
+		FBB8EB511A776250004759CA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBB8EB501A776250004759CA /* Security.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +48,7 @@
 		FBB8EAE31A773A5B004759CA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBB8EAE51A773A5B004759CA /* ZXAppleMap-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZXAppleMap-Prefix.pch"; sourceTree = "<group>"; };
 		FBB8EAE61A773A5B004759CA /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
-		FBB8EAE71A773A5B004759CA /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
+		FBB8EAE71A773A5B004759CA /* ZXAppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ZXAppDelegate.mm; sourceTree = "<group>"; };
 		FBB8EAE91A773A5B004759CA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FBB8EAEF1A773A5B004759CA /* ZXAppleMapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZXAppleMapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBB8EAF01A773A5B004759CA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -113,6 +118,11 @@
 		FBB8EB431A774364004759CA /* BMKVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BMKVersion.h; sourceTree = "<group>"; };
 		FBB8EB441A774364004759CA /* libbaidumapapi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libbaidumapapi.a; sourceTree = "<group>"; };
 		FBB8EB451A774364004759CA /* mapapi.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = mapapi.bundle; sourceTree = "<group>"; };
+		FBB8EB481A776219004759CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		FBB8EB4A1A776229004759CA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		FBB8EB4C1A776234004759CA /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		FBB8EB4E1A77623E004759CA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FBB8EB501A776250004759CA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +130,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBB8EB511A776250004759CA /* Security.framework in Frameworks */,
 				FBB8EADA1A773A5B004759CA /* CoreGraphics.framework in Frameworks */,
+				FBB8EB4F1A77623E004759CA /* SystemConfiguration.framework in Frameworks */,
+				FBB8EB4D1A776234004759CA /* OpenGLES.framework in Frameworks */,
+				FBB8EB4B1A776229004759CA /* QuartzCore.framework in Frameworks */,
+				FBB8EB491A776219004759CA /* CoreLocation.framework in Frameworks */,
 				FBB8EADC1A773A5B004759CA /* UIKit.framework in Frameworks */,
 				FBB8EAD81A773A5B004759CA /* Foundation.framework in Frameworks */,
 				FBB8EB461A774364004759CA /* libbaidumapapi.a in Frameworks */,
@@ -162,6 +177,11 @@
 		FBB8EAD61A773A5B004759CA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FBB8EB501A776250004759CA /* Security.framework */,
+				FBB8EB4E1A77623E004759CA /* SystemConfiguration.framework */,
+				FBB8EB4C1A776234004759CA /* OpenGLES.framework */,
+				FBB8EB4A1A776229004759CA /* QuartzCore.framework */,
+				FBB8EB481A776219004759CA /* CoreLocation.framework */,
 				FBB8EAD71A773A5B004759CA /* Foundation.framework */,
 				FBB8EAD91A773A5B004759CA /* CoreGraphics.framework */,
 				FBB8EADB1A773A5B004759CA /* UIKit.framework */,
@@ -174,7 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				FBB8EAE61A773A5B004759CA /* ZXAppDelegate.h */,
-				FBB8EAE71A773A5B004759CA /* ZXAppDelegate.m */,
+				FBB8EAE71A773A5B004759CA /* ZXAppDelegate.mm */,
 				FBB8EB061A774364004759CA /* inc */,
 				FBB8EB441A774364004759CA /* libbaidumapapi.a */,
 				FBB8EB451A774364004759CA /* mapapi.bundle */,
@@ -378,7 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FBB8EAE81A773A5B004759CA /* ZXAppDelegate.m in Sources */,
+				FBB8EAE81A773A5B004759CA /* ZXAppDelegate.mm in Sources */,
 				FBB8EAE41A773A5B004759CA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -584,6 +604,7 @@
 				FBB8EB021A773A5B004759CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FBB8EB031A773A5B004759CA /* Build configuration list for PBXNativeTarget "ZXAppleMapTests" */ = {
 			isa = XCConfigurationList;
@@ -592,6 +613,7 @@
 				FBB8EB051A773A5B004759CA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
