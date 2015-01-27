@@ -89,6 +89,16 @@
     return 42;
 }
 
+
+/**
+ *  表头视图
+ *
+ *  @param tableView 表
+ *  @param section   分组
+ *
+ *  @return 表头视图
+ */
+
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     UIView *headerView = [[UIView alloc]init];
@@ -125,6 +135,12 @@
     return headerView;
 }
 
+/**
+ *  单击,折叠与显示数据
+ *  剪头图片替换
+ *
+ *  @param tap 单击的手势
+ */
 -(void)headViewTapped:(UITapGestureRecognizer *)tap{
     id tapView = [tap view];
     if([tapView isKindOfClass:[UIView class]]){
