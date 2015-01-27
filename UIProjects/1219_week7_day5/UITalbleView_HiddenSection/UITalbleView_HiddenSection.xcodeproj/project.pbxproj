@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FB9E5E7A1A77B99C00193A59 /* section.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9E5E791A77B99C00193A59 /* section.png */; };
+		FB9E5E7C1A77BA8E00193A59 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9E5E7B1A77BA8E00193A59 /* right.png */; };
+		FB9E5E7E1A77BAD700193A59 /* down.png in Resources */ = {isa = PBXBuildFile; fileRef = FB9E5E7D1A77BAD700193A59 /* down.png */; };
+		FBE2372B1A77A69500FF3D05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE2372A1A77A69500FF3D05 /* Foundation.framework */; };
+		FBE2372D1A77A69500FF3D05 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE2372C1A77A69500FF3D05 /* CoreGraphics.framework */; };
+		FBE2372F1A77A69500FF3D05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE2372E1A77A69500FF3D05 /* UIKit.framework */; };
+		FBE237351A77A69500FF3D05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBE237331A77A69500FF3D05 /* InfoPlist.strings */; };
+		FBE237371A77A69500FF3D05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE237361A77A69500FF3D05 /* main.m */; };
+		FBE2373B1A77A69500FF3D05 /* ZXAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE2373A1A77A69500FF3D05 /* ZXAppDelegate.m */; };
+		FBE2373D1A77A69500FF3D05 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FBE2373C1A77A69500FF3D05 /* Images.xcassets */; };
+		FBE237441A77A69500FF3D05 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE237431A77A69500FF3D05 /* XCTest.framework */; };
+		FBE237451A77A69500FF3D05 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE2372A1A77A69500FF3D05 /* Foundation.framework */; };
+		FBE237461A77A69500FF3D05 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBE2372E1A77A69500FF3D05 /* UIKit.framework */; };
+		FBE2374E1A77A69500FF3D05 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FBE2374C1A77A69500FF3D05 /* InfoPlist.strings */; };
+		FBE237501A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE2374F1A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.m */; };
+		FBE2375B1A77A6BB00FF3D05 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE2375A1A77A6BB00FF3D05 /* MainViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FBE237471A77A69500FF3D05 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FBE2371F1A77A69500FF3D05 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FBE237261A77A69500FF3D05;
+			remoteInfo = UITalbleView_HiddenSection;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FB9E5E791A77B99C00193A59 /* section.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = section.png; sourceTree = "<group>"; };
+		FB9E5E7B1A77BA8E00193A59 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		FB9E5E7D1A77BAD700193A59 /* down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = down.png; sourceTree = "<group>"; };
+		FBE237271A77A69500FF3D05 /* UITalbleView_HiddenSection.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UITalbleView_HiddenSection.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE2372A1A77A69500FF3D05 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FBE2372C1A77A69500FF3D05 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FBE2372E1A77A69500FF3D05 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FBE237321A77A69500FF3D05 /* UITalbleView_HiddenSection-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UITalbleView_HiddenSection-Info.plist"; sourceTree = "<group>"; };
+		FBE237341A77A69500FF3D05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBE237361A77A69500FF3D05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		FBE237381A77A69500FF3D05 /* UITalbleView_HiddenSection-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITalbleView_HiddenSection-Prefix.pch"; sourceTree = "<group>"; };
+		FBE237391A77A69500FF3D05 /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
+		FBE2373A1A77A69500FF3D05 /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
+		FBE2373C1A77A69500FF3D05 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		FBE237421A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITalbleView_HiddenSectionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FBE237431A77A69500FF3D05 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		FBE2374B1A77A69500FF3D05 /* UITalbleView_HiddenSectionTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UITalbleView_HiddenSectionTests-Info.plist"; sourceTree = "<group>"; };
+		FBE2374D1A77A69500FF3D05 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FBE2374F1A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITalbleView_HiddenSectionTests.m; sourceTree = "<group>"; };
+		FBE237591A77A6BB00FF3D05 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FBE2375A1A77A6BB00FF3D05 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FBE237241A77A69500FF3D05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE2372D1A77A69500FF3D05 /* CoreGraphics.framework in Frameworks */,
+				FBE2372F1A77A69500FF3D05 /* UIKit.framework in Frameworks */,
+				FBE2372B1A77A69500FF3D05 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE2373F1A77A69500FF3D05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE237441A77A69500FF3D05 /* XCTest.framework in Frameworks */,
+				FBE237461A77A69500FF3D05 /* UIKit.framework in Frameworks */,
+				FBE237451A77A69500FF3D05 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FBE2371E1A77A69500FF3D05 = {
+			isa = PBXGroup;
+			children = (
+				FBE237301A77A69500FF3D05 /* UITalbleView_HiddenSection */,
+				FBE237491A77A69500FF3D05 /* UITalbleView_HiddenSectionTests */,
+				FBE237291A77A69500FF3D05 /* Frameworks */,
+				FBE237281A77A69500FF3D05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FBE237281A77A69500FF3D05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FBE237271A77A69500FF3D05 /* UITalbleView_HiddenSection.app */,
+				FBE237421A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FBE237291A77A69500FF3D05 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2372A1A77A69500FF3D05 /* Foundation.framework */,
+				FBE2372C1A77A69500FF3D05 /* CoreGraphics.framework */,
+				FBE2372E1A77A69500FF3D05 /* UIKit.framework */,
+				FBE237431A77A69500FF3D05 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FBE237301A77A69500FF3D05 /* UITalbleView_HiddenSection */ = {
+			isa = PBXGroup;
+			children = (
+				FB9E5E7B1A77BA8E00193A59 /* right.png */,
+				FB9E5E7D1A77BAD700193A59 /* down.png */,
+				FB9E5E791A77B99C00193A59 /* section.png */,
+				FBE237391A77A69500FF3D05 /* ZXAppDelegate.h */,
+				FBE2373A1A77A69500FF3D05 /* ZXAppDelegate.m */,
+				FBE237591A77A6BB00FF3D05 /* MainViewController.h */,
+				FBE2375A1A77A6BB00FF3D05 /* MainViewController.m */,
+				FBE2373C1A77A69500FF3D05 /* Images.xcassets */,
+				FBE237311A77A69500FF3D05 /* Supporting Files */,
+			);
+			path = UITalbleView_HiddenSection;
+			sourceTree = "<group>";
+		};
+		FBE237311A77A69500FF3D05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBE237321A77A69500FF3D05 /* UITalbleView_HiddenSection-Info.plist */,
+				FBE237331A77A69500FF3D05 /* InfoPlist.strings */,
+				FBE237361A77A69500FF3D05 /* main.m */,
+				FBE237381A77A69500FF3D05 /* UITalbleView_HiddenSection-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FBE237491A77A69500FF3D05 /* UITalbleView_HiddenSectionTests */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2374F1A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.m */,
+				FBE2374A1A77A69500FF3D05 /* Supporting Files */,
+			);
+			path = UITalbleView_HiddenSectionTests;
+			sourceTree = "<group>";
+		};
+		FBE2374A1A77A69500FF3D05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FBE2374B1A77A69500FF3D05 /* UITalbleView_HiddenSectionTests-Info.plist */,
+				FBE2374C1A77A69500FF3D05 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FBE237261A77A69500FF3D05 /* UITalbleView_HiddenSection */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBE237531A77A69500FF3D05 /* Build configuration list for PBXNativeTarget "UITalbleView_HiddenSection" */;
+			buildPhases = (
+				FBE237231A77A69500FF3D05 /* Sources */,
+				FBE237241A77A69500FF3D05 /* Frameworks */,
+				FBE237251A77A69500FF3D05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = UITalbleView_HiddenSection;
+			productName = UITalbleView_HiddenSection;
+			productReference = FBE237271A77A69500FF3D05 /* UITalbleView_HiddenSection.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FBE237411A77A69500FF3D05 /* UITalbleView_HiddenSectionTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FBE237561A77A69500FF3D05 /* Build configuration list for PBXNativeTarget "UITalbleView_HiddenSectionTests" */;
+			buildPhases = (
+				FBE2373E1A77A69500FF3D05 /* Sources */,
+				FBE2373F1A77A69500FF3D05 /* Frameworks */,
+				FBE237401A77A69500FF3D05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FBE237481A77A69500FF3D05 /* PBXTargetDependency */,
+			);
+			name = UITalbleView_HiddenSectionTests;
+			productName = UITalbleView_HiddenSectionTests;
+			productReference = FBE237421A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FBE2371F1A77A69500FF3D05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = ZX;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = zx;
+				TargetAttributes = {
+					FBE237411A77A69500FF3D05 = {
+						TestTargetID = FBE237261A77A69500FF3D05;
+					};
+				};
+			};
+			buildConfigurationList = FBE237221A77A69500FF3D05 /* Build configuration list for PBXProject "UITalbleView_HiddenSection" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = FBE2371E1A77A69500FF3D05;
+			productRefGroup = FBE237281A77A69500FF3D05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FBE237261A77A69500FF3D05 /* UITalbleView_HiddenSection */,
+				FBE237411A77A69500FF3D05 /* UITalbleView_HiddenSectionTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FBE237251A77A69500FF3D05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB9E5E7C1A77BA8E00193A59 /* right.png in Resources */,
+				FB9E5E7E1A77BAD700193A59 /* down.png in Resources */,
+				FB9E5E7A1A77B99C00193A59 /* section.png in Resources */,
+				FBE237351A77A69500FF3D05 /* InfoPlist.strings in Resources */,
+				FBE2373D1A77A69500FF3D05 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE237401A77A69500FF3D05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE2374E1A77A69500FF3D05 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FBE237231A77A69500FF3D05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE2373B1A77A69500FF3D05 /* ZXAppDelegate.m in Sources */,
+				FBE2375B1A77A6BB00FF3D05 /* MainViewController.m in Sources */,
+				FBE237371A77A69500FF3D05 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FBE2373E1A77A69500FF3D05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FBE237501A77A69500FF3D05 /* UITalbleView_HiddenSectionTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FBE237481A77A69500FF3D05 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FBE237261A77A69500FF3D05 /* UITalbleView_HiddenSection */;
+			targetProxy = FBE237471A77A69500FF3D05 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		FBE237331A77A69500FF3D05 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBE237341A77A69500FF3D05 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FBE2374C1A77A69500FF3D05 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FBE2374D1A77A69500FF3D05 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FBE237511A77A69500FF3D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		FBE237521A77A69500FF3D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FBE237541A77A69500FF3D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UITalbleView_HiddenSection/UITalbleView_HiddenSection-Prefix.pch";
+				INFOPLIST_FILE = "UITalbleView_HiddenSection/UITalbleView_HiddenSection-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		FBE237551A77A69500FF3D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UITalbleView_HiddenSection/UITalbleView_HiddenSection-Prefix.pch";
+				INFOPLIST_FILE = "UITalbleView_HiddenSection/UITalbleView_HiddenSection-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		FBE237571A77A69500FF3D05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UITalbleView_HiddenSection.app/UITalbleView_HiddenSection";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UITalbleView_HiddenSection/UITalbleView_HiddenSection-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "UITalbleView_HiddenSectionTests/UITalbleView_HiddenSectionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		FBE237581A77A69500FF3D05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/UITalbleView_HiddenSection.app/UITalbleView_HiddenSection";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "UITalbleView_HiddenSection/UITalbleView_HiddenSection-Prefix.pch";
+				INFOPLIST_FILE = "UITalbleView_HiddenSectionTests/UITalbleView_HiddenSectionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FBE237221A77A69500FF3D05 /* Build configuration list for PBXProject "UITalbleView_HiddenSection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBE237511A77A69500FF3D05 /* Debug */,
+				FBE237521A77A69500FF3D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBE237531A77A69500FF3D05 /* Build configuration list for PBXNativeTarget "UITalbleView_HiddenSection" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBE237541A77A69500FF3D05 /* Debug */,
+				FBE237551A77A69500FF3D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FBE237561A77A69500FF3D05 /* Build configuration list for PBXNativeTarget "UITalbleView_HiddenSectionTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FBE237571A77A69500FF3D05 /* Debug */,
+				FBE237581A77A69500FF3D05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FBE2371F1A77A69500FF3D05 /* Project object */;
+}
