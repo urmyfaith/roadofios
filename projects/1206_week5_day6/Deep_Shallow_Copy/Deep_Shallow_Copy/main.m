@@ -47,7 +47,7 @@ int main(int argc, const char * argv[])
     
 #pragma mark     /*==========非容器类+可变对象===========*/
 
-#if 0
+#if 1
     
     NSMutableString *string = [NSMutableString stringWithFormat:@"hello world"];
     NSLog(@"string = %@ , retianCount = %ld",string,string.retainCount);
@@ -57,9 +57,8 @@ int main(int argc, const char * argv[])
     NSLog(@"string_retain = %@ , retianCount = %ld",string_retain,string_retain.retainCount);
     
     
-    NSMutableString *string_copy = [string copy];
+    NSString *string_copy = [string copy];
     NSLog(@"string_copy = %@ , retianCount = %ld",string_copy,string_copy.retainCount);
-    
     
     NSMutableString *string_mcopy = [string mutableCopy];
     NSLog(@"string_mcopy = %@ , retianCount = %ld",string_mcopy,string_mcopy.retainCount);
@@ -183,7 +182,7 @@ int main(int argc, const char * argv[])
     
 #pragma  mark     /*==========浅拷贝和深拷贝===========*/
     
-#if 1
+#if 0
     
     NSMutableString *str = [NSMutableString stringWithFormat:@"copy object"];
     

@@ -2,7 +2,7 @@
 | ------------- | ------------ |
 |[1208_week6_day1](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1208_week6_day1)| UIButton(位置,标题,背景,图片,点击方法方法方法,多个参数快速创建UIButton),UILabel(frame,text,textColor,alpha,**遍历系统字体**,设置字体大小,字体倾斜,字体加粗,文字阴影,**文字自适应.**),UIAlertView |
 |[1209_week6_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1209_week6_day2)| UIImageView,图片拉伸 |
-|[1210_week6_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1210_week6_day3)| UIViewController |
+|[1210_week6_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1210_week6_day3)| UIViewController生命周期 |
 |[1211_week6_day4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1211_week6_day4)| UIViewController的练习 |
 |[1212_week6_day5](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1212_week6_day5)| UITextField |
 |[1213_week6_day6](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1213_week6_day6)| 界面传值,单击屏幕收回键盘,键盘遮挡UI处理 |
