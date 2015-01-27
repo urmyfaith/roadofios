@@ -50,3 +50,22 @@ http://www.cnblogs.com/ludashi/p/3868687.html
 > >  8. -(NSString *) description; 返回字符串形式对象的描述，方便调试
 > >  9. -(NSUInteger) hash; 返回对象的哈希值；
 > >  10. -(BOOL) isEqual:(id)object; 比较两个对象是否相同，默认是使用地址进行比较的，且hash值一定要相同
+
+
+##ARC内存管理机制详解 
+
+http://www.cnblogs.com/ludashi/p/3911666.html
+
+```
+在ARC机制下是少不了下面这些东西的：
+
+  1.关键字 __strong  默认值，表示只要有强引用指针指向该变量，则该变量会一直存在。
+
+  2.关键字__weak 弱引用，表示若没有任何强引用指针指向该变量，会自动将变量的值置为空，即nil状态。
+
+  3.关键字 __autoreleasing 用于标示自动释放的变量
+
+  4.__unsafe_unretained 不安全的弱引用，若没有任何强引用指针指向该变量，不会自动设为空，会成为野指针。
+            
+```
+
