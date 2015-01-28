@@ -16,4 +16,8 @@
 
 #import "PPRevealSideViewController.h"
 #import "MyNavigationBar.h"
+#import "CONST.h"
+#import "INTERFACE.h"
+#import "DownloadManager.h"
+
 #endif

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2801761A78C9EA00702EF5 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2801751A78C9EA00702EF5 /* DownloadManager.m */; };
+		FB2801791A78C9F800702EF5 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2801781A78C9F800702EF5 /* Download.m */; };
 		FB33AC0B1A787F7B0059A6A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC0A1A787F7B0059A6A3 /* Foundation.framework */; };
 		FB33AC0D1A787F7B0059A6A3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC0C1A787F7B0059A6A3 /* CoreGraphics.framework */; };
 		FB33AC0F1A787F7B0059A6A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC0E1A787F7B0059A6A3 /* UIKit.framework */; };
@@ -18,7 +20,6 @@
 		FB33AC251A787F7B0059A6A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC0A1A787F7B0059A6A3 /* Foundation.framework */; };
 		FB33AC261A787F7B0059A6A3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC0E1A787F7B0059A6A3 /* UIKit.framework */; };
 		FB33AC2E1A787F7B0059A6A3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB33AC2C1A787F7B0059A6A3 /* InfoPlist.strings */; };
-		FB33AC301A787F7B0059A6A3 /* xCarDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AC2F1A787F7B0059A6A3 /* xCarDemoTests.m */; };
 		FB33AC3A1A787FC30059A6A3 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC391A787FC30059A6A3 /* libsqlite3.dylib */; };
 		FB33ADAE1A787FDA0059A6A3 /* ALRadialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AC3E1A787FD90059A6A3 /* ALRadialButton.m */; };
 		FB33ADAF1A787FDA0059A6A3 /* ALRadialMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AC401A787FD90059A6A3 /* ALRadialMenu.m */; };
@@ -369,6 +370,7 @@
 		FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0B1A7881390059A6A3 /* MenuViewController.m */; };
 		FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0E1A7881830059A6A3 /* RootViewController.m */; };
 		FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF111A7886560059A6A3 /* MyNavigationBar.m */; };
+		FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -382,6 +384,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB2801741A78C9EA00702EF5 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		FB2801751A78C9EA00702EF5 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
+		FB2801771A78C9F800702EF5 /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
+		FB2801781A78C9F800702EF5 /* Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
 		FB33AC071A787F7B0059A6A3 /* xCarDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = xCarDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB33AC0A1A787F7B0059A6A3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB33AC0C1A787F7B0059A6A3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -397,7 +403,6 @@
 		FB33AC231A787F7B0059A6A3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FB33AC2B1A787F7B0059A6A3 /* xCarDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "xCarDemoTests-Info.plist"; sourceTree = "<group>"; };
 		FB33AC2D1A787F7B0059A6A3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		FB33AC2F1A787F7B0059A6A3 /* xCarDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = xCarDemoTests.m; sourceTree = "<group>"; };
 		FB33AC391A787FC30059A6A3 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FB33AC3D1A787FD90059A6A3 /* ALRadialButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALRadialButton.h; sourceTree = "<group>"; };
 		FB33AC3E1A787FD90059A6A3 /* ALRadialButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ALRadialButton.m; sourceTree = "<group>"; };
@@ -771,6 +776,10 @@
 		FB33AF0E1A7881830059A6A3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		FB33AF101A7886560059A6A3 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
 		FB33AF111A7886560059A6A3 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
+		FBBDE9F11A78D090006F2FF4 /* CONST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CONST.h; path = ../CONST.h; sourceTree = "<group>"; };
+		FBBDE9F21A78D0D6006F2FF4 /* INTERFACE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INTERFACE.h; sourceTree = "<group>"; };
+		FBBDE9F31A78D260006F2FF4 /* FocusListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusListItem.h; sourceTree = "<group>"; };
+		FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusListItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -798,6 +807,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB2801731A78C9D400702EF5 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				FB2801741A78C9EA00702EF5 /* DownloadManager.h */,
+				FB2801751A78C9EA00702EF5 /* DownloadManager.m */,
+				FB2801771A78C9F800702EF5 /* Download.h */,
+				FB2801781A78C9F800702EF5 /* Download.m */,
+				FBBDE9F11A78D090006F2FF4 /* CONST.h */,
+				FBBDE9F21A78D0D6006F2FF4 /* INTERFACE.h */,
+			);
+			name = Download;
+			sourceTree = "<group>";
+		};
 		FB33ABFE1A787F7B0059A6A3 = {
 			isa = PBXGroup;
 			children = (
@@ -832,16 +854,13 @@
 		FB33AC101A787F7B0059A6A3 /* xCarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FB2801731A78C9D400702EF5 /* Download */,
 				FB33AC3B1A787FD90059A6A3 /* Library */,
 				FB33AC641A787FD90059A6A3 /* Resource */,
 				FB33AC191A787F7B0059A6A3 /* ZXAppDelegate.h */,
 				FB33AC1A1A787F7B0059A6A3 /* ZXAppDelegate.m */,
-				FB33AF0D1A7881830059A6A3 /* RootViewController.h */,
-				FB33AF0E1A7881830059A6A3 /* RootViewController.m */,
-				FB33AF071A78812F0059A6A3 /* IndexViewController.h */,
-				FB33AF081A78812F0059A6A3 /* IndexViewController.m */,
-				FB33AF0A1A7881390059A6A3 /* MenuViewController.h */,
-				FB33AF0B1A7881390059A6A3 /* MenuViewController.m */,
+				FBBDE9F61A78D269006F2FF4 /* Views */,
+				FBBDE9F71A78D290006F2FF4 /* Models */,
 				FB33AF101A7886560059A6A3 /* MyNavigationBar.h */,
 				FB33AF111A7886560059A6A3 /* MyNavigationBar.m */,
 				FB33AC1C1A787F7B0059A6A3 /* Images.xcassets */,
@@ -864,7 +883,6 @@
 		FB33AC291A787F7B0059A6A3 /* xCarDemoTests */ = {
 			isa = PBXGroup;
 			children = (
-				FB33AC2F1A787F7B0059A6A3 /* xCarDemoTests.m */,
 				FB33AC2A1A787F7B0059A6A3 /* Supporting Files */,
 			);
 			path = xCarDemoTests;
@@ -1297,6 +1315,28 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		FBBDE9F61A78D269006F2FF4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FB33AF0D1A7881830059A6A3 /* RootViewController.h */,
+				FB33AF0E1A7881830059A6A3 /* RootViewController.m */,
+				FB33AF071A78812F0059A6A3 /* IndexViewController.h */,
+				FB33AF081A78812F0059A6A3 /* IndexViewController.m */,
+				FB33AF0A1A7881390059A6A3 /* MenuViewController.h */,
+				FB33AF0B1A7881390059A6A3 /* MenuViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		FBBDE9F71A78D290006F2FF4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FBBDE9F31A78D260006F2FF4 /* FocusListItem.h */,
+				FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1726,6 +1766,7 @@
 				FB33ADAF1A787FDA0059A6A3 /* ALRadialMenu.m in Sources */,
 				FB33ADBB1A787FDA0059A6A3 /* SDWebImageManager.m in Sources */,
 				FB33ADB31A787FDA0059A6A3 /* FMDatabaseQueue.m in Sources */,
+				FB2801761A78C9EA00702EF5 /* DownloadManager.m in Sources */,
 				FB33ADAE1A787FDA0059A6A3 /* ALRadialButton.m in Sources */,
 				FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */,
 				FB33ADBE1A787FDA0059A6A3 /* UIImageView+WebCache.m in Sources */,
@@ -1734,6 +1775,8 @@
 				FB33ADB91A787FDA0059A6A3 /* SDWebImageDecoder.m in Sources */,
 				FB33ADBC1A787FDA0059A6A3 /* SDWebImagePrefetcher.m in Sources */,
 				FB33ADB51A787FDA0059A6A3 /* PPRevealSideViewController.m in Sources */,
+				FB2801791A78C9F800702EF5 /* Download.m in Sources */,
+				FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */,
 				FB33ADB01A787FDA0059A6A3 /* FMDatabase.m in Sources */,
 				FB33AF091A78812F0059A6A3 /* IndexViewController.m in Sources */,
 				FB33ADBA1A787FDA0059A6A3 /* SDWebImageDownloader.m in Sources */,
@@ -1751,7 +1794,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB33AC301A787F7B0059A6A3 /* xCarDemoTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1940,6 +1982,7 @@
 				FB33AC351A787F7B0059A6A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB33AC361A787F7B0059A6A3 /* Build configuration list for PBXNativeTarget "xCarDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -1948,6 +1991,7 @@
 				FB33AC381A787F7B0059A6A3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

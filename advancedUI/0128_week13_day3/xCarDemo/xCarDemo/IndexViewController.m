@@ -9,9 +9,11 @@
 #import "IndexViewController.h"
 #import "MenuViewController.h"
 #import "PPRevealSideViewController.h"
+#import "FocusListItem.h"
+#import "UIImageView+WebCache.h"
 
 
-@interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate>
+@interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @end
 
@@ -22,6 +24,10 @@
     NSMutableArray  *_cellImagesArray;
     UIScrollView    *_focusScrollView;
     UILabel         *_focusLabel;
+    NSMutableArray  *_focusListItemsArray;
+    
+    int _currentIndex;
+    NSMutableArray  *_focusImagesArray;
 }
 
 - (void)viewDidLoad
@@ -37,8 +43,25 @@
     
     [super viewDidLoad];
     [self createNavigationBar];
+
+    
+    //下载数据
+    [[NSNotificationCenter  defaultCenter] addObserver:self
+                                              selector:@selector(downloadFinish)
+                                                  name:kFOUCS_LIST_URL
+                                                object:nil];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kFOUCS_LIST_URL andDownloadType:cFOCUS_LIST_TYPE];
+    
     [self createTableView];
+
+
+}
+
+#pragma mark 数据下载完成
+-(void)downloadFinish{
+    _focusListItemsArray = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:kFOUCS_LIST_URL];
     [self createTableViewHeaderView];
+    [_tableView reloadData];
 }
 
 #pragma mark 1.创建导航条
@@ -80,7 +103,24 @@
     _tableView.tableHeaderView = baseView;
     
     _focusScrollView = [[UIScrollView alloc]init];
+    _focusScrollView.contentSize = CGSizeMake(320*3, baseView.frame.size.height/6*5);
     _focusScrollView.frame= CGRectMake(0, 0, 320, baseView.frame.size.height/6*5);
+    
+    _focusScrollView.pagingEnabled = YES;
+    _focusScrollView.delegate = self;
+    
+    _focusScrollView.showsHorizontalScrollIndicator = NO;
+    _focusScrollView.showsVerticalScrollIndicator = NO;
+
+    
+    _currentIndex = 0;
+    _focusImagesArray = [[NSMutableArray alloc]init];
+    for (int i = 0 ; i <_focusListItemsArray.count ; i++) {
+        FocusListItem *item = (FocusListItem *)_focusListItemsArray[i];
+        [_focusImagesArray addObject:item.imgURL];
+    }
+    [self loadFocusScoreViewImages];
+    
     [baseView addSubview:_focusScrollView];
     
     _focusLabel = [[UILabel alloc]init];
@@ -89,6 +129,48 @@
     [baseView addSubview:_focusLabel];
     
 }
+
+-(void)loadFocusScoreViewImages{
+    UIImageView *currentImageView   = [[UIImageView alloc]init];
+    UIImageView *preImageView       = [[UIImageView alloc]init];
+    UIImageView *nextImageView      = [[UIImageView alloc]init];
+    
+    CGFloat height_focusScrollView = _focusScrollView.frame.size.height;
+    
+    preImageView.frame          =  CGRectMake(0, 0, 320, height_focusScrollView);
+    currentImageView.frame      =  CGRectMake(320, 0, 320, height_focusScrollView);
+    nextImageView.frame         =  CGRectMake(640, 0, 320, height_focusScrollView);
+    
+    [currentImageView setImageWithURL:[NSURL URLWithString:_focusImagesArray[_currentIndex]]
+                     placeholderImage:[UIImage imageNamed:@"Other_Btn_Fresh"]];
+    [preImageView setImageWithURL:[NSURL URLWithString:
+                                   _focusImagesArray[_currentIndex-1 < 0 ? _focusImagesArray.count-1:_currentIndex-1]]
+                 placeholderImage:[UIImage imageNamed:@"Other_Btn_Fresh"]];
+    [nextImageView setImageWithURL:[NSURL URLWithString:
+                                    _focusImagesArray[_currentIndex+1 <_focusImagesArray.count ? _currentIndex+1:0]]
+                  placeholderImage:[UIImage imageNamed:@"Other_Btn_Fresh"]];
+    
+    [_focusScrollView addSubview:currentImageView];
+    [_focusScrollView addSubview:preImageView];
+    [_focusScrollView addSubview:nextImageView];
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
+    int index = scrollView.contentOffset.x/320;
+    if (index == 0) {
+        _currentIndex = _currentIndex - 1 < 0 ? _focusImagesArray.count - 1: _currentIndex - 1;
+        [self loadFocusScoreViewImages];
+        [scrollView setContentOffset:CGPointMake(320, 0)];
+    }else
+        if (index == 2) {
+        _currentIndex = _currentIndex+1 == _focusImagesArray.count ? 0: _currentIndex +1;
+        [self loadFocusScoreViewImages];
+        [scrollView setContentOffset:CGPointMake(320, 0)];
+    }
+    else
+        NSLog(@"%s [LINE:%d] nochange", __func__, __LINE__);
+}
+
 
 #pragma mark 表视图代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
