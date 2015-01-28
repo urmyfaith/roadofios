@@ -368,6 +368,7 @@
 		FB33AF091A78812F0059A6A3 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF081A78812F0059A6A3 /* IndexViewController.m */; };
 		FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0B1A7881390059A6A3 /* MenuViewController.m */; };
 		FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0E1A7881830059A6A3 /* RootViewController.m */; };
+		FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF111A7886560059A6A3 /* MyNavigationBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -768,6 +769,8 @@
 		FB33AF0B1A7881390059A6A3 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		FB33AF0D1A7881830059A6A3 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		FB33AF0E1A7881830059A6A3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		FB33AF101A7886560059A6A3 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
+		FB33AF111A7886560059A6A3 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -839,6 +842,8 @@
 				FB33AF081A78812F0059A6A3 /* IndexViewController.m */,
 				FB33AF0A1A7881390059A6A3 /* MenuViewController.h */,
 				FB33AF0B1A7881390059A6A3 /* MenuViewController.m */,
+				FB33AF101A7886560059A6A3 /* MyNavigationBar.h */,
+				FB33AF111A7886560059A6A3 /* MyNavigationBar.m */,
 				FB33AC1C1A787F7B0059A6A3 /* Images.xcassets */,
 				FB33AC111A787F7B0059A6A3 /* Supporting Files */,
 			);
@@ -1733,6 +1738,7 @@
 				FB33AF091A78812F0059A6A3 /* IndexViewController.m in Sources */,
 				FB33ADBA1A787FDA0059A6A3 /* SDWebImageDownloader.m in Sources */,
 				FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */,
+				FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */,
 				FB33ADB21A787FDA0059A6A3 /* FMDatabasePool.m in Sources */,
 				FB33ADB81A787FDA0059A6A3 /* SDImageCache.m in Sources */,
 				FB33ADB41A787FDA0059A6A3 /* FMResultSet.m in Sources */,

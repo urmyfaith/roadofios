@@ -31,12 +31,18 @@
     [super viewDidLoad];
 
     
-    UIBarButtonItem *leftBBI = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemPlay target:self action:@selector(bbiClicked:)];
-    self.navigationItem.leftBarButtonItem = leftBBI;
+    MyNavigationBar *navigationBar  = [[MyNavigationBar alloc] init];
+    navigationBar.frame  = CGRectMake(0, 20, 320, 44);
+    [navigationBar createMyNavigaitonBarWithTitleImag:@"Index_Title_logo.png"
+                                andLeftBtnImagesNames:@[@"Index_Btn_Setting.png",@"Index_Btn_Setting.png"]
+                               andRightBtnImagesNames:@[@"Index_Head02.png",@"Index_Head02.png"]
+                                             andClass:self
+                                               andSEL:@selector(bbiClicked:)];
+    [self.view addSubview:navigationBar];
 }
 
 
--(void)bbiClicked:(UIBarButtonItem *)bbi{
+-(void)bbiClicked:(UIButton *)bbi{
     MenuViewController *mvc = [[MenuViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mvc];
     [self.revealSideViewController pushViewController:nav onDirection:PPRevealSideDirectionLeft animated:YES];
