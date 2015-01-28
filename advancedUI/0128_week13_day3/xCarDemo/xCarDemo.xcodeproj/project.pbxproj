@@ -365,6 +365,9 @@
 		FB33AF041A787FDA0059A6A3 /* weibo_rec.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FB33ADAB1A787FDA0059A6A3 /* weibo_rec.jpg */; };
 		FB33AF051A787FDA0059A6A3 /* wink_smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FB33ADAC1A787FDA0059A6A3 /* wink_smile@2x.png */; };
 		FB33AF061A787FDA0059A6A3 /* youtube.png in Resources */ = {isa = PBXBuildFile; fileRef = FB33ADAD1A787FDA0059A6A3 /* youtube.png */; };
+		FB33AF091A78812F0059A6A3 /* IndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF081A78812F0059A6A3 /* IndexViewController.m */; };
+		FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0B1A7881390059A6A3 /* MenuViewController.m */; };
+		FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0E1A7881830059A6A3 /* RootViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -759,6 +762,12 @@
 		FB33ADAB1A787FDA0059A6A3 /* weibo_rec.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = weibo_rec.jpg; sourceTree = "<group>"; };
 		FB33ADAC1A787FDA0059A6A3 /* wink_smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "wink_smile@2x.png"; sourceTree = "<group>"; };
 		FB33ADAD1A787FDA0059A6A3 /* youtube.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youtube.png; sourceTree = "<group>"; };
+		FB33AF071A78812F0059A6A3 /* IndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IndexViewController.h; sourceTree = "<group>"; };
+		FB33AF081A78812F0059A6A3 /* IndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IndexViewController.m; sourceTree = "<group>"; };
+		FB33AF0A1A7881390059A6A3 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
+		FB33AF0B1A7881390059A6A3 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
+		FB33AF0D1A7881830059A6A3 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		FB33AF0E1A7881830059A6A3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -824,6 +833,12 @@
 				FB33AC641A787FD90059A6A3 /* Resource */,
 				FB33AC191A787F7B0059A6A3 /* ZXAppDelegate.h */,
 				FB33AC1A1A787F7B0059A6A3 /* ZXAppDelegate.m */,
+				FB33AF0D1A7881830059A6A3 /* RootViewController.h */,
+				FB33AF0E1A7881830059A6A3 /* RootViewController.m */,
+				FB33AF071A78812F0059A6A3 /* IndexViewController.h */,
+				FB33AF081A78812F0059A6A3 /* IndexViewController.m */,
+				FB33AF0A1A7881390059A6A3 /* MenuViewController.h */,
+				FB33AF0B1A7881390059A6A3 /* MenuViewController.m */,
 				FB33AC1C1A787F7B0059A6A3 /* Images.xcassets */,
 				FB33AC111A787F7B0059A6A3 /* Supporting Files */,
 			);
@@ -1707,6 +1722,7 @@
 				FB33ADBB1A787FDA0059A6A3 /* SDWebImageManager.m in Sources */,
 				FB33ADB31A787FDA0059A6A3 /* FMDatabaseQueue.m in Sources */,
 				FB33ADAE1A787FDA0059A6A3 /* ALRadialButton.m in Sources */,
+				FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */,
 				FB33ADBE1A787FDA0059A6A3 /* UIImageView+WebCache.m in Sources */,
 				FB33AC1B1A787F7B0059A6A3 /* ZXAppDelegate.m in Sources */,
 				FB33ADBD1A787FDA0059A6A3 /* UIButton+WebCache.m in Sources */,
@@ -1714,7 +1730,9 @@
 				FB33ADBC1A787FDA0059A6A3 /* SDWebImagePrefetcher.m in Sources */,
 				FB33ADB51A787FDA0059A6A3 /* PPRevealSideViewController.m in Sources */,
 				FB33ADB01A787FDA0059A6A3 /* FMDatabase.m in Sources */,
+				FB33AF091A78812F0059A6A3 /* IndexViewController.m in Sources */,
 				FB33ADBA1A787FDA0059A6A3 /* SDWebImageDownloader.m in Sources */,
+				FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */,
 				FB33ADB21A787FDA0059A6A3 /* FMDatabasePool.m in Sources */,
 				FB33ADB81A787FDA0059A6A3 /* SDImageCache.m in Sources */,
 				FB33ADB41A787FDA0059A6A3 /* FMResultSet.m in Sources */,

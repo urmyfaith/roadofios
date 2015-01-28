@@ -7,6 +7,8 @@
 //
 
 #import "ZXAppDelegate.h"
+#import "IndexViewController.h"
+
 
 @implementation ZXAppDelegate
 
@@ -14,6 +16,22 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    IndexViewController *ivc = [[IndexViewController alloc]init];
+    UINavigationController *inav = [[UINavigationController alloc]initWithRootViewController:ivc];
+    
+    
+    PPRevealSideViewController *pprsvc = [[PPRevealSideViewController alloc]initWithRootViewController:inav];
+    
+    /*==========函数说明===========
+     *
+     * 1. 偏移量
+     * 2. 偏移方向
+     * 3. 是否动画
+     */
+    [pprsvc changeOffset:1 forDirection:PPRevealSideDirectionLeft animated:YES];
+    self.window.rootViewController = pprsvc;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
