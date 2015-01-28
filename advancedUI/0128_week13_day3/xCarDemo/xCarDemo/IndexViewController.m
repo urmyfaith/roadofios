@@ -18,8 +18,10 @@
 @implementation IndexViewController
 {
 
-    UITableView *_tableView;
-    NSMutableArray *_cellImagesArray;
+    UITableView     *_tableView;
+    NSMutableArray  *_cellImagesArray;
+    UIScrollView    *_focusScrollView;
+    UILabel         *_focusLabel;
 }
 
 - (void)viewDidLoad
@@ -36,6 +38,7 @@
     [super viewDidLoad];
     [self createNavigationBar];
     [self createTableView];
+    [self createTableViewHeaderView];
 }
 
 #pragma mark 1.创建导航条
@@ -70,6 +73,22 @@
     [_tableView setSeparatorColor:[UIColor clearColor]];
 }
 
+#pragma mark 3.表头视图
+-(void)createTableViewHeaderView{
+    UIView *baseView = [[UIView alloc]init];
+    baseView.frame = CGRectMake(0, 0, 320, 568-64 - 51*6);
+    _tableView.tableHeaderView = baseView;
+    
+    _focusScrollView = [[UIScrollView alloc]init];
+    _focusScrollView.frame= CGRectMake(0, 0, 320, baseView.frame.size.height/6*5);
+    [baseView addSubview:_focusScrollView];
+    
+    _focusLabel = [[UILabel alloc]init];
+    _focusLabel.frame = CGRectMake(0, CGRectGetMaxY(_focusScrollView.frame), 320, baseView.frame.size.height - _focusScrollView.frame.size.height);
+    _focusLabel.backgroundColor = [UIColor purpleColor];
+    [baseView addSubview:_focusLabel];
+    
+}
 
 #pragma mark 表视图代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
