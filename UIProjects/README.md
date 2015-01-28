@@ -15,7 +15,7 @@
 |[1220_week7_day6](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1220_week7_day6)| 综合练习:plist文件,表格,单例存值,通知传值,图片缩放旋转,scrollView练习 |
 |[1223_week8_day2](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1223_week8_day2)| 表视图,增,删,改,搜索数据,移动行,表视图的索引 |
 |[1224_week8_day3](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1224_week8_day3)| nib文件基本使用,通过代码自定义cell,通过nib自定义cell |
-|[1225_week8_day4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4)| 数据下载(同步,异步,下载数据显示,下载图片显示) |
+|[1225_week8_day4](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1225_week8_day4)| 数据下载(同步,异步,下载数据显示,下载图片显示),使用**下载管理类** |
 |[1226_week8_day5](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1226_week8_day5)| xml解析(本地,网络,数据显示),**下拉刷新使用** |
 |[1227_week8_day6](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1227_week8_day6)| 数据库,创建,读取,插入,删除,查询,数据表视图显示,自定义cell,nib定义cell |
 |[1229_week9_day1](https://github.com/urmyfaith/roadofios/tree/master/UIProjects/1229_week9_day1)| 设计模式(工程模式),storyboad使用,kvc,kvo使用,UIPikcer,UIatePicker |
