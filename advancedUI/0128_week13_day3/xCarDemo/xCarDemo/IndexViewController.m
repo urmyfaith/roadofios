@@ -19,23 +19,23 @@
 {
 
     UITableView *_tableView;
-}
-
-
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    NSMutableArray *_cellImagesArray;
 }
 
 - (void)viewDidLoad
 {
+    //实例化表要的对象
+    _cellImagesArray = [[NSMutableArray alloc ]init];
+    [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_News.png"]];
+    [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Search.png"]];
+    [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Car.png"]];
+    [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Forum.png"]];
+    [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Activity.png"]];
+    [_cellImagesArray addObject:[UIImage imageNamed:@"Index_Logo.png"]];
+    
     [super viewDidLoad];
     [self createNavigationBar];
+    [self createTableView];
 }
 
 #pragma mark 1.创建导航条
@@ -50,6 +50,7 @@
     [self.view addSubview:navigationBar];
 }
 
+#pragma mark 开关抽屉
 -(void)bbiClicked:(UIButton *)bbi{
     if (bbi.tag == 1) {
     
@@ -66,5 +67,58 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     [self.view addSubview:_tableView];
+    [_tableView setSeparatorColor:[UIColor clearColor]];
 }
+
+
+#pragma mark 表视图代理方法
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_cellImagesArray count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *identifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        UIImageView *imageView = [[UIImageView alloc]initWithImage:[_cellImagesArray objectAtIndex:indexPath.row]];
+        imageView.frame = CGRectMake(0, 0, 320, 51);
+        imageView.contentMode = UIViewContentModeCenter;
+        imageView.backgroundColor = [UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.00f];
+        [cell.contentView addSubview:imageView];
+
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        UIImage *image = nil;
+        if (indexPath.row == 1) {
+            //麦克风
+            image = [UIImage imageNamed:@"Index_Btn_Voice.png"];
+        }
+        if (indexPath.row == 2 || indexPath.row == 3) {
+            //加号
+            image = [UIImage imageNamed:@"Index_Btn_Add.png"];
+        }
+        btn.frame = CGRectMake(320-image.size.width, (51-image.size.height)/2, image.size.width, image.size.height);
+        btn.tag = indexPath.row;
+        [btn setImage:image forState:UIControlStateNormal];
+        [btn addTarget:self action:@selector(cellBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        [cell.contentView addSubview:btn];
+
+    }
+    return cell;
+}
+
+-(void)cellBtnClicked:(UIButton *)button{
+    NSLog(@"%s [LINE:%d] button.tag=%d", __func__, __LINE__,button.tag);
+}
+
+///cell的高度
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 51.f;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"%s [LINE:%d] %d", __func__, __LINE__,indexPath.row);
+}
+
 @end
