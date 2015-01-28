@@ -11,11 +11,17 @@
 #import "PPRevealSideViewController.h"
 
 
-@interface IndexViewController ()
+@interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
 @implementation IndexViewController
+{
+
+    UITableView *_tableView;
+}
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -29,8 +35,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self createNavigationBar];
+}
 
-    
+#pragma mark 1.创建导航条
+-(void)createNavigationBar{
     MyNavigationBar *navigationBar  = [[MyNavigationBar alloc] init];
     navigationBar.frame  = CGRectMake(0, 20, 320, 44);
     [navigationBar createMyNavigaitonBarWithTitleImag:@"Index_Title_logo.png"
@@ -41,7 +50,6 @@
     [self.view addSubview:navigationBar];
 }
 
-
 -(void)bbiClicked:(UIButton *)bbi{
     if (bbi.tag == 1) {
     
@@ -51,22 +59,12 @@
     }
 }
 
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark 2.创建表视图
+-(void)createTableView{
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 64, 320, self.view.bounds.size.height-64)
+                                             style:UITableViewStylePlain];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    [self.view addSubview:_tableView];
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end
