@@ -131,15 +131,23 @@
 }
 
 -(void)loadFocusScoreViewImages{
+    
+    for (id subView in _focusScrollView.subviews) {
+        if ([subView isKindOfClass:[UIImageView class]]) {
+            UIImageView *imageView = (UIImageView *)subView;
+            [imageView removeFromSuperview];
+        }
+    }
+    
     UIImageView *currentImageView   = [[UIImageView alloc]init];
     UIImageView *preImageView       = [[UIImageView alloc]init];
     UIImageView *nextImageView      = [[UIImageView alloc]init];
     
     CGFloat height_focusScrollView = _focusScrollView.frame.size.height;
     
-    preImageView.frame          =  CGRectMake(0, 0, 320, height_focusScrollView);
-    currentImageView.frame      =  CGRectMake(320, 0, 320, height_focusScrollView);
-    nextImageView.frame         =  CGRectMake(640, 0, 320, height_focusScrollView);
+    preImageView.frame          =  CGRectMake(-320, 0, 320, height_focusScrollView);
+    currentImageView.frame      =  CGRectMake(0, 0, 320, height_focusScrollView);
+    nextImageView.frame         =  CGRectMake(320, 0, 320, height_focusScrollView);
     
     [currentImageView setImageWithURL:[NSURL URLWithString:_focusImagesArray[_currentIndex]]
                      placeholderImage:[UIImage imageNamed:@"Other_Btn_Fresh"]];
@@ -160,12 +168,12 @@
     if (index == 0) {
         _currentIndex = _currentIndex - 1 < 0 ? _focusImagesArray.count - 1: _currentIndex - 1;
         [self loadFocusScoreViewImages];
-        [scrollView setContentOffset:CGPointMake(320, 0)];
+        [scrollView setContentOffset:CGPointMake(0, 0)];
     }else
         if (index == 2) {
         _currentIndex = _currentIndex+1 == _focusImagesArray.count ? 0: _currentIndex +1;
         [self loadFocusScoreViewImages];
-        [scrollView setContentOffset:CGPointMake(320, 0)];
+        [scrollView setContentOffset:CGPointMake(0, 0)];
     }
     else
         NSLog(@"%s [LINE:%d] nochange", __func__, __LINE__);
