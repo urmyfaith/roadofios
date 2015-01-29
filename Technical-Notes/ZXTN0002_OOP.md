@@ -111,3 +111,13 @@ NSLog(@"%@", kvc);
 
 [self removeObserver:self forKeyPath:@"name"];
 ~~~
+
+
+## Objective-C中的Block回调模式
+
+http://www.cnblogs.com/ludashi/p/3922911.html
+
+## Objective-C中的发送通知（Notification)
+http://www.cnblogs.com/ludashi/p/3924836.html
+
+
