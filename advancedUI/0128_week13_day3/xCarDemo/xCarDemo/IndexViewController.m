@@ -279,7 +279,7 @@
 }
 
 -(void)cellBtnClicked:(UIButton *)button{
-    NSLog(@"%s [LINE:%d] button.tag=%d", __func__, __LINE__,button.tag);
+    NSLog(@"%s [LINE:%d] button.tag=%ld", __func__, __LINE__,(long)button.tag);
 }
 
 ///cell的高度

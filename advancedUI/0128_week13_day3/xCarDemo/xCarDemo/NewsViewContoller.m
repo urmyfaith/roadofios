@@ -7,6 +7,7 @@
 //
 
 #import "NewsViewContoller.h"
+#import "NewsListItemCell.h"
 
 @interface NewsViewContoller ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -26,7 +27,31 @@
     [super viewDidLoad];
     [self createNavigationBar];
     [self createIndexBar];
+    [self downloadData];
     [self createTableView];
+}
+
+-(void)downloadData{
+    //下载数据
+    [[NSNotificationCenter  defaultCenter] addObserver:self
+                                              selector:@selector(downloadFinish)
+                                                  name:kNEWS_LIST_NEWS
+                                                object:nil];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kNEWS_LIST_NEWS andDownloadType:cNNEWS_LIST_TYPE];
+}
+
+-(void)downloadFinish{
+    _leftDataArray = [[NSMutableArray alloc ]init];
+    _rightDataArray = [[NSMutableArray alloc]init];
+    NSMutableArray *tempArray  = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:kNEWS_LIST_NEWS];
+    for (int i = 0 ; i < tempArray.count; i++) {
+        if (i%2==0) {
+            [_leftDataArray addObject:[tempArray objectAtIndex:i]];
+        }
+        else{
+            [_rightDataArray addObject:[tempArray objectAtIndex:i]];
+        }
+    }
 }
 
 #pragma mark 创建表视图
@@ -66,10 +91,11 @@
         return 15;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-        static NSString *identifier = @"cellLeft";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        static NSString *identifier = @"cell";
+        NewsListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
         if (!cell) {
-            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            //cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+            cell = [[[NSBundle mainBundle]loadNibNamed:@"NewsListItemCell" owner:self options:nil] lastObject];
         }
         return cell;
 }
@@ -146,7 +172,6 @@
 
 #pragma mark  索引条点击事件
 -(void)indexBarClick:(UIButton *)button{
-    NSLog(@"button.tag=%ld",button.tag);
     
     for (UIView *view in _indexBarView.subviews) {
         if ([view isKindOfClass:[UIButton class]]) {

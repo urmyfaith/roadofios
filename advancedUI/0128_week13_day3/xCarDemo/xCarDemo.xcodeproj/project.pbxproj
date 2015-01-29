@@ -374,6 +374,9 @@
 		FB910FB21A79DD820095396F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB910FB11A79DD820095396F /* readme.txt */; };
 		FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */; };
 		FBD3043F1A7A071E008DD23D /* NewsViewContoller.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD3043E1A7A071E008DD23D /* NewsViewContoller.m */; };
+		FBD304421A7A1F12008DD23D /* NewListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD304411A7A1F12008DD23D /* NewListItem.m */; };
+		FBD3044F1A7A2772008DD23D /* NewsListItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD3044D1A7A2772008DD23D /* NewsListItemCell.m */; };
+		FBD304501A7A2772008DD23D /* NewsListItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBD3044E1A7A2772008DD23D /* NewsListItemCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -788,6 +791,11 @@
 		FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FocusListItem.m; sourceTree = "<group>"; };
 		FBD3043D1A7A071E008DD23D /* NewsViewContoller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsViewContoller.h; sourceTree = "<group>"; };
 		FBD3043E1A7A071E008DD23D /* NewsViewContoller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsViewContoller.m; sourceTree = "<group>"; };
+		FBD304401A7A1F12008DD23D /* NewListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewListItem.h; sourceTree = "<group>"; };
+		FBD304411A7A1F12008DD23D /* NewListItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewListItem.m; sourceTree = "<group>"; };
+		FBD3044C1A7A2772008DD23D /* NewsListItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsListItemCell.h; sourceTree = "<group>"; };
+		FBD3044D1A7A2772008DD23D /* NewsListItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsListItemCell.m; sourceTree = "<group>"; };
+		FBD3044E1A7A2772008DD23D /* NewsListItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewsListItemCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -867,6 +875,7 @@
 				FB33AC191A787F7B0059A6A3 /* ZXAppDelegate.h */,
 				FB33AC1A1A787F7B0059A6A3 /* ZXAppDelegate.m */,
 				FBBDE9F61A78D269006F2FF4 /* Views */,
+				FBD304431A7A2705008DD23D /* cell */,
 				FBBDE9F71A78D290006F2FF4 /* Models */,
 				FB33AF101A7886560059A6A3 /* MyNavigationBar.h */,
 				FB33AF111A7886560059A6A3 /* MyNavigationBar.m */,
@@ -1345,6 +1354,8 @@
 			children = (
 				FBBDE9F31A78D260006F2FF4 /* FocusListItem.h */,
 				FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */,
+				FBD304401A7A1F12008DD23D /* NewListItem.h */,
+				FBD304411A7A1F12008DD23D /* NewListItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1356,6 +1367,16 @@
 				FBBDE9F21A78D0D6006F2FF4 /* INTERFACE.h */,
 			);
 			name = CONST;
+			sourceTree = "<group>";
+		};
+		FBD304431A7A2705008DD23D /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FBD3044C1A7A2772008DD23D /* NewsListItemCell.h */,
+				FBD3044D1A7A2772008DD23D /* NewsListItemCell.m */,
+				FBD3044E1A7A2772008DD23D /* NewsListItemCell.xib */,
+			);
+			name = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1687,6 +1708,7 @@
 				FB33AE231A787FDA0059A6A3 /* Forum_Message_Delete@2x.png in Resources */,
 				FB33AE1B1A787FDA0059A6A3 /* Forum_List_Btn_Right@2x.png in Resources */,
 				FB33AE581A787FDA0059A6A3 /* Icon-Small.png in Resources */,
+				FBD304501A7A2772008DD23D /* NewsListItemCell.xib in Resources */,
 				FB33AE9A1A787FDA0059A6A3 /* Models_Info_Btn_Ask01_night@2x.png in Resources */,
 				FB33AEA81A787FDA0059A6A3 /* Models_News_Tab01@2x.png in Resources */,
 				FB33AEE41A787FDA0059A6A3 /* Register_Btn_More@2x.png in Resources */,
@@ -1795,6 +1817,7 @@
 				FB33AC1B1A787F7B0059A6A3 /* ZXAppDelegate.m in Sources */,
 				FBD3043F1A7A071E008DD23D /* NewsViewContoller.m in Sources */,
 				FB33ADBD1A787FDA0059A6A3 /* UIButton+WebCache.m in Sources */,
+				FBD304421A7A1F12008DD23D /* NewListItem.m in Sources */,
 				FB33ADB91A787FDA0059A6A3 /* SDWebImageDecoder.m in Sources */,
 				FB33ADBC1A787FDA0059A6A3 /* SDWebImagePrefetcher.m in Sources */,
 				FB33ADB51A787FDA0059A6A3 /* PPRevealSideViewController.m in Sources */,
@@ -1805,6 +1828,7 @@
 				FB33ADBA1A787FDA0059A6A3 /* SDWebImageDownloader.m in Sources */,
 				FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */,
 				FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */,
+				FBD3044F1A7A2772008DD23D /* NewsListItemCell.m in Sources */,
 				FB33ADB21A787FDA0059A6A3 /* FMDatabasePool.m in Sources */,
 				FB33ADB81A787FDA0059A6A3 /* SDImageCache.m in Sources */,
 				FB33ADB41A787FDA0059A6A3 /* FMResultSet.m in Sources */,

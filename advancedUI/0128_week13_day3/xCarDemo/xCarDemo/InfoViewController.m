@@ -130,7 +130,7 @@
 }
 
 #pragma mark 重写导航条
-
+    
 -(void)createNavigationBar{
     [self createMyNavigationBarWithTitle:@"non-exit-image"
                               andLeftBtn:@[@"News_Details_Btn_Back.png"]
@@ -138,7 +138,7 @@
 }
 
 -(void)buttonClick:(UIButton *)button{
-    NSLog(@"butont.tag=%d",button.tag);
+    NSLog(@"butont.tag=%ld",(long)button.tag);
     if (button.tag == 1) {
         [self.navigationController popViewControllerAnimated:YES];
     }else if (button.tag == 11)
