@@ -8,6 +8,7 @@
 
 #import "NewsViewContoller.h"
 #import "NewsListItemCell.h"
+#import "NewListItem.h"
 
 @interface NewsViewContoller ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -17,7 +18,7 @@
 {
     UIView *_indexBarView;
     UITableView *_leftTableView;
-    UITableView *_rigthTalbeView;
+    UITableView *_rightTableView;
     NSMutableArray *_leftDataArray;
     NSMutableArray *_rightDataArray;
 }
@@ -52,6 +53,8 @@
             [_rightDataArray addObject:[tempArray objectAtIndex:i]];
         }
     }
+    [_leftTableView reloadData];
+    [_rightTableView reloadData];
 }
 
 #pragma mark 创建表视图
@@ -68,16 +71,16 @@
     _leftTableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_leftTableView];
     
-    _rigthTalbeView  = [[UITableView alloc]initWithFrame:
+    _rightTableView  = [[UITableView alloc]initWithFrame:
                        CGRectMake(160,
                                   64+_indexBarView.frame.size.height,
                                   160,
                                   self.view.frame.size.height-64-_indexBarView.frame.size.height)
                                                   style:UITableViewStylePlain];
-    _rigthTalbeView.delegate = self;
-    _rigthTalbeView.dataSource = self;
-    _rigthTalbeView.showsVerticalScrollIndicator = NO;
-    [self.view addSubview:_rigthTalbeView];
+    _rightTableView.delegate = self;
+    _rightTableView.dataSource = self;
+    _rightTableView.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:_rightTableView];
     
 }
 
@@ -85,10 +88,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (tableView == _leftTableView)
-        return 10;
+        return [_leftDataArray count];
     else
 
-        return 15;
+        return [_rightDataArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
         static NSString *identifier = @"cell";
@@ -101,27 +104,44 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (tableView == _leftTableView) {
-        return 50.0f;
+    //高度 = 图片高度+空白高度+文字高度+空白高度+ 时间/评论高度+ 空白高度
+    if (_leftDataArray.count >0 && _rightDataArray.count > 0 ) {
+        NewListItem *listItem;
+        if (tableView == _leftTableView) {
+            listItem = [_leftDataArray objectAtIndex:indexPath.row];
+        }
+        else{
+            listItem = [_rightDataArray objectAtIndex:indexPath.row];
+        }
+        CGFloat height = 0.0f;
+        height = height + [listItem.img_h_small floatValue];
+        height = height + 10.0f;
+        
+        CGSize tilteSize = [listItem.newsTitle  sizeWithFont:[UIFont systemFontOfSize:20]
+                                           constrainedToSize:CGSizeMake(140, 1000) lineBreakMode:NSLineBreakByCharWrapping];
+        height  = height + tilteSize.height;
+        height  = height + 15.0f + 20.f + 20.f;
+        NSLog(@"%s [LINE:%d] %.f", __func__, __LINE__,height);
+        return height;
     }
     else
-        return 80.0f;
+        return 44.0f;
 }
 
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     //设置最大偏移量
-    _leftTableView.contentSize = _leftTableView.contentSize.height > _rigthTalbeView.contentSize.height? _leftTableView.contentSize : _rigthTalbeView.contentSize;
+    _leftTableView.contentSize = _leftTableView.contentSize.height > _rightTableView.contentSize.height? _leftTableView.contentSize : _rightTableView.contentSize;
     
-    _rigthTalbeView.contentSize = _leftTableView.contentSize.height > _rigthTalbeView.contentSize.height ?
-    _leftTableView.contentSize : _rigthTalbeView.contentSize;
+    _rightTableView.contentSize = _leftTableView.contentSize.height > _rightTableView.contentSize.height ?
+    _leftTableView.contentSize : _rightTableView.contentSize;
     
     if (scrollView == _leftTableView) {
-        _rigthTalbeView.contentOffset = _leftTableView.contentOffset;
+        _rightTableView.contentOffset = _leftTableView.contentOffset;
     }
     else{
-        _leftTableView.contentOffset = _rigthTalbeView.contentOffset;
+        _leftTableView.contentOffset = _rightTableView.contentOffset;
     
     }
 }
