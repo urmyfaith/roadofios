@@ -78,7 +78,7 @@
 }
 
 #pragma mark 开关抽屉
-
+//此方法为继承自父类.===>重写父类的方法
 -(void)buttonClick:(UIButton *)button{
     if (button.tag == 1) {
         

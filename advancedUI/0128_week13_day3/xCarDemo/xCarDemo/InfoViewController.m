@@ -19,7 +19,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
     
     [self createMyNavigationBarWithTitle:nil
                               andLeftBtn:@[@"News_Details_Btn_Back.png"]
