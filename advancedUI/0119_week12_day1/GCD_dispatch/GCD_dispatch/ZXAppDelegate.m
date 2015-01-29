@@ -9,7 +9,9 @@
 #import "ZXAppDelegate.h"
 
 @implementation ZXAppDelegate
-
+{
+    UIBackgroundTaskIdentifier _backgoundUpdateTask;
+}
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
@@ -26,7 +28,25 @@
 {
     // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    
+    [self beingBackgroundUpdateTask];
+    for (int i = 0 ; i < MAXFLOAT; i++) {
+        NSLog(@"%d",i);
+    }
+    [self endBackgroundUpdateTask];
 }
+-(void)beingBackgroundUpdateTask{
+    _backgoundUpdateTask = [[UIApplication sharedApplication] beginBackgroundTaskWithExpirationHandler:^{
+        [self endBackgroundUpdateTask];
+    }];
+}
+
+-(void)endBackgroundUpdateTask{
+    [[UIApplication sharedApplication]endBackgroundTask:_backgoundUpdateTask];
+    _backgoundUpdateTask = UIBackgroundTaskInvalid;
+    
+}
+
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
