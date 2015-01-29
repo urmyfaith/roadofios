@@ -11,7 +11,7 @@
 #import "PPRevealSideViewController.h"
 #import "FocusListItem.h"
 #import "UIImageView+WebCache.h"
-
+#import "InfoViewController.h"
 
 @interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
@@ -79,6 +79,7 @@
 
 #pragma mark 开关抽屉
 //此方法为继承自父类.===>重写父类的方法
+//自己的方法,父类的方法,协议的方法.
 -(void)buttonClick:(UIButton *)button{
     if (button.tag == 1) {
         
@@ -150,8 +151,12 @@
     
 }
 
+#pragma mark 手势方法
 -(void)focusScrollViewClick:(UITapGestureRecognizer *)tap{
-    
+    FocusListItem *fi = [_focusListItemsArray objectAtIndex:_currentIndex];
+    InfoViewController *ivc = [[InfoViewController alloc]init];
+    ivc.infoLink = fi.newsLink;
+    [self.navigationController pushViewController:ivc animated:YES];
 }
 
 #pragma mark 绘制滚动视图

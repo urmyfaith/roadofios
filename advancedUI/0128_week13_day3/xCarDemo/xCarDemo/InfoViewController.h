@@ -10,4 +10,6 @@
 
 @interface InfoViewController : RootViewController
 
+@property (nonatomic,strong) NSString    *infoLink;
+
 @end

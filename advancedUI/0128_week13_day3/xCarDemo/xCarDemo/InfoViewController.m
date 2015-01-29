@@ -20,6 +20,13 @@
 {
     [super viewDidLoad];
     
+    [self createNavigationBar];
+
+}
+
+#pragma makr 重写导航条
+
+-(void)createNavigationBar{
     [self createMyNavigationBarWithTitle:nil
                               andLeftBtn:@[@"News_Details_Btn_Back.png"]
                              andRightBtn:@[@"News_Details_Btn_Comment.png",@"News_Details_Btn_Share.png"]];
