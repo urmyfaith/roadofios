@@ -22,6 +22,11 @@
         b)异步线程的添加
         c)创建串行线程
         d)得到主线程queue.
+    4.资料链接
+        a) http://mobile.51cto.com/hot-403008.htm
+        b) http://down.51cto.com/data/872207
+        c) http://www.dreamingwish.com/frontui/article/default/gcd%E5%AE%9E%E6%88%98%E4%B8%80%EF%BC%9A%E4%BD%BF%E7%94%A8%E4%B8%B2%E8%A1%8C%E9%98%9F%E5%88%97%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E7%9A%84%E9%A2%84%E5%8A%A0%E8%BD%BD.html
+ 
 2015-01-30_01_07_26 by urmyfaith@qq.com
  */
 
