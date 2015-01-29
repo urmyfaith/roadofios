@@ -14,13 +14,23 @@
 
 @implementation RootViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+
+
+-(void)createMyNavigationBarWithTitle:(NSString *)tilteImage
+                           andLeftBtn:(NSArray *)leftBtnArray
+                          andRightBtn:(NSArray *)rightBtnArray{
+    
+    MyNavigationBar *mnb = [[MyNavigationBar alloc]init];
+    mnb.frame = CGRectMake(0, 20, 320, 44);
+    [mnb createMyNavigaitonBarWithTitleImag:tilteImage
+                      andLeftBtnImagesNames:leftBtnArray
+                     andRightBtnImagesNames:rightBtnArray
+                                   andClass:self
+                                     andSEL:@selector(buttonClick:)];
+    [self.view addSubview:mnb];
+}
+-(void)buttonClick:(UIButton *)button{
+    
 }
 
 - (void)viewDidLoad
@@ -31,22 +41,4 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.navigationController setNavigationBarHidden:YES];//属性是可以继承的
 }
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 @end

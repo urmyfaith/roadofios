@@ -10,4 +10,10 @@
 
 @interface RootViewController : UIViewController
 
+-(void)createMyNavigationBarWithTitle:(NSString *)tilteImage
+                           andLeftBtn:(NSArray *)leftBtnArray
+                          andRightBtn:(NSArray *)rightBtnArray;
+
+-(void)buttonClick:(UIButton *)button;
+
 @end

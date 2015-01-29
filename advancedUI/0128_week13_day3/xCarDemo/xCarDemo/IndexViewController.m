@@ -71,25 +71,23 @@
 
 #pragma mark 1.创建导航条
 -(void)createNavigationBar{
-    MyNavigationBar *navigationBar  = [[MyNavigationBar alloc] init];
-    navigationBar.frame  = CGRectMake(0, 20, 320, 44);
-    [navigationBar createMyNavigaitonBarWithTitleImag:@"Index_Title_logo.png"
-                                andLeftBtnImagesNames:@[@"Index_Btn_Setting.png"]
-                               andRightBtnImagesNames:@[@"Index_Head02.png"]
-                                             andClass:self
-                                               andSEL:@selector(bbiClicked:)];
-    [self.view addSubview:navigationBar];
+
+    [self createMyNavigationBarWithTitle:@"Index_Title_logo.png"
+                              andLeftBtn:@[@"Index_Btn_Setting.png"]
+                             andRightBtn:@[@"Index_Head02.png"]];
 }
 
 #pragma mark 开关抽屉
--(void)bbiClicked:(UIButton *)bbi{
-    if (bbi.tag == 1) {
-    
+
+-(void)buttonClick:(UIButton *)button{
+    if (button.tag == 1) {
+        
         MenuViewController *mvc = [[MenuViewController alloc]init];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mvc];
         [self.revealSideViewController pushViewController:nav onDirection:PPRevealSideDirectionLeft animated:YES];
     }
 }
+
 
 #pragma mark 2.创建表视图
 -(void)createTableView{
@@ -117,6 +115,10 @@
     _focusScrollView.showsHorizontalScrollIndicator = NO;
     _focusScrollView.showsVerticalScrollIndicator = NO;
 
+    //添加手势
+    UITapGestureRecognizer *tap =[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(focusScrollViewClick:)];
+    [_focusScrollView addGestureRecognizer:tap];
+    
     
     _currentIndex = 0;
     _focusImagesArray = [[NSMutableArray alloc]init];
@@ -145,6 +147,10 @@
                                       _focusListItemsArray.count*(7+3),
                                       7);
     [baseView addSubview:_focusPageView];
+    
+}
+
+-(void)focusScrollViewClick:(UITapGestureRecognizer *)tap{
     
 }
 

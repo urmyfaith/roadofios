@@ -370,6 +370,7 @@
 		FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0B1A7881390059A6A3 /* MenuViewController.m */; };
 		FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0E1A7881830059A6A3 /* RootViewController.m */; };
 		FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF111A7886560059A6A3 /* MyNavigationBar.m */; };
+		FB910FB01A79D1B00095396F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB910FAF1A79D1B00095396F /* InfoViewController.m */; };
 		FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */; };
 /* End PBXBuildFile section */
 
@@ -776,6 +777,8 @@
 		FB33AF0E1A7881830059A6A3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		FB33AF101A7886560059A6A3 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
 		FB33AF111A7886560059A6A3 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
+		FB910FAE1A79D1B00095396F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		FB910FAF1A79D1B00095396F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		FBBDE9F11A78D090006F2FF4 /* CONST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CONST.h; path = ../CONST.h; sourceTree = "<group>"; };
 		FBBDE9F21A78D0D6006F2FF4 /* INTERFACE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INTERFACE.h; sourceTree = "<group>"; };
 		FBBDE9F31A78D260006F2FF4 /* FocusListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusListItem.h; sourceTree = "<group>"; };
@@ -1324,6 +1327,8 @@
 				FB33AF081A78812F0059A6A3 /* IndexViewController.m */,
 				FB33AF0A1A7881390059A6A3 /* MenuViewController.h */,
 				FB33AF0B1A7881390059A6A3 /* MenuViewController.m */,
+				FB910FAE1A79D1B00095396F /* InfoViewController.h */,
+				FB910FAF1A79D1B00095396F /* InfoViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1786,6 +1791,7 @@
 				FB33ADB81A787FDA0059A6A3 /* SDImageCache.m in Sources */,
 				FB33ADB41A787FDA0059A6A3 /* FMResultSet.m in Sources */,
 				FB33AC171A787F7B0059A6A3 /* main.m in Sources */,
+				FB910FB01A79D1B00095396F /* InfoViewController.m in Sources */,
 				FB33ADB11A787FDA0059A6A3 /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

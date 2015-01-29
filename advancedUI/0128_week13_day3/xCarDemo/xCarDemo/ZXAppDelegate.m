@@ -8,7 +8,7 @@
 
 #import "ZXAppDelegate.h"
 #import "IndexViewController.h"
-
+//#import "InfoViewController.h"
 
 @implementation ZXAppDelegate
 
@@ -18,6 +18,7 @@
     // Override point for customization after application launch.
     
     IndexViewController *ivc = [[IndexViewController alloc]init];
+    //InfoViewController *ivc = [[InfoViewController alloc]init];
     UINavigationController *inav = [[UINavigationController alloc]initWithRootViewController:ivc];
     
     
