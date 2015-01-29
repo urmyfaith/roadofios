@@ -7,6 +7,7 @@
 //
 
 #import "RootViewController.h"
+#import "ALRadialMenu.h"
 
 @interface InfoViewController : RootViewController
 

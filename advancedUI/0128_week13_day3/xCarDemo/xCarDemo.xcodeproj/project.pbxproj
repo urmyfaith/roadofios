@@ -371,6 +371,7 @@
 		FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0E1A7881830059A6A3 /* RootViewController.m */; };
 		FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF111A7886560059A6A3 /* MyNavigationBar.m */; };
 		FB910FB01A79D1B00095396F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB910FAF1A79D1B00095396F /* InfoViewController.m */; };
+		FB910FB21A79DD820095396F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB910FB11A79DD820095396F /* readme.txt */; };
 		FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */; };
 /* End PBXBuildFile section */
 
@@ -779,6 +780,7 @@
 		FB33AF111A7886560059A6A3 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
 		FB910FAE1A79D1B00095396F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		FB910FAF1A79D1B00095396F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		FB910FB11A79DD820095396F /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 		FBBDE9F11A78D090006F2FF4 /* CONST.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CONST.h; path = ../CONST.h; sourceTree = "<group>"; };
 		FBBDE9F21A78D0D6006F2FF4 /* INTERFACE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INTERFACE.h; sourceTree = "<group>"; };
 		FBBDE9F31A78D260006F2FF4 /* FocusListItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FocusListItem.h; sourceTree = "<group>"; };
@@ -868,6 +870,7 @@
 				FB33AF111A7886560059A6A3 /* MyNavigationBar.m */,
 				FB33AC1C1A787F7B0059A6A3 /* Images.xcassets */,
 				FB33AC111A787F7B0059A6A3 /* Supporting Files */,
+				FB910FB11A79DD820095396F /* readme.txt */,
 			);
 			path = xCarDemo;
 			sourceTree = "<group>";
@@ -1730,6 +1733,7 @@
 				FB33AEAA1A787FDA0059A6A3 /* Models_News_Tab02@2x.png in Resources */,
 				FB33AE841A787FDA0059A6A3 /* Models_Car_Btn_Color_black@2x.png in Resources */,
 				FB33AE901A787FDA0059A6A3 /* Models_Index_HOT@2x.png in Resources */,
+				FB910FB21A79DD820095396F /* readme.txt in Resources */,
 				FB33AED81A787FDA0059A6A3 /* pinterest.png in Resources */,
 				FB33AEA01A787FDA0059A6A3 /* Models_Info_Btn_More02_night@2x.png in Resources */,
 				FB33AE201A787FDA0059A6A3 /* Forum_Message_Copy@2x.png in Resources */,
