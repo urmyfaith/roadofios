@@ -8,13 +8,17 @@
 
 #import "NewsViewContoller.h"
 
-@interface NewsViewContoller ()
+@interface NewsViewContoller ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
 @implementation NewsViewContoller
 {
     UIView *_indexBarView;
+    UITableView *_leftTableView;
+    UITableView *_rigthTalbeView;
+    NSMutableArray *_leftDataArray;
+    NSMutableArray *_rightDataArray;
 }
 
 - (void)viewDidLoad
@@ -22,6 +26,78 @@
     [super viewDidLoad];
     [self createNavigationBar];
     [self createIndexBar];
+    [self createTableView];
+}
+
+#pragma mark 创建表视图
+-(void)createTableView{
+
+    _leftTableView  = [[UITableView alloc]initWithFrame:
+                       CGRectMake(0,
+                                  64+_indexBarView.frame.size.height,
+                                  160,
+                                  self.view.frame.size.height-64-_indexBarView.frame.size.height)
+                                                  style:UITableViewStylePlain];
+    _leftTableView.delegate = self;
+    _leftTableView.dataSource = self;
+    _leftTableView.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:_leftTableView];
+    
+    _rigthTalbeView  = [[UITableView alloc]initWithFrame:
+                       CGRectMake(160,
+                                  64+_indexBarView.frame.size.height,
+                                  160,
+                                  self.view.frame.size.height-64-_indexBarView.frame.size.height)
+                                                  style:UITableViewStylePlain];
+    _rigthTalbeView.delegate = self;
+    _rigthTalbeView.dataSource = self;
+    _rigthTalbeView.showsVerticalScrollIndicator = NO;
+    [self.view addSubview:_rigthTalbeView];
+    
+}
+
+#pragma mark 表视图代理方法
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    if (tableView == _leftTableView)
+        return 10;
+    else
+
+        return 15;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+        static NSString *identifier = @"cellLeft";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+        if (!cell) {
+            cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        }
+        return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (tableView == _leftTableView) {
+        return 50.0f;
+    }
+    else
+        return 80.0f;
+}
+
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+    //设置最大偏移量
+    _leftTableView.contentSize = _leftTableView.contentSize.height > _rigthTalbeView.contentSize.height? _leftTableView.contentSize : _rigthTalbeView.contentSize;
+    
+    _rigthTalbeView.contentSize = _leftTableView.contentSize.height > _rigthTalbeView.contentSize.height ?
+    _leftTableView.contentSize : _rigthTalbeView.contentSize;
+    
+    if (scrollView == _leftTableView) {
+        _rigthTalbeView.contentOffset = _leftTableView.contentOffset;
+    }
+    else{
+        _leftTableView.contentOffset = _rigthTalbeView.contentOffset;
+    
+    }
 }
 
 #pragma mark  创建导航条
@@ -68,7 +144,17 @@
     }
 }
 
+#pragma mark  索引条点击事件
 -(void)indexBarClick:(UIButton *)button{
     NSLog(@"button.tag=%ld",button.tag);
+    
+    for (UIView *view in _indexBarView.subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            ((UIButton *) view).selected = NO;
+            if (( (UIButton *) view).tag == button.tag) {
+                ((UIButton *) view).selected = YES;
+            }
+        }
+    }
 }
 @end
