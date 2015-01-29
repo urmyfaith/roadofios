@@ -12,6 +12,8 @@
 #import "FocusListItem.h"
 #import "UIImageView+WebCache.h"
 #import "InfoViewController.h"
+#import "NewsViewContoller.h"
+
 
 @interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
@@ -32,12 +34,23 @@
     //小白点
     UIView *_focusPageView;
     
+    
+    //数组-->装载cell对应的视图控制器的名称.
+    NSMutableArray *_cellNamesArray;
 }
 
 - (void)viewDidLoad
 {
     //实例化表要的对象
     _cellImagesArray = [[NSMutableArray alloc ]init];
+    _cellNamesArray = [[NSMutableArray alloc]init];
+    
+    [_cellNamesArray addObject:@"NewsViewContoller"];
+    [_cellNamesArray addObject:@"NewsViewContoller"];
+    [_cellNamesArray addObject:@"NewsViewContoller"];
+    [_cellNamesArray addObject:@"NewsViewContoller"];
+    [_cellNamesArray addObject:@"NewsViewContoller"];
+
     [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_News.png"]];
     [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Search.png"]];
     [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Car.png"]];
@@ -275,7 +288,9 @@
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%s [LINE:%d] %d", __func__, __LINE__,indexPath.row);
+
+    RootViewController *vc = [[NSClassFromString([_cellNamesArray objectAtIndex:indexPath.row]) alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end
