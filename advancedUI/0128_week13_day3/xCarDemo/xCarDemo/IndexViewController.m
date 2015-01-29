@@ -28,6 +28,10 @@
     
     int _currentIndex;
     NSMutableArray  *_focusImagesArray;
+    
+    //小白点
+    UIView *_focusPageView;
+    
 }
 
 - (void)viewDidLoad
@@ -61,6 +65,7 @@
 -(void)downloadFinish{
     _focusListItemsArray = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:kFOUCS_LIST_URL];
     [self createTableViewHeaderView];
+    [self loadFocusScoreViewImages];
     [_tableView reloadData];
 }
 
@@ -125,11 +130,25 @@
     
     _focusLabel = [[UILabel alloc]init];
     _focusLabel.frame = CGRectMake(0, CGRectGetMaxY(_focusScrollView.frame), 320, baseView.frame.size.height - _focusScrollView.frame.size.height);
-    _focusLabel.backgroundColor = [UIColor purpleColor];
+    _focusLabel.backgroundColor = [UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.00f];
+    _focusLabel.font = [UIFont systemFontOfSize:15];
+    _focusLabel.textAlignment = NSTextAlignmentCenter;
     [baseView addSubview:_focusLabel];
+    
+    
+    _focusPageView = [[UIView alloc]init];
+#pragma mark ------todo-----#1    
+    //News_Pic_Number01@2x.png
+    //移动到下载完成去设置frame.
+    _focusPageView.frame = CGRectMake(320-5- _focusListItemsArray.count*(7+3),
+                                      _focusScrollView.frame.size.height-(10+7),
+                                      _focusListItemsArray.count*(7+3),
+                                      7);
+    [baseView addSubview:_focusPageView];
     
 }
 
+#pragma mark 绘制滚动视图
 -(void)loadFocusScoreViewImages{
     
     for (id subView in _focusScrollView.subviews) {
@@ -161,24 +180,42 @@
     [_focusScrollView addSubview:currentImageView];
     [_focusScrollView addSubview:preImageView];
     [_focusScrollView addSubview:nextImageView];
+    
+    //改变label
+    _focusLabel.text = ((FocusListItem *)[_focusListItemsArray objectAtIndex:_currentIndex]).title;
+    
+    //改变focusPageView
+    for (UIView *view in _focusPageView.subviews) {
+        [view removeFromSuperview];
+    }
+    for (int i = 0 ; i < _focusListItemsArray.count; i++) {
+        UIImageView *imageView = [[UIImageView alloc]init];
+        imageView.image =  i == _currentIndex ? [UIImage imageNamed:@"News_Pic_Number01"] : [UIImage imageNamed:@"News_Pic_Number02"];
+        imageView.frame = CGRectMake(10*i, 0, 7, 7);
+        [_focusPageView addSubview:imageView];
+    }
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    int index = scrollView.contentOffset.x/320;
-    if (index == 0) {
-        _currentIndex = _currentIndex - 1 < 0 ? _focusImagesArray.count - 1: _currentIndex - 1;
-        [self loadFocusScoreViewImages];
-        [scrollView setContentOffset:CGPointMake(0, 0)];
-    }else
-        if (index == 2) {
-        _currentIndex = _currentIndex+1 == _focusImagesArray.count ? 0: _currentIndex +1;
-        [self loadFocusScoreViewImages];
-        [scrollView setContentOffset:CGPointMake(0, 0)];
-    }
-    else
-        NSLog(@"%s [LINE:%d] nochange", __func__, __LINE__);
-}
+    if (scrollView == _focusScrollView) {
 
+        int index = scrollView.contentOffset.x/320;
+#pragma mark ------todo-----#2
+        NSLog(@"%s [LINE:%d] scrollView.contentOffset.x = %f", __func__, __LINE__,scrollView.contentOffset.x);
+        if (index == 0) {
+            _currentIndex = _currentIndex - 1 < 0 ? _focusImagesArray.count - 1: _currentIndex - 1;
+            [self loadFocusScoreViewImages];
+            [scrollView setContentOffset:CGPointMake(0, 0)];
+        }else
+            if (index ==  1) {
+                _currentIndex = _currentIndex+1 == _focusImagesArray.count ? 0: _currentIndex +1;
+                [self loadFocusScoreViewImages];
+                [scrollView setContentOffset:CGPointMake(0, 0)];
+            }
+            else
+                NSLog(@"%s [LINE:%d] nochange", __func__, __LINE__);
+    }
+}
 
 #pragma mark 表视图代理方法
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{

@@ -79,7 +79,7 @@
                                     btnImage.size.width,
                                     btnImage.size.height)
                         :
-                        CGRectMake(btnX - btnImage.size.width,
+                        CGRectMake(btnX - btnImage.size.width-10,
                                    (self.bounds.size.height-btnImage.size.height)/2,
                                    btnImage.size.width,
                                    btnImage.size.height);
