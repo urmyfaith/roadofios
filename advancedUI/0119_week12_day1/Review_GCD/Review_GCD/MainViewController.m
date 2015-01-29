@@ -128,9 +128,9 @@
     }
 }
 
+
+#pragma mark Block按钮
 -(void)doTag100{
-    
-    
     __weak __block MainViewController *copy_self = self;
     NSBlockOperation *blockOperation = [NSBlockOperation blockOperationWithBlock:^{
         [copy_self loadImageWithThreadName:@"Block"];
@@ -138,12 +138,17 @@
     NSOperationQueue *operationQueue = [[NSOperationQueue alloc] init];
     [operationQueue addOperation:blockOperation];
 }
+
+#pragma mark NSInvocationOperation按钮
 -(void)doTag101{
     NSOperationQueue *operationQueue = [[NSOperationQueue  alloc]init];
-    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc]initWithTarget:self selector:@selector(loadImageWithThreadName:) object:@"NSInvocationOperation"];
+    NSInvocationOperation *invocationOperation = [[NSInvocationOperation alloc]initWithTarget:self
+                                                                                     selector:@selector(loadImageWithThreadName:)
+                                                                                       object:@"NSInvocationOperation"];
     [operationQueue addOperation:invocationOperation];
-    
 }
+
+#pragma mark GCD_串行任务
 -(void)doTag102{
      dispatch_queue_t serialQueue = dispatch_queue_create("mySerialQueue", DISPATCH_QUEUE_SERIAL);
     __weak __block MainViewController *copy_self = self;
@@ -151,6 +156,8 @@
         [copy_self loadImageWithThreadName:@"Serial"];
     });
 }
+
+#pragma mark GCD_并发任务
 -(void)doTag103{
     dispatch_queue_t serialQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
     __weak __block MainViewController *copy_self = self;
@@ -158,19 +165,27 @@
         [copy_self loadImageWithThreadName:@"Concurrent"];
     });
 }
+#pragma mark NSThread按钮
+
 -(void)doTag104{
     [NSThread detachNewThreadSelector:@selector(loadImageWithThreadName:) toTarget:self withObject:@"NSThread"];
 }
+
+#pragma mark 同步下载按钮
+
 -(void)doTag105{
     NSData *data = [self getImageData];
     [self updateImageWithData:data];
 }
+
+#pragma mark 下载过程中是否能够更换颜色
 -(void)doTag106{
     if (_lable.backgroundColor == [UIColor redColor])
         _lable.backgroundColor = [UIColor greenColor];
     else
         _lable.backgroundColor = [UIColor redColor];
 }
+
 
 -(void)loadImageWithThreadName:(NSString *)threadName{
 
@@ -181,16 +196,10 @@
                         waitUntilDone:YES];
 }
 
--(void)updateImageWithData:(NSData *)data{
-    _imageView.image = [UIImage imageWithData:data];
-}
-
 -(NSData *)getImageData{
     [NSThread sleepForTimeInterval:1];
-
 #define IMAGEURL @"http://localhost/~zx/UISettingResources/headpicture.png"
-    
-    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:IMAGEURL]];
+    NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:IMAGEURL]];//---->同步下载==>阻塞主线程
     NSString *currentThread = [NSString stringWithFormat:@"thread:%@",[[NSThread currentThread] name] ];
     [self performSelectorOnMainThread:@selector(updateTextViewWithString:)
                            withObject:currentThread
@@ -198,11 +207,16 @@
     return  data;
 }
 
+//主线程更新UI
+-(void)updateImageWithData:(NSData *)data{
+    _imageView.image = [UIImage imageWithData:data];
+}
+
+//主线程更新UI
 -(void)updateTextViewWithString:(NSString *)string{
 
     _tv.text = [NSString stringWithFormat:@"%@\n%@",_tv.text,string];
     [_aciv stopAnimating];
 }
-
 
 @end
