@@ -9,7 +9,7 @@
 #import "RootViewController.h"
 #import "ALRadialMenu.h"
 
-@interface InfoViewController : RootViewController
+@interface InfoViewController : RootViewController<ALRadialMenuDelegate>
 
 @property (nonatomic,strong) NSString    *infoLink;
 
