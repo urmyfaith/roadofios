@@ -160,6 +160,8 @@ typedef void(^block)();
 //对于简单的数据类型,需要使用__block==>block类型的变量
 //对于对象/指针,不要使用__block修饰.(对象被复制了一份,(复制了指针),修改的是同一个对象的内容.)
 
+**如果要在block内修改block外声明的栈变量，那么一定要对该变量加__block标记**
+
 
 > 可以在block的内部使用外部的变量,但是不能去改变值.
 
@@ -343,5 +345,34 @@ block作为参数传入:
 - 第二步:block作为参数,那么在这个方法内部,需要保存在这个block变量
 - 第三步:给block实际的参数,执行代码块方法. ===>
 
+
+
+---- 
+
+add 2015-01-29_18_38_55
+
+## blokc变量的赋值
+
+~~~objectivec
+对block调用复制，有以下几种情况：
+1.对全局区的block调用copy，会返回原指针，并且这期间不处理任何东西（至少目前的内部实现是这样）；
+2.对栈上的block调用copy，每次会返回新复制到堆上的block的指针，同时，所有__block变量都会被复制至堆一份(多次拷贝，只会生成一份)。
+3.对已经位于heap上的block，再次调用copy，只会增加block的引用计数。
+~~~
+
+> 简单说,全局区的block,copy后返回原指针;
+>
+> 栈上的block,copy后,栈变量==>堆上复制一份
+> 
+> 在堆上的变量,引用计数+1
+> 
+
+
+- http://thirdcog.eu/pwcblocks/#cblocks-memory 
+- http://blog.csdn.net/jasonblog/article/details/7756763 
+- http://clang.llvm.org/docs/Block-ABI-Apple.html
+-  http://www.tanhao.me/pieces/310.html 
+-  http://llvm.org/svn/llvm-project/compiler-rt/trunk/BlocksRuntime/runtime.c 
+- http://llvm.org/svn/llvm-project/compiler-rt/trunk/BlocksRuntime/Block_private.h
 
 
