@@ -13,13 +13,15 @@
 @end
 
 @implementation NewsViewContoller
-
+{
+    UIView *_indexBarView;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     [self createNavigationBar];
-    
+    [self createIndexBar];
 }
 
 #pragma mark  创建导航条
@@ -37,4 +39,14 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark 创建索引条
+-(void)createIndexBar{
+    _indexBarView = [[UIView alloc]init];
+    _indexBarView.frame = CGRectMake(0, 64, 320, 30);
+    _indexBarView.backgroundColor = [UIColor cyanColor];
+    [self.view addSubview:_indexBarView];
+    
+    NSArray *name = @[@"最新",@"新车",@"评测",@"导购",@"详情"];
+    
+}
 @end
