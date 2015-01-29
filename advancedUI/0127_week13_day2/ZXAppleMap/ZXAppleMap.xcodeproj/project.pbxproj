@@ -538,6 +538,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZXAppleMap",
+					"$(PROJECT_DIR)/ZXAppleMap/navLib/BaiduStatistics",
+					"$(PROJECT_DIR)/ZXAppleMap/navLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -555,6 +557,8 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ZXAppleMap",
+					"$(PROJECT_DIR)/ZXAppleMap/navLib/BaiduStatistics",
+					"$(PROJECT_DIR)/ZXAppleMap/navLib",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
