@@ -57,6 +57,8 @@
 
 -(void)downloadFinish{
     
+    
+    NSLog(@"%s [LINE:%d] %@", __func__, __LINE__,[_interfaceArray objectAtIndex:_downloadIndex]);
     //取消通知
     [[NSNotificationCenter defaultCenter]removeObserver:self name:[_interfaceArray objectAtIndex:_downloadIndex] object:nil];
     

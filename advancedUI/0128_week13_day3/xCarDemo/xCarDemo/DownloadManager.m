@@ -9,6 +9,8 @@
 #import "DownloadManager.h"
 #import "FocusListItem.h"
 #import "NewListItem.h"
+#import "CONST.h"
+
 
 @implementation DownloadManager
 {
@@ -71,8 +73,17 @@ static DownloadManager *_sharedDownloadManager;
     if (download.downloadType == cNNEWS_LIST_TYPE) {
         NSArray *newItemArray = [rootDic objectForKey:@"news"];
         for (NSDictionary *dic in newItemArray) {
+
             NewListItem *ni = [[NewListItem alloc]init];
-            [ni setValuesForKeysWithDictionary:dic];
+            for (NSString *key  in  [dic allKeys]) {
+                if ([dic[key] isKindOfClass:[NSNumber class]]){
+                    NSLog(@"dic = %@ key=%@",dic,key);
+                    [ni setValue:[NSString stringWithFormat:@"%@",dic[key]] forKey:key];
+                }
+                else{
+                    [ni setValue:dic[key] forKey:key];
+                } 
+            }
             [dataArray addObject:ni];
         }
     }
