@@ -12,7 +12,8 @@
 @interface DownloadManager : NSObject<DownloadDelegate>
 
 -(void)addDownloadWithDownloadStr:(NSString *)downloadStr
-                  andDownloadType:(int )downloadType;
+                  andDownloadType:(int )downloadType
+                     andItemIndex:(NSString *)downloadItemIndex;
 -(NSMutableArray *)getDownloadDataWithDownloadStr:(NSString *)downloadStr;
 
 +(DownloadManager *)sharedDownloadManager;

@@ -67,7 +67,7 @@
                                               selector:@selector(downloadFinish)
                                                   name:kFOUCS_LIST_URL
                                                 object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kFOUCS_LIST_URL andDownloadType:cFOCUS_LIST_TYPE];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kFOUCS_LIST_URL andDownloadType:cFOCUS_LIST_TYPE andItemIndex:nil];
     
     [self createTableView];
 

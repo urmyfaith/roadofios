@@ -39,7 +39,7 @@ static DataBase *_sharedDataBase;
     [_database open];
     
     [_database executeUpdate:@"create table FocusItem(title text,imgURL text,newsLink text)"];
-    [_database executeUpdate:@"create table NewsItem(newsTitle text , imgHeight text, imgURL text,createDate text,comment text,newsLink text) "];
+    [_database executeUpdate:@"create table NewsItem(newsTitle text , imgHeight text, imgURL text,createDate text,comment text,newsLink text,itemIndex text) "];
     [_database close];
 }
 -(void)insertFocusItem:(FocusListItem *)focusItem{
@@ -51,13 +51,14 @@ static DataBase *_sharedDataBase;
 }
 -(void)insertNewsItem:(NewListItem *)newsItem{
     [_database open];
-    [_database executeUpdate:@"insert into NewsItem values(?,?,?,?,?,?)",
+    [_database executeUpdate:@"insert into NewsItem values(?,?,?,?,?,?,?)",
      newsItem.newsTitle,
      newsItem.img_h_small,
      newsItem.newsImg_small,
      newsItem.createDate,
      newsItem.comment,
-     newsItem.newsLink];
+     newsItem.newsLink,
+     newsItem.itemIndex ];
     [_database close];
 }
 
@@ -77,11 +78,11 @@ static DataBase *_sharedDataBase;
     [_database close];
     return dataArray;
 }
--(NSMutableArray *)selectNewItemWithIndex:(int)index{
+-(NSMutableArray *)selectNewItemWithIndex:(NSString *)index{
     
     [_database open];
     NSMutableArray  *dataArray = [[NSMutableArray alloc]init];
-    FMResultSet *res = [_database executeQuery:@"select * from NewsItem"];
+    FMResultSet *res = [_database executeQuery:@"select * from NewsItem where itemIndex = ?",index];
     while ([res next]) {
         //
         NewListItem *nli = [[NewListItem alloc]init];
@@ -91,6 +92,7 @@ static DataBase *_sharedDataBase;
         nli.comment = [res stringForColumn:@"commetn"];
         nli.newsImg_small = [res stringForColumn:@"newsLink"];
         nli.createDate = [res stringForColumn:@"createDate"];
+        nli.itemIndex = [res stringForColumn:@"itemIndex"];
         [dataArray addObject:nli];
     }
     [_database close];

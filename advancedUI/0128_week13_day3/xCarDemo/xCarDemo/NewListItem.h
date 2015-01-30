@@ -43,5 +43,8 @@
 @property (nonatomic,strong) NSString    *cmsid;
 @property (nonatomic,strong) NSString    *comment;
 
+//区分页面
+@property (nonatomic,strong) NSString    *itemIndex;
+
 
 @end

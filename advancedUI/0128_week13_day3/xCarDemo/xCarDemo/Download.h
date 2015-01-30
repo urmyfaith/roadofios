@@ -19,6 +19,10 @@
 @property (nonatomic,strong) NSString       *downloadStr;
 @property (nonatomic,strong) NSMutableData  *downloadData;
 @property (nonatomic,assign)     int        downloadType;
+
+@property (nonatomic,strong) NSString       *downloadItemIndex;
+
+
 @property(nonatomic,weak) __weak id<DownloadDelegate> delegate;
 -(void)download;
 

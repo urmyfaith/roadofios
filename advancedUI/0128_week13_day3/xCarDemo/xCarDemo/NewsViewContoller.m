@@ -52,7 +52,7 @@
                                               selector:@selector(downloadFinish)
                                                   name:[_interfaceArray objectAtIndex:index]
                                                 object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]andDownloadType:type];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]andDownloadType:type andItemIndex:[NSString stringWithFormat:@"%d",index]];
 }
 
 -(void)downloadFinish{

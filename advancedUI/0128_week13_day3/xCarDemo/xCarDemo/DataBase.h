@@ -23,6 +23,7 @@
 -(void)insertNewsItem:(NewListItem *)newsItem;
 
 -(NSMutableArray *)selectFocusItem;
--(NSMutableArray *)selectNewItemWithIndex:(int)index;
+
+-(NSMutableArray *)selectNewItemWithIndex:(NSString *)index;
 
 @end
