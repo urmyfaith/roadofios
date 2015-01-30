@@ -36,10 +36,11 @@
     
     [self createNavigationBar];
     [self createIndexBar];
+     [self createTableView];
 //    [self downloadData];
     _downloadIndex = 0;
     [self downloadDataWithIndex:_downloadIndex];
-    [self createTableView];
+   
 }
 
 
@@ -204,6 +205,7 @@
         }
         cell.baseView.frame = CGRectMake(5, 0, 150, 0);
         cell.iconImageView.frame = CGRectMake(0, 0, 150, [nli.img_h_small floatValue]);
+       
         [cell.iconImageView setImageWithURL:[NSURL URLWithString:nli.newsImg_small]];
         
         
