@@ -46,20 +46,13 @@
 
 -(void)downloadDataWithIndex:(int)index{
     //下载数据
+    int type =  index==4 ? cNNEWS_LIST_PRICE_TYPE :cNNEWS_LIST_TYPE;
+    
     [[NSNotificationCenter  defaultCenter] addObserver:self
                                               selector:@selector(downloadFinish)
                                                   name:[_interfaceArray objectAtIndex:index]
                                                 object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]andDownloadType:cNNEWS_LIST_TYPE];
-}
-
--(void)downloadData{
-    //下载数据
-    [[NSNotificationCenter  defaultCenter] addObserver:self
-                                              selector:@selector(downloadFinish)
-                                                  name:[_interfaceArray objectAtIndex:_downloadIndex]
-                                                object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kNEWS_LIST_NEWS andDownloadType:cNNEWS_LIST_TYPE];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]andDownloadType:type];
 }
 
 -(void)downloadFinish{

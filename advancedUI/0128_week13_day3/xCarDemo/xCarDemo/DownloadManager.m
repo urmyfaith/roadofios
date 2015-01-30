@@ -76,6 +76,16 @@ static DownloadManager *_sharedDownloadManager;
             [dataArray addObject:ni];
         }
     }
+    if (download.downloadType == cNNEWS_LIST_PRICE_TYPE) {
+        NSArray *newsArray = [rootDic objectForKey:@"news"];
+        for (NSDictionary *dic in newsArray) {
+            NewListItem *nli = [[NewListItem alloc]init];
+            nli.newsTitle = [dic objectForKey:@"newsTitle"];
+            nli.newsLink = [dic objectForKey:@"newsLink"];
+            nli.createDate = [NSString stringWithFormat:@"%@",[dic objectForKey:@"createDate"]];
+            [dataArray addObject:nli];
+        }
+    }
     [_sourceDict setObject:dataArray forKey:download.downloadStr];//缓存数据
     [[NSNotificationCenter defaultCenter]postNotificationName:download.downloadStr object:nil];
 }
