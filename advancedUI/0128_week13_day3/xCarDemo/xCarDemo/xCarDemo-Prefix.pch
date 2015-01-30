@@ -19,5 +19,5 @@
 #import "CONST.h"
 #import "INTERFACE.h"
 #import "DownloadManager.h"
-
+#import "DataBase.h"
 #endif

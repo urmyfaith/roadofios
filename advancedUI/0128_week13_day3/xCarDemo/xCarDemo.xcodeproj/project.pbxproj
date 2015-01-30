@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB23E37F1A7B584000DB1534 /* DataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = FB23E37E1A7B584000DB1534 /* DataBase.m */; };
 		FB2801761A78C9EA00702EF5 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2801751A78C9EA00702EF5 /* DownloadManager.m */; };
 		FB2801791A78C9F800702EF5 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2801781A78C9F800702EF5 /* Download.m */; };
 		FB33AC0B1A787F7B0059A6A3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB33AC0A1A787F7B0059A6A3 /* Foundation.framework */; };
@@ -390,6 +391,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB23E37D1A7B584000DB1534 /* DataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataBase.h; sourceTree = "<group>"; };
+		FB23E37E1A7B584000DB1534 /* DataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataBase.m; sourceTree = "<group>"; };
 		FB2801741A78C9EA00702EF5 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		FB2801751A78C9EA00702EF5 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		FB2801771A78C9F800702EF5 /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
@@ -823,6 +826,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB23E37C1A7B583100DB1534 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				FB23E37D1A7B584000DB1534 /* DataBase.h */,
+				FB23E37E1A7B584000DB1534 /* DataBase.m */,
+			);
+			name = DB;
+			sourceTree = "<group>";
+		};
 		FB2801731A78C9D400702EF5 /* Download */ = {
 			isa = PBXGroup;
 			children = (
@@ -868,12 +880,13 @@
 		FB33AC101A787F7B0059A6A3 /* xCarDemo */ = {
 			isa = PBXGroup;
 			children = (
+				FB33AC191A787F7B0059A6A3 /* ZXAppDelegate.h */,
+				FB33AC1A1A787F7B0059A6A3 /* ZXAppDelegate.m */,
+				FB23E37C1A7B583100DB1534 /* DB */,
 				FBD3043C1A7A0665008DD23D /* CONST */,
 				FB2801731A78C9D400702EF5 /* Download */,
 				FB33AC3B1A787FD90059A6A3 /* Library */,
 				FB33AC641A787FD90059A6A3 /* Resource */,
-				FB33AC191A787F7B0059A6A3 /* ZXAppDelegate.h */,
-				FB33AC1A1A787F7B0059A6A3 /* ZXAppDelegate.m */,
 				FBBDE9F61A78D269006F2FF4 /* Views */,
 				FBD304431A7A2705008DD23D /* cell */,
 				FBBDE9F71A78D290006F2FF4 /* Models */,
@@ -1825,6 +1838,7 @@
 				FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */,
 				FB33ADB01A787FDA0059A6A3 /* FMDatabase.m in Sources */,
 				FB33AF091A78812F0059A6A3 /* IndexViewController.m in Sources */,
+				FB23E37F1A7B584000DB1534 /* DataBase.m in Sources */,
 				FB33ADBA1A787FDA0059A6A3 /* SDWebImageDownloader.m in Sources */,
 				FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */,
 				FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */,

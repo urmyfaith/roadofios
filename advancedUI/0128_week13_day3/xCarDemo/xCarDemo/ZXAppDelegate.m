@@ -33,6 +33,12 @@
     [pprsvc changeOffset:1 forDirection:PPRevealSideDirectionLeft animated:YES];
     self.window.rootViewController = pprsvc;
     
+    
+    [[DataBase sharedDateBase]createDataBase];
+    [[DataBase sharedDateBase]createTable];
+    
+    NSLog(@"%@",NSHomeDirectory());
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
