@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'HitTestDemo' target in the 'HitTestDemo' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif
