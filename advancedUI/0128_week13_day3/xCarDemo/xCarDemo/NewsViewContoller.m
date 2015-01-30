@@ -1,4 +1,4 @@
-//
+    //
 //  NewsViewContoller.m
 //  xCarDemo
 //
@@ -23,30 +23,60 @@
     UITableView *_rightTableView;
     NSMutableArray *_leftDataArray;
     NSMutableArray *_rightDataArray;
+    
+    NSMutableArray *_interfaceArray;
+    int _downloadIndex;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    _interfaceArray = [[NSMutableArray alloc]initWithObjects:kNEWS_LIST_NEWS,kNEWS_LIST_CAR,kNEWS_LIST_BUY,kNEWS_LIST_COMMENT,kNEWS_LIST_PRICE, nil];
+    
     [self createNavigationBar];
     [self createIndexBar];
-    [self downloadData];
+//    [self downloadData];
+    _downloadIndex = 0;
+    [self downloadDataWithIndex:_downloadIndex];
     [self createTableView];
+}
+
+
+
+-(void)downloadDataWithIndex:(int)index{
+    //下载数据
+    [[NSNotificationCenter  defaultCenter] addObserver:self
+                                              selector:@selector(downloadFinish)
+                                                  name:[_interfaceArray objectAtIndex:index]
+                                                object:nil];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]andDownloadType:cNNEWS_LIST_TYPE];
 }
 
 -(void)downloadData{
     //下载数据
     [[NSNotificationCenter  defaultCenter] addObserver:self
                                               selector:@selector(downloadFinish)
-                                                  name:kNEWS_LIST_NEWS
+                                                  name:[_interfaceArray objectAtIndex:_downloadIndex]
                                                 object:nil];
     [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kNEWS_LIST_NEWS andDownloadType:cNNEWS_LIST_TYPE];
 }
 
 -(void)downloadFinish{
+    
+    //取消通知
+    [[NSNotificationCenter defaultCenter]removeObserver:self name:[_interfaceArray objectAtIndex:_downloadIndex] object:nil];
+    
     _leftDataArray = [[NSMutableArray alloc ]init];
     _rightDataArray = [[NSMutableArray alloc]init];
-    NSMutableArray *tempArray  = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:kNEWS_LIST_NEWS];
+    
+    
+    //清空数组
+    //[_leftDataArray removeAllObjects];
+    //[_rightDataArray removeAllObjects];
+    
+    
+    NSMutableArray *tempArray  = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:[_interfaceArray objectAtIndex:_downloadIndex]];
     for (int i = 0 ; i < tempArray.count; i++) {
         if (i%2==0) {
             [_leftDataArray addObject:[tempArray objectAtIndex:i]];
@@ -135,6 +165,8 @@
     cell.dateLabel.frame = CGRectMake(5, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f, 80, 20);
     
     //日期格式转换
+    //时间戳==>时间
+    //时间戳,1970到现在的秒数.
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
 //    [dateFormatter setDateFormat:@"yyyy年MM月dd HH:mm:ss"];
@@ -143,9 +175,9 @@
     
     cell.dateLabel.text = [dateFormatter stringFromDate:theday];;
     
-    cell.commentImageView.frame = CGRectMake(100, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f+ 3.f, 16, 16);
+    cell.commentImageView.frame = CGRectMake(95, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f+ 3.f, 16, 16);
     
-    cell.commentLabel.frame = CGRectMake(120, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f, 20, 20);
+    cell.commentLabel.frame = CGRectMake(115, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f, 25, 20);
     cell.commentLabel.text = nli.comment;
     
     cell.baseView.frame = CGRectMake(5, 0, 150, cell.commentLabel.frame.origin.y+cell.commentLabel.frame.size.height + 15.f);
@@ -170,7 +202,6 @@
                                            constrainedToSize:CGSizeMake(140, 1000) lineBreakMode:NSLineBreakByCharWrapping];
         height  = height + tilteSize.height;
         height  = height + 15.0f + 20.f + 20.f;
-        NSLog(@"%s [LINE:%d] %.f", __func__, __LINE__,height);
         return height;
     }
     else
@@ -250,5 +281,9 @@
             }
         }
     }
+    
+    //新的下载
+    _downloadIndex = button.tag -1;
+    [self downloadDataWithIndex:_downloadIndex];
 }
 @end

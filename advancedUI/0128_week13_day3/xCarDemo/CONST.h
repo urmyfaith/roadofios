@@ -8,3 +8,4 @@
 
 #define cFOCUS_LIST_TYPE 1
 #define cNNEWS_LIST_TYPE 2
+#define cNNEWS_LIST_PRICE_TYPE 3
