@@ -9,6 +9,8 @@
 #import "NewsViewContoller.h"
 #import "NewsListItemCell.h"
 #import "NewListItem.h"
+#import "UIImageView+WebCache.h"
+
 
 @interface NewsViewContoller ()<UITableViewDataSource,UITableViewDelegate>
 
@@ -69,6 +71,9 @@
     _leftTableView.delegate = self;
     _leftTableView.dataSource = self;
     _leftTableView.showsVerticalScrollIndicator = NO;
+    _leftTableView.backgroundColor = [UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.00f];
+    //表视图的分割线
+    [_leftTableView setSeparatorColor:[UIColor clearColor]];
     [self.view addSubview:_leftTableView];
     
     _rightTableView  = [[UITableView alloc]initWithFrame:
@@ -80,6 +85,8 @@
     _rightTableView.delegate = self;
     _rightTableView.dataSource = self;
     _rightTableView.showsVerticalScrollIndicator = NO;
+    _rightTableView.backgroundColor = [UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.00f];
+    [_rightTableView setSeparatorColor:[UIColor clearColor]];
     [self.view addSubview:_rightTableView];
     
 }
@@ -94,13 +101,55 @@
         return [_rightDataArray count];
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-        static NSString *identifier = @"cell";
-        NewsListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
-        if (!cell) {
-            //cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-            cell = [[[NSBundle mainBundle]loadNibNamed:@"NewsListItemCell" owner:self options:nil] lastObject];
-        }
-        return cell;
+    static NSString *identifier = @"cell";
+    NewsListItemCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier];
+    if (!cell) {
+        //cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
+        cell = [[[NSBundle mainBundle]loadNibNamed:@"NewsListItemCell" owner:self options:nil] lastObject];
+        //cell选中变色
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    }
+    
+    //cell控件重新布局
+    //需要重新给控件设置frame
+    
+    NewListItem *nli;
+    if (tableView == _leftTableView) {
+        nli = [_leftDataArray objectAtIndex:indexPath.row];
+    }
+    else{
+        nli = [_rightDataArray objectAtIndex:indexPath.row];
+    }
+    cell.baseView.frame = CGRectMake(5, 0, 150, 0);
+    cell.iconImageView.frame = CGRectMake(0, 0, 150, [nli.img_h_small floatValue]);
+    [cell.iconImageView setImageWithURL:[NSURL URLWithString:nli.newsImg_small]];
+    
+    
+    //动态计算文字高度
+    //动态计算cell高度
+    CGSize tilteSize = [nli.newsTitle  sizeWithFont:[UIFont systemFontOfSize:20]
+                                       constrainedToSize:CGSizeMake(140, 1000) lineBreakMode:NSLineBreakByCharWrapping];
+    cell.titleLabel.frame = CGRectMake(5, cell.iconImageView.frame.size.height+10.f, 140, tilteSize.height);
+    cell.titleLabel.text = nli.newsTitle;
+    
+    cell.dateLabel.frame = CGRectMake(5, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f, 80, 20);
+    
+    //日期格式转换
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.timeZone = [NSTimeZone timeZoneWithName:@"shanghai"];
+//    [dateFormatter setDateFormat:@"yyyy年MM月dd HH:mm:ss"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+    NSDate *theday = [NSDate dateWithTimeIntervalSince1970:[nli.createDate intValue]];
+    
+    cell.dateLabel.text = [dateFormatter stringFromDate:theday];;
+    
+    cell.commentImageView.frame = CGRectMake(100, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f+ 3.f, 16, 16);
+    
+    cell.commentLabel.frame = CGRectMake(120, cell.titleLabel.frame.origin.y+cell.titleLabel.frame.size.height+15.f, 20, 20);
+    cell.commentLabel.text = nli.comment;
+    
+    cell.baseView.frame = CGRectMake(5, 0, 150, cell.commentLabel.frame.origin.y+cell.commentLabel.frame.size.height + 15.f);
+    return cell;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
