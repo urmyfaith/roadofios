@@ -28,7 +28,6 @@
 }
 
 -(void)connectionDidFinishLoading:(NSURLConnection *)connection{
-    NSLog(@"%s [LINE:%d] 下载完成", __func__, __LINE__);
     [_delegate downloadFinishWithDownLoad:self];
 }
 

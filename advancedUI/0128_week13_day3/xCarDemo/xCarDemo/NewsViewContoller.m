@@ -23,7 +23,7 @@
     UITableView *_rightTableView;
     NSMutableArray *_leftDataArray;
     NSMutableArray *_rightDataArray;
-    
+    NSMutableArray *_tableDataArry;
     NSMutableArray *_interfaceArray;
     int _downloadIndex;
 }
@@ -45,20 +45,34 @@
 
 
 -(void)downloadDataWithIndex:(int)index{
-    //下载数据
-    int type =  index==4 ? cNNEWS_LIST_PRICE_TYPE :cNNEWS_LIST_TYPE;
     
-    [[NSNotificationCenter  defaultCenter] addObserver:self
-                                              selector:@selector(downloadFinish)
-                                                  name:[_interfaceArray objectAtIndex:index]
-                                                object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]andDownloadType:type andItemIndex:[NSString stringWithFormat:@"%d",index]];
+    NSString *tempKey = [NSString stringWithFormat:@"%@_%d",_interfaceArray[index],index];
+    
+    NSString *tempKeyVaule = [[NSUserDefaults standardUserDefaults]objectForKey:tempKey];
+    
+    if ([tempKeyVaule isEqualToString:@"YES"]) {
+        //从缓存读取数据
+        _tableDataArry = [[NSMutableArray alloc]initWithArray:[[DataBase sharedDateBase] selectNewItemWithIndex:[NSString stringWithFormat:@"%d",index]]];
+        [self downloadFinish];
+        NSLog(@"%s [LINE:%d] 资讯页面也从数据库读取", __func__, __LINE__);
+    }else{
+        //下载数据
+        int type =  index==4 ? cNNEWS_LIST_PRICE_TYPE :cNNEWS_LIST_TYPE;
+        
+        [[NSNotificationCenter  defaultCenter] addObserver:self
+                                                  selector:@selector(downloadFinish)
+                                                      name:[_interfaceArray objectAtIndex:index]
+                                                    object:nil];
+        [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:[_interfaceArray objectAtIndex:index]
+                                                            andDownloadType:type
+                                                               andItemIndex:[NSString stringWithFormat:@"%d",index]];
+        [[NSUserDefaults standardUserDefaults ] setObject:@"YES" forKey:tempKey];//最好在下载完成后执行.
+         NSLog(@"%s [LINE:%d] 资讯页面 从网络下载", __func__, __LINE__);
+    }
 }
 
 -(void)downloadFinish{
     
-    
-    NSLog(@"%s [LINE:%d] %@", __func__, __LINE__,[_interfaceArray objectAtIndex:_downloadIndex]);
     //取消通知
     [[NSNotificationCenter defaultCenter]removeObserver:self name:[_interfaceArray objectAtIndex:_downloadIndex] object:nil];
     
@@ -69,11 +83,17 @@
     //清空数组
     //[_leftDataArray removeAllObjects];
     //[_rightDataArray removeAllObjects];
+    NSString *tempKey = [NSString stringWithFormat:@"%@_%d",_interfaceArray[_downloadIndex],_downloadIndex];
+    NSString *tempKeyVaule = [[NSUserDefaults standardUserDefaults]objectForKey:tempKey];
     
-    
-    NSMutableArray *tempArray  = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:[_interfaceArray objectAtIndex:_downloadIndex]];
+    NSMutableArray * tempArray = nil;
+    if ([tempKeyVaule isEqualToString:@"YES"]) {
+        tempArray  = _tableDataArry;
+    }
+    else{
+        tempArray  = [[DownloadManager sharedDownloadManager]getDownloadDataWithDownloadStr:[_interfaceArray objectAtIndex:_downloadIndex]];
+    }
 
-    
     if (_downloadIndex == 4) {
         
         //数据源
@@ -261,7 +281,7 @@
 
 #pragma mark  创建导航条
 -(void)createNavigationBar{
-    [self createMyNavigationBarWithTitle:nil andLeftBtn:@[@"News_Details_Btn_Back.png"] andRightBtn:nil];
+    [self createMyNavigationBarWithTitle:nil andLeftBtn:@[@"News_Details_Btn_Back.png"] andRightBtn:@[@"News_Details_Btn_Back.png"]];
     UILabel *label = [[UILabel alloc]init];
     label.frame =CGRectMake(50, 20, 100, 44);
     label.text = @"咨讯";
@@ -271,7 +291,16 @@
 }
 
 -(void)buttonClick:(UIButton *)button{
-    [self.navigationController popViewControllerAnimated:YES];
+    NSLog(@"%s [LINE:%d] button.tag=%d", __func__, __LINE__,button.tag);
+    if (button.tag == 1) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    if (button.tag == 11) {
+
+        NSString *tempKey = [NSString stringWithFormat:@"%@_%d",_interfaceArray[_downloadIndex],_downloadIndex];
+        [[NSUserDefaults standardUserDefaults ] setObject:@"NO" forKey:tempKey];
+        [self downloadDataWithIndex:_downloadIndex];
+    }
 }
 
 #pragma mark 创建索引条

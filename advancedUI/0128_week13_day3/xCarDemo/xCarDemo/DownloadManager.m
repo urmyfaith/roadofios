@@ -84,7 +84,7 @@ static DownloadManager *_sharedDownloadManager;
             NewListItem *ni = [[NewListItem alloc]init];
             for (NSString *key  in  [dic allKeys]) {
                 if ([dic[key] isKindOfClass:[NSNumber class]]){
-                    NSLog(@"dic = %@ key=%@",dic,key);
+                    NSLog(@"%s [LINE:%d] NSCFNumber: key=%@ value =%@ ", __func__, __LINE__,key,dic[key]);
                     [ni setValue:[NSString stringWithFormat:@"%@",dic[key]] forKey:key];
                 }
                 else{

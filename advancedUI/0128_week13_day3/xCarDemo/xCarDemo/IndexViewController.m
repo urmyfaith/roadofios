@@ -62,16 +62,31 @@
     [self createNavigationBar];
 
     
-    //下载数据
-    [[NSNotificationCenter  defaultCenter] addObserver:self
-                                              selector:@selector(downloadFinish)
-                                                  name:kFOUCS_LIST_URL
-                                                object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kFOUCS_LIST_URL andDownloadType:cFOCUS_LIST_TYPE andItemIndex:nil];
+    NSString *hasCaches = [[NSUserDefaults standardUserDefaults] objectForKey:@"hasCaches"];
     
-    [self createTableView];
-
-
+    if ([hasCaches isEqualToString:@"YES"]) {
+        //从数据库取数据
+        _focusListItemsArray = [[NSMutableArray alloc]initWithArray:[[DataBase sharedDateBase]selectFocusItem]];
+        [self createTableView];
+        [self createTableViewHeaderView];
+        [self loadFocusScoreViewImages];
+        [_tableView reloadData];
+        NSLog(@"%s [LINE:%d] 本次从数据库读取数据", __func__, __LINE__);
+    }
+    else{
+        //从网络获取数据
+        
+        //下载数据
+        [[NSNotificationCenter  defaultCenter] addObserver:self
+                                                  selector:@selector(downloadFinish)
+                                                      name:kFOUCS_LIST_URL
+                                                    object:nil];
+        [[DownloadManager sharedDownloadManager] addDownloadWithDownloadStr:kFOUCS_LIST_URL andDownloadType:cFOCUS_LIST_TYPE andItemIndex:nil];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"hasCaches"];
+         [self createTableView];
+        NSLog(@"%s [LINE:%d] 从网络下载数据", __func__, __LINE__);
+    }
 }
 
 #pragma mark 数据下载完成
@@ -225,7 +240,6 @@
 
         int index = scrollView.contentOffset.x/320;
 #pragma mark ------todo-----#2
-        NSLog(@"%s [LINE:%d] scrollView.contentOffset.x = %f", __func__, __LINE__,scrollView.contentOffset.x);
         if (index == 0) {
             _currentIndex = _currentIndex - 1 < 0 ? _focusImagesArray.count - 1: _currentIndex - 1;
             [self loadFocusScoreViewImages];
