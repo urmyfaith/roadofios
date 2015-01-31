@@ -12,4 +12,13 @@
 
 @implementation SubBrand
 
+-(id)init{
+    
+    if (self = [super init]) {
+        //
+        _subBrandSeriesArray = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
+
 @end

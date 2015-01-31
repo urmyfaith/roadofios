@@ -375,6 +375,7 @@
 		FB65AA3D1A7C7EDC00BE322E /* SubBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA3C1A7C7EDC00BE322E /* SubBrand.m */; };
 		FB65AA401A7C7F8A00BE322E /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA3F1A7C7F8A00BE322E /* Brand.m */; };
 		FB65AA431A7C803B00BE322E /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA421A7C803B00BE322E /* Letter.m */; };
+		FB8FBEA81A7CACF600872FF0 /* CarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB8FBEA71A7CACF600872FF0 /* CarViewController.m */; };
 		FB910FB01A79D1B00095396F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB910FAF1A79D1B00095396F /* InfoViewController.m */; };
 		FB910FB21A79DD820095396F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB910FB11A79DD820095396F /* readme.txt */; };
 		FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */; };
@@ -797,6 +798,8 @@
 		FB65AA3F1A7C7F8A00BE322E /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
 		FB65AA411A7C803B00BE322E /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
 		FB65AA421A7C803B00BE322E /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
+		FB8FBEA61A7CACF600872FF0 /* CarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarViewController.h; sourceTree = "<group>"; };
+		FB8FBEA71A7CACF600872FF0 /* CarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarViewController.m; sourceTree = "<group>"; };
 		FB910FAE1A79D1B00095396F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		FB910FAF1A79D1B00095396F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		FB910FB11A79DD820095396F /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
@@ -1370,6 +1373,8 @@
 				FB910FAF1A79D1B00095396F /* InfoViewController.m */,
 				FBD3043D1A7A071E008DD23D /* NewsViewContoller.h */,
 				FBD3043E1A7A071E008DD23D /* NewsViewContoller.m */,
+				FB8FBEA61A7CACF600872FF0 /* CarViewController.h */,
+				FB8FBEA71A7CACF600872FF0 /* CarViewController.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1841,6 +1846,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB33ADAF1A787FDA0059A6A3 /* ALRadialMenu.m in Sources */,
+				FB8FBEA81A7CACF600872FF0 /* CarViewController.m in Sources */,
 				FB65AA3D1A7C7EDC00BE322E /* SubBrand.m in Sources */,
 				FB33ADBB1A787FDA0059A6A3 /* SDWebImageManager.m in Sources */,
 				FB33ADB31A787FDA0059A6A3 /* FMDatabaseQueue.m in Sources */,

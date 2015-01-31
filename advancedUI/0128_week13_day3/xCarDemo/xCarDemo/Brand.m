@@ -10,4 +10,11 @@
 
 @implementation Brand
 
+
+-(id)init{
+    if (self = [super init]) {
+        _brandSubBrandsArray = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
 @end

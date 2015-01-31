@@ -10,4 +10,11 @@
 
 @implementation Letter
 
+-(id)init{
+    if (self = [super init]) {
+        _letterBrandsArray = [[NSMutableArray alloc ]init];
+    }
+    return self;
+}
+
 @end

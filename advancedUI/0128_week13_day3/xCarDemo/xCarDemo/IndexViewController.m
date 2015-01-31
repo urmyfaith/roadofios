@@ -16,6 +16,8 @@
 #import "SDImageCache.h"
 #import "ZXAppDelegate.h"
 
+#import "CarViewController.h"
+
 @interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
 @end
@@ -50,7 +52,7 @@
     
     [_cellNamesArray addObject:@"NewsViewContoller"];
     [_cellNamesArray addObject:@"NewsViewContoller"];
-    [_cellNamesArray addObject:@"NewsViewContoller"];
+    [_cellNamesArray addObject:@"CarViewController"];
     [_cellNamesArray addObject:@"NewsViewContoller"];
     [_cellNamesArray addObject:@"NewsViewContoller"];
 
@@ -327,6 +329,8 @@
 
     RootViewController *vc = [[NSClassFromString([_cellNamesArray objectAtIndex:indexPath.row]) alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
+    
+    
 }
 
 @end
