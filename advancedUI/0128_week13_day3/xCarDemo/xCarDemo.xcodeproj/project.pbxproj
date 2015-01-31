@@ -371,6 +371,10 @@
 		FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0B1A7881390059A6A3 /* MenuViewController.m */; };
 		FB33AF0F1A7881830059A6A3 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF0E1A7881830059A6A3 /* RootViewController.m */; };
 		FB33AF121A7886560059A6A3 /* MyNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FB33AF111A7886560059A6A3 /* MyNavigationBar.m */; };
+		FB65AA3A1A7C7DFC00BE322E /* Serie.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA391A7C7DFC00BE322E /* Serie.m */; };
+		FB65AA3D1A7C7EDC00BE322E /* SubBrand.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA3C1A7C7EDC00BE322E /* SubBrand.m */; };
+		FB65AA401A7C7F8A00BE322E /* Brand.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA3F1A7C7F8A00BE322E /* Brand.m */; };
+		FB65AA431A7C803B00BE322E /* Letter.m in Sources */ = {isa = PBXBuildFile; fileRef = FB65AA421A7C803B00BE322E /* Letter.m */; };
 		FB910FB01A79D1B00095396F /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB910FAF1A79D1B00095396F /* InfoViewController.m */; };
 		FB910FB21A79DD820095396F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB910FB11A79DD820095396F /* readme.txt */; };
 		FBBDE9F51A78D260006F2FF4 /* FocusListItem.m in Sources */ = {isa = PBXBuildFile; fileRef = FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */; };
@@ -785,6 +789,14 @@
 		FB33AF0E1A7881830059A6A3 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		FB33AF101A7886560059A6A3 /* MyNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyNavigationBar.h; sourceTree = "<group>"; };
 		FB33AF111A7886560059A6A3 /* MyNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyNavigationBar.m; sourceTree = "<group>"; };
+		FB65AA381A7C7DFC00BE322E /* Serie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Serie.h; sourceTree = "<group>"; };
+		FB65AA391A7C7DFC00BE322E /* Serie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Serie.m; sourceTree = "<group>"; };
+		FB65AA3B1A7C7EDC00BE322E /* SubBrand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubBrand.h; sourceTree = "<group>"; };
+		FB65AA3C1A7C7EDC00BE322E /* SubBrand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubBrand.m; sourceTree = "<group>"; };
+		FB65AA3E1A7C7F8A00BE322E /* Brand.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Brand.h; sourceTree = "<group>"; };
+		FB65AA3F1A7C7F8A00BE322E /* Brand.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Brand.m; sourceTree = "<group>"; };
+		FB65AA411A7C803B00BE322E /* Letter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Letter.h; sourceTree = "<group>"; };
+		FB65AA421A7C803B00BE322E /* Letter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Letter.m; sourceTree = "<group>"; };
 		FB910FAE1A79D1B00095396F /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
 		FB910FAF1A79D1B00095396F /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		FB910FB11A79DD820095396F /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
@@ -1369,6 +1381,14 @@
 				FBBDE9F41A78D260006F2FF4 /* FocusListItem.m */,
 				FBD304401A7A1F12008DD23D /* NewListItem.h */,
 				FBD304411A7A1F12008DD23D /* NewListItem.m */,
+				FB65AA381A7C7DFC00BE322E /* Serie.h */,
+				FB65AA391A7C7DFC00BE322E /* Serie.m */,
+				FB65AA3B1A7C7EDC00BE322E /* SubBrand.h */,
+				FB65AA3C1A7C7EDC00BE322E /* SubBrand.m */,
+				FB65AA3E1A7C7F8A00BE322E /* Brand.h */,
+				FB65AA3F1A7C7F8A00BE322E /* Brand.m */,
+				FB65AA411A7C803B00BE322E /* Letter.h */,
+				FB65AA421A7C803B00BE322E /* Letter.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1821,6 +1841,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB33ADAF1A787FDA0059A6A3 /* ALRadialMenu.m in Sources */,
+				FB65AA3D1A7C7EDC00BE322E /* SubBrand.m in Sources */,
 				FB33ADBB1A787FDA0059A6A3 /* SDWebImageManager.m in Sources */,
 				FB33ADB31A787FDA0059A6A3 /* FMDatabaseQueue.m in Sources */,
 				FB2801761A78C9EA00702EF5 /* DownloadManager.m in Sources */,
@@ -1828,10 +1849,12 @@
 				FB33AF0C1A7881390059A6A3 /* MenuViewController.m in Sources */,
 				FB33ADBE1A787FDA0059A6A3 /* UIImageView+WebCache.m in Sources */,
 				FB33AC1B1A787F7B0059A6A3 /* ZXAppDelegate.m in Sources */,
+				FB65AA401A7C7F8A00BE322E /* Brand.m in Sources */,
 				FBD3043F1A7A071E008DD23D /* NewsViewContoller.m in Sources */,
 				FB33ADBD1A787FDA0059A6A3 /* UIButton+WebCache.m in Sources */,
 				FBD304421A7A1F12008DD23D /* NewListItem.m in Sources */,
 				FB33ADB91A787FDA0059A6A3 /* SDWebImageDecoder.m in Sources */,
+				FB65AA3A1A7C7DFC00BE322E /* Serie.m in Sources */,
 				FB33ADBC1A787FDA0059A6A3 /* SDWebImagePrefetcher.m in Sources */,
 				FB33ADB51A787FDA0059A6A3 /* PPRevealSideViewController.m in Sources */,
 				FB2801791A78C9F800702EF5 /* Download.m in Sources */,
@@ -1845,6 +1868,7 @@
 				FBD3044F1A7A2772008DD23D /* NewsListItemCell.m in Sources */,
 				FB33ADB21A787FDA0059A6A3 /* FMDatabasePool.m in Sources */,
 				FB33ADB81A787FDA0059A6A3 /* SDImageCache.m in Sources */,
+				FB65AA431A7C803B00BE322E /* Letter.m in Sources */,
 				FB33ADB41A787FDA0059A6A3 /* FMResultSet.m in Sources */,
 				FB33AC171A787F7B0059A6A3 /* main.m in Sources */,
 				FB910FB01A79D1B00095396F /* InfoViewController.m in Sources */,

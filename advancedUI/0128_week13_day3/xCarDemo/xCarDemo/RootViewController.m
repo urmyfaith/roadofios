@@ -7,6 +7,8 @@
 //
 
 #import "RootViewController.h"
+#import "ZXAppDelegate.h"
+
 
 @interface RootViewController ()
 
@@ -37,6 +39,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    //获取当前Application的类的属性===>得到当前AppDelegate类对象
+    _isDownload = ((ZXAppDelegate *) [UIApplication sharedApplication].delegate).isDownload;
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
     [self.navigationController setNavigationBarHidden:YES];//属性是可以继承的

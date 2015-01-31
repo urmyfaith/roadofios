@@ -26,4 +26,10 @@
 
 -(NSMutableArray *)selectNewItemWithIndex:(NSString *)index;
 
+-(BOOL)selectFocusItemCount;
+
+-(BOOL)selectNewItemCount;
+
+-(void)deleteAllData;
+
 @end

@@ -47,6 +47,23 @@
 
 -(void)downloadDataWithIndex:(int)index{
     
+#if 1
+    
+    if (self.isDownload) {
+        //下载数据
+    }else{
+        //从数据库里读取数据
+        NSArray  *array = [[DataBase sharedDateBase]selectNewItemWithIndex:[NSString  stringWithFormat:@"%d",index]];
+        
+        //给left,ringht数组赋值.
+        
+        //刷表
+    }
+#else
+    
+    
+#endif
+    
     NSString *tempKey = [NSString stringWithFormat:@"%@_%d",_interfaceArray[index],index];
     
     NSString *tempKeyVaule = [[NSUserDefaults standardUserDefaults]objectForKey:tempKey];

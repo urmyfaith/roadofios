@@ -37,6 +37,18 @@
     [[DataBase sharedDateBase]createDataBase];
     [[DataBase sharedDateBase]createTable];
     
+    //判断数据库是否有数据
+    
+    if ([[DataBase sharedDateBase] selectFocusItemCount] &&
+        [[DataBase sharedDateBase ] selectNewItemCount]) {
+        NSLog(@"数据库 有数据");
+        _isDownload = NO;
+    }
+    else{
+        NSLog(@"数据库 无数据");
+        _isDownload = YES;
+    }
+    
     NSLog(@"%@",NSHomeDirectory());
     
     self.window.backgroundColor = [UIColor whiteColor];

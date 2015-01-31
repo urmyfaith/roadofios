@@ -17,4 +17,8 @@
 
 -(void)buttonClick:(UIButton *)button;
 
+
+@property (nonatomic,assign)    BOOL     isDownload;
+
+
 @end

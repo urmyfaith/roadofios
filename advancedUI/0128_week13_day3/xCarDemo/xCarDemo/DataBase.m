@@ -100,4 +100,42 @@ static DataBase *_sharedDataBase;
 }
 
 
+-(BOOL)selectFocusItemCount{
+    [_database open];
+    
+    FMResultSet *res = [_database executeQuery:@"select count(*) from FocusItem"];
+    int count = 0;
+    while ([res next]) {
+        //
+        count = [res intForColumnIndex:0];
+    }
+    
+    [_database close];
+    
+    return count==5 ? YES:NO;
+}
+
+-(BOOL)selectNewItemCount{
+    
+    [_database open];
+    
+    FMResultSet *res = [_database executeQuery:@"select count(*) from NewsItem"];
+    int count = 0;
+    while ([res next]) {
+        //
+        count = [res intForColumnIndex:0];
+    }
+    
+    [_database close];
+    
+    return count==50 ? YES:NO;
+}
+
+-(void)deleteAllData{
+    [_database open];
+    [_database executeUpdate:@"delete from FoucusItem"];
+    [_database executeUpdate:@"delete from NewsItem"];
+    [_database close];
+}
+
 @end

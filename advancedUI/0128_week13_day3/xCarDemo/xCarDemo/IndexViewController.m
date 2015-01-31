@@ -13,7 +13,8 @@
 #import "UIImageView+WebCache.h"
 #import "InfoViewController.h"
 #import "NewsViewContoller.h"
-
+#import "SDImageCache.h"
+#import "ZXAppDelegate.h"
 
 @interface IndexViewController ()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 
@@ -41,6 +42,8 @@
 
 - (void)viewDidLoad
 {
+    [super viewDidLoad];
+    
     //实例化表要的对象
     _cellImagesArray = [[NSMutableArray alloc ]init];
     _cellNamesArray = [[NSMutableArray alloc]init];
@@ -58,7 +61,7 @@
     [_cellImagesArray addObject:[UIImage imageNamed:@"Index_MenuBar_Activity.png"]];
     [_cellImagesArray addObject:[UIImage imageNamed:@"Index_Logo.png"]];
     
-    [super viewDidLoad];
+
     [self createNavigationBar];
 
     
@@ -95,6 +98,14 @@
     [self createTableViewHeaderView];
     [self loadFocusScoreViewImages];
     [_tableView reloadData];
+    
+#if 0
+    //读取数据库
+    _focusListItemsArray  = [[DataBase sharedDateBase]selectFocusItem];
+    [self createTableViewHeaderView];
+    [self loadFocusScoreViewImages];
+    
+#endif
 }
 
 #pragma mark 1.创建导航条
@@ -114,6 +125,17 @@
         MenuViewController *mvc = [[MenuViewController alloc]init];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mvc];
         [self.revealSideViewController pushViewController:nav onDirection:PPRevealSideDirectionLeft animated:YES];
+    }else
+    {
+        //清除数据库数据
+        [[DataBase  sharedDateBase] deleteAllData];
+        
+        //清楚sdwebimage数据
+        [[SDImageCache sharedImageCache]clearMemory];
+        [[SDImageCache sharedImageCache]clearDisk];//clear (not clean).
+        
+        //下面的这句话无意义 ===数据库操作====>影响了这个值.
+        ((ZXAppDelegate *)([UIApplication sharedApplication]).delegate).isDownload = YES;
     }
 }
 
