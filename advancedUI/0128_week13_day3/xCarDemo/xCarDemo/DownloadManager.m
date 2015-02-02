@@ -11,6 +11,11 @@
 #import "NewListItem.h"
 #import "CONST.h"
 
+#import "Letter.h"
+#import "Brand.h"
+#import "SubBrand.h"
+#import "Serie.h"
+
 
 @implementation DownloadManager
 {
@@ -108,6 +113,42 @@ static DownloadManager *_sharedDownloadManager;
          
             [dataArray addObject:nli];
             [[DataBase sharedDateBase]insertNewsItem:nli];//------>存入数据库
+        }
+    }
+    
+    if (download.downloadType == cCar_LIST_TYPE) {
+        
+        NSArray *lettersArray = [rootDic objectForKey:@"letters"];
+        for (NSDictionary *dic0 in lettersArray ) {
+            
+            Letter *letter =[[Letter alloc]init];
+            letter.letterName = dic0[@"letter"];
+            NSArray *brandsArray  = [dic0 objectForKey:@"brands"];
+            for (NSDictionary *dic1 in brandsArray) {
+                
+                Brand *brand  = [[Brand alloc]init];
+                brand.brandIcon = dic1[@"icon"];
+                brand.brandName = dic1[@"name"];
+                
+                NSArray *brandSubBrandsArray = dic1[@"subBrands"];
+                for (NSDictionary *dic2 in brandSubBrandsArray) {
+                    SubBrand *subBrand = [[SubBrand alloc]init];
+                    subBrand.subBrandName = dic2[@"subBrandName"];
+                    subBrand.subBrandSeriesNum = dic2[@"seriesNum"];
+                    NSArray *seriesArray = dic2[@"series"];
+                    for (NSDictionary *dic3 in seriesArray) {
+                        Serie *serie = [[Serie alloc]init];
+                        serie.serieName = dic3[@"name"];
+                        serie.serieId = dic3[@"id"];
+                        serie.serieIcon = dic3[@"icon"];
+                        serie.seriePrice = dic3[@"price"];
+                        [subBrand.subBrandSeriesArray addObject:serie];
+                    }
+                    [brand.brandSubBrandsArray addObject:subBrand];
+                }
+                [letter.letterBrandsArray addObject:brand];
+            }
+            [dataArray addObject:letter];
         }
     }
     

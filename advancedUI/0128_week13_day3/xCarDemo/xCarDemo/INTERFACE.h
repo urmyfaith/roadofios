@@ -23,6 +23,8 @@
 #define kNEWS_LIST_PRICE (kSERVER_URL@"cms/interface/5.0/getNewsList.php?cityId=475&limit=10&offset=0&type=2&ver=5.3.1")
 
 
+#define kCAR_LIST_URL @"http://mi.xcar.com.cn/interface/xcar/GetBrands.php"
+
 
 
 
