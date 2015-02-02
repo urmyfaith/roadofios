@@ -1,3 +1,12 @@
+
+
+
+## Demo下载地址
+
+[点我](http://zuoxue.sinaapp.com/responder_chain_demo/responder_chain_demo%E4%BA%8B%E4%BB%B6%E7%A9%BF%E9%80%8F.zip)
+
+## 参考资料
+
 | 序号 | 标题| tag|
 | :-------------: | :------------ |:------|
 | 01 |  [(技术哥)iOS事件分发机制（一） hit-Testing](http://suenblog.duapp.com/blog/100031/iOS%E4%BA%8B%E4%BB%B6%E5%88%86%E5%8F%91%E6%9C%BA%E5%88%B6%EF%BC%88%E4%B8%80%EF%BC%89%20hit-Testing#sidebar)| event, Responder|
