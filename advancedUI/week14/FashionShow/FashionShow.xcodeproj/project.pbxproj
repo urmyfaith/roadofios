@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB17FC901A81293600A6D4A4 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC8F1A81293600A6D4A4 /* Download.m */; };
+		FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC941A81303D00A6D4A4 /* TesTViewController.m */; };
 		FB4581511A80F9EE00895E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581501A80F9EE00895E6F /* Foundation.framework */; };
 		FB4581531A80F9EE00895E6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581521A80F9EE00895E6F /* CoreGraphics.framework */; };
 		FB4581551A80F9EE00895E6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581541A80F9EE00895E6F /* UIKit.framework */; };
@@ -19,6 +21,22 @@
 		FB45816C1A80F9EE00895E6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581541A80F9EE00895E6F /* UIKit.framework */; };
 		FB4581741A80F9EE00895E6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB4581721A80F9EE00895E6F /* InfoPlist.strings */; };
 		FB4581761A80F9EE00895E6F /* FashionShowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581751A80F9EE00895E6F /* FashionShowTests.m */; };
+		FB45818E1A81001000895E6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB4581851A81001000895E6F /* InfoPlist.strings */; };
+		FB4581911A81006300895E6F /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581901A81006300895E6F /* RootViewController.m */; };
+		FB4581941A81007E00895E6F /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581931A81007E00895E6F /* BaseViewController.m */; };
+		FB4581971A8100AD00895E6F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581961A8100AD00895E6F /* MainViewController.m */; };
+		FB45819A1A8100CE00895E6F /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581991A8100CE00895E6F /* SettingViewController.m */; };
+		FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB45819C1A8100DF00895E6F /* CollectionViewController.m */; };
+		FB4581A01A8100ED00895E6F /* ShowCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB45819F1A8100ED00895E6F /* ShowCommentsViewController.m */; };
+		FB4581A31A81010000895E6F /* PostCommentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581A21A81010000895E6F /* PostCommentViewController.m */; };
+		FB4581A71A81014700895E6F /* StarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581A61A81014700895E6F /* StarViewController.m */; };
+		FB4581AA1A81015000895E6F /* FashionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581A91A81015000895E6F /* FashionViewController.m */; };
+		FB4581AD1A81015B00895E6F /* BeautyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581AC1A81015B00895E6F /* BeautyViewController.m */; };
+		FB4581B01A81016100895E6F /* LifeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581AF1A81016100895E6F /* LifeViewController.m */; };
+		FB4581B31A81016A00895E6F /* VisualViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581B21A81016A00895E6F /* VisualViewController.m */; };
+		FB4581B61A8101D600895E6F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581B51A8101D600895E6F /* WebViewController.m */; };
+		FB4581B91A8101E100895E6F /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581B81A8101E100895E6F /* PhotosViewController.m */; };
+		FB4581BD1A81032000895E6F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB4581BC1A81032000895E6F /* readme.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +50,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB17FC8D1A81233B00A6D4A4 /* INTERFACE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INTERFACE.h; sourceTree = "<group>"; };
+		FB17FC8E1A81293600A6D4A4 /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
+		FB17FC8F1A81293600A6D4A4 /* Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
+		FB17FC931A81303D00A6D4A4 /* TesTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesTViewController.h; sourceTree = "<group>"; };
+		FB17FC941A81303D00A6D4A4 /* TesTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesTViewController.m; sourceTree = "<group>"; };
 		FB45814D1A80F9EE00895E6F /* FashionShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4581501A80F9EE00895E6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB4581521A80F9EE00895E6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -40,14 +63,44 @@
 		FB45815A1A80F9EE00895E6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB45815C1A80F9EE00895E6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FB45815E1A80F9EE00895E6F /* FashionShow-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FashionShow-Prefix.pch"; sourceTree = "<group>"; };
-		FB45815F1A80F9EE00895E6F /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZXAppDelegate.h; sourceTree = "<group>"; };
-		FB4581601A80F9EE00895E6F /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZXAppDelegate.m; sourceTree = "<group>"; };
+		FB45815F1A80F9EE00895E6F /* ZXAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZXAppDelegate.h; path = ../ZXAppDelegate.h; sourceTree = "<group>"; };
+		FB4581601A80F9EE00895E6F /* ZXAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ZXAppDelegate.m; path = ../ZXAppDelegate.m; sourceTree = "<group>"; };
 		FB4581621A80F9EE00895E6F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FB4581681A80F9EE00895E6F /* FashionShowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FashionShowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4581691A80F9EE00895E6F /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		FB4581711A80F9EE00895E6F /* FashionShowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FashionShowTests-Info.plist"; sourceTree = "<group>"; };
 		FB4581731A80F9EE00895E6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB4581751A80F9EE00895E6F /* FashionShowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FashionShowTests.m; sourceTree = "<group>"; };
+		FB4581861A81001000895E6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = InfoPlist.strings; sourceTree = "<group>"; };
+		FB45818F1A81006300895E6F /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		FB4581901A81006300895E6F /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		FB4581921A81007E00895E6F /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		FB4581931A81007E00895E6F /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		FB4581951A8100AD00895E6F /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		FB4581961A8100AD00895E6F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		FB4581981A8100CE00895E6F /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		FB4581991A8100CE00895E6F /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		FB45819B1A8100DF00895E6F /* CollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewController.h; sourceTree = "<group>"; };
+		FB45819C1A8100DF00895E6F /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
+		FB45819E1A8100ED00895E6F /* ShowCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowCommentsViewController.h; sourceTree = "<group>"; };
+		FB45819F1A8100ED00895E6F /* ShowCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowCommentsViewController.m; sourceTree = "<group>"; };
+		FB4581A11A81010000895E6F /* PostCommentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCommentViewController.h; sourceTree = "<group>"; };
+		FB4581A21A81010000895E6F /* PostCommentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCommentViewController.m; sourceTree = "<group>"; };
+		FB4581A51A81014700895E6F /* StarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarViewController.h; sourceTree = "<group>"; };
+		FB4581A61A81014700895E6F /* StarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarViewController.m; sourceTree = "<group>"; };
+		FB4581A81A81015000895E6F /* FashionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FashionViewController.h; sourceTree = "<group>"; };
+		FB4581A91A81015000895E6F /* FashionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FashionViewController.m; sourceTree = "<group>"; };
+		FB4581AB1A81015B00895E6F /* BeautyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyViewController.h; sourceTree = "<group>"; };
+		FB4581AC1A81015B00895E6F /* BeautyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyViewController.m; sourceTree = "<group>"; };
+		FB4581AE1A81016100895E6F /* LifeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LifeViewController.h; sourceTree = "<group>"; };
+		FB4581AF1A81016100895E6F /* LifeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LifeViewController.m; sourceTree = "<group>"; };
+		FB4581B11A81016A00895E6F /* VisualViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisualViewController.h; sourceTree = "<group>"; };
+		FB4581B21A81016A00895E6F /* VisualViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisualViewController.m; sourceTree = "<group>"; };
+		FB4581B41A8101D600895E6F /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		FB4581B51A8101D600895E6F /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		FB4581B71A8101E100895E6F /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		FB4581B81A8101E100895E6F /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		FB4581BC1A81032000895E6F /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +127,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB17FC8C1A81232300A6D4A4 /* Macros */ = {
+			isa = PBXGroup;
+			children = (
+				FB17FC8D1A81233B00A6D4A4 /* INTERFACE.h */,
+			);
+			name = Macros;
+			sourceTree = "<group>";
+		};
+		FB17FC921A81302300A6D4A4 /* TEST */ = {
+			isa = PBXGroup;
+			children = (
+				FB17FC931A81303D00A6D4A4 /* TesTViewController.h */,
+				FB17FC941A81303D00A6D4A4 /* TesTViewController.m */,
+			);
+			path = TEST;
+			sourceTree = "<group>";
+		};
 		FB4581441A80F9EE00895E6F = {
 			isa = PBXGroup;
 			children = (
@@ -107,9 +177,23 @@
 		FB4581561A80F9EE00895E6F /* FashionShow */ = {
 			isa = PBXGroup;
 			children = (
-				FB45815F1A80F9EE00895E6F /* ZXAppDelegate.h */,
-				FB4581601A80F9EE00895E6F /* ZXAppDelegate.m */,
+				FB4581BC1A81032000895E6F /* readme.txt */,
+				FB45817F1A81001000895E6F /* Application */,
+				FB17FC8C1A81232300A6D4A4 /* Macros */,
+				FB4581801A81001000895E6F /* Base */,
+				FB4581821A81001000895E6F /* Controller */,
+				FB4581881A81001000895E6F /* Model */,
+				FB45818D1A81001000895E6F /* View */,
+				FB4581811A81001000895E6F /* Categories */,
+				FB4581831A81001000895E6F /* Datbase */,
+				FB4581871A81001000895E6F /* Handler */,
+				FB4581891A81001000895E6F /* Network */,
+				FB45818B1A81001000895E6F /* Storage */,
+				FB17FC921A81302300A6D4A4 /* TEST */,
+				FB45818C1A81001000895E6F /* Utils */,
+				FB45818A1A81001000895E6F /* Resource */,
 				FB4581621A80F9EE00895E6F /* Images.xcassets */,
+				FB4581841A81001000895E6F /* en.lproj */,
 				FB4581571A80F9EE00895E6F /* Supporting Files */,
 			);
 			path = FashionShow;
@@ -142,6 +226,146 @@
 				FB4581721A80F9EE00895E6F /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FB45817F1A81001000895E6F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				FB45815F1A80F9EE00895E6F /* ZXAppDelegate.h */,
+				FB4581601A80F9EE00895E6F /* ZXAppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		FB4581801A81001000895E6F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				FB45818F1A81006300895E6F /* RootViewController.h */,
+				FB4581901A81006300895E6F /* RootViewController.m */,
+				FB4581921A81007E00895E6F /* BaseViewController.h */,
+				FB4581931A81007E00895E6F /* BaseViewController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		FB4581811A81001000895E6F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		FB4581821A81001000895E6F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FB4581BA1A8101E600895E6F /* root */,
+				FB4581BB1A8101EA00895E6F /* base */,
+				FB4581B41A8101D600895E6F /* WebViewController.h */,
+				FB4581B51A8101D600895E6F /* WebViewController.m */,
+				FB4581B71A8101E100895E6F /* PhotosViewController.h */,
+				FB4581B81A8101E100895E6F /* PhotosViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		FB4581831A81001000895E6F /* Datbase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Datbase;
+			sourceTree = "<group>";
+		};
+		FB4581841A81001000895E6F /* en.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				FB4581851A81001000895E6F /* InfoPlist.strings */,
+			);
+			path = en.lproj;
+			sourceTree = "<group>";
+		};
+		FB4581871A81001000895E6F /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		FB4581881A81001000895E6F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FB4581891A81001000895E6F /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FB17FC8E1A81293600A6D4A4 /* Download.h */,
+				FB17FC8F1A81293600A6D4A4 /* Download.m */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FB45818A1A81001000895E6F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		FB45818B1A81001000895E6F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		FB45818C1A81001000895E6F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		FB45818D1A81001000895E6F /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB4581BA1A8101E600895E6F /* root */ = {
+			isa = PBXGroup;
+			children = (
+				FB4581951A8100AD00895E6F /* MainViewController.h */,
+				FB4581961A8100AD00895E6F /* MainViewController.m */,
+				FB4581981A8100CE00895E6F /* SettingViewController.h */,
+				FB4581991A8100CE00895E6F /* SettingViewController.m */,
+				FB45819B1A8100DF00895E6F /* CollectionViewController.h */,
+				FB45819C1A8100DF00895E6F /* CollectionViewController.m */,
+				FB45819E1A8100ED00895E6F /* ShowCommentsViewController.h */,
+				FB45819F1A8100ED00895E6F /* ShowCommentsViewController.m */,
+				FB4581A11A81010000895E6F /* PostCommentViewController.h */,
+				FB4581A21A81010000895E6F /* PostCommentViewController.m */,
+			);
+			name = root;
+			sourceTree = "<group>";
+		};
+		FB4581BB1A8101EA00895E6F /* base */ = {
+			isa = PBXGroup;
+			children = (
+				FB4581A51A81014700895E6F /* StarViewController.h */,
+				FB4581A61A81014700895E6F /* StarViewController.m */,
+				FB4581A81A81015000895E6F /* FashionViewController.h */,
+				FB4581A91A81015000895E6F /* FashionViewController.m */,
+				FB4581AB1A81015B00895E6F /* BeautyViewController.h */,
+				FB4581AC1A81015B00895E6F /* BeautyViewController.m */,
+				FB4581AE1A81016100895E6F /* LifeViewController.h */,
+				FB4581AF1A81016100895E6F /* LifeViewController.m */,
+				FB4581B11A81016A00895E6F /* VisualViewController.h */,
+				FB4581B21A81016A00895E6F /* VisualViewController.m */,
+			);
+			name = base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +445,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB45815B1A80F9EE00895E6F /* InfoPlist.strings in Resources */,
+				FB45818E1A81001000895E6F /* InfoPlist.strings in Resources */,
+				FB4581BD1A81032000895E6F /* readme.txt in Resources */,
 				FB4581631A80F9EE00895E6F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,8 +466,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB4581AA1A81015000895E6F /* FashionViewController.m in Sources */,
+				FB4581B61A8101D600895E6F /* WebViewController.m in Sources */,
+				FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */,
 				FB4581611A80F9EE00895E6F /* ZXAppDelegate.m in Sources */,
+				FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */,
+				FB4581941A81007E00895E6F /* BaseViewController.m in Sources */,
 				FB45815D1A80F9EE00895E6F /* main.m in Sources */,
+				FB4581971A8100AD00895E6F /* MainViewController.m in Sources */,
+				FB4581B31A81016A00895E6F /* VisualViewController.m in Sources */,
+				FB4581AD1A81015B00895E6F /* BeautyViewController.m in Sources */,
+				FB4581A01A8100ED00895E6F /* ShowCommentsViewController.m in Sources */,
+				FB4581A71A81014700895E6F /* StarViewController.m in Sources */,
+				FB4581A31A81010000895E6F /* PostCommentViewController.m in Sources */,
+				FB4581911A81006300895E6F /* RootViewController.m in Sources */,
+				FB4581B91A8101E100895E6F /* PhotosViewController.m in Sources */,
+				FB45819A1A8100CE00895E6F /* SettingViewController.m in Sources */,
+				FB17FC901A81293600A6D4A4 /* Download.m in Sources */,
+				FB4581B01A81016100895E6F /* LifeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +518,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB4581731A80F9EE00895E6F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FB4581851A81001000895E6F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB4581861A81001000895E6F /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -438,6 +688,7 @@
 				FB45817B1A80F9EE00895E6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FB45817C1A80F9EE00895E6F /* Build configuration list for PBXNativeTarget "FashionShowTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +697,7 @@
 				FB45817E1A80F9EE00895E6F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,6 +7,9 @@
 //
 
 #import "ZXAppDelegate.h"
+#import "INTERFACE.h"
+
+#import "TesTViewController.h"
 
 @implementation ZXAppDelegate
 
@@ -14,6 +17,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+#define TEST YES
+    if (TEST) {
+        TesTViewController *tvc = [[TesTViewController alloc]init];
+        self.window.rootViewController = tvc;
+    }
+#undef TEST
+
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
