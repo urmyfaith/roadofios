@@ -47,7 +47,7 @@
     
 //    [self testZXNavigationbar];
     
-    [self testZXTabBar];
+     [self testZXTabBar];
 }
 
 #pragma mark 测试testZXTabBar
@@ -63,7 +63,7 @@
 }
 
 -(void)tabbarClicked:(UIButton *)button{
-    NSLog(@"%s [LINE:%d] button.tag = %lu", __func__, __LINE__,button.tag);
+    NSLog(@"%s [LINE:%d] button.tag = %d", __func__, __LINE__,button.tag);
 }
 
 

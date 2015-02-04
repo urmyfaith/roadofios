@@ -59,6 +59,7 @@
         
         leftGap =  15.0f;
     }
+
     
     //左右两侧的button
     
