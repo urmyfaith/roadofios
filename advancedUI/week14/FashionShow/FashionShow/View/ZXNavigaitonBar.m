@@ -31,7 +31,6 @@
 
     //背景图片---写在最前面.
     UIImageView *backgroundImageView = [[UIImageView alloc]initWithFrame:self.bounds];
-    
     if (backgroundImage != nil)
         backgroundImageView.image = [UIImage imageNamed:backgroundImage];
     else
@@ -88,17 +87,30 @@
 -(void)createTitleImageViewWithTitleImageName:(NSString *)titleImageName andIsTop:(BOOL)isTopPage{
     
     //中间图片
-    UIImageView *titleImageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:titleImageName]];
-    titleImageView.frame = self.bounds;
+    UIImage *titleImage = [UIImage imageNamed:titleImageName];
+    
+    UIImageView *titleImageView = [[UIImageView alloc]init];
+    titleImageView.frame = CGRectMake((self.frame.size.width - titleImage.size.width)/2,
+                                      (self.frame.size.height - titleImage.size.height)/2,
+                                      titleImage.size.width,
+                                      titleImage.size.height);
+    titleImageView.image = titleImage;
     titleImageView.contentMode = UIViewContentModeCenter;
     [self addSubview:titleImageView];
+    
+    CGFloat adjustmentX = 7.0f;
+    CGFloat adjustmentY = 10.0f;
     
     //top图片
     if (isTopPage == YES) {
         
-        UIImage *topImage = [UIImage imageNamed:@"logo"];
+        UIImage *topImage = [UIImage imageNamed:@"top"];
         
-        UIImageView *topImageView = [[UIImageView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(titleImageView.frame), CGRectGetMaxY(titleImageView.frame)-topImage.size.height/2, topImage.size.width, topImage.size.height)];
+        UIImageView *topImageView = [[UIImageView alloc]initWithFrame:
+                                     CGRectMake(CGRectGetMaxX(titleImageView.frame) - adjustmentX,
+                                                CGRectGetMaxY(titleImageView.frame) - topImage.size.height - adjustmentY,
+                                                topImage.size.width,
+                                                topImage.size.height)];
         topImageView.image = topImage;
         [self addSubview:topImageView];
     }

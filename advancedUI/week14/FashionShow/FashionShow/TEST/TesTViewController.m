@@ -51,6 +51,7 @@
 #pragma mark testZXNavigationbar
 -(void)testZXNavigationbar{
     ZXNavigaitonBar *nb = [[ZXNavigaitonBar alloc]init];
+     nb.frame = CGRectMake(0, 0, 320, 64);
     [nb createMyNavigaitonBarWithTitleImag:@"logo"
                                   andIsTop:YES
                               andTitleName:nil
@@ -59,7 +60,7 @@
                      andRightBtnImagesName:@""
                                   andClass:self
                                     andSEL:@selector(navigationBarClicked:)];
-    nb.frame = CGRectMake(0, 0, 320, 64);
+   
     [self.view addSubview:nb];
 }
 
