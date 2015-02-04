@@ -8,3 +8,5 @@
 
 #define zxNavigaionBarButtonLeftTag 10001
 #define zxNavigaionBarButtonRightTag 10002
+
+#define zxTabBarButtonBaseTag 9000

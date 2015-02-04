@@ -12,7 +12,7 @@
 #import "DownloadManager.h"
 #import "NSDate+Transform.h"
 #import "ZXNavigaitonBar.h"
-
+#import "ZXTabBar.h"
 
 @interface TesTViewController ()<DownloadDelegate>
 
@@ -45,10 +45,30 @@
     
 //    [self testNSDateTransform];
     
-    [self testZXNavigationbar];
+//    [self testZXNavigationbar];
+    
+    [self testZXTabBar];
 }
 
-#pragma mark testZXNavigationbar
+#pragma mark 测试testZXTabBar
+
+-(void)testZXTabBar{
+    ZXTabBar *tb = [[ZXTabBar alloc]init];
+    tb.frame = CGRectMake(0, self.view.frame.size.height- 49, self.view.frame.size.width, 49);
+    
+    NSArray *imagesArray = @[@"内文返回_1",@"下载_1",@"分享_1",@"收藏_1",@"评论_1"];
+    
+    [tb tabBarWithImagesArray:imagesArray andClass:self andSEL:@selector(tabbarClicked:)];
+    [self.view addSubview:tb];
+}
+
+-(void)tabbarClicked:(UIButton *)button{
+    NSLog(@"%s [LINE:%d] button.tag = %lu", __func__, __LINE__,button.tag);
+}
+
+
+
+#pragma mark 测试ZXNavigationbar
 -(void)testZXNavigationbar{
     ZXNavigaitonBar *nb = [[ZXNavigaitonBar alloc]init];
      nb.frame = CGRectMake(0, 0, 320, 64);
@@ -56,12 +76,26 @@
                                   andIsTop:YES
                               andTitleName:nil
                         andBackgroundImage:nil
-                      andLeftBtnImagesName:@""
-                     andRightBtnImagesName:@""
+                      andLeftBtnImagesName:@"top_1"
+                     andRightBtnImagesName:@"栏目_1"
                                   andClass:self
                                     andSEL:@selector(navigationBarClicked:)];
    
     [self.view addSubview:nb];
+    
+    
+    ZXNavigaitonBar *nb2 = [[ZXNavigaitonBar alloc]init];
+    nb2.frame = CGRectMake(0, 64*3, 320, 64);
+    [nb2 createMyNavigaitonBarWithTitleImag:nil
+                                  andIsTop:NO
+                              andTitleName:@"评论"
+                        andBackgroundImage:nil
+                      andLeftBtnImagesName:@"返回_1"
+                     andRightBtnImagesName:nil
+                                  andClass:self
+                                    andSEL:@selector(navigationBarClicked:)];
+    
+    [self.view addSubview:nb2];
 }
 
 -(void)navigationBarClicked:(UIButton *)button{

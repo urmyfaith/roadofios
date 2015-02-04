@@ -40,15 +40,23 @@
     
     CGFloat leftGap = 0;
     //中间的logo  是文字? 还是图片?
+    //调整按钮左侧的位置
     if (titleImageName!=nil) {
         [self createTitleImageViewWithTitleImageName:titleImageName andIsTop:isTopPage];
         leftGap = 10.0f;
     }
     if (titleName != nil) {
         UILabel *titleLabel = [[UILabel alloc]init];
-        titleLabel.frame = self.bounds;
-        titleLabel.contentMode = UIViewContentModeCenter;
+        titleLabel.text = titleName;
+        titleLabel.textColor = [UIColor colorWithRed:1.00f green:0.97f blue:0.94f alpha:1.00f];
+        CGSize tilteSize = [titleName  sizeWithFont:[UIFont systemFontOfSize:20]
+                                      constrainedToSize:CGSizeMake(1000, 64) lineBreakMode:NSLineBreakByCharWrapping];
+        titleLabel.frame = CGRectMake((self.frame.size.width - tilteSize.width)/2,
+                                      (self.frame.size.height - tilteSize.height)/2,
+                                      tilteSize.width,
+                                      tilteSize.height);
         [self addSubview:titleLabel];
+        
         leftGap =  15.0f;
     }
     
@@ -73,7 +81,7 @@
     
     UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeCustom];
     buttonRight.tag = zxNavigaionBarButtonRightTag;
-    buttonRight.frame = CGRectMake(self.bounds.size.width - leftGap,
+    buttonRight.frame = CGRectMake(self.bounds.size.width - leftGap - buttonRightImage.size.width,
                                   (self.bounds.size.height - buttonLeftImage.size.height)/2,
                                   buttonRightImage.size.width,
                                   buttonRightImage.size.height);
