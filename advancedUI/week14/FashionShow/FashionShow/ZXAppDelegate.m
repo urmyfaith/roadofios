@@ -10,6 +10,8 @@
 #import "INTERFACE.h"
 
 #import "TesTViewController.h"
+#import "MainViewController.h"
+
 
 @implementation ZXAppDelegate
 
@@ -18,10 +20,14 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
     
-#define TEST YES
+#define TEST NO
     if (TEST) {
         TesTViewController *tvc = [[TesTViewController alloc]init];
         self.window.rootViewController = tvc;
+    }
+    else{
+        MainViewController *mvc = [[MainViewController alloc]init];
+        self.window.rootViewController = mvc;
     }
 #undef TEST
 

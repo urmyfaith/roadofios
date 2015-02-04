@@ -63,33 +63,36 @@
     
     //左右两侧的button
     
-    UIImage *buttonLeftImage = [UIImage imageNamed:leftBtnImage];
-    
-    UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
-    buttonLeft.tag  = zxNavigaionBarButtonLeftTag;
-    buttonLeft.frame = CGRectMake(leftGap,
-                                  (self.bounds.size.height - buttonLeftImage.size.height)/2,
-                                  buttonLeftImage.size.width,
-                                  buttonLeftImage.size.height);
-    
-    [buttonLeft setImage:buttonLeftImage forState:UIControlStateNormal];
-    [buttonLeft addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:buttonLeft];
-    
-    
-    
-    UIImage *buttonRightImage = [UIImage imageNamed:rightBtnImage];
-    
-    UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeCustom];
-    buttonRight.tag = zxNavigaionBarButtonRightTag;
-    buttonRight.frame = CGRectMake(self.bounds.size.width - leftGap - buttonRightImage.size.width,
-                                  (self.bounds.size.height - buttonLeftImage.size.height)/2,
-                                  buttonRightImage.size.width,
-                                  buttonRightImage.size.height);
-    
-    [buttonRight setImage:buttonRightImage forState:UIControlStateNormal];
-    [buttonRight addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:buttonRight];
+    if (leftBtnImage )
+    {
+        UIImage *buttonLeftImage = [UIImage imageNamed:leftBtnImage];
+        
+        UIButton *buttonLeft = [UIButton buttonWithType:UIButtonTypeCustom];
+        buttonLeft.tag  = zxNavigaionBarButtonLeftTag;
+        buttonLeft.frame = CGRectMake(leftGap,
+                                      (self.frame.size.height - buttonLeftImage.size.height)/2,
+                                      buttonLeftImage.size.width,
+                                      buttonLeftImage.size.height);
+        
+        [buttonLeft setImage:buttonLeftImage forState:UIControlStateNormal];
+        [buttonLeft addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:buttonLeft];
+    }
+    if (rightBtnImage)
+    {   
+        UIImage *buttonRightImage = [UIImage imageNamed:rightBtnImage];
+        
+        UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeCustom];
+        buttonRight.tag = zxNavigaionBarButtonRightTag;
+        buttonRight.frame = CGRectMake(self.frame.size.width - leftGap - buttonRightImage.size.width,
+                                       (self.frame.size.height - buttonRightImage.size.height)/2,
+                                       buttonRightImage.size.width,
+                                       buttonRightImage.size.height);
+        
+        [buttonRight setImage:buttonRightImage forState:UIControlStateNormal];
+        [buttonRight addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:buttonRight];
+    }
     
 }
 

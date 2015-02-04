@@ -45,9 +45,9 @@
     
 //    [self testNSDateTransform];
     
-//    [self testZXNavigationbar];
+    [self testZXNavigationbar];
     
-     [self testZXTabBar];
+//     [self testZXTabBar];
 }
 
 #pragma mark 测试testZXTabBar

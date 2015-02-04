@@ -26,8 +26,31 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self createNavitaionbar];
 }
+
+-(void)createNavitaionbar{
+    
+    ZXNavigaitonBar *nb = [[ZXNavigaitonBar alloc]init];
+    nb.frame = CGRectMake(0, 0, 320, 64);
+    [nb createMyNavigaitonBarWithTitleImag:@"logo"
+                                  andIsTop:YES
+                              andTitleName:nil
+                        andBackgroundImage:nil
+                      andLeftBtnImagesName:nil
+                     andRightBtnImagesName:@"栏目_1"
+                                  andClass:self
+                                    andSEL:@selector(navigationBarClicked:)];
+    
+    [self.view addSubview:nb];
+}
+
+-(void)navigationBarClicked:(UIButton *)button{
+    if (button.tag == zxNavigaionBarButtonRightTag) {
+        
+    }
+}
+
 
 - (void)didReceiveMemoryWarning
 {
