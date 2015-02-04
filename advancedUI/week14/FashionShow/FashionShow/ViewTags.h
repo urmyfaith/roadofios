@@ -6,3 +6,5 @@
 //  Copyright (c) 2015年 zx. All rights reserved.
 //
 
+#define zxNavigaionBarButtonLeftTag 10001
+#define zxNavigaionBarButtonRightTag 10002

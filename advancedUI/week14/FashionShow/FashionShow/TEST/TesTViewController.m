@@ -11,7 +11,7 @@
 #import "INTERFACE.h"
 #import "DownloadManager.h"
 #import "NSDate+Transform.h"
-
+#import "ZXNavigaitonBar.h"
 
 
 @interface TesTViewController ()<DownloadDelegate>
@@ -37,15 +37,40 @@
 {
     [super viewDidLoad];
     
-    [self testAPI];
+//    [self testAPI];
     
-   // [self testDownload];
+//    [self testDownload];
     
-   // [self testDownloadManager];
+//    [self testDownloadManager];
     
-    [self testNSDateTransform];
+//    [self testNSDateTransform];
+    
+    [self testZXNavigationbar];
 }
 
+#pragma mark testZXNavigationbar
+-(void)testZXNavigationbar{
+    ZXNavigaitonBar *nb = [[ZXNavigaitonBar alloc]init];
+    [nb createMyNavigaitonBarWithTitleImag:@"logo"
+                                  andIsTop:YES
+                              andTitleName:nil
+                        andBackgroundImage:nil
+                      andLeftBtnImagesName:@""
+                     andRightBtnImagesName:@""
+                                  andClass:self
+                                    andSEL:@selector(navigationBarClicked:)];
+    nb.frame = CGRectMake(0, 0, 320, 64);
+    [self.view addSubview:nb];
+}
+
+-(void)navigationBarClicked:(UIButton *)button{
+    if (button.tag  == zxNavigaionBarButtonLeftTag) {
+        NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    }
+    if (button.tag == zxNavigaionBarButtonRightTag) {
+        NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    }
+}
 
 #pragma mark 测试分类 NSDate+Transform.h
 -(void)testNSDateTransform{
