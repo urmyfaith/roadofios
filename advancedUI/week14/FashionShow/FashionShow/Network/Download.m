@@ -8,6 +8,13 @@
 
 #import "Download.h"
 
+/**
+ *  下载类
+ 1. 下载地址
+ 2.  请求方法类型
+ 3.  post请求的参数或者是请求体
+ 3. 下载得到的数据
+ */
 @implementation Download
 
 
