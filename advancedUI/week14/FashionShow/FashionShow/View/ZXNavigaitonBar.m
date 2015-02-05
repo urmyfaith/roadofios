@@ -79,7 +79,7 @@
         [self addSubview:buttonLeft];
     }
     if (rightBtnImage)
-    {   
+    {
         UIImage *buttonRightImage = [UIImage imageNamed:rightBtnImage];
         
         UIButton *buttonRight = [UIButton buttonWithType:UIButtonTypeCustom];

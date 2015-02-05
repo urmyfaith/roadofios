@@ -13,6 +13,18 @@
  */
 #import "ZXNavigaitonBar.h"
 
+/**
+ *  引入接口
+ */
+#import "INTERFACE.h"
+
+
+/**
+ *  引入数据解析方法
+ */
+
+#import "JSON2Model.h"
+
 
 @interface RootViewController : UIViewController
 

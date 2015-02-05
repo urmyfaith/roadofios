@@ -13,6 +13,22 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+/**
+ *  引入一些常量:全局的tag值
+ */
+
 #import "ViewTags.h"
+
+
+/**
+ *  引入经常使用的下载管理类
+ */
+#import "DownloadManager.h"
+
+/**
+ *  引入枚举常量
+ */
+
+#import "ENUMS.h"
 
 #endif

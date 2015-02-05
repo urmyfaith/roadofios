@@ -37,6 +37,9 @@
 		FB4581B61A8101D600895E6F /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581B51A8101D600895E6F /* WebViewController.m */; };
 		FB4581B91A8101E100895E6F /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4581B81A8101E100895E6F /* PhotosViewController.m */; };
 		FB4581BD1A81032000895E6F /* readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB4581BC1A81032000895E6F /* readme.txt */; };
+		FB92214A1A823D1700342963 /* API.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB9221491A823D1700342963 /* API.txt */; };
+		FB92214D1A82473600342963 /* GenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92214C1A82473600342963 /* GenericModel.m */; };
+		FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = FB97185C1A82826F00CDB90A /* JSON2Model.m */; };
 		FBC54EA91A81EFD5000A891D /* ZXNavigaitonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC54EA81A81EFD5000A891D /* ZXNavigaitonBar.m */; };
 		FBC54FFB1A81F422000A891D /* 导购_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54EAC1A81F421000A891D /* 导购_1.png */; };
 		FBC54FFC1A81F422000A891D /* 导购_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54EAD1A81F421000A891D /* 导购_1@2x.png */; };
@@ -423,6 +426,12 @@
 		FB4581B71A8101E100895E6F /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		FB4581B81A8101E100895E6F /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		FB4581BC1A81032000895E6F /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		FB9221491A823D1700342963 /* API.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.txt; sourceTree = "<group>"; };
+		FB92214B1A82473600342963 /* GenericModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericModel.h; sourceTree = "<group>"; };
+		FB92214C1A82473600342963 /* GenericModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericModel.m; sourceTree = "<group>"; };
+		FB97185B1A82826F00CDB90A /* JSON2Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON2Model.h; sourceTree = "<group>"; };
+		FB97185C1A82826F00CDB90A /* JSON2Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSON2Model.m; sourceTree = "<group>"; };
+		FB97185E1A82848D00CDB90A /* ENUMS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENUMS.h; sourceTree = "<group>"; };
 		FBAC6B341A81FA980090DC9C /* ViewTags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewTags.h; sourceTree = "<group>"; };
 		FBC54EA71A81EFD5000A891D /* ZXNavigaitonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNavigaitonBar.h; sourceTree = "<group>"; };
 		FBC54EA81A81EFD5000A891D /* ZXNavigaitonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNavigaitonBar.m; sourceTree = "<group>"; };
@@ -781,6 +790,7 @@
 			children = (
 				FB17FC8D1A81233B00A6D4A4 /* INTERFACE.h */,
 				FBAC6B341A81FA980090DC9C /* ViewTags.h */,
+				FB97185E1A82848D00CDB90A /* ENUMS.h */,
 			);
 			name = Macros;
 			sourceTree = "<group>";
@@ -827,6 +837,7 @@
 		FB4581561A80F9EE00895E6F /* FashionShow */ = {
 			isa = PBXGroup;
 			children = (
+				FB9221491A823D1700342963 /* API.txt */,
 				FB4581BC1A81032000895E6F /* readme.txt */,
 				FB45817F1A81001000895E6F /* Application */,
 				FB17FC8C1A81232300A6D4A4 /* Macros */,
@@ -936,6 +947,8 @@
 		FB4581871A81001000895E6F /* Handler */ = {
 			isa = PBXGroup;
 			children = (
+				FB97185B1A82826F00CDB90A /* JSON2Model.h */,
+				FB97185C1A82826F00CDB90A /* JSON2Model.m */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -943,6 +956,8 @@
 		FB4581881A81001000895E6F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FB92214B1A82473600342963 /* GenericModel.h */,
+				FB92214C1A82473600342963 /* GenericModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1572,6 +1587,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB92214A1A823D1700342963 /* API.txt in Resources */,
 				FBC550031A81F422000A891D /* 彩妆.png in Resources */,
 				FBC550651A81F422000A891D /* share_check_default.png in Resources */,
 				FBC5502C1A81F422000A891D /* 已购买_2@2x.png in Resources */,
@@ -1915,6 +1931,8 @@
 				FB4581AA1A81015000895E6F /* FashionViewController.m in Sources */,
 				FB4581B61A8101D600895E6F /* WebViewController.m in Sources */,
 				FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */,
+				FB92214D1A82473600342963 /* GenericModel.m in Sources */,
+				FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */,
 				FB4581611A80F9EE00895E6F /* ZXAppDelegate.m in Sources */,
 				FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */,
 				FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */,
