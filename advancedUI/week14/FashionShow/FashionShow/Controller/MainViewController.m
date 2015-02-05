@@ -9,9 +9,10 @@
 #import "MainViewController.h"
 #import "ZXTabBarVC.h"
 #import "BaseViewController.h"
-#import "StarViewController.h"
+#import "MainTableViewCell.h"
 
-@interface MainViewController ()
+
+@interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
 
@@ -20,6 +21,7 @@
     NSString *_urlIdentifier;
     
     NSArray *_tableViewDataSource_array;
+    UITableView *_tabelView;
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,8 +36,40 @@
 {
     [super viewDidLoad];
     [self createNavitaionbar];
+    
+    [self createTableView];
     [self downloadData];
 }
+
+
+
+#pragma mark 创建表视图
+-(void)createTableView{
+    _tabelView = [[UITableView alloc]initWithFrame:CGRectMake(0,
+                                                              64,
+                                                              self.view.frame.size.width,
+                                                              self.view.frame.size.height)
+                                             style:UITableViewStylePlain];
+    _tabelView.delegate = self;
+    _tabelView.dataSource = self;
+    
+    [self.view addSubview:_tabelView];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [_tableViewDataSource_array count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainTableViewCell *cell = [MainTableViewCell cellWithTableView:tableView];
+    cell.mainCell_Model = [_tableViewDataSource_array objectAtIndex:indexPath.row];
+    return cell;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 85;
+}
+
 
 /*
  尺寸:
@@ -53,6 +87,8 @@
  */
 
 
+
+
 #pragma mark 下载数据
 -(void)downloadData{
     
@@ -63,11 +99,12 @@
                                             selector:@selector(mainPage_downloadFinish)
                                                 name:_urlIdentifier
                                               object:nil];
-   // [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
 }
 
 -(void)mainPage_downloadFinish{
      _tableViewDataSource_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier andDataType:zxJSON_DATATYPE_GENERIC];
+    [_tabelView reloadData];
 }
 
 #pragma mark 绘制顶部导航栏
