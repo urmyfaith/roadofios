@@ -44,3 +44,11 @@ post请求,url地址相同,只是请求体不同,
 
 ~~~
 
+## 问题4
+ 
+ 计算文件夹的大小
+ 
+ http://www.cocoachina.com/bbs/read.php?tid-265475.html
+ http://blog.sina.com.cn/s/blog_63b4ee0d0101gdli.html
+ http://www.2cto.com/kf/201412/360426.html
+
