@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "SettingViewController.h"
 
 @interface BaseViewController ()
 
@@ -26,24 +27,58 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   [self createZXNavigationbar];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)createZXNavigationbar{
+
+    [self createRootNavigaitonBarWithTitleImag:@"logo"
+                                  andIsTop:NO
+                              andTitleName:nil
+                        andBackgroundImage:nil
+                      andLeftBtnImagesName:@"top_1"
+                     andRightBtnImagesName:@"设置_1"
+                                  andClass:self
+                                    andSEL:@selector(navigationBarClicked:)];
+    
 }
 
-/*
-#pragma mark - Navigation
+-(void)navigationBarClicked:(UIButton *)button{
+    if (button.tag  == zxNavigaionBarButtonLeftTag) {
+        
+  //      [self.navigationController popViewControllerAnimated:YES];
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+        self.modalPresentationStyle = UIModalPresentationCurrentContext;
+        [self dismissViewControllerAnimated:YES completion:^{
+            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+ }];
+        
+    }
+    if (button.tag == zxNavigaionBarButtonRightTag) {
+
+        SettingViewController *settingVC = [[SettingViewController alloc] init];
+#if 0
+        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        self.modalPresentationStyle = UIModalPresentationOverFullScreen;
+        [self presentViewController:settingVC animated:YES completion:^{
+            //
+        }];
+#endif
+
+#if 1
+        
+        UIViewController *src = self;
+        UIViewController *dst = settingVC;
+        
+        [UIView transitionWithView:src.navigationController.view
+                          duration:1
+                           options:UIViewAnimationOptionTransitionCurlUp
+                        animations:^{
+                            [src.navigationController pushViewController:dst animated:NO];
+                        }
+                        completion:nil];
+#endif
+    }
 }
-*/
 
 @end

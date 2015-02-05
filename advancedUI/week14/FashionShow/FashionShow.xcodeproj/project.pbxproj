@@ -40,6 +40,7 @@
 		FB92214A1A823D1700342963 /* API.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB9221491A823D1700342963 /* API.txt */; };
 		FB92214D1A82473600342963 /* GenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92214C1A82473600342963 /* GenericModel.m */; };
 		FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = FB97185C1A82826F00CDB90A /* JSON2Model.m */; };
+		FB9718611A82F96300CDB90A /* ZXTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = FB9718601A82F96300CDB90A /* ZXTabBarVC.m */; };
 		FBC54EA91A81EFD5000A891D /* ZXNavigaitonBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FBC54EA81A81EFD5000A891D /* ZXNavigaitonBar.m */; };
 		FBC54FFB1A81F422000A891D /* 导购_1.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54EAC1A81F421000A891D /* 导购_1.png */; };
 		FBC54FFC1A81F422000A891D /* 导购_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54EAD1A81F421000A891D /* 导购_1@2x.png */; };
@@ -432,6 +433,8 @@
 		FB97185B1A82826F00CDB90A /* JSON2Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON2Model.h; sourceTree = "<group>"; };
 		FB97185C1A82826F00CDB90A /* JSON2Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSON2Model.m; sourceTree = "<group>"; };
 		FB97185E1A82848D00CDB90A /* ENUMS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ENUMS.h; sourceTree = "<group>"; };
+		FB97185F1A82F96300CDB90A /* ZXTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZXTabBarVC.h; path = ../View/ZXTabBarVC.h; sourceTree = "<group>"; };
+		FB9718601A82F96300CDB90A /* ZXTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZXTabBarVC.m; path = ../View/ZXTabBarVC.m; sourceTree = "<group>"; };
 		FBAC6B341A81FA980090DC9C /* ViewTags.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewTags.h; sourceTree = "<group>"; };
 		FBC54EA71A81EFD5000A891D /* ZXNavigaitonBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNavigaitonBar.h; sourceTree = "<group>"; };
 		FBC54EA81A81EFD5000A891D /* ZXNavigaitonBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNavigaitonBar.m; sourceTree = "<group>"; };
@@ -919,6 +922,8 @@
 		FB4581821A81001000895E6F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FB97185F1A82F96300CDB90A /* ZXTabBarVC.h */,
+				FB9718601A82F96300CDB90A /* ZXTabBarVC.m */,
 				FB4581BA1A8101E600895E6F /* root */,
 				FB4581BB1A8101EA00895E6F /* base */,
 				FB4581B41A8101D600895E6F /* WebViewController.h */,
@@ -1951,6 +1956,7 @@
 				FB4581B91A8101E100895E6F /* PhotosViewController.m in Sources */,
 				FB45819A1A8100CE00895E6F /* SettingViewController.m in Sources */,
 				FB17FC901A81293600A6D4A4 /* Download.m in Sources */,
+				FB9718611A82F96300CDB90A /* ZXTabBarVC.m in Sources */,
 				FB4581B01A81016100895E6F /* LifeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

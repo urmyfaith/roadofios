@@ -28,4 +28,15 @@
 
 @interface RootViewController : UIViewController
 
+
+-(void)createRootNavigaitonBarWithTitleImag:(NSString * )titleImageName
+                                 andIsTop:(BOOL)isTopPage
+                             andTitleName:(NSString *)titleName
+                       andBackgroundImage:(NSString *)backgroundImage
+                     andLeftBtnImagesName:(NSString *)leftBtnImage
+                    andRightBtnImagesName:(NSString *)rightBtnImage
+                                 andClass:(id)classObject
+                                   andSEL:(SEL)sel;
+
+
 @end

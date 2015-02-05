@@ -7,6 +7,8 @@
 //
 
 #import "MainViewController.h"
+#import "ZXTabBarVC.h"
+
 
 @interface MainViewController ()
 
@@ -68,11 +70,10 @@
 }
 
 #pragma mark 绘制顶部导航栏
+//重写root的创建导航栏的方法
 -(void)createNavitaionbar{
     
-    ZXNavigaitonBar *nb = [[ZXNavigaitonBar alloc]init];
-    nb.frame = CGRectMake(0, 0, 320, 64);
-    [nb createMyNavigaitonBarWithTitleImag:@"logo"
+    [self createRootNavigaitonBarWithTitleImag:@"logo"
                                   andIsTop:YES
                               andTitleName:nil
                         andBackgroundImage:nil
@@ -80,13 +81,19 @@
                      andRightBtnImagesName:@"栏目_1"
                                   andClass:self
                                     andSEL:@selector(navigationBarClicked:)];
-    
-    [self.view addSubview:nb];
 }
 
 -(void)navigationBarClicked:(UIButton *)button{
     if (button.tag == zxNavigaionBarButtonRightTag) {
-        NSLog(@"%s [LINE:%d] rightButtonClicked.", __func__, __LINE__);
+        ZXTabBarVC *tvc = [[ZXTabBarVC alloc]init];
+        
+        //模态跳转
+        tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+        [self presentViewController:tvc animated:YES completion:^{
+            NSLog(@"%s [LINE:%d] 从主页==>tabBar视图", __func__, __LINE__);
+        }];
+
+        
     }
 }
 

@@ -11,6 +11,7 @@
 
 #import "TesTViewController.h"
 #import "MainViewController.h"
+#import "ZXTabBarVC.h"
 
 
 @implementation ZXAppDelegate
@@ -26,8 +27,16 @@
         self.window.rootViewController = tvc;
     }
     else{
+        
+        
         MainViewController *mvc = [[MainViewController alloc]init];
-        self.window.rootViewController = mvc;
+        
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:mvc];
+        nav.navigationBar.hidden = YES;
+        self.window.rootViewController = nav;
+        
+        //ZXTabBarVC *tvc = [[ZXTabBarVC alloc]init];
+        //self.window.rootViewController = tvc;
     }
 #undef TEST
 

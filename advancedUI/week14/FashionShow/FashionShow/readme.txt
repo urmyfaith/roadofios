@@ -32,5 +32,15 @@ post请求,url地址相同,只是请求体不同,
 
 
 #问题2
+
 首页,页面能够下拉刷新,但是不能上拉.
 这是怎么实现的?
+
+
+##问题3
+
+从UINavigationController/UIViewController  push到 UITabBarController
+~~~objectivec
+
+~~~
+
