@@ -9,8 +9,6 @@
 #import "SettingViewController.h"
 #import "CollectionViewController.h"
 
-
-
 @interface SettingViewController ()<UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -49,6 +47,8 @@
     
     
 }
+
+#pragma mark tableVeiw 代理方法
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [_tableViewDataSoucrce count];
