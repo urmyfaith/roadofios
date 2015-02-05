@@ -8,7 +8,8 @@
 
 #import "MainViewController.h"
 #import "ZXTabBarVC.h"
-
+#import "BaseViewController.h"
+#import "StarViewController.h"
 
 @interface MainViewController ()
 
@@ -62,7 +63,7 @@
                                             selector:@selector(mainPage_downloadFinish)
                                                 name:_urlIdentifier
                                               object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
+   // [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
 }
 
 -(void)mainPage_downloadFinish{
@@ -85,7 +86,9 @@
 
 -(void)navigationBarClicked:(UIButton *)button{
     if (button.tag == zxNavigaionBarButtonRightTag) {
-        ZXTabBarVC *tvc = [[ZXTabBarVC alloc]init];
+        
+#if 1
+        ZXTabBarVC *tvc = [ZXTabBarVC sharedZXTabBarViewController];
         
         //模态跳转
         tvc.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
@@ -94,25 +97,20 @@
         }];
 
         
+#else
+        BaseViewController *bvc = [[BaseViewController alloc]init];
+        
+        StarViewController *svc = [[StarViewController alloc]init];
+        
+//        UINavigationController *nav =[[ UINavigationController alloc]initWithRootViewController:bvc];
+//        nav.navigationBar.hidden = YES;
+//        [self presentViewController:nav animated:YES completion:nil];
+        
+        [self.navigationController pushViewController:svc animated:YES];
+        
+#endif
+        
     }
 }
-
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

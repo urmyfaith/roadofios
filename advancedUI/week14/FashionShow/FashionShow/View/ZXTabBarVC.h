@@ -12,6 +12,7 @@
 
 @property(nonatomic,strong)    UIView *customTabBar;
 
-
+@property (nonatomic,strong)  NSMutableArray   *viewConrollers_mArray;
++(ZXTabBarVC *)sharedZXTabBarViewController;
 
 @end

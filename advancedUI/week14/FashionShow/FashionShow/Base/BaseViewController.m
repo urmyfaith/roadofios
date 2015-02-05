@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 #import "SettingViewController.h"
+#import "ZXTabBarVC.h"
 
 @interface BaseViewController ()
 
@@ -27,7 +28,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   [self createZXNavigationbar];
+    [self createZXNavigationbar];
+    
+    ZXTabBarVC *tvc =[ZXTabBarVC sharedZXTabBarViewController];
+    
 }
 
 -(void)createZXNavigationbar{
@@ -47,36 +51,27 @@
     if (button.tag  == zxNavigaionBarButtonLeftTag) {
         
   //      [self.navigationController popViewControllerAnimated:YES];
-
-        self.modalPresentationStyle = UIModalPresentationCurrentContext;
+#if 1
+     //   self.modalPresentationStyle = UIModalPresentationCurrentContext;
         [self dismissViewControllerAnimated:YES completion:^{
             NSLog(@"%s [LINE:%d]", __func__, __LINE__);
  }];
-        
+#else
+        [self.navigationController popViewControllerAnimated:YES];
+#endif
+      
     }
     if (button.tag == zxNavigaionBarButtonRightTag) {
 
         SettingViewController *settingVC = [[SettingViewController alloc] init];
+     
+        
 #if 0
-        self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-        self.modalPresentationStyle = UIModalPresentationOverFullScreen;
-        [self presentViewController:settingVC animated:YES completion:^{
-            //
-        }];
-#endif
-
-#if 1
-        
-        UIViewController *src = self;
-        UIViewController *dst = settingVC;
-        
-        [UIView transitionWithView:src.navigationController.view
-                          duration:1
-                           options:UIViewAnimationOptionTransitionCurlUp
-                        animations:^{
-                            [src.navigationController pushViewController:dst animated:NO];
-                        }
-                        completion:nil];
+        [self.navigationController pushViewController:settingVC animated:YES];
+#else
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:settingVC];
+        nav.navigationBar.hidden = YES;
+        [self presentViewController:nav animated:YES completion:nil];
 #endif
     }
 }

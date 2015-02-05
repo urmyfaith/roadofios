@@ -32,16 +32,21 @@
     NSArray *_selectedImages;
     int _tabBarItems_count;
     NSArray *_viewControllers;
-    NSMutableArray *_viewConrollers_mArray;
+   // NSMutableArray *_viewConrollers_mArray;
+}
+
++(ZXTabBarVC *)sharedZXTabBarViewController{
+    static ZXTabBarVC *_sharedTabBarVC;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedTabBarVC = [[ZXTabBarVC alloc]init];
+      //  [_sharedTabBarVC createTabBar];
+    });
+    return _sharedTabBarVC;
 }
 
 
-
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-
+-(void)createTabBar{
     self.tabBar.hidden = YES;
     
     CGFloat tabBarHeight = 49.0f;
@@ -83,13 +88,21 @@
                         @"BeautyViewController",@"LifeViewController",@"VisualViewController"];
     
     for (int index = 0 ; index < _viewControllers.count; index++) {
-         BaseViewController *bvc =  (BaseViewController *) [[NSClassFromString(_viewControllers[index]) alloc] init];
+        BaseViewController *bvc =  (BaseViewController *) [[NSClassFromString(_viewControllers[index]) alloc] init];
         UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:bvc];
         //隐藏上面的系统的导航栏
         nav.navigationBarHidden = YES;
         [_viewConrollers_mArray addObject:nav];
     }
     self.viewControllers =_viewConrollers_mArray;
+
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+
+    [self createTabBar];
 }
 
 -(void)buttonClick:(UIButton *)button{
