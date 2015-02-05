@@ -52,3 +52,24 @@ post请求,url地址相同,只是请求体不同,
  http://blog.sina.com.cn/s/blog_63b4ee0d0101gdli.html
  http://www.2cto.com/kf/201412/360426.html
 
+## 问题5
+
+首页首行cell的尺寸调整问题
+
+/*
+
+尺寸:
+首行cell
+高度145
+数字图片宽度65
+
+其他行
+高度85
+图片150w*85h
+320-64-150= 106 剩余
+gapW = 8???
+gapH = 5;
+
+*/
+
+#todo  将所有的尺寸改写为宏定义

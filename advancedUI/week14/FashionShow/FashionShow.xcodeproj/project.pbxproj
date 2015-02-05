@@ -438,6 +438,7 @@
 		FB4581B71A8101E100895E6F /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		FB4581B81A8101E100895E6F /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		FB4581BC1A81032000895E6F /* readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = readme.txt; sourceTree = "<group>"; };
+		FB8068B81A838839009448AD /* CONSTANT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTANT.h; sourceTree = "<group>"; };
 		FB9221491A823D1700342963 /* API.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.txt; sourceTree = "<group>"; };
 		FB92214B1A82473600342963 /* GenericModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericModel.h; sourceTree = "<group>"; };
 		FB92214C1A82473600342963 /* GenericModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GenericModel.m; sourceTree = "<group>"; };
@@ -829,6 +830,7 @@
 				FB17FC8D1A81233B00A6D4A4 /* INTERFACE.h */,
 				FBAC6B341A81FA980090DC9C /* ViewTags.h */,
 				FB97185E1A82848D00CDB90A /* ENUMS.h */,
+				FB8068B81A838839009448AD /* CONSTANT.h */,
 			);
 			name = Macros;
 			sourceTree = "<group>";

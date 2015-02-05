@@ -19,9 +19,9 @@
 @implementation MainViewController
 {
     NSString *_urlIdentifier;
-    
     NSArray *_tableViewDataSource_array;
     UITableView *_tabelView;
+
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,25 +35,32 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     [self createNavitaionbar];
     
     [self createTableView];
     [self downloadData];
+
 }
-
-
 
 #pragma mark 创建表视图
 -(void)createTableView{
     _tabelView = [[UITableView alloc]initWithFrame:CGRectMake(0,
                                                               64,
                                                               self.view.frame.size.width,
-                                                              self.view.frame.size.height)
+                                                              self.view.frame.size.height-64)
                                              style:UITableViewStylePlain];
     _tabelView.delegate = self;
     _tabelView.dataSource = self;
     
+    _tabelView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+
+    UIImageView *backgroudImageView  = [[UIImageView alloc]initWithFrame:self.view.bounds];
+    backgroudImageView.image = [UIImage imageNamed:@"背景"];
+    _tabelView.backgroundView = backgroudImageView;
     [self.view addSubview:_tabelView];
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -62,32 +69,54 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     MainTableViewCell *cell = [MainTableViewCell cellWithTableView:tableView];
+    
+    if (indexPath.row == 0) {
+        //调整首行cell: 数字居中,图片大小调整,文本下移.
+        cell.mainCell_number_imageView.center = CGPointMake((CGRectGetMaxX(cell.mainCell_number_imageView.frame)+ 5.0f)/2,
+                                                            150/2);
+        cell.mainCell_picture_imageView.frame = CGRectMake(CGRectGetMaxX(cell.mainCell_number_imageView.frame) + 5.0f,
+                                                           0,
+                                                           250,
+                                                           145);
+        cell.mainCell_title_label.frame = CGRectMake(CGRectGetMaxX(cell.mainCell_number_imageView.frame)+ 5.0f + 5.0f,
+                                                     CGRectGetMaxY(cell.mainCell_picture_imageView.frame) - 40.0f,
+                                                     240,
+                                                     40);
+        UIView *backView = [[UIView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(cell.mainCell_number_imageView.frame)+ 5.0f,
+                                                                   CGRectGetMaxY(cell.mainCell_picture_imageView.frame) - 40.0f,
+                                                                   250,
+                                                                   40)];
+        backView.backgroundColor = [UIColor colorWithRed:0.90f green:0.91f blue:0.91f alpha:0.200f];
+        [cell.contentView addSubview:backView];
+    }
     cell.mainCell_Model = [_tableViewDataSource_array objectAtIndex:indexPath.row];
+    cell.mainCell_number_imageView.image = [UIImage imageNamed: [NSString stringWithFormat:@"%02d",(int)indexPath.row+1]];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
     return cell;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 85;
-}
-
-
 /*
+ 
  尺寸:
  首行cell
-    高度145
-    数字图片宽度65
+ 高度145
+ 数字图片宽度65
  
  其他行
-    高度85
-    图片150w*85h
+ 高度85
+ 图片150w*85h
  320-64-150= 106 剩余
  gapW = 8???
  gapH = 5;
- 
+
  */
-
-
-
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.row == 0 ) {
+        return 150;
+    }
+    return 85;
+}
 
 #pragma mark 下载数据
 -(void)downloadData{

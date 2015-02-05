@@ -26,9 +26,23 @@
 #import "DownloadManager.h"
 
 /**
+ *  引入SDwebimage下载
+ */
+#import "UIImageView+WebCache.h"
+
+/**
  *  引入枚举常量
  */
 
 #import "ENUMS.h"
+
+
+/**
+ *  引入尺寸常量
+ */
+
+#import "CONSTANT.h"
+
+
 
 #endif

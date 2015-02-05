@@ -12,31 +12,13 @@
 
 @implementation MainTableViewCell
 
-/*
- @property (nonatomic,strong) UIImageView    *mainCell_number_imageView;
- @property (nonatomic,strong) UIImageView    *mainCell_picture_imageView;
- @property (nonatomic,strong) UILabel        *mainCell_title_label;
-
- 尺寸:
- 首行cell
- 高度145
- 数字图片宽度65
- 
- 其他行
- 高度85
- 图片150w*85h
- 320-64-150= 106 剩余
- gapW = 8???
- gapH = 5;
-
-
- */
-
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
+        
+        self.backgroundColor = [UIColor clearColor];
         
         CGFloat gap = 5.0f;
         CGFloat cellHeight = 90.0f;
@@ -44,6 +26,12 @@
         CGFloat imageHeight = 50.0f;
         CGFloat pictureWidth = 150.0f;
         CGFloat pictureHeight = 85.0f;
+        
+        UIImageView *backgroudImageView  = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, zxSCRREN_WIDTH,cellHeight)];
+        backgroudImageView.image = [UIImage imageNamed:@"背景"];
+        [self.contentView addSubview:backgroudImageView];
+        
+
         
         
         _mainCell_number_imageView = [[UIImageView alloc]init];
@@ -59,13 +47,27 @@
                                                        0,
                                                        pictureWidth,
                                                        pictureHeight);
+        _mainCell_picture_imageView.clipsToBounds = YES;
+        [_mainCell_picture_imageView.layer setCornerRadius:10];
+        
         [self.contentView addSubview:_mainCell_picture_imageView];
         
         _mainCell_title_label = [[UILabel alloc]init];
+        
+        //如果屏幕宽度> 320,显示2行,
+        //如果屏幕宽度 == 320 ,显示3行.
+        
         _mainCell_title_label.frame = CGRectMake(CGRectGetMaxX(_mainCell_picture_imageView.frame)+gap,
                                                  0,
-                                                 self.frame.size.width - CGRectGetMaxX(_mainCell_picture_imageView.frame) - gap*2,
+                                                 zxSCRREN_WIDTH - CGRectGetMaxX(_mainCell_picture_imageView.frame) - gap*2,
                                                  cellHeight);
+        NSLog(@" width = %.f",zxSCRREN_WIDTH);
+        if (zxSCRREN_WIDTH > 320.f) {
+            _mainCell_title_label.numberOfLines = 2;
+        }
+        else if (self.frame.size.width == 320.f)
+            _mainCell_title_label.numberOfLines = 3;
+        _mainCell_title_label.textColor = [UIColor whiteColor];
         [self.contentView addSubview:_mainCell_title_label];
         
     }
@@ -84,8 +86,9 @@
 
 -(void)setMainCell_Model:(GenericModel *)mainCell_Model{
     _mainCell_Model = mainCell_Model;
-
     
+    [_mainCell_picture_imageView setImageWithURL:[NSURL URLWithString:mainCell_Model.icon] placeholderImage:[UIImage imageNamed:@"列表图"]];
+    _mainCell_title_label.text = mainCell_Model.title;
 }
 
 @end
