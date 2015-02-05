@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PhotosViewController : UIViewController
+#import "DetailViewController.h"
+
+@interface PhotosViewController : DetailViewController
 
 @end

@@ -360,6 +360,7 @@
 		FBC551361A81F422000A891D /* 首页1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54FF81A81F422000A891D /* 首页1@2x.png */; };
 		FBC551371A81F422000A891D /* 首页2.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54FF91A81F422000A891D /* 首页2.png */; };
 		FBC551381A81F422000A891D /* 首页2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBC54FFA1A81F422000A891D /* 首页2@2x.png */; };
+		FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8C8291A834CAE00431B5A /* DetailViewController.m */; };
 		FBF09C111A81E55D00444969 /* NSDate+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF09C101A81E55D00444969 /* NSDate+Transform.m */; };
 		FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFF7E591A81A97400B10BCD /* DownloadManager.m */; };
 		FBFFD7231A820E3900B3F6ED /* ZXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFFD7221A820E3900B3F6ED /* ZXTabBar.m */; };
@@ -756,6 +757,8 @@
 		FBC54FF81A81F422000A891D /* 首页1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页1@2x.png"; sourceTree = "<group>"; };
 		FBC54FF91A81F422000A891D /* 首页2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页2.png"; sourceTree = "<group>"; };
 		FBC54FFA1A81F422000A891D /* 首页2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "首页2@2x.png"; sourceTree = "<group>"; };
+		FBE8C8281A834CAE00431B5A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		FBE8C8291A834CAE00431B5A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		FBF09C0F1A81E55D00444969 /* NSDate+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Transform.h"; sourceTree = "<group>"; };
 		FBF09C101A81E55D00444969 /* NSDate+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Transform.m"; sourceTree = "<group>"; };
 		FBFF7E581A81A97400B10BCD /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
@@ -908,6 +911,8 @@
 				FB4581901A81006300895E6F /* RootViewController.m */,
 				FB4581921A81007E00895E6F /* BaseViewController.h */,
 				FB4581931A81007E00895E6F /* BaseViewController.m */,
+				FBE8C8281A834CAE00431B5A /* DetailViewController.h */,
+				FBE8C8291A834CAE00431B5A /* DetailViewController.m */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -926,10 +931,7 @@
 				FB9718601A82F96300CDB90A /* ZXTabBarVC.m */,
 				FB4581BA1A8101E600895E6F /* root */,
 				FB4581BB1A8101EA00895E6F /* base */,
-				FB4581B41A8101D600895E6F /* WebViewController.h */,
-				FB4581B51A8101D600895E6F /* WebViewController.m */,
-				FB4581B71A8101E100895E6F /* PhotosViewController.h */,
-				FB4581B81A8101E100895E6F /* PhotosViewController.m */,
+				FBE8C82B1A834CB800431B5A /* detail */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1516,6 +1518,17 @@
 			path = "首页Top";
 			sourceTree = "<group>";
 		};
+		FBE8C82B1A834CB800431B5A /* detail */ = {
+			isa = PBXGroup;
+			children = (
+				FB4581B41A8101D600895E6F /* WebViewController.h */,
+				FB4581B51A8101D600895E6F /* WebViewController.m */,
+				FB4581B71A8101E100895E6F /* PhotosViewController.h */,
+				FB4581B81A8101E100895E6F /* PhotosViewController.m */,
+			);
+			name = detail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1942,6 +1955,7 @@
 				FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */,
 				FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */,
 				FB4581941A81007E00895E6F /* BaseViewController.m in Sources */,
+				FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */,
 				FBF09C111A81E55D00444969 /* NSDate+Transform.m in Sources */,
 				FBC54EA91A81EFD5000A891D /* ZXNavigaitonBar.m in Sources */,
 				FB45815D1A80F9EE00895E6F /* main.m in Sources */,

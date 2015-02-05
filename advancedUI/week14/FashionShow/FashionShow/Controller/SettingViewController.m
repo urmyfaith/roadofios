@@ -31,20 +31,8 @@
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor darkGrayColor];
     [self createNavitaionbar];
-    
-    UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom ];
-    button.frame = CGRectMake(0, 0, 100, 40);
-    button.center = self.view.center;
-    [button setTitle:@"clickME" forState:UIControlStateNormal];
-    
-    [button addTarget:self action:@selector(buttonClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:button];
-    
 }
 
--(void)buttonClick{
-    
-}
 
 #pragma mark 绘制顶部导航栏
 //重写root的创建导航栏的方法
