@@ -98,4 +98,15 @@ NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
 - http://openq.cn/use-nsurlprotocol-uiwebview-offline-cache/
 - http://openq.cn/nsurlcache-to-achieve-a-little-experience-for-offline-reading/
 - http://blog.csdn.net/mad2man/article/details/30285001
+
+
+
+## 问题8
+
+UITextView
+怎么得到输入文字的高度,比如输入了两行数据?
+
+怎么得到这两行数据的整体高度?
+
+
 #todo  将所有的尺寸改写为宏定义

@@ -13,3 +13,5 @@
 #define zxiPhone4s_WIDTH   320.f
 
 #define zxiPhone4s_HEIGHT  480.f
+
+#define zxStatusBar_NavigatinBar_HEIGHT 64.0f

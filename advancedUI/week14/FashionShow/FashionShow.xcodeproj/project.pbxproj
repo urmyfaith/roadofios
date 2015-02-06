@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FB17FC901A81293600A6D4A4 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC8F1A81293600A6D4A4 /* Download.m */; };
 		FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC941A81303D00A6D4A4 /* TesTViewController.m */; };
+		FB4526EF1A84B3F700FC0548 /* CommentItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4526ED1A84B3F700FC0548 /* CommentItemCell.m */; };
+		FB4526F01A84B3F700FC0548 /* CommentItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4526EE1A84B3F700FC0548 /* CommentItemCell.xib */; };
 		FB4581511A80F9EE00895E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581501A80F9EE00895E6F /* Foundation.framework */; };
 		FB4581531A80F9EE00895E6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581521A80F9EE00895E6F /* CoreGraphics.framework */; };
 		FB4581551A80F9EE00895E6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581541A80F9EE00895E6F /* UIKit.framework */; };
@@ -394,6 +396,9 @@
 		FB17FC8F1A81293600A6D4A4 /* Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
 		FB17FC931A81303D00A6D4A4 /* TesTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesTViewController.h; sourceTree = "<group>"; };
 		FB17FC941A81303D00A6D4A4 /* TesTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesTViewController.m; sourceTree = "<group>"; };
+		FB4526EC1A84B3F700FC0548 /* CommentItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItemCell.h; sourceTree = "<group>"; };
+		FB4526ED1A84B3F700FC0548 /* CommentItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentItemCell.m; sourceTree = "<group>"; };
+		FB4526EE1A84B3F700FC0548 /* CommentItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentItemCell.xib; sourceTree = "<group>"; };
 		FB45814D1A80F9EE00895E6F /* FashionShow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FashionShow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB4581501A80F9EE00895E6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		FB4581521A80F9EE00895E6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1569,6 +1574,9 @@
 			children = (
 				FBD4446B1A8365CB00EB17D1 /* MainTableViewCell.h */,
 				FBD4446C1A8365CB00EB17D1 /* MainTableViewCell.m */,
+				FB4526EC1A84B3F700FC0548 /* CommentItemCell.h */,
+				FB4526ED1A84B3F700FC0548 /* CommentItemCell.m */,
+				FB4526EE1A84B3F700FC0548 /* CommentItemCell.xib */,
 			);
 			name = cells;
 			sourceTree = "<group>";
@@ -1979,6 +1987,7 @@
 				FBC5502D1A81F422000A891D /* 收藏.png in Resources */,
 				FBC5504E1A81F422000A891D /* 下一页_1@2x.png in Resources */,
 				FBC5512C1A81F422000A891D /* 背景@2x.png in Resources */,
+				FB4526F01A84B3F700FC0548 /* CommentItemCell.xib in Resources */,
 				FBC551091A81F422000A891D /* 失败.png in Resources */,
 				FBC550E31A81F422000A891D /* arrow@2x.png in Resources */,
 				FBC550EB1A81F422000A891D /* logo1.png in Resources */,
@@ -2057,6 +2066,7 @@
 				FB4581A71A81014700895E6F /* StarViewController.m in Sources */,
 				FB4581A31A81010000895E6F /* PostCommentViewController.m in Sources */,
 				FB4581911A81006300895E6F /* RootViewController.m in Sources */,
+				FB4526EF1A84B3F700FC0548 /* CommentItemCell.m in Sources */,
 				FBD4446D1A8365CB00EB17D1 /* MainTableViewCell.m in Sources */,
 				FBD4448A1A836F1400EB17D1 /* UIButton+WebCache.m in Sources */,
 				FBD444861A836F1400EB17D1 /* SDWebImageDecoder.m in Sources */,
