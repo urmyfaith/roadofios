@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ZXTabBar.h"
 
 @interface DetailViewController ()
 
@@ -29,5 +30,12 @@
     
 }
 
-
+-(void)createButtomViewWithImagesArray:(NSArray *)imagesArray
+                              andClass:(id)classObject
+                                andSEL:(SEL)sel{
+    ZXTabBar *tb = [[ZXTabBar alloc]init];
+    tb.frame = CGRectMake(0, self.view.frame.size.height- 49, self.view.frame.size.width, 49);
+    [tb tabBarWithImagesArray:imagesArray andClass:classObject andSEL:sel];
+    [self.view addSubview:tb];
+}
 @end

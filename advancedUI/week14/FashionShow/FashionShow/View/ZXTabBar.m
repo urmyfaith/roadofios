@@ -44,15 +44,50 @@
                                       buttonImage.size.width,
                                       buttonImage.size.height);
             [button setImage:buttonImage forState:UIControlStateNormal];
-            [button addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
             
+            //如果子类需要修改的时候,sel不为空,子类自己实现点击方法
+            //target为子类自己
+            if (sel != nil) {
+                [button addTarget:classObject action:sel forControlEvents:UIControlEventTouchUpInside];
+            }else{
+                //如果sel == nil,由父类来完成默认的点击事件的处理
+                //target为当前的类
+                [button addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
+            }
             [self addSubview:button];
         }
     }
-    
-    
     return self;
 }
 
-
+-(void)buttonClick:(UIButton *)button{
+    NSLog(@"%s [LINE:%d] button.tag =%ld", __func__, __LINE__,button.tag);
+    switch (button.tag) {
+        case zxTabBarButtonBaseTag:
+        {
+            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        }
+            break;
+        case zxTabBarButtonBaseTag+1:
+        {
+           NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        }
+            break;
+        case zxTabBarButtonBaseTag+2:
+        {
+           NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        }
+            break;
+        case zxTabBarButtonBaseTag+3:
+        {
+            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        }
+            break;
+        case zxTabBarButtonBaseTag+4:
+        {
+            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        }
+            break;
+    }
+}
 @end

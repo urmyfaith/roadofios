@@ -10,6 +10,8 @@
 #import "ZXTabBarVC.h"
 #import "BaseViewController.h"
 #import "MainTableViewCell.h"
+#import "WebViewController.h"
+#import "GenericModel.h"
 
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>
@@ -96,6 +98,13 @@
     return cell;
 }
 
+#pragma mark 页面跳转
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    WebViewController *webVC = [[WebViewController alloc]init];
+    webVC.article_id =  ((GenericModel *)[_tableViewDataSource_array objectAtIndex:indexPath.row]).id;
+    [self.navigationController pushViewController:webVC animated:YES];
+}
+
 /*
  
  尺寸:
@@ -130,6 +139,7 @@
                                               object:nil];
     [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
 }
+
 
 -(void)mainPage_downloadFinish{
      _tableViewDataSource_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier andDataType:zxJSON_DATATYPE_GENERIC];

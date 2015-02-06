@@ -13,37 +13,44 @@
 @end
 
 @implementation WebViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+    NSString *_urlIdentifier;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self getArticleURLPath];
+    
+    UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+    NSURL *url = [NSURL URLWithString:_urlIdentifier];
+    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    [webView loadRequest:request];
+    [self.view addSubview:webView];
+    
+    [self createButtomView];
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+#pragma mark 拼接网页地址
+
+-(void)getArticleURLPath{
+    NSString *postData_string = @"action=article&id=%@&uid=11111111&e=a2ae6a1b2c1a6aa2faa07bf2bd57ab37&platform=a&pid=10129&mobile=HUAWEI+P6-C00&fontsize=m";
+    postData_string = [NSString stringWithFormat:postData_string,_article_id];
+    
+    //注意,这里地址中间有一个问号,将地址和参数分割开来
+    _urlIdentifier = [NSString stringWithFormat:@"%@?%@",zxAPI_FULLPATH,postData_string];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)createButtomView{
+    [self createButtomViewWithImagesArray:@[@"内文返回_1",@"non-exist-image",@"分享_1",@"收藏_1",@"评论_1"]
+                                 andClass:self
+                                   andSEL:nil];
 }
-*/
+
+-(void)buttonViewClicked:(UIButton *)button{
+    NSLog(@"%s [LINE:%d] button.tag =%ld", __func__, __LINE__,button.tag);
+}
 
 @end

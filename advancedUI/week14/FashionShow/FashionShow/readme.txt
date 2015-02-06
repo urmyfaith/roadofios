@@ -42,6 +42,9 @@ post请求,url地址相同,只是请求体不同,
 从UINavigationController/UIViewController  push到 UITabBarController
 ~~~objectivec
 
+kindDemo里面确实是push了啊????
+
+
 ~~~
 
 ## 问题4
@@ -71,5 +74,10 @@ gapW = 8???
 gapH = 5;
 
 */
+
+## 问题6
+
+webView点击图片,添加自定义视图
+
 
 #todo  将所有的尺寸改写为宏定义

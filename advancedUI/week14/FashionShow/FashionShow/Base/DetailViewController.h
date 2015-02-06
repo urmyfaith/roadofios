@@ -10,4 +10,9 @@
 
 @interface DetailViewController : UIViewController
 
+-(void)createButtomViewWithImagesArray:(NSArray *)imagesArray
+                              andClass:(id)classObject
+                                andSEL:(SEL)sel;
+
 @end
+
