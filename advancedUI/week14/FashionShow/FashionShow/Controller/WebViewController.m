@@ -8,6 +8,7 @@
 
 #import "WebViewController.h"
 
+
 @interface WebViewController ()
 
 @end
@@ -47,6 +48,7 @@
     [self createButtomViewWithImagesArray:@[@"内文返回_1",@"non-exist-image",@"分享_1",@"收藏_1",@"评论_1"]
                                  andClass:self
                                    andSEL:nil];
+     
 }
 
 -(void)buttonViewClicked:(UIButton *)button{

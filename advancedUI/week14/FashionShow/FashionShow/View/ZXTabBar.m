@@ -7,9 +7,12 @@
 //
 
 #import "ZXTabBar.h"
+#import "ShowCommentsViewController.h"
 
 @implementation ZXTabBar
-
+{
+    id _currentClassObject;
+}
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -22,6 +25,9 @@
 -(ZXTabBar *)tabBarWithImagesArray:(NSArray *)imagesArray
                           andClass:(id)classObject
                             andSEL:(SEL)sel{
+    
+    _currentClassObject = classObject;
+    
     //背景图片---写在最前面.
     UIImageView *backgroundImageView = [[UIImageView alloc]initWithFrame:self.bounds];
     backgroundImageView.image = [UIImage imageNamed:@"一级栏目底"];
@@ -62,29 +68,41 @@
 
 -(void)buttonClick:(UIButton *)button{
     NSLog(@"%s [LINE:%d] button.tag =%ld", __func__, __LINE__,button.tag);
+    
+    UIViewController *curren_vc = (UIViewController *)_currentClassObject;
     switch (button.tag) {
+            
+#pragma mark  返回按钮事件处理
         case zxTabBarButtonBaseTag:
         {
+
+            [curren_vc.navigationController popViewControllerAnimated:YES];
             NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
+#pragma mark  下载按钮事件处理
         case zxTabBarButtonBaseTag+1:
         {
            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
+#pragma mark  分享按钮事件处理
         case zxTabBarButtonBaseTag+2:
         {
            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
+#pragma mark  收藏按钮事件处理
         case zxTabBarButtonBaseTag+3:
         {
             NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
+#pragma mark  评论按钮事件处理
         case zxTabBarButtonBaseTag+4:
         {
+            ShowCommentsViewController *svc = [[ShowCommentsViewController alloc]init];
+            [curren_vc.navigationController pushViewController:svc animated:YES];
             NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
