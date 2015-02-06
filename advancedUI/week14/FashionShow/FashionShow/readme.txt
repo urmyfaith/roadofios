@@ -22,7 +22,7 @@ Resource：资源库，包括图片，plist文件等；
 
 
 
-#问题1
+#问题1 --已解决
 
 post请求,url地址相同,只是请求体不同,
 
@@ -55,7 +55,7 @@ kindDemo里面确实是push了啊????
  http://blog.sina.com.cn/s/blog_63b4ee0d0101gdli.html
  http://www.2cto.com/kf/201412/360426.html
 
-## 问题5
+## 问题5 --已经解决
 
 首页首行cell的尺寸调整问题
 
@@ -79,5 +79,23 @@ gapH = 5;
 
 webView点击图片,添加自定义视图
 
+## 问题7
 
+webView的内容怎么缓存?
+
+从webView的创建过来看,数据的下载已经封装到内部了.
+怎么取出下载的数据?
+
+UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
+NSURL *url = [NSURL URLWithString:_urlIdentifier];
+NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+[webView loadRequest:request];
+[self.view addSubview:webView];
+
+> 参考资料:
+
+- http://code4app.com/ios/UIWebView-%E7%A6%BB%E7%BA%BF%E6%B5%8F%E8%A7%88/51204e716803fa2949000001
+- http://openq.cn/use-nsurlprotocol-uiwebview-offline-cache/
+- http://openq.cn/nsurlcache-to-achieve-a-little-experience-for-offline-reading/
+- http://blog.csdn.net/mad2man/article/details/30285001
 #todo  将所有的尺寸改写为宏定义

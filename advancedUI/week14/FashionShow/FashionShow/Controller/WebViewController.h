@@ -13,4 +13,8 @@
 
 @property (nonatomic,strong) NSString    *article_id;
 
+@property (nonatomic,strong) id    model;
+
+@property (nonatomic,assign) int   modelType;
+
 @end

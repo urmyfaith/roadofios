@@ -14,36 +14,40 @@
 
 @implementation ShowCommentsViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self createNavitaionbar];
+    
+    
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+#pragma mark 绘制顶部导航栏
+//重写root的创建导航栏的方法
+-(void)createNavitaionbar{
+    
+    [self createRootNavigaitonBarWithTitleImag:nil
+                                      andIsTop:NO
+                                  andTitleName:@"大家在评论"
+                            andBackgroundImage:nil
+                          andLeftBtnImagesName:@"内文返回_1"
+                         andRightBtnImagesName:nil
+                                      andClass:self
+                                        andSEL:@selector(navigationBarClicked:)];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)navigationBarClicked:(UIButton *)button{
+    if (button.tag == zxNavigaionBarButtonLeftTag) {
+#if 1
+        [self.navigationController popViewControllerAnimated:YES];
+#else
+        [self dismissViewControllerAnimated:YES completion:nil];
+#endif
+    }
 }
-*/
+
 
 @end

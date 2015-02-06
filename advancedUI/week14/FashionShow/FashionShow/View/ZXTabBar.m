@@ -8,6 +8,9 @@
 
 #import "ZXTabBar.h"
 #import "ShowCommentsViewController.h"
+#import "GenericModel.h"
+#import "WebViewController.h"
+
 
 @implementation ZXTabBar
 {
@@ -70,14 +73,15 @@
     NSLog(@"%s [LINE:%d] button.tag =%ld", __func__, __LINE__,button.tag);
     
     UIViewController *curren_vc = (UIViewController *)_currentClassObject;
+    
+
+    
     switch (button.tag) {
             
 #pragma mark  返回按钮事件处理
         case zxTabBarButtonBaseTag:
         {
-
             [curren_vc.navigationController popViewControllerAnimated:YES];
-            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
 #pragma mark  下载按钮事件处理
@@ -95,15 +99,25 @@
 #pragma mark  收藏按钮事件处理
         case zxTabBarButtonBaseTag+3:
         {
-            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+            //收藏事件
+            //显示收藏的的模型是传递过来模型,===>数据库===>用于显示收藏
+            //收藏实际跳转的时候,需要webview,这个数据也需要缓存==>用于从收藏页面跳转到实际的webView页面.
+            
+            //在按钮点击的时候,得到的是收藏页面的VC,包含了收藏的webView页面.
+
         }
             break;
 #pragma mark  评论按钮事件处理
         case zxTabBarButtonBaseTag+4:
         {
+            NSLog(@"%s [LINE:%d] 点击了评论", __func__, __LINE__);
+
             ShowCommentsViewController *svc = [[ShowCommentsViewController alloc]init];
+            //[ curren_vcisKindOfClass:[WebViewController class]]
+            if ([curren_vc isKindOfClass:NSClassFromString(@"WebViewController")]) {
+                svc.comment_article_id = ((WebViewController *)curren_vc).article_id;
+            }
             [curren_vc.navigationController pushViewController:svc animated:YES];
-            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
             break;
     }

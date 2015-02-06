@@ -10,4 +10,6 @@
 
 @interface ShowCommentsViewController : RootViewController
 
+@property (nonatomic,strong) NSString    *comment_article_id;
+
 @end

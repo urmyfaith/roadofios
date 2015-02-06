@@ -23,6 +23,7 @@
     [super viewDidLoad];
     
     [self getArticleURLPath];
+
     
     UIWebView *webView = [[UIWebView alloc]initWithFrame:self.view.bounds];
     NSURL *url = [NSURL URLWithString:_urlIdentifier];
@@ -32,6 +33,7 @@
     
     [self createButtomView];
 }
+
 
 
 #pragma mark 拼接网页地址

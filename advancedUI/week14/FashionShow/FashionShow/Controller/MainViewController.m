@@ -101,7 +101,12 @@
 #pragma mark 页面跳转
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     WebViewController *webVC = [[WebViewController alloc]init];
-    webVC.article_id =  ((GenericModel *)[_tableViewDataSource_array objectAtIndex:indexPath.row]).id;
+    GenericModel *model = (GenericModel *)[_tableViewDataSource_array objectAtIndex:indexPath.row];
+    
+    webVC.article_id =  model.id;  //用于webView地址的拼接
+    webVC.model = model; //用于收藏webView的时候,展示收藏页面的标题.
+    webVC.modelType = zxJSON_DATATYPE_GENERIC; //标记数据模型的类型
+    
     [self.navigationController pushViewController:webVC animated:YES];
 }
 
