@@ -8,13 +8,23 @@
 
 #import "JSON2Model.h"
 #import "GenericModel.h"
+#import "CommentModel.h"
 
 
 @implementation JSON2Model
 
 +(NSArray *)JSONData2ModelWithURLIdentifier:(NSString *)urlIdentifier andDataType:(int)dataType{
     
+    
     NSData *data = [[DownloadManager sharedDownloadManager]getDownloadDataWithURLIdentifier:urlIdentifier];
+    
+#if 0
+    //调试语句
+    
+    NSString *data_string  = [[NSString alloc]initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"%s [LINE:%d] data_string=%@", __func__, __LINE__,data_string);
+#endif
+    
     
     NSDictionary *root_dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
 //  NSLog(@"%s [LINE:%d dic=%@]", __func__, __LINE__,root_dic);
@@ -35,6 +45,13 @@
         case zxJSON_DATATYPE_SPECIAL:
             {
                 //解析美搭,导购数据
+            }
+            break;
+        case zxJSON_DATATYPE_COMMENT:
+            {
+                //解析评论
+                CommentModel *cm = [CommentModel modelWithDic:root_dic];
+                [models_array addObject:cm];
             }
             break;
             

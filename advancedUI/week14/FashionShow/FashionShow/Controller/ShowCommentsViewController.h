@@ -12,4 +12,5 @@
 
 @property (nonatomic,strong) NSString    *comment_article_id;
 
+@property (nonatomic,strong) NSString     *urlIdentifier;
 @end

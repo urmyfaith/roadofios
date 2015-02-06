@@ -371,6 +371,8 @@
 		FBD4448A1A836F1400EB17D1 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD444801A836F1400EB17D1 /* UIButton+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBD4448B1A836F1400EB17D1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD444821A836F1400EB17D1 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8C8291A834CAE00431B5A /* DetailViewController.m */; };
+		FBEA230B1A849CEE00427782 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA230A1A849CEE00427782 /* CommentModel.m */; };
+		FBEA230E1A849FC600427782 /* CommentIteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA230D1A849FC600427782 /* CommentIteModel.m */; };
 		FBF09C111A81E55D00444969 /* NSDate+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF09C101A81E55D00444969 /* NSDate+Transform.m */; };
 		FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFF7E591A81A97400B10BCD /* DownloadManager.m */; };
 		FBFFD7231A820E3900B3F6ED /* ZXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFFD7221A820E3900B3F6ED /* ZXTabBar.m */; };
@@ -792,6 +794,10 @@
 		FBD444821A836F1400EB17D1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		FBE8C8281A834CAE00431B5A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		FBE8C8291A834CAE00431B5A /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		FBEA23091A849CEE00427782 /* CommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentModel.h; sourceTree = "<group>"; };
+		FBEA230A1A849CEE00427782 /* CommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentModel.m; sourceTree = "<group>"; };
+		FBEA230C1A849FC600427782 /* CommentIteModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentIteModel.h; sourceTree = "<group>"; };
+		FBEA230D1A849FC600427782 /* CommentIteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentIteModel.m; sourceTree = "<group>"; };
 		FBF09C0F1A81E55D00444969 /* NSDate+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Transform.h"; sourceTree = "<group>"; };
 		FBF09C101A81E55D00444969 /* NSDate+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Transform.m"; sourceTree = "<group>"; };
 		FBFF7E581A81A97400B10BCD /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
@@ -999,6 +1005,10 @@
 			children = (
 				FB92214B1A82473600342963 /* GenericModel.h */,
 				FB92214C1A82473600342963 /* GenericModel.m */,
+				FBEA23091A849CEE00427782 /* CommentModel.h */,
+				FBEA230A1A849CEE00427782 /* CommentModel.m */,
+				FBEA230C1A849FC600427782 /* CommentIteModel.h */,
+				FBEA230D1A849FC600427782 /* CommentIteModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2026,6 +2036,8 @@
 				FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */,
 				FBD4448B1A836F1400EB17D1 /* UIImageView+WebCache.m in Sources */,
 				FB92214D1A82473600342963 /* GenericModel.m in Sources */,
+				FBEA230E1A849FC600427782 /* CommentIteModel.m in Sources */,
+				FBEA230B1A849CEE00427782 /* CommentModel.m in Sources */,
 				FBD444871A836F1400EB17D1 /* SDWebImageDownloader.m in Sources */,
 				FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */,
 				FB4581611A80F9EE00895E6F /* ZXAppDelegate.m in Sources */,

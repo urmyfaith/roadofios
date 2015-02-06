@@ -61,7 +61,7 @@
                                                  0,
                                                  zxSCRREN_WIDTH - CGRectGetMaxX(_mainCell_picture_imageView.frame) - gap*2,
                                                  cellHeight);
-        NSLog(@" width = %.f",zxSCRREN_WIDTH);
+        //NSLog(@" width = %.f",zxSCRREN_WIDTH);
         if (zxSCRREN_WIDTH > 320.f) {
             _mainCell_title_label.numberOfLines = 2;
         }

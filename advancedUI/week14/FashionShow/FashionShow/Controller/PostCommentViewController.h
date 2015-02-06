@@ -10,4 +10,6 @@
 
 @interface PostCommentViewController : RootViewController
 
+@property (nonatomic,strong) NSString    *article_id;
+
 @end
