@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FB17FC901A81293600A6D4A4 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC8F1A81293600A6D4A4 /* Download.m */; };
 		FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC941A81303D00A6D4A4 /* TesTViewController.m */; };
+		FB3401DD1A85EFFE006783B5 /* ZXNames.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3401DC1A85EFFE006783B5 /* ZXNames.m */; };
+		FB3401DF1A85F033006783B5 /* name.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3401DE1A85F033006783B5 /* name.txt */; };
 		FB4526EF1A84B3F700FC0548 /* CommentItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4526ED1A84B3F700FC0548 /* CommentItemCell.m */; };
 		FB4526F01A84B3F700FC0548 /* CommentItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB4526EE1A84B3F700FC0548 /* CommentItemCell.xib */; };
 		FB4581511A80F9EE00895E6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB4581501A80F9EE00895E6F /* Foundation.framework */; };
@@ -396,6 +398,9 @@
 		FB17FC8F1A81293600A6D4A4 /* Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
 		FB17FC931A81303D00A6D4A4 /* TesTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesTViewController.h; sourceTree = "<group>"; };
 		FB17FC941A81303D00A6D4A4 /* TesTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesTViewController.m; sourceTree = "<group>"; };
+		FB3401DB1A85EFFE006783B5 /* ZXNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNames.h; sourceTree = "<group>"; };
+		FB3401DC1A85EFFE006783B5 /* ZXNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNames.m; sourceTree = "<group>"; };
+		FB3401DE1A85F033006783B5 /* name.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = name.txt; sourceTree = "<group>"; };
 		FB4526EC1A84B3F700FC0548 /* CommentItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommentItemCell.h; sourceTree = "<group>"; };
 		FB4526ED1A84B3F700FC0548 /* CommentItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentItemCell.m; sourceTree = "<group>"; };
 		FB4526EE1A84B3F700FC0548 /* CommentItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentItemCell.xib; sourceTree = "<group>"; };
@@ -1152,6 +1157,9 @@
 			children = (
 				FBF09C0F1A81E55D00444969 /* NSDate+Transform.h */,
 				FBF09C101A81E55D00444969 /* NSDate+Transform.m */,
+				FB3401DB1A85EFFE006783B5 /* ZXNames.h */,
+				FB3401DC1A85EFFE006783B5 /* ZXNames.m */,
+				FB3401DE1A85F033006783B5 /* name.txt */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1699,6 +1707,7 @@
 				FBC550031A81F422000A891D /* 彩妆.png in Resources */,
 				FBC550651A81F422000A891D /* share_check_default.png in Resources */,
 				FBC5502C1A81F422000A891D /* 已购买_2@2x.png in Resources */,
+				FB3401DF1A85F033006783B5 /* name.txt in Resources */,
 				FBC550A41A81F422000A891D /* Icon-Small-50.png in Resources */,
 				FBC551061A81F422000A891D /* 图片标记@2x.png in Resources */,
 				FBC5505D1A81F422000A891D /* 内文页分享分割线.png in Resources */,
@@ -2051,6 +2060,7 @@
 				FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */,
 				FB4581611A80F9EE00895E6F /* ZXAppDelegate.m in Sources */,
 				FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */,
+				FB3401DD1A85EFFE006783B5 /* ZXNames.m in Sources */,
 				FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */,
 				FB4581941A81007E00895E6F /* BaseViewController.m in Sources */,
 				FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */,

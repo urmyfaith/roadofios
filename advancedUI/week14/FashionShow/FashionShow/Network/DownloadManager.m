@@ -107,4 +107,23 @@
 }
 
 
+/**
+ *  移除缓存了的数据
+ *
+ *  @param urlIdentifier url标志符
+ *
+ *  @return 是否清除成功
+ */
+-(BOOL)removeCachedDataWithURLIdentifier:(NSString *)urlIdentifier{
+    
+    [_cachedDownloadedData_mDict removeObjectForKey:urlIdentifier];
+    if ([_cachedDownloadedData_mDict objectForKey:urlIdentifier]) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+    return YES;
+}
+
 @end

@@ -41,4 +41,13 @@
  */
 +(DownloadManager *)sharedDownloadManager;
 
+/**
+ *  移除缓存了的数据
+ *
+ *  @param urlIdentifier url标志符
+ *
+ *  @return 是否清除成功
+ */
+-(BOOL)removeCachedDataWithURLIdentifier:(NSString *)urlIdentifier;
+
 @end

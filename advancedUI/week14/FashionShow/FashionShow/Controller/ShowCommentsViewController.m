@@ -38,6 +38,14 @@
     [self downloadData];
 }
 
+
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [[DownloadManager sharedDownloadManager] removeCachedDataWithURLIdentifier:_urlIdentifier];
+    [self downloadData];
+    
+}
+
 -(void)previewLoadUI{
     self.view.backgroundColor = [UIColor colorWithRed:1.00f green:0.98f blue:0.95f alpha:1.00f];
     

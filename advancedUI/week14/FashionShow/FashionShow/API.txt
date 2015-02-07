@@ -209,6 +209,18 @@ html:首页详细:
 html:明星详情:
 
     http://qqssbb.cms.handleader.com/api_v2.php?action=article&id=2209&uid=11111111&e=a2ae6a1b2c1a6aa2faa07bf2bd57ab37&platform=a&pid=10129&mobile=HUAWEI+P6-C00&fontsize=m
+    
+    
+评论接口
+    - http://qqssbb.cms.handleader.com/api_v2.php
+    action=wzpl&id=2214&name=zx&content=hello&uid=11111111&platform=a&mobile=HUAWEI+P6-C00&pid=10129&e=a2ae6a1b2c1a6aa2faa07bf2bd57ab37
+    - 两个参数,action,id,content
+
+    --->响应:
+            {
+            "msg": "评论成功",
+            "code": "1"
+            }
 
 
 

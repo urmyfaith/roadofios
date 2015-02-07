@@ -37,7 +37,9 @@ post请求,url地址相同,只是请求体不同,
 这是怎么实现的?
 
 
-##问题3
+##问题3  ---已解决
+
+使用模态视图转换
 
 从UINavigationController/UIViewController  push到 UITabBarController
 ~~~objectivec
@@ -101,12 +103,24 @@ NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
 
 
 
-## 问题8
+## 问题8  ---已解决
+
+PostCommentViewController.m
 
 UITextView
 怎么得到输入文字的高度,比如输入了两行数据?
 
 怎么得到这两行数据的整体高度?
+
+
+# 问题9 KVO的使用 ---已解决
+
+PostCommentViewController.m # 228
+
+- 使用_isCommentSuccess改变值的时候,不会触发KVO的方法.
+
+- 自己能监听自己的属性的么?(可以)
+
 
 
 #todo  将所有的尺寸改写为宏定义

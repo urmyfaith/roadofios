@@ -12,4 +12,6 @@
 
 @property (nonatomic,strong) NSString    *article_id;
 
+@property (nonatomic,assign) NSString    *isCommentSuccess;
+
 @end

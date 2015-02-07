@@ -7,6 +7,8 @@
 //
 
 #import "PostCommentViewController.h"
+#import "ShowCommentsViewController.h"
+#import "ZXNames.h"
 
 @interface PostCommentViewController ()<UITextViewDelegate>
 
@@ -30,7 +32,17 @@
 {
     UITextView *_textView;
     UILabel *_wordsCount_label;
+    NSString *_urlIdentifier;
 }
+
+-(instancetype)init{
+
+    if (self = [super init]) {
+        _isCommentSuccess = @"0";
+    }
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -203,17 +215,69 @@
         
         if ( _textView.text.length > TEXTVIEW_SHOULD_INPUT_TEXTLENGTH) {
             //提示删减文字
-            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+           // NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         }
         else {
             //发送评论,跳转页面
-            NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+            // NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+            //需要得到参数: 页面id,评论的内容,作者名称
+            
             //发送评论,接收返回值===>显示发送状态,是否返回?
-            [self.navigationController popViewControllerAnimated:YES];
+            
+            [self downloadData];
+            [self addObserver:self forKeyPath:@"isCommentSuccess" options:NSKeyValueObservingOptionNew context:nil]; //KVO---步骤1
+           
         }
     }
 }
 
+//KVO---步骤3
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    [self removeObserver:self forKeyPath:@"isCommentSuccess" context:nil];//KVO---步骤4
+    if ([_isCommentSuccess isEqualToString:@"1"]) {
+        //评论成功
+        NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else{
+        NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+    }
+}
 
+
+#pragma mark 下载数据
+-(void)downloadData{
+
+#pragma mark 随机生成姓名
+    
+    NSArray *namesArray = [ZXNames readNamesFromFilename:@"name" andFiletype:@"txt"];
+    NSString *name = [namesArray objectAtIndex:arc4random()%(namesArray.count)];
+    
+    NSString *postData_string = @"action=wzpl&id=%@&name=%@&content=%@&uid=11111111&platform=a&mobile=HUAWEI+P6-C00&pid=10129&e=a2ae6a1b2c1a6aa2faa07bf2bd57ab37";
+    
+    postData_string = [NSString stringWithFormat:postData_string,_article_id,name,_textView.text];
+    _urlIdentifier= [NSString stringWithFormat:@"%@%@",zxAPI_FULLPATH,postData_string];
+    
+    NSLog(@"%s [LINE:%d] _urlIdentifier=%@", __func__, __LINE__,_urlIdentifier);
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(postCommentFinish)
+                                                name:_urlIdentifier
+                                              object:nil];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
+}
+
+
+-(void)postCommentFinish{
+    NSData *commentStatusData = [[DownloadManager sharedDownloadManager]getDownloadDataWithURLIdentifier:_urlIdentifier];
+    
+    NSDictionary *commentStatusDic = [NSJSONSerialization JSONObjectWithData:commentStatusData options:NSJSONReadingMutableContainers error:nil];
+    NSLog(@"%s [LINE:%d] commentStatusDic = %@", __func__, __LINE__,commentStatusDic);
+    
+    //需要使用属性
+    //KVO---步骤2
+    self.isCommentSuccess = [commentStatusDic objectForKey:@"code"];
+    
+}
 
 @end
