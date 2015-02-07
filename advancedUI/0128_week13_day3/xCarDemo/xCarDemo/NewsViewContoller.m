@@ -176,7 +176,6 @@
     _rightTableView.backgroundColor = [UIColor colorWithRed:0.93f green:0.93f blue:0.93f alpha:1.00f];
     [_rightTableView setSeparatorColor:[UIColor clearColor]];
     [self.view addSubview:_rightTableView];
-    
 }
 
 #pragma mark 表视图代理方法
