@@ -40,7 +40,7 @@
     }
 #undef TEST
 
-    
+    NSLog(@"home = %@",NSHomeDirectory());
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
