@@ -122,5 +122,14 @@ PostCommentViewController.m # 228
 - 自己能监听自己的属性的么?(可以)
 
 
+# 问题10 UICollectionView --- 已解决
+调整cell之间的间距<10.0f
+
+参考资料
+ 
+   - http://stackoverflow.com/questions/17229350/cell-spacing-in-uicollectionview/17554270
+
+
+
 
 #todo  将所有的尺寸改写为宏定义

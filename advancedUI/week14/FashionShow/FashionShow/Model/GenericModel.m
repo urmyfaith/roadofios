@@ -49,7 +49,7 @@
     return [NSString stringWithFormat:@"type=%@, title_position=%@, \
             icon=%@, id=%@, title=%@, des=%@, \
             adddate=%@, timesstamp=%@, buy=%@, \
-            tag=%@",
+            tag=%@\n",
             _type,_title_position,_icon,
             _id,_title,_des,
             _adddate,_timestamp,_buy,

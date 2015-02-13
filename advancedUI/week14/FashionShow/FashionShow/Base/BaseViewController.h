@@ -7,7 +7,14 @@
 //
 
 #import "RootViewController.h"
+#import "GenericModel.h"
 
 @interface BaseViewController : RootViewController
+
+@property (nonatomic,strong) NSString    *postURL_action;
+@property (nonatomic,strong) NSString    *postURL_sa;
+@property (nonatomic,strong) NSString    *postURL_offset;
+@property (nonatomic,strong) NSString    *postURL_count;
+
 
 @end
