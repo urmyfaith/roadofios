@@ -11,7 +11,7 @@
 #import "ZXCustomCVFL.h"
 
 
-@interface StarViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface StarViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,MJRefreshBaseViewDelegate>
 
 @end
 
@@ -20,7 +20,11 @@
 {
     NSString *_urlIdentifier;
     UICollectionView *_collectionView;
-    NSArray *_collectionViewDateSource_array;
+    NSMutableArray *_collectionViewDateSource_array;
+    
+    MJRefreshHeaderView *_headerView;
+    MJRefreshFooterView *_footerView;
+    
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -36,21 +40,25 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self loadCollectionView];
-    [self downloadData];
-}
-
-
-#pragma mark 下载数据
--(void)downloadData{
-    
     
     self.postURL_action = @"list";
     self.postURL_sa = @"MX";
     self.postURL_count = @"12";
     self.postURL_offset = @"0";
+    _collectionViewDateSource_array = [[NSMutableArray alloc]init];
     
+    [self loadCollectionView];
+    [self createFreashView];//下拉刷新表添加在collectionView上.
+    [self downloadData];
+
+}
+
+
+
+#pragma mark 下载数据
+-(void)downloadData{
     
+
     NSString *postData_string = [NSString stringWithFormat:zxpostData_string,self.postURL_action,self.postURL_sa,self.postURL_offset,self.postURL_count];
 
     _urlIdentifier= [NSString stringWithFormat:@"%@%@",zxAPI_FULLPATH,postData_string];
@@ -58,17 +66,28 @@
     NSLog(@"_urlIdentifier=%@",_urlIdentifier);
     
     [[NSNotificationCenter defaultCenter]addObserver:self
-                                            selector:@selector(mingXingPage_downloadFinish)
+                                            selector:@selector(starPage_downloadFinish)
                                                 name:_urlIdentifier
                                               object:nil];
     [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
 }
 
 
--(void)mingXingPage_downloadFinish{
-    _collectionViewDateSource_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier andDataType:zxJSON_DATATYPE_GENERIC];
+-(void)starPage_downloadFinish{
+    
+    if ([self.postURL_offset isEqualToString:@"0"]) {
+        [_collectionViewDateSource_array removeAllObjects];
+    }
+    [_collectionViewDateSource_array addObjectsFromArray:[JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
+                                                                                         andDataType:zxJSON_DATATYPE_GENERIC]];
     [_collectionView reloadData];
+    
+    [_headerView endRefreshing];
+    [_footerView endRefreshing];
 }
+
+
+#pragma mark 绘制九宫格视图
 
 -(void)loadCollectionView{
     ZXCustomCVFL *flowLayout = [[ZXCustomCVFL alloc]init];
@@ -86,6 +105,32 @@
     _collectionView.dataSource = self;
     [self.view addSubview:_collectionView];
     [_collectionView registerClass:[StarCollectionCell class] forCellWithReuseIdentifier:@"cell"];
+}
+
+
+#pragma mark 下拉刷新
+-(void)createFreashView{
+    _headerView = [MJRefreshHeaderView header];
+    _headerView.delegate = self;
+    _headerView.scrollView = _collectionView;
+    
+    _footerView = [MJRefreshFooterView footer];
+    _footerView.delegate = self;
+    _footerView.scrollView = _collectionView;
+}
+
+-(void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView{
+    
+    if (refreshView == _headerView) {
+        self.postURL_offset = @"0";
+    }
+    
+    if (refreshView == _footerView) {
+        static int page = 1;
+        self.postURL_offset = [NSString stringWithFormat:@"%d",self.postURL_count.intValue * page];
+        page++;
+    }
+    [self downloadData];
 }
 
 
@@ -112,7 +157,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-    NSLog(@"%s [LINE:%d] indexPath=%d", __func__, __LINE__,indexPath.row);
+    NSLog(@"%s [LINE:%d] indexPatsh=%d", __func__, __LINE__,indexPath.row);
 }
 
 //设置每个cell的大小

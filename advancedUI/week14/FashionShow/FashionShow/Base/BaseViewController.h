@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "GenericModel.h"
+#import "MJRefresh.h"
 
 @interface BaseViewController : RootViewController
 
