@@ -84,6 +84,9 @@
     [self.models_mArray addObjectsFromArray:[JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
                                                                             andDataType:zxJSON_DATATYPE_SPECIAL]];
     [_waterflowView reloadData];
+
+    [_waterflowView headerEndRefreshing];
+    [_waterflowView footerEndRefreshing];
 }
 
 -(void)createWaterfallFlow{
@@ -95,7 +98,26 @@
     _waterflowView.delegate = self;
     _waterflowView.dataSource = self;
     [self.view addSubview:_waterflowView];
+    
+    //刷新数据
+    [_waterflowView addHeaderWithTarget:self action:@selector(loadNewItems)];
+    [_waterflowView addFooterWithTarget:self action:@selector(loadMoreItems)];
 }
+
+#pragma mark 刷新数据的方法
+-(void)loadNewItems{
+    
+    self.postURL_offset = @"0";
+    [self downloadData];
+}
+-(void)loadMoreItems{
+    
+    static int page = 1;
+    self.postURL_offset = [NSString stringWithFormat:@"%d",self.postURL_count.intValue * page];
+    page++;
+    [self downloadData];
+}
+
 
 #pragma mark ZXWaterflowView Delegate & DataSoucre 
 
