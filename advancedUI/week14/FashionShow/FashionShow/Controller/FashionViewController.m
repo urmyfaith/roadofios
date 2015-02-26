@@ -14,6 +14,7 @@
 
 /*==========自定义cell===========*/
 #import "FashionCell.h"
+#import "FashionModel.h"
 
 @interface FashionViewController ()<ZXWaterflowViewDataSource,ZXWaterflowViewDelegate>
 @property (nonatomic,strong) NSMutableArray    *models_mArray;
@@ -42,6 +43,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor blackColor];
+    
     [self createWaterfallFlow];
     
     self.postURL_action = @"piclist";
@@ -49,13 +53,10 @@
     self.postURL_count = @"18";
     self.postURL_offset = @"0";
     [self downloadData];
-    
 }
 
 #pragma mark 下载数据
 -(void)downloadData{
-    
-    
     NSString *postData_string = [NSString stringWithFormat:zxpostData_string,
                                  self.postURL_action,
                                  self.postURL_sa,
@@ -114,6 +115,32 @@
     return cell;
 }
 
+//调整外观
+-(CGFloat)waterflowView:(ZXWaterflowView *)waterflowView marginForType:(ZXWaterFlowViewMarginType)type{
+    switch (type) {
+        case ZXWaterFlowViewMarginTypeTop:
+            return 0.0f;
+        case ZXWaterFlowViewMarginTypeBottom:
+            return 0.0f;
+        case ZXWaterFlowViewMarginTypeLeft:
+            return 0.0f;
+        case ZXWaterFlowViewMarginTypeRight:
+            return 0.0f;
+        case ZXWaterFlowViewMarginTypeColumn:
+            return 0.0f;
+        case ZXWaterFlowViewMarginTypeRow:
+            return 1.0f;
+    }
+    return 0.0f;
+}
 
+/**
+ *  这个方法应该是对于自定义的cell最为有用的方法,确定每个cell的高度
+ */
+
+-(CGFloat)waterflowView:(ZXWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index{
+    FashionModel *fm = (FashionModel *)[self.models_mArray objectAtIndex:index];
+    return fm.pic_height/2;
+}
 
 @end
