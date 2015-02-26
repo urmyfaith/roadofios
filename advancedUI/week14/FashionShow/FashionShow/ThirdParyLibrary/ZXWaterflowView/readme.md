@@ -1,5 +1,7 @@
-# 使用
+# 使用UIScrollView实现的瀑布流的使用
 
+
+可以使用瀑布流来代替简单的UICollectionView
 
 ##  view_cell
 

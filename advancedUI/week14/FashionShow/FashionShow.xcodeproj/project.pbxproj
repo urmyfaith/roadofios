@@ -386,6 +386,7 @@
 		FBD444891A836F1400EB17D1 /* SDWebImagePrefetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD4447E1A836F1400EB17D1 /* SDWebImagePrefetcher.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBD4448A1A836F1400EB17D1 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD444801A836F1400EB17D1 /* UIButton+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBD4448B1A836F1400EB17D1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD444821A836F1400EB17D1 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FBD5E4341A9F58FE005A797D /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E4331A9F58FE005A797D /* readme.md */; };
 		FBE1C0471A8C38F70036E6EE /* StarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE1C0461A8C38F70036E6EE /* StarCollectionCell.m */; };
 		FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8C8291A834CAE00431B5A /* DetailViewController.m */; };
 		FBEA230B1A849CEE00427782 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA230A1A849CEE00427782 /* CommentModel.m */; };
@@ -838,6 +839,7 @@
 		FBD444801A836F1400EB17D1 /* UIButton+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+WebCache.m"; sourceTree = "<group>"; };
 		FBD444811A836F1400EB17D1 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		FBD444821A836F1400EB17D1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
+		FBD5E4331A9F58FE005A797D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		FBE1C0451A8C38F70036E6EE /* StarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarCollectionCell.h; sourceTree = "<group>"; };
 		FBE1C0461A8C38F70036E6EE /* StarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarCollectionCell.m; sourceTree = "<group>"; };
 		FBE8C8281A834CAE00431B5A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -1285,6 +1287,7 @@
 		FB7C240F1A9F5586006A5EA8 /* ZXWaterflowView */ = {
 			isa = PBXGroup;
 			children = (
+				FBD5E4331A9F58FE005A797D /* readme.md */,
 				FB7C24101A9F5586006A5EA8 /* ZXWaterflowView.h */,
 				FB7C24111A9F5586006A5EA8 /* ZXWaterflowView.m */,
 				FB7C24121A9F5586006A5EA8 /* ZXWaterflowViewCell.h */,
@@ -2178,6 +2181,7 @@
 				FBD4446D1A8365CB00EB17D1 /* MainTableViewCell.m in Sources */,
 				FBD4448A1A836F1400EB17D1 /* UIButton+WebCache.m in Sources */,
 				FBD444861A836F1400EB17D1 /* SDWebImageDecoder.m in Sources */,
+				FBD5E4341A9F58FE005A797D /* readme.md in Sources */,
 				FB4581B91A8101E100895E6F /* PhotosViewController.m in Sources */,
 				FB2C716C1A8C7F1C000EB848 /* ZXCustomCVFL.m in Sources */,
 				FB45819A1A8100CE00895E6F /* SettingViewController.m in Sources */,
