@@ -125,11 +125,15 @@ PostCommentViewController.m # 228
 # 问题10 UICollectionView --- 已解决
 调整cell之间的间距<10.0f
 
+
+
 参考资料
  
    - http://stackoverflow.com/questions/17229350/cell-spacing-in-uicollectionview/17554270
 
+# 界面之间的通用性
 
+明星界面,时装界面,
 
 
 #todo  将所有的尺寸改写为宏定义

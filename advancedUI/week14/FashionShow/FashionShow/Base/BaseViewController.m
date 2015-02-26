@@ -30,7 +30,7 @@
     [super viewDidLoad];
     [self createZXNavigationbar];
     
-    ZXTabBarVC *tvc =[ZXTabBarVC sharedZXTabBarViewController];
+//    ZXTabBarVC *tvc =[ZXTabBarVC sharedZXTabBarViewController];
     
 }
 

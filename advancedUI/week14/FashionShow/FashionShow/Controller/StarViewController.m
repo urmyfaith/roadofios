@@ -11,7 +11,7 @@
 #import "ZXCustomCVFL.h"
 
 
-@interface StarViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,MJRefreshBaseViewDelegate>
+@interface StarViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @end
 
@@ -21,9 +21,6 @@
     NSString *_urlIdentifier;
     UICollectionView *_collectionView;
     NSMutableArray *_collectionViewDateSource_array;
-    
-    MJRefreshHeaderView *_headerView;
-    MJRefreshFooterView *_footerView;
     
 }
 
@@ -48,7 +45,6 @@
     _collectionViewDateSource_array = [[NSMutableArray alloc]init];
     
     [self loadCollectionView];
-    [self createFreashView];//下拉刷新表添加在collectionView上.
     [self downloadData];
 
 }
@@ -59,7 +55,11 @@
 -(void)downloadData{
     
 
-    NSString *postData_string = [NSString stringWithFormat:zxpostData_string,self.postURL_action,self.postURL_sa,self.postURL_offset,self.postURL_count];
+    NSString *postData_string = [NSString stringWithFormat:zxpostData_string,
+                                 self.postURL_action,
+                                 self.postURL_sa,
+                                 self.postURL_offset,
+                                 self.postURL_count];
 
     _urlIdentifier= [NSString stringWithFormat:@"%@%@",zxAPI_FULLPATH,postData_string];
     
@@ -69,9 +69,10 @@
                                             selector:@selector(starPage_downloadFinish)
                                                 name:_urlIdentifier
                                               object:nil];
-    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH andDownloadResqustMethod:@"POST"andPostDataString:postData_string];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH
+                                               andDownloadResqustMethod:@"POST"
+                                                      andPostDataString:postData_string];
 }
-
 
 -(void)starPage_downloadFinish{
     
@@ -81,9 +82,9 @@
     [_collectionViewDateSource_array addObjectsFromArray:[JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
                                                                                          andDataType:zxJSON_DATATYPE_GENERIC]];
     [_collectionView reloadData];
-    
-    [_headerView endRefreshing];
-    [_footerView endRefreshing];
+    [_collectionView headerEndRefreshing];
+    [_collectionView footerEndRefreshing];
+
 }
 
 
@@ -91,8 +92,6 @@
 
 -(void)loadCollectionView{
     ZXCustomCVFL *flowLayout = [[ZXCustomCVFL alloc]init];
-    
-
     
     [flowLayout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
@@ -105,31 +104,22 @@
     _collectionView.dataSource = self;
     [self.view addSubview:_collectionView];
     [_collectionView registerClass:[StarCollectionCell class] forCellWithReuseIdentifier:@"cell"];
+    
+    [_collectionView addHeaderWithTarget:self action:@selector(loadNewItem)];
+    [_collectionView addFooterWithTarget:self action:@selector(loadMoreItem)];
 }
 
 
-#pragma mark 下拉刷新
--(void)createFreashView{
-    _headerView = [MJRefreshHeaderView header];
-    _headerView.delegate = self;
-    _headerView.scrollView = _collectionView;
-    
-    _footerView = [MJRefreshFooterView footer];
-    _footerView.delegate = self;
-    _footerView.scrollView = _collectionView;
+-(void)loadNewItem{
+    self.postURL_offset = @"0";
+    [self downloadData];
 }
 
--(void)refreshViewBeginRefreshing:(MJRefreshBaseView *)refreshView{
+-(void)loadMoreItem{
+    static int page = 1;
+    self.postURL_offset = [NSString stringWithFormat:@"%d",self.postURL_count.intValue * page];
+    page++;
     
-    if (refreshView == _headerView) {
-        self.postURL_offset = @"0";
-    }
-    
-    if (refreshView == _footerView) {
-        static int page = 1;
-        self.postURL_offset = [NSString stringWithFormat:@"%d",self.postURL_count.intValue * page];
-        page++;
-    }
     [self downloadData];
 }
 
