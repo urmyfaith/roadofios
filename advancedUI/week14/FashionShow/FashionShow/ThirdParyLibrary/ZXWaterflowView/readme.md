@@ -180,13 +180,6 @@
 `MJRefresh_new_category/demo/zxWaterFallFlow/ZXViewController.m`
 
 ~~~objectivec
-//
-//  ZXViewController.m
-//  zxWaterFallFlow
-//
-//  Created by zx on 15/2/17.
-//  Copyright (c) 2015年 zx. All rights reserved.
-//
 
 #import "ZXViewController.h"
 
@@ -335,5 +328,4 @@
 }
 
 @end
-
 ~~~

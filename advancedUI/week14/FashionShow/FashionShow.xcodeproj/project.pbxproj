@@ -947,7 +947,6 @@
 				FB7C240D1A9F5382006A5EA8 /* readme.md */,
 				FB45817F1A81001000895E6F /* Application */,
 				FB17FC8C1A81232300A6D4A4 /* Macros */,
-				FB4581801A81001000895E6F /* Base */,
 				FB4581821A81001000895E6F /* Controller */,
 				FB4581881A81001000895E6F /* Model */,
 				FB45818D1A81001000895E6F /* View */,
@@ -1005,7 +1004,7 @@
 			path = Application;
 			sourceTree = "<group>";
 		};
-		FB4581801A81001000895E6F /* Base */ = {
+		FB4581801A81001000895E6F /* superClass */ = {
 			isa = PBXGroup;
 			children = (
 				FB45818F1A81006300895E6F /* RootViewController.h */,
@@ -1014,8 +1013,11 @@
 				FB4581931A81007E00895E6F /* BaseViewController.m */,
 				FBE8C8281A834CAE00431B5A /* DetailViewController.h */,
 				FBE8C8291A834CAE00431B5A /* DetailViewController.m */,
+				FB4581BA1A8101E600895E6F /* root */,
+				FB4581BB1A8101EA00895E6F /* base */,
 			);
-			path = Base;
+			name = superClass;
+			path = ../Base;
 			sourceTree = "<group>";
 		};
 		FB4581811A81001000895E6F /* Categories */ = {
@@ -1030,8 +1032,7 @@
 			children = (
 				FB97185F1A82F96300CDB90A /* ZXTabBarVC.h */,
 				FB9718601A82F96300CDB90A /* ZXTabBarVC.m */,
-				FB4581BA1A8101E600895E6F /* root */,
-				FB4581BB1A8101EA00895E6F /* base */,
+				FB4581801A81001000895E6F /* superClass */,
 				FBE8C82B1A834CB800431B5A /* detail */,
 			);
 			path = Controller;
@@ -1241,6 +1242,7 @@
 				FB4581A21A81010000895E6F /* PostCommentViewController.m */,
 			);
 			name = root;
+			path = ../Controller;
 			sourceTree = "<group>";
 		};
 		FB4581BB1A8101EA00895E6F /* base */ = {
@@ -1258,6 +1260,7 @@
 				FB4581B21A81016A00895E6F /* VisualViewController.m */,
 			);
 			name = base;
+			path = ../Controller;
 			sourceTree = "<group>";
 		};
 		FB7C23F21A9F3FA2006A5EA8 /* MJRefresh */ = {
