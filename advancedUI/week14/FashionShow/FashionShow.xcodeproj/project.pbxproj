@@ -51,6 +51,8 @@
 		FB7C240A1A9F3FA2006A5EA8 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7C24021A9F3FA2006A5EA8 /* UIView+MJExtension.m */; };
 		FB7C240C1A9F4CCF006A5EA8 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = FB7C240B1A9F4CCF006A5EA8 /* readme.md */; };
 		FB7C240E1A9F5382006A5EA8 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = FB7C240D1A9F5382006A5EA8 /* readme.md */; };
+		FB7C24141A9F5586006A5EA8 /* ZXWaterflowView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7C24111A9F5586006A5EA8 /* ZXWaterflowView.m */; };
+		FB7C24151A9F5586006A5EA8 /* ZXWaterflowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7C24131A9F5586006A5EA8 /* ZXWaterflowViewCell.m */; };
 		FB92214A1A823D1700342963 /* API.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB9221491A823D1700342963 /* API.txt */; };
 		FB92214D1A82473600342963 /* GenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92214C1A82473600342963 /* GenericModel.m */; };
 		FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = FB97185C1A82826F00CDB90A /* JSON2Model.m */; };
@@ -480,6 +482,10 @@
 		FB7C24021A9F3FA2006A5EA8 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
 		FB7C240B1A9F4CCF006A5EA8 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
 		FB7C240D1A9F5382006A5EA8 /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		FB7C24101A9F5586006A5EA8 /* ZXWaterflowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXWaterflowView.h; sourceTree = "<group>"; };
+		FB7C24111A9F5586006A5EA8 /* ZXWaterflowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXWaterflowView.m; sourceTree = "<group>"; };
+		FB7C24121A9F5586006A5EA8 /* ZXWaterflowViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXWaterflowViewCell.h; sourceTree = "<group>"; };
+		FB7C24131A9F5586006A5EA8 /* ZXWaterflowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXWaterflowViewCell.m; sourceTree = "<group>"; };
 		FB8068B81A838839009448AD /* CONSTANT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTANT.h; sourceTree = "<group>"; };
 		FB9221491A823D1700342963 /* API.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.txt; sourceTree = "<group>"; };
 		FB92214B1A82473600342963 /* GenericModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericModel.h; sourceTree = "<group>"; };
@@ -895,6 +901,7 @@
 		FB2C71B11A8CA849000EB848 /* ThirdParyLibrary */ = {
 			isa = PBXGroup;
 			children = (
+				FB7C240F1A9F5586006A5EA8 /* ZXWaterflowView */,
 				FB7C23F21A9F3FA2006A5EA8 /* MJRefresh */,
 				FBD4446E1A836F1400EB17D1 /* SDWebImage_MRC */,
 			);
@@ -1273,6 +1280,17 @@
 				FB7C24021A9F3FA2006A5EA8 /* UIView+MJExtension.m */,
 			);
 			path = MJRefresh;
+			sourceTree = "<group>";
+		};
+		FB7C240F1A9F5586006A5EA8 /* ZXWaterflowView */ = {
+			isa = PBXGroup;
+			children = (
+				FB7C24101A9F5586006A5EA8 /* ZXWaterflowView.h */,
+				FB7C24111A9F5586006A5EA8 /* ZXWaterflowView.m */,
+				FB7C24121A9F5586006A5EA8 /* ZXWaterflowViewCell.h */,
+				FB7C24131A9F5586006A5EA8 /* ZXWaterflowViewCell.m */,
+			);
+			path = ZXWaterflowView;
 			sourceTree = "<group>";
 		};
 		FBC54EAA1A81F421000A891D /* 01明星页  */ = {
@@ -2124,6 +2142,7 @@
 				FBD444881A836F1400EB17D1 /* SDWebImageManager.m in Sources */,
 				FB7C240E1A9F5382006A5EA8 /* readme.md in Sources */,
 				FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */,
+				FB7C24141A9F5586006A5EA8 /* ZXWaterflowView.m in Sources */,
 				FBD4448B1A836F1400EB17D1 /* UIImageView+WebCache.m in Sources */,
 				FB7C24041A9F3FA2006A5EA8 /* MJRefreshBaseView.m in Sources */,
 				FB92214D1A82473600342963 /* GenericModel.m in Sources */,
@@ -2138,6 +2157,7 @@
 				FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */,
 				FB3401DD1A85EFFE006783B5 /* ZXNames.m in Sources */,
 				FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */,
+				FB7C24151A9F5586006A5EA8 /* ZXWaterflowViewCell.m in Sources */,
 				FB7C24091A9F3FA2006A5EA8 /* UIScrollView+MJRefresh.m in Sources */,
 				FB4581941A81007E00895E6F /* BaseViewController.m in Sources */,
 				FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */,
