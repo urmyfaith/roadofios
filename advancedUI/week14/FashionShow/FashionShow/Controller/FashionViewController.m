@@ -12,6 +12,9 @@
 #import "ZXWaterflowView.h"
 #import "ZXWaterflowViewCell.h"
 
+/*==========自定义cell===========*/
+#import "FashionCell.h"
+
 @interface FashionViewController ()<ZXWaterflowViewDataSource,ZXWaterflowViewDelegate>
 @property (nonatomic,strong) NSMutableArray    *models_mArray;
 @end
@@ -46,7 +49,7 @@
     self.postURL_count = @"18";
     self.postURL_offset = @"0";
     [self downloadData];
-    [_waterflowView reloadData];
+    
 }
 
 #pragma mark 下载数据
@@ -79,8 +82,7 @@
     }
     [self.models_mArray addObjectsFromArray:[JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
                                                                             andDataType:zxJSON_DATATYPE_SPECIAL]];
-
-    
+    [_waterflowView reloadData];
 }
 
 -(void)createWaterfallFlow{
@@ -96,20 +98,22 @@
 
 #pragma mark ZXWaterflowView Delegate & DataSoucre 
 
+//加载数据源
 -(NSUInteger)numberOfCellsInWaterflowView:(ZXWaterflowView *)waterflowView{
-    return 100;
+    return self.models_mArray.count;
 }
 
 -(ZXWaterflowViewCell *)waterflowView:(ZXWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index{
-    static    NSString *identifier = @"cell";
+    FashionCell *cell = [FashionCell cellWithWaterflowView:waterflowView];
     
-    ZXWaterflowViewCell *cell = [waterflowView dequeueReusableCellWithIdentifier:identifier];
-    if (nil == cell) {
-        cell = [[ZXWaterflowViewCell alloc]init];
-        cell.identifier = identifier;
+    //首次刷新的时候,数组count为0
+    if (self.models_mArray.count ) {
+        cell.fashionModel = [self.models_mArray objectAtIndex:index];
     }
-    cell.backgroundColor = [UIColor redColor];
+    
     return cell;
 }
+
+
 
 @end

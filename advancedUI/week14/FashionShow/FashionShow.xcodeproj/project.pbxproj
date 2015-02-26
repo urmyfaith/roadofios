@@ -54,6 +54,7 @@
 		FB7C240E1A9F5382006A5EA8 /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = FB7C240D1A9F5382006A5EA8 /* readme.md */; };
 		FB7C24141A9F5586006A5EA8 /* ZXWaterflowView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7C24111A9F5586006A5EA8 /* ZXWaterflowView.m */; };
 		FB7C24151A9F5586006A5EA8 /* ZXWaterflowViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7C24131A9F5586006A5EA8 /* ZXWaterflowViewCell.m */; };
+		FB7EC40E1A9F865100E5A9D3 /* FashionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB7EC40D1A9F865100E5A9D3 /* FashionCell.m */; };
 		FB92214A1A823D1700342963 /* API.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB9221491A823D1700342963 /* API.txt */; };
 		FB92214D1A82473600342963 /* GenericModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB92214C1A82473600342963 /* GenericModel.m */; };
 		FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */ = {isa = PBXBuildFile; fileRef = FB97185C1A82826F00CDB90A /* JSON2Model.m */; };
@@ -490,6 +491,8 @@
 		FB7C24111A9F5586006A5EA8 /* ZXWaterflowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXWaterflowView.m; sourceTree = "<group>"; };
 		FB7C24121A9F5586006A5EA8 /* ZXWaterflowViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXWaterflowViewCell.h; sourceTree = "<group>"; };
 		FB7C24131A9F5586006A5EA8 /* ZXWaterflowViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXWaterflowViewCell.m; sourceTree = "<group>"; };
+		FB7EC40C1A9F865100E5A9D3 /* FashionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FashionCell.h; sourceTree = "<group>"; };
+		FB7EC40D1A9F865100E5A9D3 /* FashionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FashionCell.m; sourceTree = "<group>"; };
 		FB8068B81A838839009448AD /* CONSTANT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CONSTANT.h; sourceTree = "<group>"; };
 		FB9221491A823D1700342963 /* API.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API.txt; sourceTree = "<group>"; };
 		FB92214B1A82473600342963 /* GenericModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GenericModel.h; sourceTree = "<group>"; };
@@ -1681,6 +1684,8 @@
 				FB4526EE1A84B3F700FC0548 /* CommentItemCell.xib */,
 				FBE1C0451A8C38F70036E6EE /* StarCollectionCell.h */,
 				FBE1C0461A8C38F70036E6EE /* StarCollectionCell.m */,
+				FB7EC40C1A9F865100E5A9D3 /* FashionCell.h */,
+				FB7EC40D1A9F865100E5A9D3 /* FashionCell.m */,
 				FB2C716A1A8C7F1C000EB848 /* ZXCustomCVFL.h */,
 				FB2C716B1A8C7F1C000EB848 /* ZXCustomCVFL.m */,
 			);
@@ -2179,6 +2184,7 @@
 				FB4581971A8100AD00895E6F /* MainViewController.m in Sources */,
 				FBFFD7231A820E3900B3F6ED /* ZXTabBar.m in Sources */,
 				FBD444891A836F1400EB17D1 /* SDWebImagePrefetcher.m in Sources */,
+				FB7EC40E1A9F865100E5A9D3 /* FashionCell.m in Sources */,
 				FB4581B31A81016A00895E6F /* VisualViewController.m in Sources */,
 				FB4581AD1A81015B00895E6F /* BeautyViewController.m in Sources */,
 				FB4581A01A8100ED00895E6F /* ShowCommentsViewController.m in Sources */,

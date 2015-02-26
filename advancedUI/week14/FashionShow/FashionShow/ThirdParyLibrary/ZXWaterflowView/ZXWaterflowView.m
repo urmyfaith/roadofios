@@ -176,7 +176,7 @@
     }
     contentHeight += bottomMargin;
     self.contentSize = CGSizeMake(0, contentHeight);
-    
+    [self layoutSubviews];
 }
 
 /**
