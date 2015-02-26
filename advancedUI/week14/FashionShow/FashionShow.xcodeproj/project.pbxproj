@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB0F5E091A9F80B000D85822 /* FashionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FB0F5E081A9F80B000D85822 /* FashionModel.m */; };
 		FB17FC901A81293600A6D4A4 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC8F1A81293600A6D4A4 /* Download.m */; };
 		FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC941A81303D00A6D4A4 /* TesTViewController.m */; };
 		FB2C716C1A8C7F1C000EB848 /* ZXCustomCVFL.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2C716B1A8C7F1C000EB848 /* ZXCustomCVFL.m */; };
@@ -407,6 +408,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FB0F5E071A9F80B000D85822 /* FashionModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FashionModel.h; sourceTree = "<group>"; };
+		FB0F5E081A9F80B000D85822 /* FashionModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FashionModel.m; sourceTree = "<group>"; };
 		FB17FC8D1A81233B00A6D4A4 /* INTERFACE.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = INTERFACE.h; sourceTree = "<group>"; };
 		FB17FC8E1A81293600A6D4A4 /* Download.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Download.h; sourceTree = "<group>"; };
 		FB17FC8F1A81293600A6D4A4 /* Download.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Download.m; sourceTree = "<group>"; };
@@ -1071,6 +1074,8 @@
 				FBEA230A1A849CEE00427782 /* CommentModel.m */,
 				FBEA230C1A849FC600427782 /* CommentIteModel.h */,
 				FBEA230D1A849FC600427782 /* CommentIteModel.m */,
+				FB0F5E071A9F80B000D85822 /* FashionModel.h */,
+				FB0F5E081A9F80B000D85822 /* FashionModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2183,6 +2188,7 @@
 				FB4526EF1A84B3F700FC0548 /* CommentItemCell.m in Sources */,
 				FBD4446D1A8365CB00EB17D1 /* MainTableViewCell.m in Sources */,
 				FBD4448A1A836F1400EB17D1 /* UIButton+WebCache.m in Sources */,
+				FB0F5E091A9F80B000D85822 /* FashionModel.m in Sources */,
 				FBD444861A836F1400EB17D1 /* SDWebImageDecoder.m in Sources */,
 				FBD5E4341A9F58FE005A797D /* readme.md in Sources */,
 				FB4581B91A8101E100895E6F /* PhotosViewController.m in Sources */,

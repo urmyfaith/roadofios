@@ -7,9 +7,15 @@
 //
 
 #import "JSON2Model.h"
+
+/*==========通用数据模型:明星===========*/
 #import "GenericModel.h"
+
+/*==========评论数据模型===========*/
 #import "CommentModel.h"
 
+/*==========时装:美搭,导购===========*/
+#import "FashionModel.h"
 
 @implementation JSON2Model
 
@@ -45,6 +51,11 @@
         case zxJSON_DATATYPE_SPECIAL:
             {
                 //解析美搭,导购数据
+                NSArray *list_array = root_dic[@"list"];
+                for (NSDictionary *dic in list_array) {
+                    FashionModel *fm  =  [FashionModel fashionModelWithDic:dic];
+                    [models_array addObject:fm];
+                }
             }
             break;
         case zxJSON_DATATYPE_COMMENT:
@@ -54,9 +65,9 @@
                 [models_array addObject:cm];
             }
             break;
-            
-        default:
-            break;
+        //移除default,这样在dataType不存在的时候,程序崩溃,方便改错.
+//        default:
+//            break;
     }
     return models_array;
 }

@@ -25,6 +25,7 @@
 @implementation FashionViewController
 {
     ZXWaterflowView *_waterflowView;
+     NSString *_urlIdentifier; //数据下载的url标志符
 }
 
 #pragma mark lazy-load-array
@@ -39,7 +40,47 @@
 {
     [super viewDidLoad];
     [self createWaterfallFlow];
+    
+    self.postURL_action = @"piclist";
+    self.postURL_sa = @"MD";
+    self.postURL_count = @"18";
+    self.postURL_offset = @"0";
+    [self downloadData];
     [_waterflowView reloadData];
+}
+
+#pragma mark 下载数据
+-(void)downloadData{
+    
+    
+    NSString *postData_string = [NSString stringWithFormat:zxpostData_string,
+                                 self.postURL_action,
+                                 self.postURL_sa,
+                                 self.postURL_offset,
+                                 self.postURL_count];
+    
+    _urlIdentifier= [NSString stringWithFormat:@"%@%@",zxAPI_FULLPATH,postData_string];
+    
+    NSLog(@"_urlIdentifier=%@",_urlIdentifier);
+    
+    [[NSNotificationCenter defaultCenter]addObserver:self
+                                            selector:@selector(fashionPage_downloadFinish)
+                                                name:_urlIdentifier
+                                              object:nil];
+    [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH
+                                               andDownloadResqustMethod:@"POST"
+                                                      andPostDataString:postData_string];
+}
+
+-(void)fashionPage_downloadFinish{
+    
+    if ([self.postURL_offset isEqualToString:@"0"]) {
+        [self.models_mArray removeAllObjects];
+    }
+    [self.models_mArray addObjectsFromArray:[JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
+                                                                            andDataType:zxJSON_DATATYPE_SPECIAL]];
+
+    
 }
 
 -(void)createWaterfallFlow{
