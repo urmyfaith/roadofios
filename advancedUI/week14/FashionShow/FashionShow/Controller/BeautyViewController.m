@@ -118,17 +118,25 @@
 }
 
 
+/**
+ *  1.创建View
+ *  2.准备数据
+ *  3.绘制控件
+ *  4.调整frame
+ */
 -(void)createBeautyView{
-    //记录高度,每绘制一行,总高度更新;
-    //遍历数组,如果是small图片,取出连续三个,绘制一行
-    //如果是大图片,取出数据,绘制一行
-    //如果是左边,绘制左侧
-    //如果是右侧,绘制右侧
     
     self.beautyView = [[BeautyView alloc]init];
+    
     self.beautyView.models_array = self.beautyModels_mArray;
-    self.beautyView.frame = CGRectMake(0, zxStatusBar_NavigatinBar_HEIGHT, self.view.frame.size.width,_beautyView.currentHeight);
-    [self.view addSubview:_beautyView];
+    self.beautyView.frame = CGRectMake(0,
+                                       zxStatusBar_NavigatinBar_HEIGHT,
+                                       self.view.frame.size.width,
+                                       self.view.frame.size.height-zxStatusBar_NavigatinBar_HEIGHT);
+    [self.beautyView drawBeautyView];
+
+    self.beautyView.contentSize = CGSizeMake(self.view.frame.size.width, self.beautyView.currentHeight);
+    [self.view addSubview:self.beautyView];
 }
 
 @end

@@ -14,4 +14,6 @@
 
 @property (nonatomic,assign) CGFloat     currentHeight;
 
+-(void)drawBeautyView;
+
 @end

@@ -16,4 +16,6 @@
 @property (nonatomic,strong) NSArray  *BeautySmallModels_array;
 @property (nonatomic,strong) NSArray  *indexs_array;
 
+-(void)drawBeautySmallView;
+
 @end

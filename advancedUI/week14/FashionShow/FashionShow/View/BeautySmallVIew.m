@@ -26,9 +26,7 @@
     return self;
 }
 
--(void)layoutSubviews{
-    [super layoutSubviews];
-    
+-(void)drawBeautySmallView{
     if (0 == self.gapBewtweenPic ) {
         self.gapBewtweenPic = defaultGapBetweenPic;
     }
@@ -46,12 +44,19 @@
         imageView.userInteractionEnabled = YES;
         [self addSubview:imageView];
     }
-    self.backgroundColor = [UIColor yellowColor];
 }
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
-   NSLog(@"%s [LINE:%d]", __func__, __LINE__);
-    //todo 触摸方法 判断frame
-}
+    NSLog(@"%s [LINE:%d] ", __func__, __LINE__);
+    //todo 判断点击的view的id
+    UITouch *touch = [touches anyObject];
+    CGPoint touchPoint = [touch locationInView:self];//坐标系以滚动视图为参考
+    
 
+    
+    int index = touchPoint.x/(self.frame.size.width/3);
+    int tapped_cell_index = [[self.indexs_array objectAtIndex:index] intValue];
+
+    NSLog(@"touch postion: %@  tapped_cell_index=%d",NSStringFromCGPoint(touchPoint),tapped_cell_index);
+}
 @end
