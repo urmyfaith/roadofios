@@ -126,6 +126,10 @@ PostCommentViewController.m # 228
 下拉刷新的时候,没有数据返回的时候,给用户一个提示
 使用第三方库 iToast,类似android上自带的toast消息提示.
 
+使用很简单,消息内容,消息位置,消息显示时间长度,显示
+
+- https://github.com/urmyfaith/roadofios/blob/1847404a85859d16851ab84b56e7d26d1d66fc7b/advancedUI/week14/FashionShow/FashionShow/Controller/FashionViewController.m#L88-93
+
 
 
 
