@@ -48,10 +48,10 @@ typedef enum {
 
 #pragma mark lazy-load-array
 -(NSMutableArray *)modelsMD_mArray{
-    if (nil == _modelsDG_mArray) {
-        _modelsDG_mArray = [[NSMutableArray alloc]init];
+    if (nil == _modelsMD_mArray) {
+        _modelsMD_mArray = [[NSMutableArray alloc]init];
     }
-    return _modelsDG_mArray;
+    return _modelsMD_mArray;
 }
 
 -(NSMutableArray *)modelsDG_mArray{
@@ -107,15 +107,16 @@ typedef enum {
 -(void)buttonClicked:(UIButton *)button{
     if (button == _button_DG) {
         self.postURL_sa = @"DG";
+        self.currentDisplyingView = FashionViewShowViewDG;
         _button_DG.selected = YES;
         _button_MD.selected = NO;
     }
     if (button == _button_MD) {
         self.postURL_sa = @"MD";
+        self.currentDisplyingView = fashionViewShowViewMD;
         _button_DG.selected = NO;
         _button_MD.selected = YES;
     }
-    [self downloadData];
 }
 
 #pragma mark 绘制瀑布流
@@ -156,11 +157,20 @@ typedef enum {
     NSLog(@"%s [LINE:%d] keyPath=%@ object=%@ change=%@ contentx=%@", __func__, __LINE__,keyPath,object,change,context);
     if (self.currentDisplyingView == FashionViewShowViewDG) {
         _models_mArray = self.modelsDG_mArray;
+        
+        //第一次点的时候可能没有数据.
+        //以后点击的时候,就不用去下载数据了,直接刷新瀑布流就可以了.
+        if (_models_mArray.count == 0 ) {
+            [self downloadData];
+        }
+        else{
+            [_waterflowView reloadData];
+        }
     }
     if (self.currentDisplyingView == fashionViewShowViewMD) {
         _models_mArray = self.modelsMD_mArray;
+        [_waterflowView reloadData];
     }
-    [_waterflowView reloadData];
 }
 
 #pragma mark 下载数据
