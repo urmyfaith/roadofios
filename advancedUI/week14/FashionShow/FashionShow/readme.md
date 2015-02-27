@@ -121,6 +121,10 @@ PostCommentViewController.m # 228
 
 - 自己能监听自己的属性的么?(可以)
 
+- 监听属性(可以是私有的属性)
+
+- https://github.com/urmyfaith/roadofios/blob/e7ab82dcd9b6e3ef12b986a7adb6c1e5a1d46686/advancedUI/week14/FashionShow/FashionShow/Controller/FashionViewController.m#L145-156
+
 # 问题10 下拉刷新无数据返回 -- 已解决
 
 下拉刷新的时候,没有数据返回的时候,给用户一个提示

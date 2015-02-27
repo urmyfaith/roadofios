@@ -154,7 +154,7 @@ typedef enum {
  键值观察,当值变化的之后调用
  */
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    NSLog(@"%s [LINE:%d] keyPath=%@ object=%@ change=%@ contentx=%@", __func__, __LINE__,keyPath,object,change,context);
+  //  NSLog(@"%s [LINE:%d] keyPath=%@ object=%@ change=%@ contentx=%@", __func__, __LINE__,keyPath,object,change,context);
     if (self.currentDisplyingView == FashionViewShowViewDG) {
         _models_mArray = self.modelsDG_mArray;
         
