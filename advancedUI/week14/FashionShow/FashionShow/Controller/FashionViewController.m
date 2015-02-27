@@ -40,6 +40,10 @@ typedef enum {
     ZXWaterflowView *_waterflowView;
     NSString *_urlIdentifier; //数据下载的url标志符
     NSMutableArray *_models_mArray;
+    
+    UIButton *_button_MD;
+    UIButton *_button_DG;
+    CGFloat _buttonHeight_MD_DG;
 }
 
 #pragma mark lazy-load-array
@@ -62,10 +66,74 @@ typedef enum {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"背景"]];
+    [self createMDandDG_view];
     [self createWaterfallFlow];
     [self dataInitilnize];
     [self downloadData];
 }
+#pragma mark 绘制UI
+#pragma mark 绘制按钮
+-(void)createMDandDG_view{
+    
+    UIImage *image_MD = [UIImage imageNamed:@"美搭_2"];
+    UIImage *image_DG = [UIImage imageNamed:@"导购_2"];
+    
+    _buttonHeight_MD_DG = MAX(image_MD.size.height, image_DG.size.height);
+    
+    _button_MD = [UIButton buttonWithType:UIButtonTypeCustom];
+    _button_MD.frame = CGRectMake(self.view.frame.size.width/2 - image_MD.size.width,
+                                 zxStatusBar_NavigatinBar_HEIGHT,
+                                 image_MD.size.width,
+                                 image_MD.size.height);
+    [_button_MD setImage:[UIImage imageNamed:@"美搭_1"] forState:UIControlStateNormal];
+    [_button_MD setImage:image_MD                      forState:UIControlStateSelected];//选中状态
+    [_button_MD addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_button_MD];
+    
+    _button_DG =  [UIButton buttonWithType:UIButtonTypeCustom];
+    _button_DG.frame = CGRectMake(self.view.frame.size.width/2,
+                                  zxStatusBar_NavigatinBar_HEIGHT,
+                                  image_DG.size.width,
+                                  image_DG.size.height);
+    [_button_DG setImage:[UIImage imageNamed:@"导购_1"]   forState:UIControlStateNormal];
+    [_button_DG setImage:image_DG                        forState:UIControlStateSelected];//选中状态
+    [_button_DG addTarget:self action:@selector(buttonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:_button_DG];
+    
+    /*==========初始状态下选中一个===========*/
+    [_button_MD setSelected:YES];
+}
+
+-(void)buttonClicked:(UIButton *)button{
+    if (button == _button_DG) {
+        self.postURL_sa = @"DG";
+        _button_DG.selected = YES;
+        _button_MD.selected = NO;
+    }
+    if (button == _button_MD) {
+        self.postURL_sa = @"MD";
+        _button_DG.selected = NO;
+        _button_MD.selected = YES;
+    }
+    [self downloadData];
+}
+
+#pragma mark 绘制瀑布流
+-(void)createWaterfallFlow{
+    _waterflowView = [[ZXWaterflowView alloc]init];
+    _waterflowView.frame = CGRectMake(0,
+                                      zxStatusBar_NavigatinBar_HEIGHT+_buttonHeight_MD_DG,
+                                      self.view.frame.size.width,
+                                      self.view.frame.size.height -zxStatusBar_NavigatinBar_HEIGHT-_buttonHeight_MD_DG);
+    _waterflowView.delegate = self;
+    _waterflowView.dataSource = self;
+    [self.view addSubview:_waterflowView];
+    
+    //刷新数据
+    [_waterflowView addHeaderWithTarget:self action:@selector(loadNewItems)];
+    [_waterflowView addFooterWithTarget:self action:@selector(loadMoreItems)];
+}
+
 
 /**
  *  数据初始化工作
@@ -147,20 +215,6 @@ typedef enum {
     [_waterflowView footerEndRefreshing];
 }
 
--(void)createWaterfallFlow{
-    _waterflowView = [[ZXWaterflowView alloc]init];
-    _waterflowView.frame = CGRectMake(0,
-                                      zxStatusBar_NavigatinBar_HEIGHT,
-                                      self.view.frame.size.width,
-                                      self.view.frame.size.height -zxStatusBar_NavigatinBar_HEIGHT);
-    _waterflowView.delegate = self;
-    _waterflowView.dataSource = self;
-    [self.view addSubview:_waterflowView];
-    
-    //刷新数据
-    [_waterflowView addHeaderWithTarget:self action:@selector(loadNewItems)];
-    [_waterflowView addFooterWithTarget:self action:@selector(loadMoreItems)];
-}
 
 #pragma mark 刷新数据的方法
 -(void)loadNewItems{
