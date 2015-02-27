@@ -127,16 +127,21 @@
 -(void)createBeautyView{
     
     self.beautyView = [[BeautyView alloc]init];
-    
+    [self refreshBeautyView];
+    [self.view addSubview:self.beautyView];
+}
+
+/**
+ *  更新数据,重新绘制,调整frame
+ */
+-(void)refreshBeautyView{
     self.beautyView.models_array = self.beautyModels_mArray;
     self.beautyView.frame = CGRectMake(0,
                                        zxStatusBar_NavigatinBar_HEIGHT,
                                        self.view.frame.size.width,
                                        self.view.frame.size.height-zxStatusBar_NavigatinBar_HEIGHT);
     [self.beautyView drawBeautyView];
-
     self.beautyView.contentSize = CGSizeMake(self.view.frame.size.width, self.beautyView.currentHeight);
-    [self.view addSubview:self.beautyView];
 }
 
 @end
