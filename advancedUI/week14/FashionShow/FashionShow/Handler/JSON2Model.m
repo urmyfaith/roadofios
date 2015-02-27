@@ -17,6 +17,9 @@
 /*==========时装:美搭,导购===========*/
 #import "FashionModel.h"
 
+/*==========美容 数据模型===========*/
+#import "BeautyModel.h"
+
 @implementation JSON2Model
 
 +(NSArray *)JSONData2ModelWithURLIdentifier:(NSString *)urlIdentifier andDataType:(int)dataType{
@@ -63,6 +66,16 @@
                 //解析评论
                 CommentModel *cm = [CommentModel modelWithDic:root_dic];
                 [models_array addObject:cm];
+            }
+            break;
+        case zxJSON_DATATYPE_BEAUTYPAGE:
+            {
+                //解析Beauty页面的数据
+                NSArray *list_array = root_dic[@"list"];
+                for (NSDictionary *dic in list_array) {
+                    BeautyModel *bm  =  [BeautyModel beautyModelWithDic:dic];
+                    [models_array addObject:bm];
+                }
             }
             break;
         //移除default,这样在dataType不存在的时候,程序崩溃,方便改错.

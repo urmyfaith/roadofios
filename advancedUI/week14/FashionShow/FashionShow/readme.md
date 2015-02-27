@@ -135,7 +135,9 @@ PostCommentViewController.m # 228
 - https://github.com/urmyfaith/roadofios/blob/1847404a85859d16851ab84b56e7d26d1d66fc7b/advancedUI/week14/FashionShow/FashionShow/Controller/FashionViewController.m#L88-93
 
 
+# 问题11  美容页面怎么实现?
 
+难点:数据源是
 
 
 #todo  将所有的尺寸改写为宏定义

@@ -396,6 +396,7 @@
 		FBEA230B1A849CEE00427782 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA230A1A849CEE00427782 /* CommentModel.m */; };
 		FBEA230E1A849FC600427782 /* CommentIteModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA230D1A849FC600427782 /* CommentIteModel.m */; };
 		FBF09C111A81E55D00444969 /* NSDate+Transform.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF09C101A81E55D00444969 /* NSDate+Transform.m */; };
+		FBF3346F1AA07FDC008E218D /* BeautyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBF3346E1AA07FDC008E218D /* BeautyModel.m */; };
 		FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFF7E591A81A97400B10BCD /* DownloadManager.m */; };
 		FBFFD7231A820E3900B3F6ED /* ZXTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = FBFFD7221A820E3900B3F6ED /* ZXTabBar.m */; };
 /* End PBXBuildFile section */
@@ -861,6 +862,8 @@
 		FBEA230D1A849FC600427782 /* CommentIteModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommentIteModel.m; sourceTree = "<group>"; };
 		FBF09C0F1A81E55D00444969 /* NSDate+Transform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Transform.h"; sourceTree = "<group>"; };
 		FBF09C101A81E55D00444969 /* NSDate+Transform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Transform.m"; sourceTree = "<group>"; };
+		FBF3346D1AA07FDC008E218D /* BeautyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyModel.h; sourceTree = "<group>"; };
+		FBF3346E1AA07FDC008E218D /* BeautyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyModel.m; sourceTree = "<group>"; };
 		FBFF7E581A81A97400B10BCD /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
 		FBFF7E591A81A97400B10BCD /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		FBFFD7211A820E3900B3F6ED /* ZXTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXTabBar.h; sourceTree = "<group>"; };
@@ -1085,6 +1088,8 @@
 				FBEA230D1A849FC600427782 /* CommentIteModel.m */,
 				FB0F5E071A9F80B000D85822 /* FashionModel.h */,
 				FB0F5E081A9F80B000D85822 /* FashionModel.m */,
+				FBF3346D1AA07FDC008E218D /* BeautyModel.h */,
+				FBF3346E1AA07FDC008E218D /* BeautyModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -2188,6 +2193,7 @@
 				FBD444871A836F1400EB17D1 /* SDWebImageDownloader.m in Sources */,
 				FB97185D1A82826F00CDB90A /* JSON2Model.m in Sources */,
 				FB4581611A80F9EE00895E6F /* ZXAppDelegate.m in Sources */,
+				FBF3346F1AA07FDC008E218D /* BeautyModel.m in Sources */,
 				FB45819D1A8100DF00895E6F /* CollectionViewController.m in Sources */,
 				FB3401DD1A85EFFE006783B5 /* ZXNames.m in Sources */,
 				FBFF7E5A1A81A97400B10BCD /* DownloadManager.m in Sources */,
