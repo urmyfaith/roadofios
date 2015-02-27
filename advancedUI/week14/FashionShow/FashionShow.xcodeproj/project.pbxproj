@@ -11,6 +11,8 @@
 		FB17FC901A81293600A6D4A4 /* Download.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC8F1A81293600A6D4A4 /* Download.m */; };
 		FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FB17FC941A81303D00A6D4A4 /* TesTViewController.m */; };
 		FB2C716C1A8C7F1C000EB848 /* ZXCustomCVFL.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2C716B1A8C7F1C000EB848 /* ZXCustomCVFL.m */; };
+		FB301DA31AA0914800A70BE6 /* BeautyView.m in Sources */ = {isa = PBXBuildFile; fileRef = FB301DA21AA0914800A70BE6 /* BeautyView.m */; };
+		FB301DA61AA09AEE00A70BE6 /* BeautySmallVIew.m in Sources */ = {isa = PBXBuildFile; fileRef = FB301DA51AA09AEE00A70BE6 /* BeautySmallVIew.m */; };
 		FB3401DD1A85EFFE006783B5 /* ZXNames.m in Sources */ = {isa = PBXBuildFile; fileRef = FB3401DC1A85EFFE006783B5 /* ZXNames.m */; };
 		FB3401DF1A85F033006783B5 /* name.txt in Resources */ = {isa = PBXBuildFile; fileRef = FB3401DE1A85F033006783B5 /* name.txt */; };
 		FB4526EF1A84B3F700FC0548 /* CommentItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB4526ED1A84B3F700FC0548 /* CommentItemCell.m */; };
@@ -421,6 +423,10 @@
 		FB17FC941A81303D00A6D4A4 /* TesTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesTViewController.m; sourceTree = "<group>"; };
 		FB2C716A1A8C7F1C000EB848 /* ZXCustomCVFL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXCustomCVFL.h; sourceTree = "<group>"; };
 		FB2C716B1A8C7F1C000EB848 /* ZXCustomCVFL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXCustomCVFL.m; sourceTree = "<group>"; };
+		FB301DA11AA0914800A70BE6 /* BeautyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyView.h; sourceTree = "<group>"; };
+		FB301DA21AA0914800A70BE6 /* BeautyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyView.m; sourceTree = "<group>"; };
+		FB301DA41AA09AEE00A70BE6 /* BeautySmallVIew.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautySmallVIew.h; sourceTree = "<group>"; };
+		FB301DA51AA09AEE00A70BE6 /* BeautySmallVIew.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautySmallVIew.m; sourceTree = "<group>"; };
 		FB3401DB1A85EFFE006783B5 /* ZXNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXNames.h; sourceTree = "<group>"; };
 		FB3401DC1A85EFFE006783B5 /* ZXNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXNames.m; sourceTree = "<group>"; };
 		FB3401DE1A85F033006783B5 /* name.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = name.txt; sourceTree = "<group>"; };
@@ -1242,6 +1248,10 @@
 				FBC54EA81A81EFD5000A891D /* ZXNavigaitonBar.m */,
 				FBFFD7211A820E3900B3F6ED /* ZXTabBar.h */,
 				FBFFD7221A820E3900B3F6ED /* ZXTabBar.m */,
+				FB301DA11AA0914800A70BE6 /* BeautyView.h */,
+				FB301DA21AA0914800A70BE6 /* BeautyView.m */,
+				FB301DA41AA09AEE00A70BE6 /* BeautySmallVIew.h */,
+				FB301DA51AA09AEE00A70BE6 /* BeautySmallVIew.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2178,6 +2188,7 @@
 				FB4581B61A8101D600895E6F /* WebViewController.m in Sources */,
 				FB7C24071A9F3FA2006A5EA8 /* MJRefreshHeaderView.m in Sources */,
 				FBD444881A836F1400EB17D1 /* SDWebImageManager.m in Sources */,
+				FB301DA31AA0914800A70BE6 /* BeautyView.m in Sources */,
 				FB7C240E1A9F5382006A5EA8 /* readme.md in Sources */,
 				FB17FC951A81303D00A6D4A4 /* TesTViewController.m in Sources */,
 				FB7C24141A9F5586006A5EA8 /* ZXWaterflowView.m in Sources */,
@@ -2187,6 +2198,7 @@
 				FB92214D1A82473600342963 /* GenericModel.m in Sources */,
 				FB7C240A1A9F3FA2006A5EA8 /* UIView+MJExtension.m in Sources */,
 				FBEA230E1A849FC600427782 /* CommentIteModel.m in Sources */,
+				FB301DA61AA09AEE00A70BE6 /* BeautySmallVIew.m in Sources */,
 				FB7C24081A9F3FA2006A5EA8 /* UIScrollView+MJExtension.m in Sources */,
 				FBEA230B1A849CEE00427782 /* CommentModel.m in Sources */,
 				FB7C24061A9F3FA2006A5EA8 /* MJRefreshFooterView.m in Sources */,

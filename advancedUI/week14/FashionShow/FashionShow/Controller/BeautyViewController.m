@@ -8,13 +8,20 @@
 
 #import "BeautyViewController.h"
 
+/*==========滚动视图(添加子控件)===========*/
+#import "BeautyView.h"
+#import "BeautyModel.h"
+
+
 @interface BeautyViewController ()
 @property (nonatomic,strong) NSMutableArray    *beautyModels_mArray;
+@property (nonatomic,strong)  BeautyView    *beautyView;
 @end
 
 @implementation BeautyViewController
 {
     NSString *_urlIdentifier;
+   
 }
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,8 +95,12 @@
     }
     NSArray *json2Moodel_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
                                                                  andDataType:zxJSON_DATATYPE_BEAUTYPAGE];
+    
+    //数据下载完成后,创建View
+    
     if (json2Moodel_array.count > 0 ) {
         NSLog(@"%s [LINE:%d]", __func__, __LINE__);
+        [self.beautyModels_mArray addObjectsFromArray:json2Moodel_array];
 //        if (self.currentDisplyingView == fashionViewShowViewMD) {
 //            [self.modelsMD_mArray addObjectsFromArray:json2Moodel_array];
 //            _models_mArray = self.modelsMD_mArray;
@@ -103,7 +114,21 @@
     else{
         [[[iToast makeText:@"亲,没数据啦!"] setDuration:iToastDurationNormal] show:iToastTypeNotice];
     }
+    [self createBeautyView];
 }
 
+
+-(void)createBeautyView{
+    //记录高度,每绘制一行,总高度更新;
+    //遍历数组,如果是small图片,取出连续三个,绘制一行
+    //如果是大图片,取出数据,绘制一行
+    //如果是左边,绘制左侧
+    //如果是右侧,绘制右侧
+    
+    self.beautyView = [[BeautyView alloc]init];
+    self.beautyView.models_array = self.beautyModels_mArray;
+    self.beautyView.frame = CGRectMake(0, zxStatusBar_NavigatinBar_HEIGHT, self.view.frame.size.width,_beautyView.currentHeight);
+    [self.view addSubview:_beautyView];
+}
 
 @end
