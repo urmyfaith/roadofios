@@ -11,7 +11,7 @@
 #import "BeautyModel.h"
 #import "BeautySmallVIew.h"
 
-#define defaultRowHeight 150.0f
+#define defaultRowHeight 140.0f
 
 @implementation BeautyView
 
@@ -38,7 +38,7 @@
     for (int i = 0 ; i < self.models_array.count; i++) {
         BeautyModel *bm = [self.models_array objectAtIndex:i];
         
-        NSLog(@"i=%d bm.type=%@ bm.title_positon=%@",i,bm.type,bm.title_position);
+        //NSLog(@"i=%d bm.type=%@ bm.title_positon=%@",i,bm.type,bm.title_position);
         
         if ([bm.type isEqualToString:@"small"]) {
             //取出三个,绘制一行

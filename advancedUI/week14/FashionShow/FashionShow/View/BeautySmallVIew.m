@@ -12,7 +12,9 @@
 /*==========图片下载===========*/
 #import "UIImageView+WebCache.h"
 
-#define defaultGapBetweenPic 2.0f;
+#define defaultGapBetweenPic 2.0f
+
+#define tagGapInImageView 5.0f
 
 @implementation BeautySmallView
 {
@@ -43,6 +45,47 @@
                   placeholderImage:[UIImage imageNamed:@"缺省图2"]];
         imageView.userInteractionEnabled = YES;
         [self addSubview:imageView];
+        
+        
+        if (![bm.tag isEqualToString:@""]) {
+            
+            UIImage *tag_image =  [UIImage imageNamed:@"标签"];
+            
+            UIImageView *tag_imageView = [[UIImageView alloc]init];
+            if ([bm.tag isEqualToString:@"健康"]) {
+                tag_imageView.image = [UIImage imageNamed:@"健康"];
+            }else if ([bm.tag isEqualToString:@"家居"]){
+                tag_imageView.image = [UIImage imageNamed:@"家居"];
+            }else if ([bm.tag isEqualToString:@"彩妆"]){
+                tag_imageView.image = [UIImage imageNamed:@"彩妆"];
+            }else if ([bm.tag isEqualToString:@"护肤"]){
+                tag_imageView.image = [UIImage imageNamed:@"护肤"];
+            }else if ([bm.tag isEqualToString:@"旅行"]){
+                tag_imageView.image = [UIImage imageNamed:@"旅行"];
+            }else if ([bm.tag isEqualToString:@"电影"]){
+                tag_imageView.image = [UIImage imageNamed:@"电影"];
+            }else if ([bm.tag isEqualToString:@"美体"]){
+                tag_imageView.image = [UIImage imageNamed:@"美体"];
+            }else if ([bm.tag isEqualToString:@"美发"]){
+                tag_imageView.image = [UIImage imageNamed:@"健康"];
+            }else if ([bm.tag isEqualToString:@"美食"]){
+                tag_imageView.image = [UIImage imageNamed:@"美食"];
+            }else if ([bm.tag isEqualToString:@"艺术"]){
+                tag_imageView.image = [UIImage imageNamed:@"艺术"];
+            }else if ([bm.tag isEqualToString:@"音乐"]){
+                tag_imageView.image = [UIImage imageNamed:@"音乐"];
+            }else if ([bm.tag isEqualToString:@"香水"]){
+                tag_imageView.image = [UIImage imageNamed:@"香水"];
+            }else{
+                NSLog(@"%s [LINE:%d] 需要处理更多标签.", __func__, __LINE__);
+                tag_imageView.image = tag_image; //默认的图,无标签文字
+            }
+            tag_imageView.frame = CGRectMake(tagGapInImageView,
+                                             tagGapInImageView,
+                                             tag_image.size.width,
+                                             tag_image.size.height);
+            [imageView addSubview:tag_imageView];
+        }
     }
 }
 
