@@ -26,6 +26,11 @@
 #import "JSON2Model.h"
 
 
+/**
+ *  引入toast弹出消息提示
+ */
+#import "iToast.h"
+
 @interface RootViewController : UIViewController
 
 

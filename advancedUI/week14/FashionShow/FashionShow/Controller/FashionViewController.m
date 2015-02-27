@@ -81,10 +81,18 @@
     if ([self.postURL_offset isEqualToString:@"0"]) {
         [self.models_mArray removeAllObjects];
     }
-    [self.models_mArray addObjectsFromArray:[JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
-                                                                            andDataType:zxJSON_DATATYPE_SPECIAL]];
-    [_waterflowView reloadData];
-
+    
+    NSArray *json2Moodel_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
+                                                                 andDataType:zxJSON_DATATYPE_SPECIAL];
+    
+    if (json2Moodel_array.count > 0 ) {
+        [self.models_mArray addObjectsFromArray:json2Moodel_array];
+        [_waterflowView reloadData];
+    }
+    else{
+        [[[iToast makeText:@"no more data!"] setDuration:iToastDurationNormal] show:iToastTypeNotice];
+    }
+    
     [_waterflowView headerEndRefreshing];
     [_waterflowView footerEndRefreshing];
 }
