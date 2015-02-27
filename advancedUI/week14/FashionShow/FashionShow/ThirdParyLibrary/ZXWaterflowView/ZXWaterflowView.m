@@ -107,7 +107,7 @@
     
     //cell边距
     CGFloat leftMargin      = [self marginForType:ZXWaterFlowViewMarginTypeLeft];
-    CGFloat rightMargin     = [self marginForType:ZXWaterFlowViewMarginTypeRight];
+//    CGFloat rightMargin     = [self marginForType:ZXWaterFlowViewMarginTypeRight];
     CGFloat topMargin       = [self marginForType:ZXWaterFlowViewMarginTypeTop];
     CGFloat bottomMargin    = [self marginForType:ZXWaterFlowViewMarginTypeBottom];
     CGFloat columnMagrin    = [self marginForType:ZXWaterFlowViewMarginTypeColumn];

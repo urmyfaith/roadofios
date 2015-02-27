@@ -16,8 +16,17 @@
 #import "FashionCell.h"
 #import "FashionModel.h"
 
+
+typedef enum {
+    fashionViewShowViewMD = 1,
+    FashionViewShowViewDG
+}FashionViewShowView;
+
 @interface FashionViewController ()<ZXWaterflowViewDataSource,ZXWaterflowViewDelegate>
-@property (nonatomic,strong) NSMutableArray    *models_mArray;
+
+@property (nonatomic,strong) NSMutableArray    *modelsMD_mArray;
+@property (nonatomic,strong) NSMutableArray    *modelsDG_mArray;
+@property (nonatomic,assign)     NSUInteger   currentDisplyingView ;
 @end
 
 
@@ -29,30 +38,61 @@
 @implementation FashionViewController
 {
     ZXWaterflowView *_waterflowView;
-     NSString *_urlIdentifier; //数据下载的url标志符
+    NSString *_urlIdentifier; //数据下载的url标志符
+    NSMutableArray *_models_mArray;
 }
 
 #pragma mark lazy-load-array
--(NSMutableArray *)models_mArray{
-    if (nil == _models_mArray) {
-        _models_mArray = [[NSMutableArray alloc]init];
+-(NSMutableArray *)modelsMD_mArray{
+    if (nil == _modelsDG_mArray) {
+        _modelsDG_mArray = [[NSMutableArray alloc]init];
     }
-    return _models_mArray;
+    return _modelsDG_mArray;
+}
+
+-(NSMutableArray *)modelsDG_mArray{
+    if (nil == _modelsDG_mArray) {
+        _modelsDG_mArray = [[NSMutableArray alloc]init];
+    }
+    return _modelsDG_mArray;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.view.backgroundColor = [UIColor blackColor];
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"背景"]];
     [self createWaterfallFlow];
+    [self dataInitilnize];
+    [self downloadData];
+}
+
+/**
+ *  数据初始化工作
+ *  1.添加键值观察,2.URL数据初始化.
+ */
+-(void)dataInitilnize{
+    self.currentDisplyingView = fashionViewShowViewMD;
+    [self addObserver:self forKeyPath:@"currentDisplyingView" options:NSKeyValueObservingOptionNew context:nil];
     
     self.postURL_action = @"piclist";
     self.postURL_sa = @"MD";
     self.postURL_count = @"18";
     self.postURL_offset = @"0";
-    [self downloadData];
+}
+
+/*
+ 键值观察,当值变化的之后调用
+ */
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    NSLog(@"%s [LINE:%d] keyPath=%@ object=%@ change=%@ contentx=%@", __func__, __LINE__,keyPath,object,change,context);
+    if (self.currentDisplyingView == FashionViewShowViewDG) {
+        _models_mArray = self.modelsDG_mArray;
+    }
+    if (self.currentDisplyingView == fashionViewShowViewMD) {
+        _models_mArray = self.modelsMD_mArray;
+    }
+    [_waterflowView reloadData];
 }
 
 #pragma mark 下载数据
@@ -74,25 +114,35 @@
     [[DownloadManager sharedDownloadManager] addDownloadWithDownloadURL:zxAPI_FULLPATH
                                                andDownloadResqustMethod:@"POST"
                                                       andPostDataString:postData_string];
+    
 }
 
 -(void)fashionPage_downloadFinish{
-    
+
     if ([self.postURL_offset isEqualToString:@"0"]) {
-        [self.models_mArray removeAllObjects];
+        if (self.currentDisplyingView == fashionViewShowViewMD) {
+            [self.modelsMD_mArray removeAllObjects];
+        }
+        if (self.currentDisplyingView  == FashionViewShowViewDG) {
+            [self.modelsDG_mArray removeAllObjects];
+        }
     }
-    
     NSArray *json2Moodel_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
                                                                  andDataType:zxJSON_DATATYPE_SPECIAL];
-    
     if (json2Moodel_array.count > 0 ) {
-        [self.models_mArray addObjectsFromArray:json2Moodel_array];
+        if (self.currentDisplyingView == fashionViewShowViewMD) {
+            [self.modelsMD_mArray addObjectsFromArray:json2Moodel_array];
+            _models_mArray = self.modelsMD_mArray;
+        }
+        if (self.currentDisplyingView  == FashionViewShowViewDG) {
+            [self.modelsDG_mArray addObjectsFromArray:json2Moodel_array];
+            _models_mArray = self.modelsDG_mArray;
+        }
         [_waterflowView reloadData];
     }
     else{
-        [[[iToast makeText:@"no more data!"] setDuration:iToastDurationNormal] show:iToastTypeNotice];
+        [[[iToast makeText:@"亲,没数据啦!"] setDuration:iToastDurationNormal] show:iToastTypeNotice];
     }
-    
     [_waterflowView headerEndRefreshing];
     [_waterflowView footerEndRefreshing];
 }
@@ -131,17 +181,16 @@
 
 //加载数据源
 -(NSUInteger)numberOfCellsInWaterflowView:(ZXWaterflowView *)waterflowView{
-    return self.models_mArray.count;
+    return _models_mArray.count;
 }
 
 -(ZXWaterflowViewCell *)waterflowView:(ZXWaterflowView *)waterflowView cellAtIndex:(NSUInteger)index{
     FashionCell *cell = [FashionCell cellWithWaterflowView:waterflowView];
     
     //首次刷新的时候,数组count为0
-    if (self.models_mArray.count ) {
-        cell.fashionModel = [self.models_mArray objectAtIndex:index];
+    if (_models_mArray.count ) {
+        cell.fashionModel = [_models_mArray objectAtIndex:index];
     }
-    
     return cell;
 }
 
@@ -169,7 +218,7 @@
  */
 
 -(CGFloat)waterflowView:(ZXWaterflowView *)waterflowView heightAtIndex:(NSUInteger)index{
-    FashionModel *fm = (FashionModel *)[self.models_mArray objectAtIndex:index];
+    FashionModel *fm = (FashionModel *)[_models_mArray objectAtIndex:index];
     return fm.pic_height/2;
 }
 
