@@ -14,6 +14,11 @@
 /*==========下拉刷新===========*/
 #import "MJRefresh.h"
 
+/*==========UICollectionView===========*/
+#import "ZXCustomCVFL.h"
+#import "StarCollectionCell.h"
+
+
 @interface BaseViewController : RootViewController
 
 @property (nonatomic,strong) NSString    *postURL_action;
