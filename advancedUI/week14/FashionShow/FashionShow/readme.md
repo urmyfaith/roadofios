@@ -135,9 +135,37 @@ PostCommentViewController.m # 228
 - https://github.com/urmyfaith/roadofios/blob/1847404a85859d16851ab84b56e7d26d1d66fc7b/advancedUI/week14/FashionShow/FashionShow/Controller/FashionViewController.m#L88-93
 
 
-# 问题11  美容页面怎么实现?
+# 问题11  美容页面怎么实现? --已解决
 
-难点:数据源是
+难点:数据源是一样的,但是怎么摆放控件:
 
+- a.一行3个小图 
+
+- b.文字左侧+图片右侧 
+- c.文字右侧+ 图片左侧
+
+解决的办法:先下载数据,转换为模型,模型存入数组,遍历数组,根据每个模型,分支判断,逐渐创建 ==> 添加到滚动视图.
+
+一般是先创建控件,然后给视图里填充数据.
+
+反过来之后,可以 
+
+- a.使用代理,外部传入数据,动态创建(例如UITablieView,ZXWaterflow瀑布流)
+
+- b.不在init方法里创建,而是等这个对象创建完成之后,调用对象的方法来创建控件.
+
+# 问题11 自定义的标签栏控件在push到下一页怎么隐藏? -- 已解决
+
+解决的方法是:
+
+> 把这个控件的创建做成一个单例,并且,自定义的控件全部加载一个View上,让这个View作为这个单例的属性.
+
+> 这样,在任何地方,只要通过这个单例,访问单例的属性,操作view的hidden属性,就可以显示和隐藏自定义的标签栏控件.
+
+
+
+#todo 代码的复用,单行图片在左还是在右的代码的复用?
+
+#todo UICollectionView的复用
 
 #todo  将所有的尺寸改写为宏定义
