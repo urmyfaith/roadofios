@@ -393,6 +393,7 @@
 		FBD4448A1A836F1400EB17D1 /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD444801A836F1400EB17D1 /* UIButton+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBD4448B1A836F1400EB17D1 /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = FBD444821A836F1400EB17D1 /* UIImageView+WebCache.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FBD5E4341A9F58FE005A797D /* readme.md in Sources */ = {isa = PBXBuildFile; fileRef = FBD5E4331A9F58FE005A797D /* readme.md */; };
+		FBDD13541AA1586300724201 /* BeautyBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBDD13531AA1586300724201 /* BeautyBaseView.m */; };
 		FBE1C0471A8C38F70036E6EE /* StarCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE1C0461A8C38F70036E6EE /* StarCollectionCell.m */; };
 		FBE8C82A1A834CAE00431B5A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBE8C8291A834CAE00431B5A /* DetailViewController.m */; };
 		FBEA230B1A849CEE00427782 /* CommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = FBEA230A1A849CEE00427782 /* CommentModel.m */; };
@@ -860,6 +861,8 @@
 		FBD444811A836F1400EB17D1 /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		FBD444821A836F1400EB17D1 /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		FBD5E4331A9F58FE005A797D /* readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = readme.md; sourceTree = "<group>"; };
+		FBDD13521AA1586300724201 /* BeautyBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeautyBaseView.h; sourceTree = "<group>"; };
+		FBDD13531AA1586300724201 /* BeautyBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeautyBaseView.m; sourceTree = "<group>"; };
 		FBE1C0451A8C38F70036E6EE /* StarCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StarCollectionCell.h; sourceTree = "<group>"; };
 		FBE1C0461A8C38F70036E6EE /* StarCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StarCollectionCell.m; sourceTree = "<group>"; };
 		FBE8C8281A834CAE00431B5A /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
@@ -974,9 +977,9 @@
 				FB7C240D1A9F5382006A5EA8 /* readme.md */,
 				FB45817F1A81001000895E6F /* Application */,
 				FB17FC8C1A81232300A6D4A4 /* Macros */,
-				FB4581821A81001000895E6F /* Controller */,
 				FB4581881A81001000895E6F /* Model */,
 				FB45818D1A81001000895E6F /* View */,
+				FB4581821A81001000895E6F /* Controller */,
 				FB4581811A81001000895E6F /* Categories */,
 				FB4581831A81001000895E6F /* Datbase */,
 				FB4581871A81001000895E6F /* Handler */,
@@ -1256,6 +1259,8 @@
 				FBFFD7221A820E3900B3F6ED /* ZXTabBar.m */,
 				FB301DA11AA0914800A70BE6 /* BeautyView.h */,
 				FB301DA21AA0914800A70BE6 /* BeautyView.m */,
+				FBDD13521AA1586300724201 /* BeautyBaseView.h */,
+				FBDD13531AA1586300724201 /* BeautyBaseView.m */,
 				FB301DA41AA09AEE00A70BE6 /* BeautySmallVIew.h */,
 				FB301DA51AA09AEE00A70BE6 /* BeautySmallVIew.m */,
 				FBF846091AA0DD9800C758B8 /* BeautyLeftView.h */,
@@ -2227,6 +2232,7 @@
 				FB7C240C1A9F4CCF006A5EA8 /* readme.md in Sources */,
 				FBF09C111A81E55D00444969 /* NSDate+Transform.m in Sources */,
 				FBC54EA91A81EFD5000A891D /* ZXNavigaitonBar.m in Sources */,
+				FBDD13541AA1586300724201 /* BeautyBaseView.m in Sources */,
 				FB45815D1A80F9EE00895E6F /* main.m in Sources */,
 				FB4581971A8100AD00895E6F /* MainViewController.m in Sources */,
 				FBFFD7231A820E3900B3F6ED /* ZXTabBar.m in Sources */,

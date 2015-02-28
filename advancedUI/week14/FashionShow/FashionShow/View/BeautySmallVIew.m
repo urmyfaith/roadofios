@@ -7,10 +7,6 @@
 //
 
 #import "BeautySmallView.h"
-#import "BeautyModel.h"
-
-/*==========图片下载===========*/
-#import "UIImageView+WebCache.h"
 
 #define defaultGapBetweenPic 2.0f
 
@@ -28,19 +24,21 @@
     return self;
 }
 
--(void)drawBeautySmallView{
+-(void)drawOneRowView{
+    [super drawOneRowView];
+    
     if (0 == self.gapBewtweenPic ) {
         self.gapBewtweenPic = defaultGapBetweenPic;
     }
-    CGFloat pictureWidth = (self.BeautySmallViewwidth - 2*self.gapBewtweenPic)/3;
+    CGFloat pictureWidth = (self.OneRowViewWidth - 2*self.gapBewtweenPic)/3;
     
     for (int i = 0 ; i < 3; i++) {
         CGFloat xPos = i*(self.gapBewtweenPic+pictureWidth);
         CGFloat yPos = 0.0f;
         
         UIImageView *imageView  = [[UIImageView alloc]init];
-        imageView.frame = CGRectMake(xPos, yPos, pictureWidth, self.BeautySmallViewheight);
-        BeautyModel *bm = [self.BeautySmallModels_array objectAtIndex:i];
+        imageView.frame = CGRectMake(xPos, yPos, pictureWidth, self.OneRowViewHeight);
+        BeautyModel *bm = [self.models_array objectAtIndex:i];
         [imageView setImageWithURL:[NSURL URLWithString:bm.icon]
                   placeholderImage:[UIImage imageNamed:@"缺省图2"]];
         imageView.userInteractionEnabled = YES;

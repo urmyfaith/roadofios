@@ -50,21 +50,20 @@
              *  3.绘制控件
              *  4.调整frame
              */
-            NSArray *modles =[[NSArray alloc]initWithObjects:self.models_array[i],
-                              self.models_array[i+1],
-                              self.models_array[i+2],
-                              nil];
             
             BeautySmallView *bsv = [[BeautySmallView alloc]init];
             
-            bsv.BeautySmallModels_array  = modles;
+            bsv.models_array  = [[NSArray alloc]initWithObjects:self.models_array[i],
+                                 self.models_array[i+1],
+                                 self.models_array[i+2],
+                                 nil];
             bsv.indexs_array = [[NSArray alloc]initWithObjects:@(i),@(i+1),@(i+2),nil];
-            bsv.BeautySmallViewwidth = self.frame.size.width;
-            bsv.BeautySmallViewheight = defaultRowHeight;
+            bsv.OneRowViewWidth = self.frame.size.width;
+            bsv.OneRowViewHeight = defaultRowHeight;
             
             bsv.frame = CGRectMake(0, _currentHeight, self.frame.size.width,defaultRowHeight);
             
-            [bsv drawBeautySmallView];
+            [bsv drawOneRowView];
             [self addSubview:bsv];
             
             i = i+2;

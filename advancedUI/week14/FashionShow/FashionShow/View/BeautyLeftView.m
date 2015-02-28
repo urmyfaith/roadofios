@@ -8,6 +8,11 @@
 
 #import "BeautyLeftView.h"
 
+
 @implementation BeautyLeftView
+
+-(void)drawOneRowView{
+    [super drawOneRowView];
+}
 
 @end

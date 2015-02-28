@@ -8,14 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BeautySmallView : UIView
+#import "BeautyBaseView.h"
 
-@property (nonatomic,assign) CGFloat  BeautySmallViewheight;
-@property (nonatomic,assign) CGFloat  BeautySmallViewwidth;
+@interface BeautySmallView : BeautyBaseView
+
 @property (nonatomic,assign) CGFloat  gapBewtweenPic;
-@property (nonatomic,strong) NSArray  *BeautySmallModels_array;
-@property (nonatomic,strong) NSArray  *indexs_array;
 
--(void)drawBeautySmallView;
+
 
 @end

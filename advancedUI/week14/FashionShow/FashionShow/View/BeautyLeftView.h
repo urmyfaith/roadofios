@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BeautyBaseView.h"
 
-@interface BeautyLeftView : UIView
+@interface BeautyLeftView : BeautyBaseView
 
 @end
