@@ -7,11 +7,14 @@
 //
 
 #import "BeautyView.h"
-
-#import "BeautyModel.h"
 #import "BeautySmallVIew.h"
+#import "BeautyLeftView.h"
+#import "BeautyRightView.h"
+#import "BeautyModel.h"
+
 
 #define defaultRowHeight 140.0f
+#define gapBetweenRow 2.0f
 
 @implementation BeautyView
 
@@ -61,23 +64,49 @@
             bsv.OneRowViewWidth = self.frame.size.width;
             bsv.OneRowViewHeight = defaultRowHeight;
             
-            bsv.frame = CGRectMake(0, _currentHeight, self.frame.size.width,defaultRowHeight);
+            bsv.frame = CGRectMake(0, self.currentHeight + gapBetweenRow, self.frame.size.width,defaultRowHeight);
             
             [bsv drawOneRowView];
             [self addSubview:bsv];
             
             i = i+2;
-            self.currentHeight += defaultRowHeight;
+            self.currentHeight += defaultRowHeight + gapBetweenRow;
             //NSLog(@"%s [LINE:%d] self.currentHeight=%.f", __func__, __LINE__,self.currentHeight);
         }
         if ([bm.type isEqualToString:@"big"]) {
             //绘制大图
+            
+            NSArray *tempModelsArray  = [[NSArray alloc]initWithObjects:self.models_array[i], nil];
+            NSArray *tempIndexsArray  = [[NSArray alloc]initWithObjects:@(i), nil];
             if ([bm.title_position isEqualToString:@"left"]) {
                 //文字左侧
+                BeautyLeftView *blv = [[BeautyLeftView alloc]init];
+                
+                blv.models_array = tempModelsArray;
+                blv.indexs_array = tempIndexsArray;
+                blv.OneRowViewWidth = self.frame.size.width;
+                blv.OneRowViewHeight = defaultRowHeight;
+                
+                blv.frame = CGRectMake(0, self.currentHeight + gapBetweenRow, blv.OneRowViewWidth,blv.OneRowViewHeight);
+                [blv drawOneRowView];
+                [self addSubview:blv];
             }
             if ([bm.title_position isEqualToString:@"right"]) {
                 //文字右侧
+                
+                BeautyRightView *brv = [[BeautyRightView alloc]init];
+                
+                brv.models_array = tempModelsArray;
+                brv.indexs_array = tempIndexsArray;
+                
+                brv.OneRowViewWidth = self.frame.size.width;
+                brv.OneRowViewHeight = defaultRowHeight;
+                
+                brv.frame = CGRectMake(0, self.currentHeight + gapBetweenRow, brv.OneRowViewWidth,brv.OneRowViewHeight);
+                [brv drawOneRowView];
+                [self addSubview:brv];
             }
+            self.currentHeight += defaultRowHeight + gapBetweenRow;
         }
     }
 }
