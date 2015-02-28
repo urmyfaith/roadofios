@@ -1043,8 +1043,6 @@
 				FB4581931A81007E00895E6F /* BaseViewController.m */,
 				FBE8C8281A834CAE00431B5A /* DetailViewController.h */,
 				FBE8C8291A834CAE00431B5A /* DetailViewController.m */,
-				FB4581BA1A8101E600895E6F /* root */,
-				FB4581BB1A8101EA00895E6F /* base */,
 			);
 			name = superClass;
 			path = ../Base;
@@ -1062,6 +1060,8 @@
 			children = (
 				FB97185F1A82F96300CDB90A /* ZXTabBarVC.h */,
 				FB9718601A82F96300CDB90A /* ZXTabBarVC.m */,
+				FB4581BA1A8101E600895E6F /* root */,
+				FB4581BB1A8101EA00895E6F /* base */,
 				FB4581801A81001000895E6F /* superClass */,
 				FBE8C82B1A834CB800431B5A /* detail */,
 			);
@@ -1286,7 +1286,6 @@
 				FB4581A21A81010000895E6F /* PostCommentViewController.m */,
 			);
 			name = root;
-			path = ../Controller;
 			sourceTree = "<group>";
 		};
 		FB4581BB1A8101EA00895E6F /* base */ = {
@@ -1304,7 +1303,6 @@
 				FB4581B21A81016A00895E6F /* VisualViewController.m */,
 			);
 			name = base;
-			path = ../Controller;
 			sourceTree = "<group>";
 		};
 		FB7C23F21A9F3FA2006A5EA8 /* MJRefresh */ = {
