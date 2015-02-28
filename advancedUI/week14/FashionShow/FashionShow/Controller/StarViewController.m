@@ -49,8 +49,6 @@
 
 }
 
-
-
 #pragma mark 下载数据
 -(void)downloadData{
     

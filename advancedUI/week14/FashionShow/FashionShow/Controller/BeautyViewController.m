@@ -21,17 +21,7 @@
 @implementation BeautyViewController
 {
     NSString *_urlIdentifier;
-   
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-     
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -87,12 +77,7 @@
 -(void)fashionPage_downloadFinish{
     
     if ([self.postURL_offset isEqualToString:@"0"]) {
-//        if (self.currentDisplyingView == fashionViewShowViewMD) {
-//            [self.modelsMD_mArray removeAllObjects];
-//        }
-//        if (self.currentDisplyingView  == FashionViewShowViewDG) {
-//            [self.modelsDG_mArray removeAllObjects];
-//        }
+        [self.beautyModels_mArray removeAllObjects];
     }
     NSArray *json2Moodel_array = [JSON2Model JSONData2ModelWithURLIdentifier:_urlIdentifier
                                                                  andDataType:zxJSON_DATATYPE_BEAUTYPAGE];
@@ -102,20 +87,18 @@
     if (json2Moodel_array.count > 0 ) {
         NSLog(@"%s [LINE:%d]", __func__, __LINE__);
         [self.beautyModels_mArray addObjectsFromArray:json2Moodel_array];
-//        if (self.currentDisplyingView == fashionViewShowViewMD) {
-//            [self.modelsMD_mArray addObjectsFromArray:json2Moodel_array];
-//            _models_mArray = self.modelsMD_mArray;
-//        }
-//        if (self.currentDisplyingView  == FashionViewShowViewDG) {
-//            [self.modelsDG_mArray addObjectsFromArray:json2Moodel_array];
-//            _models_mArray = self.modelsDG_mArray;
-//        }
-//        [_waterflowView reloadData];
     }
     else{
         [[[iToast makeText:@"亲,没数据啦!"] setDuration:iToastDurationNormal] show:iToastTypeNotice];
     }
-    [self createBeautyView];
+    if (self.beautyView == nil) {
+        [self createBeautyView];
+    }
+    else{
+        [self refreshBeautyView];
+    }
+    [self.beautyView headerEndRefreshing];
+    [self.beautyView footerEndRefreshing];
 }
 
 
@@ -130,6 +113,23 @@
     self.beautyView = [[BeautyView alloc]init];
     [self refreshBeautyView];
     [self.view addSubview:self.beautyView];
+    
+    //添加数据刷新
+    [self.beautyView addHeaderWithTarget:self action:@selector(loadNewItems)];
+    [self.beautyView addFooterWithTarget:self action:@selector(loadMoreItems)];
+}
+
+
+#pragma mark 刷新数据的方法
+-(void)loadNewItems{
+    self.postURL_offset = @"0";
+    [self downloadData];
+}
+-(void)loadMoreItems{
+    static int page = 1;
+    self.postURL_offset = [NSString stringWithFormat:@"%d",self.postURL_count.intValue * page];
+    page++;
+    [self downloadData];
 }
 
 /**
@@ -144,5 +144,7 @@
     [self.beautyView drawBeautyView];
     self.beautyView.contentSize = CGSizeMake(self.view.frame.size.width, self.beautyView.currentHeight);
 }
+
+
 
 @end
