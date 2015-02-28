@@ -20,12 +20,15 @@
  1.新建vc,继承自UITabBarController
  2.将原来的隐藏
  3.创建自定义的按钮,图片,文字
-    a)按钮==>页面跳转
-    b)图片
+ a)按钮==>页面跳转
+ b)图片
  4.用自定义tabBar替换掉系统的tabBar
  */
 
-
+/**
+ *
+ *  底部的标签栏:明星,时装,美容,生活,视觉
+ */
 @implementation ZXTabBarVC
 {
     NSArray *_unSelectedImages;

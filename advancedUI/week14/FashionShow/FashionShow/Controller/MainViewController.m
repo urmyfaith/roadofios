@@ -10,8 +10,8 @@
 #import "ZXTabBarVC.h"
 #import "BaseViewController.h"
 #import "MainTableViewCell.h"
-#import "WebViewController.h"
-#import "GenericModel.h"
+
+
 
 
 @interface MainViewController ()<UITableViewDataSource,UITableViewDelegate>

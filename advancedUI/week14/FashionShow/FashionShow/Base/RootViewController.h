@@ -31,6 +31,13 @@
  */
 #import "iToast.h"
 
+/**
+ *  通用网页展示 + 数据模型
+ *
+ */
+#import "WebViewController.h"
+#import "GenericModel.h"
+
 @interface RootViewController : UIViewController
 
 

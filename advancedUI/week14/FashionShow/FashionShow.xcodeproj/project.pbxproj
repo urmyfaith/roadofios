@@ -1060,9 +1060,9 @@
 			children = (
 				FB97185F1A82F96300CDB90A /* ZXTabBarVC.h */,
 				FB9718601A82F96300CDB90A /* ZXTabBarVC.m */,
+				FB4581801A81001000895E6F /* superClass */,
 				FB4581BA1A8101E600895E6F /* root */,
 				FB4581BB1A8101EA00895E6F /* base */,
-				FB4581801A81001000895E6F /* superClass */,
 				FBE8C82B1A834CB800431B5A /* detail */,
 			);
 			path = Controller;

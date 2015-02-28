@@ -18,6 +18,8 @@
 #import "ZXCustomCVFL.h"
 #import "StarCollectionCell.h"
 
+/*==========底部标签栏===========*/
+#import "ZXTabBarVC.h"
 
 @interface BaseViewController : RootViewController
 

@@ -138,6 +138,19 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%s [LINE:%d] indexPatsh=%d", __func__, __LINE__,indexPath.row);
+
+    WebViewController *webVC = [[WebViewController alloc]init];
+    GenericModel *model = (GenericModel *)[_collectionViewDateSource_array objectAtIndex:indexPath.row];
+    
+    webVC.article_id =  model.id;  //用于webView地址的拼接
+    webVC.model = model; //用于收藏webView的时候,展示收藏页面的标题.
+    webVC.modelType = zxJSON_DATATYPE_GENERIC; //标记数据模型的类型
+    
+    ZXTabBarVC *tvc = [ZXTabBarVC sharedZXTabBarViewController];
+    tvc.customTabBar.hidden = YES;
+    
+    [self.navigationController pushViewController:webVC animated:YES];
+    
 }
 
 //设置每个cell的大小

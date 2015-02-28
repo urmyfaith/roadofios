@@ -20,7 +20,6 @@
     NSString *_urlIdentifier;
     UICollectionView *_collectionView;
     NSMutableArray *_collectionViewDateSource_array;
-    
 }
 
 - (void)viewDidLoad

@@ -11,6 +11,11 @@
 #import "GenericModel.h"
 #import "WebViewController.h"
 
+#import "ZXTabBarVC.h"
+
+/**
+ *  详细页面的ToolBar:返回前一页,分享,收藏,评论
+ */
 
 @implementation ZXTabBar
 {
@@ -81,6 +86,8 @@
 #pragma mark  返回按钮事件处理
         case zxTabBarButtonBaseTag:
         {
+            ZXTabBarVC *tvc = [ZXTabBarVC sharedZXTabBarViewController];
+            tvc.customTabBar.hidden = NO;
             [curren_vc.navigationController popViewControllerAnimated:YES];
         }
             break;
