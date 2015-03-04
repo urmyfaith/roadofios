@@ -12,9 +12,11 @@
 
 - (id)initWithFrame:(CGRect)frame
 {
+    static int count = 0;
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        
+        NSLog(@"%s [LINE:%d] %d", __func__, __LINE__,count++);
     }
     return self;
 }

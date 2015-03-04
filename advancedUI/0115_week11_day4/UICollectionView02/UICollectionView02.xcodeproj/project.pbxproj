@@ -21,6 +21,7 @@
 		FB2C719B1A8C8475000EB848 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB2C717D1A8C8474000EB848 /* UIKit.framework */; };
 		FB2C71A31A8C8475000EB848 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB2C71A11A8C8475000EB848 /* InfoPlist.strings */; };
 		FB2C71A51A8C8475000EB848 /* UICollectionView02Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2C71A41A8C8475000EB848 /* UICollectionView02Tests.m */; };
+		FB2C71B01A8C85EA000EB848 /* MyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FB2C71AF1A8C85EA000EB848 /* MyCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		FB2C71A01A8C8475000EB848 /* UICollectionView02Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "UICollectionView02Tests-Info.plist"; sourceTree = "<group>"; };
 		FB2C71A21A8C8475000EB848 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FB2C71A41A8C8475000EB848 /* UICollectionView02Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UICollectionView02Tests.m; sourceTree = "<group>"; };
+		FB2C71AE1A8C85EA000EB848 /* MyCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCell.h; sourceTree = "<group>"; };
+		FB2C71AF1A8C85EA000EB848 /* MyCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,8 @@
 				FB2C718B1A8C8475000EB848 /* Main.storyboard */,
 				FB2C718E1A8C8475000EB848 /* ZXViewController.h */,
 				FB2C718F1A8C8475000EB848 /* ZXViewController.m */,
+				FB2C71AE1A8C85EA000EB848 /* MyCell.h */,
+				FB2C71AF1A8C85EA000EB848 /* MyCell.m */,
 				FB2C71911A8C8475000EB848 /* Images.xcassets */,
 				FB2C71801A8C8474000EB848 /* Supporting Files */,
 			);
@@ -251,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB2C718A1A8C8475000EB848 /* ZXAppDelegate.m in Sources */,
+				FB2C71B01A8C85EA000EB848 /* MyCell.m in Sources */,
 				FB2C71861A8C8475000EB848 /* main.m in Sources */,
 				FB2C71901A8C8475000EB848 /* ZXViewController.m in Sources */,
 			);

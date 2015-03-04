@@ -99,5 +99,14 @@
     int tapped_cell_index = [[self.indexs_array objectAtIndex:index] intValue];
 
     NSLog(@"touch postion: %@  tapped_cell_index=%d",NSStringFromCGPoint(touchPoint),tapped_cell_index);
+    
+    /**
+     单击某个cell之后执行操作: 1.页面的跳转 2.底部标签栏的隐藏
+     */
+    
+    //返回单击的索引号
 }
+
+
+
 @end

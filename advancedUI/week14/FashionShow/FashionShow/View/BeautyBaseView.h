@@ -14,6 +14,14 @@
 /*==========图片下载===========*/
 #import "UIImageView+WebCache.h"
 
+
+@protocol BeautyOneRowViewDelegate <NSObject>
+
+@required
+-(void)clickedOneRowViewAtIndex:(NSUInteger )index;
+@end
+
+
 /**
  * 绘制一行View的基类
  *
@@ -23,6 +31,8 @@
  *
  *  共有的属性:行高,行宽,模型数组,索引数组
  *  共有的方法:绘制一行View
+ *
+ *  [注意]代理,单击一个视图,需要返回单击的索引号,使用代理方法来返回.
  */
 @interface BeautyBaseView : UIView
 
@@ -31,6 +41,8 @@
 
 @property (nonatomic,strong) NSArray  *models_array;
 @property (nonatomic,strong) NSArray  *indexs_array;
+
+@property (nonatomic,weak) __weak id  delegate;
 
 -(void)drawOneRowView;
 

@@ -136,9 +136,14 @@
     return cell;
 }
 
+
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSLog(@"%s [LINE:%d] indexPatsh=%d", __func__, __LINE__,indexPath.row);
 
+    /**
+     单击某个cell之后执行操作: 1.页面的跳转 2.底部标签栏的隐藏
+     */
+    
     WebViewController *webVC = [[WebViewController alloc]init];
     GenericModel *model = (GenericModel *)[_collectionViewDateSource_array objectAtIndex:indexPath.row];
     
