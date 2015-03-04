@@ -21,6 +21,15 @@
 2015-01-29 19:42:24.809 demo[10246:607] -[ZXViewController viewDidLoad] [LINE:28] now=2015-01-29 11:42:24 +0000
 ~~~
 
+
+`roadofios/advancedUI/0128_week13_day3/xCarDemo/xCarDemo/NewsViewContoller.m`
+
+NSDateFormatter *dateFormater = [[NSDateFormatter alloc] init];
+
+[dateFormater setDateFormate:"yyyy-MM-dd"];
+
+NSDate *date = [[NSDate dateWithTimeIntervalSince1970:[nil.createDate intValue]];
+
 ## 参考资料
 
 - 1. http://blog.csdn.net/sxsj333/article/details/7776910

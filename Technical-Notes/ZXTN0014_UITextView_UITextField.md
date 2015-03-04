@@ -1,0 +1,8 @@
+##  UITextView和UITextFiled的区别
+
+UITextview支持多行输入 UITextFiled只支持单行
+
+UITextview没有placeholder属性 UItextField有placeholder属性
+
+继承也不一样 UITextview继承UIScrollerView UItextField继承UIview
+
